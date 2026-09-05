@@ -1,0 +1,4 @@
+SELECT id/22. a, ID FROM jt1 ORDER BY ID
+#Paradox
+SELECT id/22. a, ID FROM jt1 ORDER BY ID
+

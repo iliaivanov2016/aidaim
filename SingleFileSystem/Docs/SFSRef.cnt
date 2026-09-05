@@ -1,0 +1,20 @@
+:Base SFSREF.HLP
+:Title Single File System Reference
+1 Overview=Overview
+1 Features=Features
+1 Compression and encryption algorithms=Compression_and_encryption_algorithms
+1 Getting Help from Technical Support=Getting_Help_from_Technical_Support
+1 How to Buy=How_to_Buy
+1 Classes
+2 TSingleFileSystem=TSingleFileSystem
+2 TSFSFileStream=TSFSFileStream
+1 Procedures
+2 MakeSFX procedure=MakeSFX_procedure
+2 CopySFS function=CopySFS_function
+2 DeleteSFS function=DeleteSFS_function
+2 RenameSFS function=RenameSFS_function
+2 IsSFSFile=IsSFSFile
+2 IsSingleFileEncrypted function=IsSingleFileEncrypted_function
+2 IsPasswordValid function=IsPasswordValid_function
+2 GetControlQuestion function=GetControlQuestion_function
+2 RestorePasswordByControlAnswer function=RestorePasswordByControlAnswer_function

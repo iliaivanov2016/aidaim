@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EA751021-F658-410F-8963-178B40068655}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dclCryptoPressStreamD17.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclCryptoPressStreamD17.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dclCryptoPressStreamD17">
+        <MSBuild Projects="dclCryptoPressStreamD17.dproj"/>
+    </Target>
+    <Target Name="dclCryptoPressStreamD17:Clean">
+        <MSBuild Projects="dclCryptoPressStreamD17.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclCryptoPressStreamD17:Make">
+        <MSBuild Projects="dclCryptoPressStreamD17.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclCryptoPressStreamD17">
+        <MSBuild Projects="vclCryptoPressStreamD17.dproj"/>
+    </Target>
+    <Target Name="vclCryptoPressStreamD17:Clean">
+        <MSBuild Projects="vclCryptoPressStreamD17.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclCryptoPressStreamD17:Make">
+        <MSBuild Projects="vclCryptoPressStreamD17.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dclCryptoPressStreamD17;vclCryptoPressStreamD17"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dclCryptoPressStreamD17:Clean;vclCryptoPressStreamD17:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dclCryptoPressStreamD17:Make;vclCryptoPressStreamD17:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

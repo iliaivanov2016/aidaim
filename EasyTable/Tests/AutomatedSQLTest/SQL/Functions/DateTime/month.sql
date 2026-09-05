@@ -1,0 +1,19 @@
+#exec
+DROP TABLE MEMORY Tmp;
+#exec
+CREATE TABLE MEMORY Tmp (dt DateTime);
+#exec
+INSERT INTO MEMORY Tmp VALUES(TODATE('05/01/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp VALUES(TODATE('12/31/2005','MM/DD/YYYY'));
+select MONTH(dt) f1 FROM MEMORY Tmp order by f1;
+#dbisam 
+#exec
+DROP TABLE if exists "\MEMORY\Tmp";
+#exec
+CREATE TABLE "\MEMORY\Tmp" (f1 Integer);
+#exec
+INSERT INTO "\MEMORY\Tmp" VALUES(5);
+#exec
+INSERT INTO "\MEMORY\Tmp" VALUES(12);
+SELECT f1 FROM "\MEMORY\Tmp" order by f1;

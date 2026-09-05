@@ -1,0 +1,1072 @@
+EasyTable: History of changes
+=============================
+
+- version 23.00 (10/21/2025)
+  New features added: 
+    1. RAD Studio 13 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 22.00 (07/23/2025)
+  New features added: 
+    1. RAD Studio 12.3 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 21.00 (01/17/2024)
+  New features added: 
+    1. RAD Studio 12.0 Athens support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 20.00 (03/27/2023)
+  New features added: 
+    1. RAD Studio 11.3 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 19.00 (12/19/2022)
+  New features added: 
+    1. RAD Studio 11.2 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 18.00 (03/31/2022)
+  New features added: 
+    1. RAD Studio 11.1 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 17.00 (09/27/2021)
+  New features added: 
+    1. RAD Studio 11 Alexandria support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.4.2 Sydney rebuld with update 2 (Windows 32 bit and Windows 64 bit).
+
+
+- version 16.00 (06/30/2020)
+  New features added: 
+    1. RAD Studio 10.4 Sydney support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.3.3 Rio rebuld with update 3 (Windows 32 bit and Windows 64 bit).
+
+
+- version 15.00 (12/25/2018)
+  New features added: 
+    1. RAD Studio 10.3 Rio support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.2 Tokyo rebuilt with update 3.
+
+
+- version 14.00 (04/17/2017)
+  New features added: 
+    1. RAD Studio 10.2 Tokyo support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.1 Berlin rebuilt with update 2.
+
+
+- version 13.00 (06/17/2016)
+  New features added: 
+    1. RAD Studio 10.1 Berlin support added (32 bit and 64 bit Windows).
+    2. Windows 64-bit platform support improved - components now enabled in form designer.
+
+
+- version 12.00 (09/08/2015)
+  New features added: 
+    1. RAD Studio 10 Seattle support added (32 bit and 64 bit Windows).
+
+
+- version 11.00 (04/16/2015)
+  New features added: 
+    1. Delphi and C++ Builder XE8 support added.
+
+
+- version 10.20 (12/10/2014)
+
+  New features added: 
+  1. RAD Studio XE7 support improved.
+  Bugs fixed:
+  1. Search bug in Locate/Lookup in Delphi/C++ Builder 2009 and higher fixed.
+
+
+- version 10.10 (10/30/2014)
+
+  New features added: 
+  1. RAD Studio XE7 support essentially improved.
+
+  Bugs fixed:
+  1. Problems with bookmarks in XE7 were solved.
+  2. Bug with memo fields was fixed.
+
+
+- version 10.00 (09/11/2014)
+
+  New features added: 
+  1. Delphi and C++ Builder XE7 (32-bit and 64-bit) support added.
+
+
+- version 9.00 (05/19/2014)
+
+  New features added: 
+  1. Delphi and C++ Builder XE6 (32-bit and 64-bit) support added.
+
+
+- version 8.00 (02/21/2014)
+
+  New features added: 
+  1. Delphi and C++ Builder XE3, XE4, XE5 (32-bit and 64-bit) support added.
+
+
+- version 7.00 (02/02/2012)
+
+  New features added: 
+  1. Delphi and C++ Builder XE2 (32-bit) supported. 
+
+
+- version 6.50 (08/13/2010)
+
+  New features added: 
+  1. Delphi 2010 file create problem is solved.
+  2. Delphi and C++ Builder 2011 support added.
+
+
+- version 6.40 (07/28/2009)
+
+  New features added: 
+  1. Support for Delphi and C++ Builder 2010.
+  2. Latest version of Single File System v.2.70 included.
+
+  Bugs fixed:
+  1. Bug in repairing disk database in Delphi 2009 and higher fixed.
+
+
+- version 6.30 (02/22/2008)
+
+  New features added: 
+  1. New SQL functions were added:
+     - ABS
+     - CEILING, CEIL 
+     - FLOOR
+     - MOD
+     - POWER, POW
+     - RANDOM, RAND
+     - ROUND     
+     - SIGN
+     - TRUNCATE,TRUNC
+     - HEX
+  2. New SQL operators were added:
+     - %, mod (same as MOD(x,y))
+     - shl, << (shift left)
+     - shr, >> (shift right)
+     - xor, ^  (bitwise XOR)
+     - &  (bitwise AND)
+     - |  (bitwise OR)
+     - ~  (bitwise NOT)
+  3. Hex constants are now supported (both C++ and Delphi forms: 0xff and $FF)
+  4. C++ form of logical and comparison operators is now supported (!, &&, !=, ==).
+  5. Compatibility with BDE Paradox in TEasyTable.ExportTable and DBTransfer utility improved.
+
+  Bugs fixed:
+  1. Bug with AVG operator on currency fields fixed.
+  2. Bug in subquery containing quoted or bracketed strings was fixed.
+  3. Problem with editing / inserting records on dataset filtered by memo fields was solved.
+  4. Memory leak problem in BlobsSQL demo was solved. 
+
+- version 6.20 (02/16/2007)
+
+  New features added: 
+  1. Documentation updated.
+  2. Single file database stability on files > 2 Gb was improved.
+  3. TETManager utility was essentially improved:
+     - SQL support with optional syntax highlighting added.
+     - Fields and indexes tabs added to show structure of the opened dataset.
+     - Create and restructure table form redesigned
+     - RecNo / RecordCount display added for fields and indexes tables.
+     - Printing database structure added.
+
+  Bugs fixed:
+  1. Problem with Real type in progress events in C++ Builder was solved.
+     Real type in these events changed to Double.
+  2. Bug with setting table names from BDE in DBTransfer utility was fixed.
+  3. Bug in SUM and AVG functions with NULL arguments was fixed.
+  4. Problems with datasets filtered on memo fields were solved.
+
+- version 6.10 (08/16/2006)
+
+  New features added: 
+  1. SQL queries and filters now supports formatted memo fields. 
+  2. New SQL functions were added:
+     - ISNULL
+     - YEAR
+     - QUARTER
+     - MONTH
+     - DAY
+     - WEEKDAY
+     - DAYOFWEEK
+     - DAYNAME
+     - MONTHNAME
+     - HOUR
+     - MINUTE
+     - SECOND
+     - MSECOND
+     - EXTRACT
+
+  3. MIN and MAX functions can be used with any data types, except BLOB types.
+  4. SQL functions description is modified in Developer's Guide.
+  5. Milliseconds ('ZZZ','Z') are now supported in TODATE and TOSTRING SQL functions.
+     TODATE and TOSTRING now have the same arguments as in Accuracer / SQLMemTable.
+  6. Aggregate functions COUNT, SUM and AVG now can be used with DISTINCT option.
+
+  Bugs fixed:
+  1. Bug with converting unicode string in some methods of TEasyTable 
+  (Repairtable, ImportTable, etc.) was fixed.
+  2. Bug with filters on memo and formatted memo fields was fixed.
+  3. Bug with DY format in TODATE and TOSTRING was fixed. 
+     SQL Reference updated - DY returns 3 symobols.
+  4. Bug with NULL constant in SELECT list was fixed.
+  5. Problem with record buffers larger 65535 bytes was solved - 
+     now record size can be up to 2^31.
+
+- version 6.05 (04/21/2006)
+
+  New features added: 
+  1. SQL queries and filters now supports memo fields. MemoSearch demo was added. 
+  2. Component Reference was updated: TEasySession.FindDatabase and OpenDatabase 
+     descriptions were modified.
+
+  Bugs fixed:
+  1. Problem with ftWideString fields in Borland Developer Studio 2006 was solved.
+  2. Bug with SQL SELECT UNION and empty dataset was fixed.
+
+
+- version 6.04 (12/23/2005)
+
+  New features added: 
+  1. Compatibility with third party DB-aware controls was improved.
+  2. Compact database file mode now has smaller page size (544 bytes instead of 2048).
+
+  Bugs fixed:
+  1. Bug with extending compact database file with ExtentPageCount < 4 was fixed.
+  2. Bug with exporting indexes to Paradox was fixed.
+  3. Bug with some kind of joins was fixed.
+  4. Bug with repairing and restructuring large integer fields was fixed.
+
+- version 6.03 (06/16/2004)
+
+  New features added: 
+  1. Automatic reducing of the database file size in case of deleting data from the end of file.
+
+
+- version 6.02 (06/12/2004)
+
+  Bugs fixed:
+  1. Bug in SELECT with DISTINCT option was fixed.
+  2. Bug with editing record by DBGrid was fixed.
+  3. Bug with calculated fields and shared tables was fixed.
+  4. Problem with SQL property of TEasyQuery in C++ Builder was solved.
+  5. Left, right and full outer joins now works corectly.
+
+
+- version 6.01 (04/02/2004)
+
+  Bugs fixed:
+  1. Bug in SELECT statements with EXCEPT union was fixed.
+  2. DBTransfer utility was recompiled correctly.
+  3. Bug in SELECT DISTINCT on the single table was fixed.
+  4. Bug in RepairTable was fixed.
+
+- version 6.00 (02/04/2004)
+
+  New features added: 
+  1. Uncorrelated subqueries is now supported. 
+     See scripts in Utils\Bin\SQLConsole\SQL\SubQuery folder for examples.
+     Also read SELECT Statement topic in Developer's Guide to learn more about it.
+  2. SQL operator IN now can be used with subquery.
+  3. SQL operator EXISTS was added.
+
+  Bugs fixed:
+  1. Bug with performing Locate operation on variants of varShortInt type was fixed.
+
+
+- version 5.72 (01/15/2004)
+
+  Bugs fixed:
+  1. Some bugs in open table and repair table implementation were fixed.
+
+
+- version 5.71 (12/05/2003)
+
+  Bugs fixed:
+  1. Some bugs with RepairDatabase was fixed, Minimum Page Size 2 Kb problem was solved.
+  2. Bug in updating current record in the table after edit with index applied was fixed.
+  3. Bug in SQL SELECT with EXCEPT or INTERSECT on empty tables was fixed.
+
+
+- version 5.70 (11/12/2003)
+
+  New features added: 
+
+  1. IProvider interface support was implemented. Now you can access TEasyTable
+     and TEasyQuery components via TClientDataset.
+  2. ClientDataset demo was added.
+  3. BLOB values now can be inserted and updated via SQL statements INSERT and UPDATE
+  using parameters. See new demo BlobsSQL. Many thanks for this idea to Vasil Minaev!
+
+  Bugs fixed:
+
+  1. Some bugs with Date, Time and DateTime expressions in SQL were fixed. 
+  2. Problem with SQL statement SELECT INTO with specified field list was solved. 
+  3. Bugs in INSERT FROM SELECT statement were fixed.
+
+
+- version 5.61 (10/01/2003)
+
+  New features added: 
+
+  1. New demo Batch was added.
+
+  Bugs fixed:
+  1. Bug in TEasyTable.AddRecords method was fixed. 
+
+
+
+- version 5.60 (09/23/2003)
+
+  New features added: 
+
+  1. SQL performance was increased. SELECT INTO on joined tables was optimized.
+  2. New demo MergeDBExe was added. Thanks to Andreas Greuer.
+  3. New demo CSVImport was added.
+
+
+  Bugs fixed:
+
+  1. Bug in master-detail relationship on date, time and datetime fields was fixed.
+  2. Bug in UPDATE SQL statement implementation with WHERE clause was fixed.
+     Now all rows that matches WHERE condition will be updated.
+  3. SQL UPDATE statement with WHERE clause on the updated fields now works correctly.
+  4. Some bugs with parameters in TEasyQuery were fixed.
+  5. EasyTable Manager bug with index field names was fixed.
+  6. Bug in SQL aggregate functions implementation was fixed. 
+     Now it works with joined tables.
+  7. Bug in INSERT ... SELECT statement was fixed.
+  8. Problem with growing database after simple record modification was fixed.
+  9. Problem with TEasyDatabase.OnProgress caused by Pascal compiler in C++ Builder 
+     was solved by adding 
+     #define Real double 
+     line in EasyTable.hpp. If you are installing from source code manually 
+     do not forget to add it.
+  10. Problem with dropping table indexes after using queries in c++ Builder was solved.
+  11. Problem with reopening encrypted database after repair operation was fixed.
+  12. UNION joins now works with AutoInc fields correctly.
+ 
+
+- version 5.53 (09/10/2003)
+
+  Bugs fixed:
+  1. Bug in execution of SELECT statement with the list of fields was fixed.
+
+
+- version 5.52 (09/08/2003)
+
+  Bugs fixed:
+  1. Bugs in RestructureTable and RepairTable with sessions were fixed.
+  2. Bug with persistent fields naming in queries was fixed.
+
+
+- version 5.51 (08/04/2003)
+
+  Bugs fixed:
+
+  1. Bug in BLOB Streams used with DB-controls was fixed.
+
+
+- version 5.50 (07/24/2003)
+
+  New features added: 
+  1. SQLConsole was improved. Many thanks to Piotr Likus for this modification.
+
+  Bugs fixed:
+  1. All known SQL related bugs were fixed.
+  2. Master-detail bugs were fixed.
+  3. Navigation with Multi-Select DB Grid bug was fixed.
+  4. Bug in TetManager with switching tables was fixed.
+  5. Blob streams opened in bmRead mode now works correctly.
+  6. Bug with free disk space detection was fixed.
+  7. Bug with importing Unicode data was fixed.
+  8. Bug with retrieving BLOB data by SQL queries was fixed.
+  9. Bug with EmptyTable in multi-thread environment was fixed.
+ 
+
+- version 5.40 (05/14/2003)
+
+  Bugs fixed:
+  1. Boolean params in SQL statement are now handled correctly.
+  2. Problem with COUNT() aggregate function in SQL is solved.
+  3. Select distinct query bug is fixed.
+  4. Multiple unions in a single sql statement now work properly.
+  5. Canceling active range when changing index is added.
+  6. DateTime sorting problem is solved.
+  7. Problem with opening tables from different databases by 
+     setting DatabaseFileName now works correctly.
+  7. Master-detail relationship with multi-field indexes 
+     bug is fixed.
+  8. WideString is now correctly converted to string.
+  9. TEasyTable.RecNo with assigned OnFilterRecord is corrected.
+  10. Required fields check is added to TEasyTable.InsertRecord.
+  11. Problem with selection of BLOB fields in SQL query is solved.
+  12. SQL Inner Join problem is solved.
+  13. Range bug is fixed.
+  14. LastAutoIncValue for SQL query now works correctly.
+  15. Executing query with TEasySession problem is solved.
+
+
+- version 5.30 (03/12/2003)
+
+  Bugs fixed:
+  1. TEasyQuery component now can access in-memory tables using InMemory property.
+  2. Now TEasyQuery can use table opened by TEasyTable component.
+  3. Problems with accessing read-only database files were solved.
+  4. Importing tables with auto-increment fields now works correctly.
+  5. Populating table names list now works correctly.
+  6. Aggregative functions now can be used with empty data sets.
+  7. Master-detail relationship now works correctly.
+  8. SELECT statements with GROUP BY and aggregative functions now works correctly.
+  9. Bugs in Many to Many demo were fixed.
+  10. Search demo now works under all supported Delphi and C++ Builder versions.
+
+- version 5.20 (02/14/2003)
+
+  New features added: 
+  1. 'TOP n [, first_row]' SQL operator is added.
+     It specifies that only the first n rows starting from 
+     the first_row are to be output from the query result set.
+  2. RowsAffected property is now supported.
+  3. RequestLive property is added.  
+  4. Transfering data from SQL Server is improved.
+
+  Bugs fixed:
+  1. Problem with Union SQL command is solved.
+  2. Expressions in UPDATE SQL command are now properly supported.
+  3. Join of in-memory tables now works correctly.
+  4. Problem with accumulating values of ftCurrency fields 
+     is solved.
+
+
+- version 5.10 (01/17/2003)
+
+  New features added: 
+  1. BDELikeFilter property is added. 
+     By default EasyTable provides advanced search capability, i.e. it performs
+     FindFirst and FindNext searches even when Filtered property is False.
+     BDELikeFilter property allows to use standard way of FindFirst and FindNext 
+     calls and so to improve compatibility with some third-party DB controls.
+  2. EasyTable.BeforeRefresh and EasyTable.AfterRefresh event handleres are added.
+
+  Bugs fixed:
+  1. IndexName property at design-time with inactive table now works correctly.
+  2. Unicode parameter in TEasyQuery is now properly handled.
+  3. Problem with memory tables in SQL commands is solved.
+  4. Group by with join query problem is fixed.
+  5. Date comparison in SQL search condition now works properly.
+
+
+- version 5.01 (12/30/2002)
+
+  Bugs fixed:
+  1. Unique index problem is solved.
+  2. Opening form with connected databse with wrong path is now possible.
+
+
+- version 5.00 (12/20/2002)
+
+  New features added: 
+  1. EasyTable is now thread-safe. TEasySession component is added.
+  2. DatabaseFileMode property is added to TEasyDatabase component. 
+     If you need to store small tables, use dfmCompact database file mode 
+     (less than 10 Kb in size for a database file containing simple table). 
+     For large databases use dfmLarge mode. Default mode is dfmNormal.
+  3. Maximum field name and index name length is now 253 chars. 
+     Database file format is changed. Databases of EasyTable 5.00 format
+     cannot be opened by previous EasyTable versions. 
+     Database files of previous EasyTable versions can be handled by 
+     EasyTable 5.00 without converting.
+  4. SQL: new string functions are added: SUBSTRING, LENGTH, POS.
+  5. SQL: date-time functions are implemented: 
+          SYSDATE, NOW, CURRENT_TIMESTAMP, CURRENT_DATE, CURRENT_TIME, 
+          TOSTRING, TODATE.
+  6. SQL: MEMORY option is added to work with in-memory tables.
+  7. SQL: CAST function is added.
+  8. SQL: LastAutoInc function is added.
+  9. Deleting of auto-indexes is now allowed.
+  10.TETManager now allows to change table fields order.
+  11.AutoInc value is now unsigned integer and can be changed up to 2^32.
+  12.New method TEasyDatabase.MakeEXEDatabase is added. 
+     Now EasyTable database can be attached to executable file and 
+     handled there in read-only mode. 
+
+  Changes:
+  1. Default value of TEasyTable.AutoIndexes is now False.
+  2. Use TEasyTable.CacheEnable property instead of TEasyTable.FastOpen is recommended.
+
+  Bugs fixed:
+  1. SetKey error message for incorrect index is now meaningful.
+  2. SELECT INTO bug is fixed.
+  3. C++ Builder related bug with run-time SQL text assignment is fixed.
+  4. WideString problem with Select query is solved.
+  5. Delete statement now correctly handles search condition.
+  6. Select into bug is fixed.
+
+
+- version 4.20 (11/25/2002)
+
+  New features added: 
+  1. Significant speed improvements for SQL queries with search conditions.
+  2. GROUP BY and HAVING clauses.
+  3. AVG, SUM, MIN, MAX aggregate functions.
+  4. IN, BETWEEN operators.
+  5. Arithmetic and string operators in SQL queries.
+  6. UPPER, LOWER, TRIM, LTRIM, RTRIM functions.
+  7. AutoInc field is now not required for table creation.
+  8. Primary key for any field type is now allowed.
+
+  Bugs fixed:
+  1. SetRange on empty table now works correctly.
+  2. Setting SQL property in C++ Builder now doesn't raise an exception.
+
+
+- version 4.15 (11/06/2002)
+
+  New features added: 
+  1. SQL: UNION, EXCEPT, INTERSECT clauses.
+  2. Print table structure function in EasyTable Manager. 
+
+
+- version 4.12 (10/25/2002)
+
+  Bugs fixed:
+  1. Problem with edit on filtered and indexed table is solved.
+  2. Changing password now correctly handles invalid password.
+
+
+- version 4.11 (10/17/2002)
+
+  Bugs fixed:
+  1. AddRecords problem is solved.
+  2. Blob fields filtering now works correctly.
+
+
+- version 4.10 (10/16/2002)
+
+  New features added: 
+  1. DDL support in TEasyQuery (CREATE TABLE, DROP TABLE, ALTER TABLE, 
+     CREATE INDEX, DROP INDEX).
+  2. INSERT, UPDATE, DELETE statements support.
+  3. Parameters in queries are now supported.
+  4. Advanced SELECT syntax for encrypted tables is now supported.
+  5. Use of field pseudonyms is now allowed 
+     in WHERE, ORDER BY and other clauses.
+  6. SQL Reference book is added to EasyTable Developer's Guide.
+  7. SQL Console utility is added (with source code).
+
+  Bugs fixed:
+  1. C++ Builder installation problem is solved.
+  2. BLOB fields disabling is fixed.
+  3. Outer joins with filter now works correctly.
+  4. Requirement for SFSPack is removed.
+  5. SELECT INTO now works correctly when destination 
+     database is not specified.
+
+
+- version 4.00 (10/07/2002)
+
+  New features added: 
+  1. Outer joins support (LEFT, RIGHT, FULL).
+  2. Natural joins support (INNER, LEFT, RIGHT, FULL).
+  3. Distinct option in SELECT statement is now available.
+  4. SELECT INTO support has been added.
+  5. Inner joins speed essentially increased.
+  6. In-Memory tables now works much faster and uses less amount of RAM.
+  7. AutoIndexes property added to TEasyTable that allows to 
+     insert records faster (when set to false).
+  8. IS NULL, IS NOT NULL, LIKE, NOT LIKE operators now supported in
+  WHERE clause.
+
+  Bugs fixed:
+  1. OnFilterRecord event with custom filter on BLOB fields problem is solved.
+  2. Inner joins with Order By clause now works correctly.
+  3. TEasyQuery now works correctly at designing.
+
+
+- version 4.00 Beta1 (10/01/2002)
+
+  New features added: 
+  1. TEasyQuery component is added to support SQL queries.
+     For more information concerning supported SQL 
+     see SQL.txt in ...\EasyTable\Help folder.
+
+
+- version 3.11 (09/27/2002)
+
+  Bugs fixed:
+  1. Missed OnAfterScroll event firing is added.
+  2. Several import problems are solved.
+
+
+- version 3.10 (09/09/2002)
+
+  Bugs fixed:
+  1. FindFirst, FindNext error with blank Filter is fixed.
+
+
+- version 3.09 (09/04/2002)
+
+  Bugs fixed:
+  1. FindFirst, FindNext false match with not filtered table is fixed.
+
+
+- version 3.08 (08/26/2002)
+
+  New features added: 
+  1. Delphi 7 is supported now.
+
+  Bugs fixed:
+  1. Sharing the same table in read-only and 
+     not read-only mode problem is solved.
+  2. Error message in case of failed attempt to create database
+     using non-existsing path is added.
+  3. In-memory tables are now saved with updated index file.
+  4. Delete now can be safely called between FindFirst and FindNext calls.
+
+
+- version 3.07 (07/16/2002)
+
+  New features added: 
+  1. TEasyTable.AddRecords method is added to syncronize two tables 
+     having the same or similar structure or to transfer data 
+     between two tables.
+  2. RestructureTable method now can rename fields.
+  3. 'Add records' action is added to the EasyTable Manager.
+
+  Bugs fixed:
+  1. Restructuring problem with unique key violation is solved.
+  2. Export to Paradox table problem with one-field indexes is solved.
+  3. TEasyDatabase.TableExists now doesn't disconnect database if only 
+     one dataset is created.
+
+
+- version 3.06 (07/11/2002)
+
+  New features added: 
+  1. TEasyTable.CreateTable(TableName) method is added.
+  2. TEasyDatabase.CreateDatabase(DatabaseName) method is added.
+  3. TEasyDatabase.DeleteTable(TableName) method is added.
+  4. TEasyDatabase.TableExists(TableName) method is added.
+  5. Reopen most recent used database option is added to 
+     TETManager. Thanks to Michel Roy.
+
+  Bugs fixed:
+  1. Problem with field names having one char length is solved.
+  2. Setting Filtered to True on closed table now works correctly.
+
+
+- version 3.05 (06/21/2002)
+
+  New features added: 
+  1. ManyToMany relationshup demo is added.
+
+  Bugs fixed:
+  1. Problem with table reopening at design-time when the table 
+    is externally modified is solved.
+  2. Compatibility problem with storing reports of ReportBuilder
+     is solved.
+  3. Auto-post BLOB field changes by VCL controls is corrected.
+  4. Design-time problem with fields editor for inactive table
+     having lookup fields is solved.
+
+
+- version 3.04 (06/10/2002)
+
+  New features added: 
+  1. Now installation into IDE is optional.
+
+  Bugs fixed:
+  1. Import problem from Interbase with numeric fields is solved.
+  2. vclmid package requirement is removed from C++ Builder Demos.
+  3. RestructureTable now correctly handle AutoInc fields.
+  4. Master-detail relationship based on LargeInt field is corrected.
+  5. OnValidate event handling is added.
+  6. Error diagnostic for blank primary index is added.
+  7. Locate problem with blank string search is solved.
+
+
+- version 3.03 (04/19/2002)
+
+  New features added: 
+  1. Now database file can be encrypted:
+     2 properties added:
+      TEasyDatabase.Encrypted, TEasyDatabase.Password
+     1 method added:
+      TEasyDatabase.ChangeEncryption.
+  2. EncryptDB demo is added.
+
+  Bugs fixed:
+  1. TETManager now can be compiled in Delphi 6.
+  2. OnProgress event handler problem occuring in
+     C++ Builder is solved.
+  3. Error with FastOpen=true in C++ Builder is fixed.
+  4. CompactDatabase call for closed database is corrected.
+  5. RepairDatabase problem is solved.
+  6. LIKE search for NULL fields now works properly.
+  7. Problem with BLOB fields in read-only mode is solved.
+  8. Read-only mode detection now checks user permission 
+     for accessed database.
+
+
+- version 3.02 (03/19/2002)
+
+  New features added: 
+  1. C++ Builder 6 version is now available.
+  2. TETManager now provides a possibility to set AutoInc value 
+     when restructuring empty table. 
+  3. EasyTable & DBFlyTreeView demo is added.
+  4. EasyTable & FastReport demo is included.
+
+  Changes:
+  1.  TETManager user interface is redesigned.
+
+  Bugs fixed:
+  1. TETManager restructuring problem is solved.
+  2. Password dialog text is corrected.
+  3. OnPostError event handling is corrected.
+  4. Problem in C++ Builder 5 with ETblGauge unit is fixed.
+  5. Error message about exceed of 18 chars limit for field 
+     and index name is added.
+  6. Problem with required BLOB fields is solved.
+  7. Installation program was corrected to provide installation in 
+     cases when IDE is not found.
+  8. Problem with optimization compiler setting is solved.
+
+
+- version 3.01 (03/05/2002)
+
+  Bugs fixed:
+  1.  Gauge unit conflict is solved.
+
+
+- version 3.00 (02/26/2002)
+  New features added: 
+  1.  Single file format. Now all tables can be stored in a 
+      single database file, but work with tables in EasyTable 2.20 format 
+      is also supported. See Migration.txt for details on 
+      how to migrate from EasyTable 2.20 to EasyTable 3.00.
+  2.  EasyDatabase component properties are added:
+      - DatabaseFileName
+      - Exists
+      - InMemory
+      - ReadOnly
+  3.  EasyDatabase component methods are added:
+      - CompactDatabase
+      - CreateDatabase
+      - DeleteDatabase
+      - GetTablesList
+      - RenameDatabase
+      - RepairDatabase
+  4.  EasyDatabase OnProgress event is added to provide feedback 
+      on progress and possibility to cancel the process.
+  5.  EasyTable.DatabaseFileName property is added to provide a 
+      simple way for database file access.
+  6.  DBTransfer utility is created to transfer tables between BDE and 
+      EasyTable databases.
+  7.  Converter utility is designed to convert tables of TET 2.20 format to
+      TET 3.00 single-file format.
+  8.  Now in-memory tables can be created by setting Active property to 
+      True when FieldDefs are specified. This allows to create in-memory 
+      table at design-time and set up db-aware visual controls.
+  9.  EasyTable database files extension (*.edb) is now associated with 
+      EasyTable Manager.
+  10. Auto-rebuild indexes in case of corruption.
+  11. Turkish language is now supported.
+  12. Encryption demo is added.
+
+  Changes:
+  1.  Locate method now set position on a first matching record 
+      using current index order.
+  2.  EasyTable Manual (TETMan.hlp) is essentially extended and renamed to 
+      EasyTable Developer's Guide (TETGuide.hlp).
+  3.  All demos now use database of a single-file format.
+  4.  EasyTable Manager is now redesigned to work with a single-file
+      format only.
+
+  Bugs fixed:
+  1.  Deleting records in a filtered table problem is solved.
+  2.  Refresh of detail table in Master/detail relationship when the 
+      key field value is blank is fixed.
+  3.  Disconnecting all the tables by setting EasyDatabase.Connected to 
+      False now works properly.
+  4.  Default value of linked field in detail table is now set 
+      when inserting a new record.
+  5.  Minor filter expression parsing bug is fixed.
+  6.  Ignoring required attribute in Delphi 6 problem is solved.
+  7.  MoveBy bug in Delphi 6 is fixed.
+  
+
+- version 2.20  (11/26/2001)
+  New features added: 
+  1.  Unique indexes are now supported.
+  2.  Unicode support is improved - now WideString fields 
+      can be accessed through TWideStringField.Value property.
+  3.  CreateTable now also uses fields objects.
+
+  Bugs fixed:
+  1.  Field size for wide strings is now specified in bytes, 
+      earlier was in 2-byte characters.
+  2.  Blob fields problem caused by calculated fields is fixed.
+  3.  Restructure and repair errors are fixed.
+  
+
+- version 2.12  (11/12/2001)
+
+  New features added: 
+  1.  Delete record operation speed is increased.
+
+  Bugs fixed:
+  1.  Opening tables from disk as in-memory table is fixed.
+
+
+- version 2.11  (11/07/2001)
+
+  New features added: 
+  1.  Password dialog is now invoked in design-time when 
+      encrypted table is opening and the password is invalid.
+  2.  FastOpen property is useful when dealing with large tables
+      to reduce opening time and memory consumption.
+
+  Bugs fixed:
+  1.  FindKey search for autoincrement field is fixed.
+  2.  Lookup problem with ftLargeInt field is fixed.
+  3.  Current folder is now used by default when DatabaseName property 
+      is blank.
+  4.  Problem with restructuring encrypted table is fixed.
+  5.  Master-detail relationship based on string fields now works correctly.
+  6.  Problem with Arabic strings is fixed.
+  7.  Lookup function now returns Null when record is not found.
+  8.  Design-time problem with lookup fields is fixed.
+
+
+- version 2.10 (09/24/2001)
+
+  New features added: 
+  1.  TEasyDatabase component is added for working with several tables 
+      in a single folder. 
+  2.  InMemory property is added to support in-memory tables.
+  3.  SaveTable method is added for writing in-memory tables to disk.
+  4.  Shareable In Memory tables support is added.
+  5.  EditKey, FindKey, FindNearest, GotoKey, GotoNearest, SetKey 
+      methods are added.
+  6.  KeyFieldCount property is added.
+  7.  ApplyRange, CancelRange, EditRangeEnd, EditRangeStart, SetRange, 
+      SetRangeEnd, SetRangeStart methods are added.
+  8.  KeyExclusive property is added.
+  9.  Support of large databases is improved.
+  10. Delphi 4, C++ Builder 4 are supported.
+  11. C++ Builder demos are added.
+
+  Changes:
+  1. Setting BlobCompression property value on open table 
+     doesn't work (doesn't affect anything).
+  2. Setting Encrypted property value on open table 
+     doesn't work (doesn't affect anything).
+  3. Formats of EasyTable 2.04 and lower aren't supported now.
+  4. CopyTable, ImportTable, RenameTable, RepairTable, RestructureTable
+     methods now work when table is inactive only.
+  5. Blob field data changes now should be posted or cancelled.
+  6. Opening read-only files causes setting table to read-only mode.
+
+  Bugs fixed:
+  1.  Date/Time filter and search errors are fixed.
+  2.  Lookup fields error is fixed.
+  3.  Case-insensitive search is corrected.
+  4.  Problem with multiple selection in DBGrid is solved.
+  5.  Master-Detail problem when setting table to inactive is solved.
+  6.  Ansi string comparison problem is solved.
+  7.  FindKey problem with DateTime field is solved.
+  8.  Bug with delete in shareable mode is fixed.
+  9.  Text format of DFM files in D4 demos is replaced to 
+      binary one.
+  10. Problem with Blob fields is fixed.
+
+
+- version 2.05 (07/29/2001)
+
+  Bugs fixed:
+  1.  FlushBuffers now also flush OS file buffers.
+  2.  RepairTable now corrects AutoInc values.
+  3.  Navigation bug with descending index is fixed.
+  4.  PPMD buffer preallocation size is increased and
+      bug with clDefault and clMax is fixed.
+  5.  Writing empty Blob header for empty table error is fixed.
+  6.  Read Blob value (bug, error?) while inserting first record into an empty table 
+      is fixed.
+  7.  Verification for correct specification of primary key in CreateTable
+      is added.
+  8.  Now a table active at design-time, doesn't save data on disk when closed.
+  9.  Open Blob files now works correctly in read-only mode.
+  10. EasyTable v.1.20 tables opening problem is fixed.
+
+
+- version 2.04 (07/14/2001)
+
+  Bugs fixed:
+  1.  Bug with records multiplication in DBGrid and DBCtrlGrid was fixed.
+  2.  Compatibility with DBCtrlGrid was improved.
+  3.  Tables of previous versions format (newer than 1.25) 
+      now may be opened in read-only mode.
+  4.  Lookup and lookup fields now work for Smallint, Boolean and Currency 
+      data types.
+
+
+- version 2.02 (07/10/2001)
+
+  Bugs fixed:
+  1.  Bug with all string searches was fixed.
+  2.  Locate on boolean and currency fields now works properly.
+  3.  Locate with multiple fields condition was fixed.
+
+
+- version 2.01 (07/03/2001)
+
+  New features added:
+  1.  New setup program now automatically installs EasyTable component 
+      and help file into IDE.
+  2.  EasyTable is now Delphi 6 compatible.
+
+  Bugs fixed:
+  1.  Locate on empty table now works properly.
+  2.  Now all the Design-Time properties work properly when table is inactive.
+  3.  Read-only mode exception on table closing was fixed.
+  4.  Problem with field values containing space character when 
+      Like operator is used was fixed.
+  5.  Setting value of RecNo property to RecordCount error was fixed.
+  6.  Import error with AutoInc fields was fixed.
+  7.  Error with empty Filter property when assigning true to Filtered
+      property was fixed.
+
+
+- version 2.00 (06/01/2001)
+
+  New features added:
+  1.  Almost unlimited number (2^32) of  fields, indexes and fields 
+      per multiple index are supported now.
+  2.  RestructureTable method was added.
+  3.  Insert/Edit/Delete performance was improved 
+      (write buffering was added).
+  4.  ftWideString, ftDate, ftTime data types are supported now.
+  5.  Locate/Lookup speed was increased.
+  6.  ExportTable method for exporting tables to any other table
+      or dataset was added.
+  7.  FlushBuffers method for guaranteed saving all the data 
+      from buffer to disk was added.
+  8.  OnProgress event (for checking progress during long-time operations,
+      such as Import, Export, BLOB Compression changing, 
+      Encryption changing, Resturucturing table) was added.
+  9.  RepairTable method for repairing corrupted table files was added.
+ 10.  ZLib library was replaced by new compression library with 2 algorithms:
+      1) LZO by Mark Oberhumer and PPMd by Dmitry Shkarin.
+         LZO is used for clFastest mode, it is 3-5 times faster then ZLIB;
+      2) PPMd is for clDefault and clMax modes, compression ratio is
+         much better then in ZLIB, WinZip and WinRAR.
+ 11.  Find, filter, index creation speed was improved.
+
+  Bugs fixed:
+  1.  Import table bugs with field names containing spaces were fixed.
+  2.  Null values import was corrected.
+  3.  Bug with required fields was fixed.
+  4.  255 symbols limit to database name and table name was removed.
+  5.  Decimal separator is not changed now after table opening.
+  6.  Filter bug on empty table was fixed.
+  7.  Calculated fields are now updated after edit operation.
+  8.  Locate with loPartitialKey option now works correctly.
+  9.  BLOB fields position is now correct after records deletion.
+  10. Primary key field is now specified as ftAutoInc field.
+  11. RecNo property now works properly.
+  12. Bug in fields editor when table is inactive was fixed.
+  13. Bug in master / detail with null values was fixed.
+  14. Recreation table with stored FieldDefs and IndexDefs 
+      now works properly.
+
+
+- version 1.20 (04/03/2001)
+
+  New features added:
+  1. Master / Detail relationship: MasterFields and MasterSource properties were 
+     added. (MasterSource may be any DataSource, not only EasyTable).
+  2. Filtering: Filtered property was added.
+  3. Import tables from any DataSource: ImportTable method was added.
+  4. Automatically created fast and compact indexes - now any table has indexes 
+     for all fields.
+  5. Wildcards in 'like' operator are now supported: '%' and '_' 
+     (for Filter, FindFirst,FindNext, etc.)
+  6. Search conditions for boolean fields in Filter property are now supported.
+  7. Field names now may contain space characters.
+  8. Search engine performance was essentially improved and now EasyTable is 
+     the fastest existing TTable replacement.
+
+  Bugs fixed:
+  1. OnFilterRecord is now called only in case when Filtered = true.
+  2. Insert / Post with BLOB fields bugs fixed.
+  3. Filtering and search with partial comparison now compares strings starting 
+     from the first character.
+
+
+- version 1.15 (03/23/2001)
+
+  New features added:
+  1. New field data types supported: ftCurrency, ftWord, ftBoolean,
+     ftLargeInt, ftFmtMemo, ftBytes, ftBCD.
+  2. Full compatibility with DB-aware visual controls such as 
+     DBGrid, DBNavigator, DBImage, DBMemo, DBRichEdit and others.
+  3. Decimal separator in Filter string (for float and currency fields) 
+     now may be both '.', and ','.
+  4. Encrypted property now also indicates closed table encryption state.
+  5. CopyTable method was added.
+
+  Bugs fixed:
+  1. TEasyBLOBStream. Read method now does not check data size.
+  2. BLOB block size property indicates correct value after opening table.
+  3. Bug when table opens with IndexName or IndexFieldNames property
+     set to non-existing index.
+  4. Bug while deleting last record if indexes exist.
+  5. Bug while creating Index Definitions with case insensitive and 
+     descending fields.
+  6. Bug with quotes in quoted Filter string.
+  7. CreateBLOBStream with mode=bmWrite now truncates stream to 0 size.
+  8. RenameTable now overwrites existing files.
+
+
+- version 1.12 Final (03/10/2001)
+
+  New features added:
+  1. Calculated and Lookup fields support:
+ 	- AutoCalcFields property was added;
+ 	- OnCalcFields event handler was added.
+  2. Filtering support:
+	- OnFilterRecord event handler was added.
+  3. FieldDefs and IndexDefs designing support:
+	- FieldDefs and IndexDefs are now published properties 
+        with corresponding property editors;
+	- StoredDefs property was added.
+  4. Setting IndexName and IndexFieldNames is now available at Design-time.
+  5. IndexName and IndexFieldNames are now published properties with 
+     corresponding property editors.
+  6. IndexFieldNames and IndexName are mutually exclusive now. 
+     Setting one of them clears the other.
+  7. Data auto-refresh after setting IndexName or IndexFieldNames was added.
+  8. Filter option foNoPartialCompare is now supported.
+
+  Bugs fixed:
+  1. Bugs in RenameTable, DeleteTable, OpenTable and others
+     when DatabaseName is empty were fixed.
+  2. Bugs while deleting fields in Fields Editor were fixed.
+  3. Bugs in CloseTable (Active = false) were fixed.
+  4. Counting in RecNo property now starts from 1, so the first
+     record in a table has RecNo = 1, second - 2 etc.
+  5. Bug in GetIndexField with primary key field was fixed.
+  6. Bugs in CreateTable when table already exists were fixed 
+     (table will be re-created).
+  7. Bugs in CreateTable with field 'ID' were fixed.
+  8. Bugs with Like operation and foCaseInsensitive option 
+     in filter options were fixed.
+
+
+- version 1.12 Beta (01/15/2001)

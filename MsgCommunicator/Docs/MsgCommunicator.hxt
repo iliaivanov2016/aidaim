@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="MsgCommunicator: Developer's Guide">
+<HelpTOCNode Title="Introduction" Url="introduction.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Getting Started" Url="gettingstarted.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Networking" Url="networking.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Connecting" Url="connecting.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Messaging" Url="messaging.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Direct Messaging" Url="directmessaging.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Message History" Url="history.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="User Details and Users Database" Url="userinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Working with Contact List" Url="workingwithcontactlist.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Custom Commands" Url="customcommands.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Disconnect" Url="disconnect.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Peer-To-Peer Mode" Url="peer_to_peermode.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Client Return Codes" Url="clientreturncodes.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Writing server application" Url="writingserverapplication.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Brief" Url="brief.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="MsgCommunicator: Component Reference">
+<HelpTOCNode Title="Overview" Url="overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Classes">
+<HelpTOCNode Title="TMsgClient" Url="tmsgclient.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgServer" Url="tmsgserver.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgDatabase" Url="tmsgdatabase.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgDatabaseAccuracer" Url="tmsgdatabaseaccuracer.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgDatabaseMySQL" Url="tmsgdatabasemysql.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgDatabaseMySQLDAC" Url="tmsgdatabasemysqldac.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgTempTable" Url="tmsgtemptable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgTempTableAccuracer" Url="tmsgtemptableaccuracer.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgTempTablSQLMemTable" Url="tmsgtemptablesqlmemtable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgClientConnectParamsEditor" Url="tmsgclientconnectparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgClientNetworkSettingsEditor" Url="tmsgclientnetworksettingseditr.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgServerConnectParamsEditor" Url="tmsgserverconnectparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgServerNetworkSettingsEditor" Url="tmsgservernetworksettingseditr.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgCryptoParamsEditor" Url="tmsgcryptoparamseditor.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Types">
+<HelpTOCNode Title="TMsgClientInfo" Url="tacrclientinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgBaseUserInfo" Url="tmsgbaseuserinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgUserInfo" Url="tmsguserinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgUserInfoArray" Url="tmsguserinfoarray.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgUserInfoArraySortBy" Url="tmsguserinfoarraysortby.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgContactInfoArray" Url="tmsgcontactinfoarray.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgContactInfo" Url="tmsgcontactinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgContactNameSource" Url="tmsgcontactnamesource.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgUserStatus" Url="tmsguserstatus.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgCompressionAlgorithm" Url="tmsgcompressionalgorithm.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgComparisonOperator" Url="tmsgcomparisonoperator.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgDateComparison" Url="tmsgdatecomparison.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgIntegerComparison" Url="tmsgintegercomparison_1.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgTextComparison" Url="tmsgtextcomparison.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TMsgMessageType" Url="tmsgmessagetype.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Variables/Constants">
+<HelpTOCNode Title="MSG_INVALID_ID" Url="msg_invalid_id.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MSG_INVALID_USER_ID" Url="msg_invalid_user_id.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

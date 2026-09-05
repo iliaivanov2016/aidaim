@@ -1,0 +1,2188 @@
+// FetchData //
+Function FetchData (
+             Stmt:pStmt;
+             FetchOrientation:UWORD;
+             FetchOffset:SDWORD;
+             RowCountPtr: PInteger;
+             RowStatusArray: PSmallInt;
+             Count: Integer
+                    ): RETCODE; stdcall;
+var
+  i,row,Buf,IndBuf,StrLen_or_Ind,Columns,Offset:Integer;
+  AllColumnsLength:Integer;
+  pBuf,pIndBuf:Pointer;
+  str:String;
+  int16:SmallInt;
+  int32:Integer;
+  double8:Double;
+  DateTime:SQL_TIMESTAMP_STRUCT;
+  Date:SQL_DATE_STRUCT;
+  Time:SQL_TIME_STRUCT;
+  BS:TStream;
+label
+  Type_Char,
+  Type_Integer,
+  Type_SmallInt,
+  Type_BLOB,
+  Type_Unknown;
+begin
+WriteToLog(' >> FetchData');
+  Result:=SQL_SUCCESS;
+//  Result:=SQL_ERROR;
+WriteToLog('    Stmt='+IntToHex(Integer(Stmt),8));
+
+  // prepere to copy data to bound columns
+//WriteToLog('    Bind.RecordCount='+IntToStr(Stmt.Bind.RecordCount));
+//WriteToLog('    Result.FieldCount='+IntToStr(Stmt.Result.FieldCount));
+  if Stmt.BindingOffset = SQL_NULL_HANDLE
+    then Offset := 0
+    else Offset := Stmt.BindingOffset;
+//WriteToLog('    Offset='+IntToStr(Offset));
+  Columns:=Stmt.Bind.RecordCount;
+WriteToLog('    Columns Bound = '+IntToStr(Columns));
+  if Stmt.Result.FieldCount<Columns
+    then Columns:=Stmt.Result.FieldCount; // There are more bound columns than they are in result set
+WriteToLog('    Columns To Fetch ='+IntToStr(Columns));
+
+  AllColumnsLength:=0;
+  for i:=1 to Columns do
+    AllColumnsLength := AllColumnsLength
+                        + Stmt.Bind.FieldByName('BufferLength').AsInteger;
+WriteToLog('    AllColumnsLength='+IntToStr(AllColumnsLength));
+
+  for row:=1 to Count do
+ begin
+
+WriteToLog('    Iteration # '+IntToStr(row));
+if Stmt.Result.Active=True then WriteToLog('    Get row # '+IntToStr(Stmt.Result.RecNo));
+
+  // set bind position
+WriteToLog('    Bind.FindFirst');
+  Stmt.Bind.FindFirst;
+
+  if Stmt.Bind.FieldByName('StrLen_or_Ind').IsNull
+  or Stmt.Bind.FieldByName('Buffer').IsNull
+  or (Stmt.Bind.FieldByName('StrLen_or_Ind').AsInteger = SQL_NULL_HANDLE)
+  or (Stmt.Bind.FieldByName('Buffer').AsInteger = SQL_NULL_HANDLE)
+    then  // Error fetching data - see SQLBindCol specification
+      begin
+        Result:=SQL_SUCCESS_WITH_INFO;
+WriteToLog('#### No bound columns - Error fetching data, scrolling only.');
+        exit;
+      end;
+
+  // copy data to bound columns
+  for i:=0 to Columns-1 do
+    begin
+WriteToLog('    i='+IntToStr(i));
+WriteToLog('    ColumnNumber='+IntToStr(Stmt.Bind.FieldByName('ColumnNumber').AsInteger));
+if Stmt.Result.Active=True then WriteToLog('    Result.RecNo='+IntToStr(Stmt.Result.RecNo));
+
+WriteToLog('    Stmt.Bind.Buffer='+IntToHex(Stmt.Bind.FieldByName('Buffer').AsInteger,8));
+WriteToLog('    Stmt.Bind.Buffer='+IntToStr(Stmt.Bind.FieldByName('Buffer').AsInteger));
+WriteToLog('    Offset='+IntToStr(Offset));
+WriteToLog('    *='+IntToStr((row-1) * AllColumnsLength));
+//if Stmt.Result.Active=True then WriteToLog('    *='+IntToStr((Stmt.Result.RecNo-1) * AllColumnsLength));
+      Buf := Stmt.Bind.FieldByName('Buffer').AsInteger
+             + Offset;
+      if Stmt.Options[SQL_BIND_TYPE]=SQL_BIND_BY_COLUMN
+      then
+      // Column-Wise Binding
+      Buf := Buf + (row-1) * Stmt.Bind.FieldByName('BufferLength').AsInteger
+      else
+      // Row-Wise Binding
+      Buf := Buf + (row-1) * AllColumnsLength;
+{
+      Buf := Stmt.Bind.FieldByName('Buffer').AsInteger
+             + Offset//
+if Stmt.Result.Active=True then
+      Buf := Buf
+             + ((Stmt.Result.RecNo-1) * AllColumnsLength);
+}
+WriteToLog('    Buf='+IntToStr(Buf));
+WriteToLog('    Buf='+IntToHex(Buf,8));
+     IndBuf := Stmt.Bind.FieldByName('StrLen_or_Ind').AsInteger
+               + Offset
+               + (row-1) * 4;
+{
+      // Withou multiple rows - CODE WORKS!!!
+      Buf := Stmt.Bind.FieldByName('Buffer').AsInteger
+             + Offset;
+}
+WriteToLog('    Buf='+IntToHex(Buf,8));
+     pBuf := Pointer(Buf);
+//WriteToLog('    pBuf='+IntToHex(Integer(pBuf),8));
+{
+      // Withou multiple rows - CODE WORKS!!!
+     IndBuf := Stmt.Bind.FieldByName('StrLen_or_Ind').AsInteger
+               + Offset;
+}
+WriteToLog('    StrLen_or_Ind='+IntToHex(IndBuf,8));
+     pIndBuf := Pointer(IndBuf);
+
+  // Set a row attribute in Row Status Array
+  if Integer(RowStatusArray)<>SQL_NULL_HANDLE then
+    begin
+WriteToLog('    RowStatusArray['+IntToStr(row)+']='+IntToStr(pSmallInt(Integer(RowStatusArray)+(row-1)*2)^)+', @='+IntToHex((Integer(RowStatusArray)+(row-1)*2),8));
+      if Stmt.Result.EOF
+        then pWord(Integer(RowStatusArray)+(row-1)*2)^ := SQL_ROW_NOROW
+        else pWord(Integer(RowStatusArray)+(row-1)*2)^ := SQL_ROW_SUCCESS;
+WriteToLog('    RowStatusArray['+IntToStr(row)+']='+IntToStr(pSmallInt(Integer(RowStatusArray)+(row-1)*2)^)+', @='+IntToHex((Integer(RowStatusArray)+(row-1)*2),8));
+    end
+else WriteToLog('    @RowStatusArray=0')
+;
+
+  // check Null
+  if Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].IsNull
+  or Stmt.Result.EOF // Row Status Array might be unavailable - send NULL data
+    then
+      begin
+WriteToLog('    >NULL');
+        StrLen_or_Ind := SQL_NULL_DATA;
+        if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+      end
+    else
+      case Stmt.Bind.FieldByName('TargetType').AsInteger of
+        SQL_WCHAR,
+        SQL_CHAR:
+          begin
+WriteToLog('    SQL_CHAR');
+            if (Stmt.Result.FieldDefs[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].DataType=ftMemo)
+            or (Stmt.Result.FieldDefs[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].DataType=ftFmtMemo)
+              then goto BLOB;
+//            str:=Stmt.Result.FieldByName(Stmt.Result.Fields.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].FieldName).AsString;
+            str:=Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsString;
+WriteToLog('    str='''+str+'''');
+//WriteToLog('    Offset='+IntToStr(Offset));
+if (Stmt.Bind.FieldByName('BufferLength').AsInteger>0) then WriteToLog('    buffer='+pChar(Buf));
+            int32:=Length(str);
+            inc(int32);
+WriteToLog('    length='+IntToStr(int32));
+WriteToLog('    buffer_length='+IntToStr(Stmt.Bind.FieldByName('BufferLength').AsInteger));
+            if  (Stmt.Bind.FieldByName('BufferLength').AsInteger<>SQL_NTS)
+            and (int32>Stmt.Bind.FieldByName('BufferLength').AsInteger) then
+              begin
+                int32:=Stmt.Bind.FieldByName('BufferLength').AsInteger;
+                Result:=SQL_SUCCESS_WITH_INFO;
+WriteToLog('    Data truncated!');
+              end;
+{
+if  Stmt.Bind.FieldByName('BufferLength').AsInteger=32771 then
+begin
+Result:=SQL_SUCCESS;
+exit;
+end;
+if  Stmt.Bind.FieldByName('BufferLength').AsInteger=32771 then
+begin
+str:='';
+WriteToLog('int=32771');
+exit;
+end;
+if  IntToStr(Stmt.Bind.FieldByName('BufferLength').AsInteger)='32771' then
+begin
+str:='';
+WriteToLog('str=32771');
+end;
+}
+WriteToLog('AsInteger='+IntToStr(Stmt.Bind.FieldByName('BufferLength').AsInteger));
+WriteToLog('AsString ='+Stmt.Bind.FieldByName('BufferLength').AsString);
+
+WriteToLog('    Compare...');
+// (Stmt.Bind.FieldByName('BufferLength').AsInteger<>'32771') then
+begin
+WriteToLog('    No!');
+if (Stmt.Bind.FieldByName('BufferLength').AsInteger=-3) then
+WriteToLog('    -3-!!!!!!!!!!!!!!!!!!!!!!');
+WriteToLog('    Prepare to Copy...');
+WriteToLog('    Coping '+IntToStr(int32)+' Characters...');
+            if  (Stmt.Bind.FieldByName('BufferLength').AsInteger>0)
+              then Move(pchar(str)^,pBuf^,int32);
+WriteToLog('    Copied:');
+if (Stmt.Bind.FieldByName('BufferLength').AsInteger>0) then WriteToLog('    buffer='+pChar(Buf));
+            StrLen_or_Ind := Length(str);
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4)
+//;
+else
+WriteToLog('    -32771-!!!!!!!!!!!!!!!!!!!!!!');
+end;
+          end;
+        SQL_INTEGER:
+          begin
+WriteToLog('    SQL_INTEGER');
+            int32:=Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsInteger;
+{
+//if pos('COUNT(*)',Stmt.Result.SQL.Text)>0 then
+inc(int32); // BDE multi-user access checking blocked
+}
+            Move(int32,pBuf^,4);
+WriteToLog('    :'+IntToStr(int32));
+            StrLen_or_Ind:=4;
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+          end;
+        SQL_SMALLINT:
+          begin
+WriteToLog('    SQL_SMALLINT');
+            if Stmt.Result.FieldDefs[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].DataType = ftBoolean
+              then  // Boolean for BDE
+                begin
+                  if Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsBoolean
+                    then int16:=1
+                    else int16:=0;
+WriteToLog('    Boolean');
+                end
+              else int16:=SmallInt(Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsInteger);
+            Move(int16,pBuf^,2);
+            StrLen_or_Ind:=2;
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+          end;
+        SQL_DOUBLE:
+          begin
+WriteToLog('    SQL_DOUBLE');
+            double8:=Stmt.Result.Fields.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsFloat;
+            Move(double8,pBuf^,8);
+            StrLen_or_Ind:=8;
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+          end;
+        SQL_TIMESTAMP:
+          begin
+WriteToLog('    SQL_TIMESTAMP');
+//DateTimeToString(str,'yyyy',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime);
+            DateTime.Year     := StrToInt(FormatDateTime('yyyy',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            DateTime.Month    := StrToInt(FormatDateTime('m',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            DateTime.Day      := StrToInt(FormatDateTime('d',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            DateTime.Hour     := StrToInt(FormatDateTime('h',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            DateTime.Minute   := StrToInt(FormatDateTime('n',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            DateTime.Second   := StrToInt(FormatDateTime('s',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            DateTime.Fraction := StrToInt(FormatDateTime('z',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Move(DateTime,pBuf^,SizeOf(DateTime));
+            StrLen_or_Ind:=SizeOf(DateTime);
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+          end;
+        SQL_DATE:
+          begin
+WriteToLog('    SQL_DATE');
+            Date.Year  := StrToInt(FormatDateTime('yyyy',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Date.Month := StrToInt(FormatDateTime('m',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Date.Day   := StrToInt(FormatDateTime('d',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Move(Date,pBuf^,SizeOf(Date));
+            StrLen_or_Ind:=SizeOf(Date);
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+          end;
+        SQL_TIME:
+          begin
+WriteToLog('    SQL_TIME');
+            Time.Hour     := StrToInt(FormatDateTime('h',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Time.Minute   := StrToInt(FormatDateTime('n',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Time.Second   := StrToInt(FormatDateTime('s',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1].AsDateTime));
+            Move(Time,pBuf^,SizeOf(Time));
+            StrLen_or_Ind:=SizeOf(Time);
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+          end;
+        SQL_LONGVARCHAR,
+        SQL_VARBINARY,
+        SQL_LONGVARBINARY,
+        SQL_BINARY:
+          begin
+  BLOB:
+WriteToLog('    SQL_BINARY');
+            BS := TEasyBlobStream.Create(TBLOBField(Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger-1]),bmRead);
+WriteToLog('    created');
+            BS.Position:=0;
+WriteToLog('    positioned');
+WriteToLog('    buffer length = '+Stmt.Bind.FieldByName('BufferLength').AsString+' bytes');
+
+            pSmallInt(pBuf)^:=0;  // First 2 Bytes must be Null - BDE
+            Buf := Buf + 2;       // BLOB field copyes into buffer starting with 2 Bytes later - BDE
+            pBuf:= Pointer(Buf);
+            StrLen_or_Ind := BS.Read(pBuf^,Stmt.Bind.FieldByName('BufferLength').AsInteger-2); // StrLen_or_Ind = length
+WriteToLog('    '+IntToStr(StrLen_or_Ind)+' bytes placed into buffer');
+            // Set Len indicator
+            if BS.Size > (Stmt.Bind.FieldByName('BufferLength').AsInteger-2)
+              then
+                begin
+//                  StrLen_or_Ind := SQL_NO_TOTAL;
+                  Result:=SQL_SUCCESS_WITH_INFO;
+WriteToLog('    Data truncated:');
+                end;
+WriteToLog('    Len='+IntToStr(StrLen_or_Ind));
+WriteToLog('    pIndBuf='+IntToHex(Integer(pIndBuf),8));
+            if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pIndBuf^,4);
+WriteToLog('    StrLen_or_Ind has been set');
+            BS.Free;
+WriteToLog('    freed');
+          end;
+      else
+WriteToLog('    Unknown binding DataType='+IntToStr(Stmt.Bind.FieldByName('TargetType').AsInteger));
+        pchar(pBuf)^:=#0; // set 1-st byte of out buffer to 0
+{
+       int32:=0;
+       Move(int32,pBuf^,4);
+       Move(int32,Pointer(integer(pBuf)+4)^,4); // 8 bytes = 0
+}
+WriteToLog('    StrLen_or_Ind='+IntToHex(Buf,8));
+        StrLen_or_Ind := SQL_NULL_DATA;
+        if IndBuf<>SQL_NULL_HANDLE then Move(StrLen_or_Ind,pBuf^,4);
+      end; // case
+      Stmt.Bind.FindNext;
+    end; //for i
+  if not Stmt.Result.Eof then
+    if Integer(RowCountPtr)<>SQL_NULL_HANDLE then RowCountPtr^:=row;
+  Stmt.Result.Next;
+ end; // for row
+ if not Stmt.Result.EOF then Stmt.Result.Prior;
+
+WriteToLog(' ## FetchData');
+end;
+
+///// SQLGetInfo /////
+
+Function SQLGetInfo  (
+      Connection:PConnection;//HDBC;
+		  InfoType:UWORD;
+		  Info:PTR;
+		  BufferLength:SWORD;
+      InfoLength: PSmallInt //{UNALIGNED} SWORD
+                      ): RETCODE; stdcall;
+
+Procedure SetInfoChar(Value:String);
+  begin
+WriteToLog('    SetInfoChar');
+//    StrCopy(pChar(Info),pChar(Value));
+    if Integer(Info)<>SQL_NULL_HANDLE
+      then
+        begin
+          Move(PChar(Value)^,Info^,1);
+WriteToLog('    >Info='+pchar(Info));
+        end;
+    // set InfoLength
+    if Integer(InfoLength)=SQL_NULL_HANDLE then Exit; //  Impossible!
+    InfoLength^:=1;
+WriteToLog('    Length=1');
+  end;
+
+Procedure SetInfoStr(Value:String);
+  var
+    Terminator:String;
+  begin
+WriteToLog('    SetInfoStr');
+//    StrCopy(pChar(Info),pChar(Value));
+    if Integer(Info)<>SQL_NULL_HANDLE then
+      begin
+        Move(PChar(Value)^,Info^,BufferLength);
+        // set the latest byte in the buffer to 0
+        Terminator:='';
+        Move(Terminator,pointer(Integer(Info)+BufferLength-1)^,1);
+WriteToLog('    >Info='+pchar(Info));
+      end;
+    // set InfoLength
+    if Integer(InfoLength)=SQL_NULL_HANDLE then Exit; //  Impossible!
+WriteToLog('    not NULL_HANDLE');
+    InfoLength^:=Length(Value);
+WriteToLog('    >Length='+IntToStr(InfoLength^));
+  end;
+
+Procedure SetSmallInt(Value:Word);
+  begin
+WriteToLog('    SetSmallInt');
+    if Integer(Info)<>SQL_NULL_HANDLE
+      then
+        begin
+          pWord(Info)^:=Value;
+WriteToLog('    >Info='+IntToStr(pWord(Info)^));
+        end;
+    if Integer(InfoLength)<>SQL_NULL_HANDLE
+      then InfoLength^:=2;
+  end;
+
+Procedure SetInteger(Value:LongWord);
+  begin
+WriteToLog('    SetInteger');
+    if Integer(Info)<>SQL_NULL_HANDLE
+      then
+        begin
+          pLongWord(Info)^:=Value;
+WriteToLog('    >Info='+IntToStr(pLongWord(Info)^));
+        end;
+    if Integer(InfoLength)<>SQL_NULL_HANDLE
+      then InfoLength^:=4;
+  end;
+{
+const
+  SpecCharsMaxCount = 40;
+type
+  NTS =  Array [0..SpecCharsMaxCount] of Char;
+}
+var
+  sqlSpecChars:String;
+{
+function  SpecCharsArray:pchar; assembler;
+asm
+    MOV   EAX,OFFSET @sqlSpecChars
+    RET
+  @sqlSpecChars:
+    DB  307O, 374O, 351O, 342O, 344O, 340O, 345O, 347O, 352O, 353O
+    DB  350O, 357O, 356O, 354O, 304O, 305O, 311O, 346O, 306O, 364O
+    DB  366O, 362O, 373O, 371O, 377O, 326O, 334O, 341O, 355O, 363O
+    DB  372O, 361O, 321O, 000O
+end;
+}
+
+begin
+WriteToLog('>>> SQLGetInfo about '+IntToStr(InfoType));
+
+{
+Result:=SQL_SUCCESS;
+exit;
+}
+
+//  sqlSpecChars:=SpecCharsArray; // - MySQL
+  sqlSpecChars:='~@#$%^&*_-+=\}{"'';:?/><,.![]|'; //- Access
+//WriteToLog('sqlSpecChars:'+sqlSpecChars);
+//WriteToLog('sqlSpecChars:'+IntToHex(PWord(PChar(sqlSpecChars))^,4));
+
+{
+if InfoType<>SQL_DRIVER_ODBC_VER then
+begin
+Result:=SQL_ERROR;
+exit;
+end;
+}
+
+	Result:=SQL_SUCCESS;
+
+  case InfoType of
+
+    SQL_DRIVER_NAME:
+      SetInfoStr(DRIVER_DLL_NAME);
+    SQL_DRIVER_ODBC_VER:
+      SetInfoStr(DRIVER_ODBC_VERSION);
+    SQL_DRIVER_VER:
+      SetInfoStr(DRIVER_VERSION);
+
+    SQL_DBMS_NAME:
+      SetInfoStr(DBMS_NAME);
+    SQL_DBMS_VER:
+      SetInfoStr(FloatToStr(InternalCurrentVersion));
+
+    SQL_DATABASE_NAME:
+      SetInfoStr(Connection.Database);
+    SQL_DATA_SOURCE_NAME:
+      SetInfoStr(Connection.DSN);
+
+    SQL_SERVER_NAME:
+      SetInfoStr(UpperCase(DBMS_NAME));
+
+    SQL_ACTIVE_CONNECTIONS: // MAX_DRIVER_CONNECTIONS
+      SetSmallInt(64);//- Access         (1);//- MySQL
+    SQL_ACTIVE_STATEMENTS:  // MAX_CONCURRENT_ACTIVITIES
+      SetSmallInt(0);
+
+    SQL_CURSOR_COMMIT_BEHAVIOR,
+    SQL_CURSOR_ROLLBACK_BEHAVIOR:
+      SetSmallInt(0);//Paradox      (SQL_CB_CLOSE);//- Access        (SQL_CB_PRESERVE);//- MySQL
+
+    SQL_DATA_SOURCE_READ_ONLY,
+    SQL_INTEGRITY,  // - Access, MySQL
+    SQL_NEED_LONG_DATA_LEN:
+      SetInfoChar('N');
+
+    SQL_PROCEDURES:
+//      SetInfoChar('N');// - MySQL
+//      SetInfoChar('Y');// - Access
+      SetInfoChar('N');// - Paradox
+
+    SQL_ACCESSIBLE_PROCEDURES:
+//      SetInfoChar('N');// - MySql
+      SetInfoChar('N');// - Paradox
+//      SetInfoChar('Y');// - Access
+
+//    SQL_MAX_COLUMNS_IN_TABLE,
+    SQL_MAX_PROCEDURE_NAME_LEN,
+    SQL_MAX_SCHEMA_NAME_LEN:
+      SetSmallInt(0);
+
+    SQL_MAX_COLUMNS_IN_TABLE:
+      SetSmallInt(32767); // 2147483647
+    SQL_MAX_COLUMNS_IN_INDEX:
+      SetSmallInt(32767); // 2147483647
+
+    SQL_MAX_COLUMNS_IN_ORDER_BY,
+    SQL_MAX_COLUMNS_IN_SELECT,
+    SQL_MAX_COLUMNS_IN_GROUP_BY:
+// 0 - MySQL ,   10 - Access
+      SetSmallInt(32767); // 2147483647 - Right value
+
+    SQL_NULL_COLLATION:
+      SetSmallInt(SQL_NC_LOW);// - Access       (SQL_NC_START); // - MySql
+    SQL_NON_NULLABLE_COLUMNS:
+      SetSmallInt(SQL_NNC_NULL);//- Access
+
+    SQL_ACCESSIBLE_TABLES, // - Access, MySQL
+    SQL_ORDER_BY_COLUMNS_IN_SELECT:
+      SetInfoChar('Y');
+
+    SQL_MULT_RESULT_SETS:
+//      SetInfoChar('Y'); // MySQL
+      SetInfoChar('Y'); // - Access
+
+    SQL_DESCRIBE_PARAMETER,
+    SQL_ROW_UPDATES:
+      SetInfoChar('Y');
+    SQL_TXN_CAPABLE: // Transaction Capabilities: DDL and DML support
+      SetSmallInt(SQL_TC_NONE);// Paradox    (SQL_TC_ALL);//- Access        (SQL_TC_NONE);//- MySQL
+
+    SQL_MAX_CATALOG_NAME_LEN,
+    SQL_MAX_COLUMN_NAME_LEN,
+    SQL_MAX_IDENTIFIER_LEN,
+    SQL_MAX_TABLE_NAME_LEN:
+      SetSmallInt(MAX_IDENTIFIER_LENGTH);
+
+    SQL_CATALOG_NAME,
+    SQL_COLUMN_ALIAS,
+    SQL_EXPRESSIONS_IN_ORDERBY,
+    SQL_LIKE_ESCAPE_CLAUSE, // NOT - Access
+    SQL_OUTER_JOINS:
+      SetInfoChar('Y');
+
+    SQL_MULTIPLE_ACTIVE_TXN:
+      SetInfoChar('N'); // Paradox
+//      SetInfoChar('Y'); // Access
+
+    SQL_MAX_ROW_SIZE_INCLUDES_LONG:
+//      SetInfoChar('Y'); // - MySQL
+      SetInfoChar('N'); // - Access
+
+    SQL_STRING_FUNCTIONS:
+      SetInteger(
+       SQL_FN_STR_CONCAT + SQL_FN_STR_INSERT +
+       SQL_FN_STR_LEFT + SQL_FN_STR_LTRIM + SQL_FN_STR_LENGTH +
+       SQL_FN_STR_LOCATE + SQL_FN_STR_LCASE + SQL_FN_STR_REPEAT +
+       SQL_FN_STR_REPLACE + SQL_FN_STR_RIGHT + SQL_FN_STR_RTRIM +
+       SQL_FN_STR_SUBSTRING + SQL_FN_STR_UCASE + SQL_FN_STR_ASCII +
+       SQL_FN_STR_CHAR + SQL_FN_STR_LOCATE_2 + SQL_FN_STR_SOUNDEX +
+       SQL_FN_STR_SPACE);
+
+  SQL_POS_OPERATIONS:
+      SetInteger(
+            SQL_POS_POSITION +
+            SQL_POS_UPDATE  +
+            SQL_POS_DELETE +
+            SQL_POS_ADD +
+            SQL_POS_REFRESH +
+                       0);
+
+    SQL_PARAM_ARRAY_ROW_COUNTS:
+      SetSmallInt(SQL_PARC_NO_BATCH); // only one row is available for SQLBindParameter
+    SQL_PARAM_ARRAY_SELECTS:
+      SetSmallInt(SQL_PAS_NO_SELECT); // the driver does not allow a result set-generating statement to be executed with an array of parameters in SQLBindParameter
+// Non supported options:
+    SQL_CONVERT_FUNCTIONS,
+    SQL_CONVERT_WCHAR,
+    SQL_CONVERT_WVARCHAR,
+    SQL_CONVERT_WLONGVARCHAR,
+    SQL_CREATE_ASSERTION,
+    SQL_CREATE_CHARACTER_SET,
+    SQL_CREATE_COLLATION,
+    SQL_CREATE_DOMAIN,
+    SQL_CREATE_SCHEMA,
+    SQL_CREATE_TRANSLATION,
+    SQL_CREATE_VIEW,
+    SQL_DROP_ASSERTION,
+    SQL_DROP_CHARACTER_SET,
+    SQL_DROP_COLLATION,
+    SQL_DROP_DOMAIN,
+    SQL_DROP_SCHEMA,
+    SQL_DROP_TRANSLATION,
+    SQL_DROP_VIEW,
+    SQL_KEYSET_CURSOR_ATTRIBUTES1,
+    SQL_KEYSET_CURSOR_ATTRIBUTES2,
+    SQL_INFO_SCHEMA_VIEWS,
+    SQL_SCHEMA_USAGE,   // Checked
+    SQL_SQL92_FOREIGN_KEY_DELETE_RULE,
+    SQL_SQL92_FOREIGN_KEY_UPDATE_RULE,
+    SQL_SQL92_NUMERIC_VALUE_FUNCTIONS,
+    SQL_SQL92_PREDICATES,
+    SQL_SQL92_VALUE_EXPRESSIONS,
+    SQL_SUBQUERIES,    // SQL_SQ_COMPARISON | SQL_SQ_EXISTS | SQL_SQ_IN | SQL_SQ_QUANTIFIED | SQL_SQ_CORRELATED_SUBQUERIES - Access
+    SQL_TIMEDATE_ADD_INTERVALS,
+    SQL_TIMEDATE_DIFF_INTERVALS,
+//    SQL_UNION,
+    SQL_LOCK_TYPES:
+      SetInteger(0);
+    SQL_USER_NAME:
+      SetInfoStr('user');
+
+    SQL_GETDATA_EXTENSIONS:
+      SetInteger(SQL_GD_ANY_COLUMN + SQL_GD_ANY_ORDER + SQL_GD_BOUND +
+      SQL_GD_BLOCK + // Paradox, Access
+      0);
+
+    SQL_STATIC_SENSITIVITY:
+      SetInteger(SQL_SS_ADDITIONS + SQL_SS_DELETIONS + SQL_SS_UPDATES);
+
+    SQL_TXN_ISOLATION_OPTION:
+      SetInteger(
+//                  SQL_TXN_READ_COMMITTED +
+//                  SQL_TXN_READ_UNCOMMITTED +
+//                  SQL_TXN_REPEATABLE_READ +
+//                  SQL_TXN_SERIALIZABLE +
+                  0);
+{
+// Pradox - nat defined
+    SQL_BOOKMARK_PERSISTENCE:
+      SetInteger(0);
+}
+    SQL_SCROLL_OPTIONS:
+      SetInteger(
+          SQL_SO_FORWARD_ONLY +
+          SQL_SO_KEYSET_DRIVEN + //  YES - Access
+          SQL_SO_DYNAMIC +
+          SQL_SO_MIXED +
+          SQL_SO_STATIC +         // YES - Access
+                0);
+
+    SQL_SCROLL_CONCURRENCY: // as Paradox
+      SetInteger(
+                  SQL_SCCO_READ_ONLY  +
+//                  SQL_SCCO_LOCK       +
+//                  SQL_SCCO_OPT_ROWVER +
+                  SQL_SCCO_OPT_VALUES +
+//                 SQL_SS_ADDITIONS +
+//                 SQL_SS_DELETIONS +
+//                 SQL_SS_UPDATES +
+                 0);
+
+    SQL_FETCH_DIRECTION:
+//      SetInteger(SQL_FD_FETCH_NEXT);
+      SetInteger(
+              SQL_FD_FETCH_NEXT +
+              SQL_FD_FETCH_FIRST +
+              SQL_FD_FETCH_LAST +
+              SQL_FD_FETCH_PRIOR +
+              SQL_FD_FETCH_ABSOLUTE +
+              SQL_FD_FETCH_RELATIVE+
+              SQL_FD_FETCH_BOOKMARK + // Paradox, Access
+                 0);
+    SQL_CATALOG_TERM:
+      SetInfoStr('DATABASE');//- Access
+    SQL_CATALOG_USAGE:
+      SetInteger(SQL_QU_DML_STATEMENTS +
+                      SQL_QU_TABLE_DEFINITION +
+                      SQL_QU_INDEX_DEFINITION +
+                      SQL_QU_PRIVILEGE_DEFINITION);
+
+    SQL_PROCEDURE_TERM:
+      SetInfoStr('QUERY');//- Access
+
+    SQL_OWNER_TERM:
+      SetInfoStr('');//- Access
+
+    SQL_TABLE_TERM:
+      SetInfoStr('TABLE');//- Access
+
+    SQL_SPECIAL_CHARACTERS:
+      SetInfoStr(sqlSpecChars);
+
+{BREAK EXCELL!!!
+    SQL_QUOTED_IDENTIFIER_CASE:
+      SetSmallInt(SQL_IC_MIXED);
+BREAK EXCELL!!!}
+
+    SQL_IDENTIFIER_CASE:
+      SetSmallInt(SQL_IC_MIXED); //- MySQL     SQL_IC_SENSITIVE - Access
+    SQL_IDENTIFIER_QUOTE_CHAR:
+      SetInfoChar(IDENTIFIER_QUOTE);
+    SQL_QUALIFIER_NAME_SEPARATOR:
+      SetInfoChar(' ');// does not support multipart names            ('.');//- Access
+
+    SQL_CONCAT_NULL_BEHAVIOR:
+      SetSmallInt(SQL_CB_NON_NULL);//- Access     (SQL_CB_NULL);//- MySQL
+    SQL_GROUP_BY:
+      SetSmallInt(SQL_GB_GROUP_BY_CONTAINS_SELECT);//- Access             (SQL_GB_NO_RELATION);//- MySQL
+    SQL_MAX_INDEX_SIZE:
+      SetInteger(2147483647); // 255 - Access
+    SQL_MAX_ROW_SIZE:
+      SetInteger(2147483647); // 4052 - Access
+    SQL_MAX_TABLES_IN_SELECT:
+      SetSmallInt(32767);//(65535); // Correct Value - Unsigned! // 16 - Access
+
+    SQL_OJ_CAPABILITIES:
+      SetInteger(
+          SQL_OJ_LEFT +
+          SQL_OJ_RIGHT +
+          SQL_OJ_FULL + // not - Access
+          SQL_OJ_NESTED + // not - Access
+          SQL_OJ_NOT_ORDERED +
+//          SQL_OJ_INNER +
+          SQL_OJ_ALL_COMPARISON_OPS
+                  );
+    SQL_NUMERIC_FUNCTIONS:
+      SetInteger(0);
+{
+                (
+          SQL_FN_NUM_ABS +
+          SQL_FN_NUM_ACOS +
+          SQL_FN_NUM_ASIN +
+          SQL_FN_NUM_ATAN  +
+          SQL_FN_NUM_ATAN2  +
+          SQL_FN_NUM_CEILING +
+          SQL_FN_NUM_COS +
+          SQL_FN_NUM_COT +
+          SQL_FN_NUM_EXP +
+          SQL_FN_NUM_FLOOR +
+          SQL_FN_NUM_LOG +
+          SQL_FN_NUM_MOD +
+          SQL_FN_NUM_SIGN +
+          SQL_FN_NUM_SIN +
+          SQL_FN_NUM_SQRT +
+          SQL_FN_NUM_TAN +
+          SQL_FN_NUM_PI +
+          SQL_FN_NUM_RAND +
+          SQL_FN_NUM_DEGREES +
+          SQL_FN_NUM_LOG10 +
+          SQL_FN_NUM_POWER +
+          SQL_FN_NUM_RADIANS +
+          SQL_FN_NUM_ROUND +
+          SQL_FN_NUM_TRUNCATE
+                  );
+}
+
+    SQL_SYSTEM_FUNCTIONS:
+      SetInteger(
+//             SQL_FN_SYS_DBNAME + // Not - Access
+//             SQL_FN_SYS_IFNULL + // Not - Access
+//             SQL_FN_SYS_USERNAME +
+                  0);
+    SQL_TIMEDATE_FUNCTIONS:
+      SetInteger(
+            SQL_FN_TD_NOW           +
+            SQL_FN_TD_CURDATE       +
+//            SQL_FN_TD_DAYOFMONTH    +
+//            SQL_FN_TD_DAYOFWEEK     +
+//            SQL_FN_TD_DAYOFYEAR     +
+//            SQL_FN_TD_MONTH         +
+//            SQL_FN_TD_QUARTER       +
+//            SQL_FN_TD_WEEK          +
+//            SQL_FN_TD_YEAR          +
+            SQL_FN_TD_CURTIME       +
+//            SQL_FN_TD_HOUR          +
+//            SQL_FN_TD_MINUTE        +
+//            SQL_FN_TD_SECOND        +
+//            SQL_FN_TD_TIMESTAMPADD  +
+//            SQL_FN_TD_TIMESTAMPDIFF +
+//            SQL_FN_TD_DAYNAME       +
+//            SQL_FN_TD_MONTHNAME     +
+{
+          //#if (ODBCVER >= = $0300)
+            SQL_FN_TD_CURRENT_DATE  +
+            SQL_FN_TD_CURRENT_TIME  +
+            SQL_FN_TD_CURRENT_TIMESTAMP	+
+            SQL_FN_TD_EXTRACT       +
+}
+
+                  0);
+
+    SQL_FILE_USAGE:
+      SetSmallInt(SQL_FILE_NOT_SUPPORTED);
+//      SetSmallInt(SQL_FILE_QUALIFIER); // - Access
+
+    SQL_DEFAULT_TXN_ISOLATION:
+      SetInteger(DEFAULT_TXN_ISOLATION);
+    SQL_POSITIONED_STATEMENTS:
+      SetInteger(
+//            SQL_PS_POSITIONED_DELETE +
+//            SQL_PS_POSITIONED_UPDATE +
+//            SQL_PS_SELECT_FOR_UPDATE +
+                 0);
+    SQL_CATALOG_LOCATION:
+      SetSmallInt(SQL_CL_START);
+
+    SQL_ODBC_SQL_CONFORMANCE:
+      SetSmallInt(SQL_OSC_CORE);//(SQL_OSC_MINIMUM);// - Access (SQL_OSC_CORE);
+    SQL_ODBC_API_CONFORMANCE:
+      SetSmallInt(
+//            SQL_OAC_NONE       //core level
+            SQL_OAC_LEVEL1
+//            SQL_OAC_LEVEL2
+                  );
+  else
+//    pSmallInt(Info)^:=0; // not supported
+    Result:=SQL_ERROR; // not released
+WriteToLog('>>> SQLGetInfo: Unsupported InfoType='+IntToStr(InfoType)+'!');
+    Exit;
+  end;
+
+  if Integer(Info)=SQL_NULL_HANDLE then
+    begin
+WriteToLog('    InfoValuePtr=SQL_NULL_HANDLE');
+      if Integer(InfoLength)=SQL_NULL_HANDLE
+        then Result:=SQL_ERROR
+        else Result:=SQL_SUCCESS_WITH_INFO;
+    end;
+
+  if Integer(InfoLength)<>SQL_NULL_HANDLE
+    then
+      if  (InfoLength^<>2)
+      and (InfoLength^<>4)
+        then
+          if BufferLength<=InfoLength^ then
+            begin
+              Result:=SQL_SUCCESS_WITH_INFO;
+              if BufferLength>0 then InfoLength^:=BufferLength-1; // truncated data, else specify the length for new buffer
+WriteToLog('    truncated data');
+            end;
+
+WriteToLog('### SQLGetInfo');
+end;
+
+///// SQLTables /////
+
+Function SQLTables  (
+             Stmt:pStmt;//HSTMT;
+		         CatalogName:UCHAR;
+        		 CatalogLength:SWORD;
+        		 SchemaName:UCHAR;
+        		 SchemaLength:SWORD;
+        		 TableName:UCHAR;
+        		 TableLength:SWORD;
+        		 TableType:UCHAR;
+        		 TypeLength:SWORD
+                         ): RETCODE; stdcall;
+var
+  EDB:TEasyDatabase;
+  TablesList:TStringList;
+  i:Integer;
+  str:String;
+begin
+WriteToLog('>>> SQLTables called');
+
+if Integer(CatalogName)=SQL_NULL_HANDLE then WriteToLog('    CatalogName=0') else WriteToLog('    CatalogName="'+CatalogName+'"');
+WriteToLog('    CatalogLength='+IntToStr(CatalogLength));
+if Integer(SchemaName)=SQL_NULL_HANDLE then WriteToLog('    SchemaName=0') else WriteToLog('    SchemaName="'+SchemaName+'"');
+WriteToLog('    SchemaLength='+IntToStr(SchemaLength));
+if Integer(TableName)=SQL_NULL_HANDLE then WriteToLog('    TableName=0') else WriteToLog('    TableName="'+TableName+'"');
+WriteToLog('    TableLength='+IntToStr(TableLength));
+if Integer(TableType)=SQL_NULL_HANDLE then WriteToLog('    TableType=0') else WriteToLog('    TableType="'+TableType+'"');
+WriteToLog('    TypeLength='+IntToStr(TypeLength));
+
+  // Create Result table
+WriteToLog('    Database.create');
+  EDB := TEasyDatabase.Create(Nil);
+  EDB.DatabaseName := 'TempOpenDB1';
+WriteToLog('    TStringList.Create');
+  TablesList:=TStringList.Create;
+WriteToLog('    DatabaseFileName');
+  if Integer(CatalogName)=SQL_NULL_HANDLE
+    then EDB.DatabaseFileName := Stmt.Database
+    else
+      begin
+        if CatalogLength = SQL_NTS
+          then str := CatalogName
+          else str := Copy(CatalogName,1,CatalogLength);
+        str := StringReplace(str,'''',' ',[rfReplaceAll]);
+        str := StringReplace(str,'"',' ',[rfReplaceAll]);
+        str := Trim(str);
+        if ( str = ''  )
+        or ( str = '%' )
+          then EDB.DatabaseFileName := Stmt.Database
+          else EDB.DatabaseFileName := str;
+      end;
+WriteToLog('    "'+EDB.DatabaseFileName+'"');
+WriteToLog('    InMemory');
+  Stmt.Result.InMemory:=True;
+WriteToLog('    Active=False');
+  Stmt.Result.Active:=False;
+WriteToLog('    Drop table');
+  Stmt.Result.SQL.Text := 'drop table Tables';
+    try
+  Stmt.Result.ExecSQL;
+    except
+    on e: Exception do
+        begin
+WriteToLog('Error: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+    end;
+WriteToLog('    Create Table');
+  Stmt.Result.SQL.Text :=
+    'create table Tables('+
+    'TABLE_QUALIFIER STRING('+IntToStr(_MAX_PATH)+'),'+
+    'TABLE_OWNER STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),'+
+    'TABLE_NAME STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),'+
+    'TABLE_TYPE STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),'+
+    'REMARKS STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+')'+
+    ')'; //v.2
+//  'create table Tables(TABLE_CAT STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),TABLE_SCHEM STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),TABLE_NAME STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),TABLE_TYPE STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),REMARKS STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'))'; //v.3
+    try
+  Stmt.Result.ExecSQL;
+    except
+    on e: Exception do
+        begin
+WriteToLog('Error: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+    end;
+WriteToLog('    GetTablesList');
+    try
+  EDB.Open;
+    except
+    on e: Exception do
+        begin
+WriteToLog('Error: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+    end;
+WriteToLog('    DB opened');
+    try
+  EDB.GetTablesList(TablesList);
+    except
+    on e: Exception do
+        begin
+WriteToLog('Error: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+    end;
+WriteToLog('    OK');
+  for i:=0 to TablesList.Count - 1 do
+    begin
+WriteToLog('    insert '+IntToStr(i)+' = '+TablesList[i]);
+      Stmt.Result.SQL.Text :=
+        'insert into Tables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE) values('+
+        CONSTANT_QUOTE+Stmt.Database+CONSTANT_QUOTE+','+
+        CONSTANT_QUOTE+TablesList[i]+CONSTANT_QUOTE+','+
+        CONSTANT_QUOTE+'TABLE'+CONSTANT_QUOTE+')';
+WriteToLog('    exec');
+      try
+        Stmt.Result.ExecSQL;
+      except
+      on e: Exception do
+        begin
+WriteToLog('Error: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+      end;
+    end;
+  EDB.Free;
+  TablesList.Free;
+
+  // Select using the TableName mask
+  if Integer(TableName)<>SQL_NULL_HANDLE
+    then
+      begin
+        if TableLength = SQL_NTS
+          then str:=TableName//StrCopy(pChar(str),TableName)
+          else str := Copy(TableName,1,TableLength);
+        str := StringReplace(str,'''',' ',[rfReplaceAll]);
+        str := StringReplace(str,'"',' ',[rfReplaceAll]);
+        str := Trim(str);
+WriteToLog('    str='+str);
+        if str='' then str:='%';
+        str := 'select * from memory Tables where (TABLE_NAME like '+CONSTANT_QUOTE+str+CONSTANT_QUOTE+')'
+      end
+    else
+        str := 'select * from memory Tables where (TABLE_NAME like '+CONSTANT_QUOTE+'%'+CONSTANT_QUOTE+')';
+WriteToLog('    str='+str);
+  Stmt.Result.SQL.Text := str;
+WriteToLog('    SQL.Text='+Stmt.Result.SQL.Text);
+  if Integer(TableType)=SQL_NULL_HANDLE
+    then
+      str:=''
+    else
+      if TypeLength = SQL_NTS
+          then str:=TableType//StrCopy(pChar(str),TableType)
+          else str := Copy(TableType,1,TableLength);
+WriteToLog('    str='+str);
+  str := StringReplace(str,'''',' ',[rfReplaceAll]);
+  str := StringReplace(str,'"',' ',[rfReplaceAll]);
+  str := StringReplace(str,'VIEW',' ',[rfReplaceAll]);
+  str := StringReplace(str,',',' ',[rfReplaceAll]);
+  str := Trim(str);
+  if str='' then str:='%';
+  str := ' and (TABLE_TYPE like '+CONSTANT_QUOTE+str+CONSTANT_QUOTE+')';
+  Stmt.Result.SQL.Text := Stmt.Result.SQL.Text+str;
+WriteToLog('    SQL.Text='+Stmt.Result.SQL.Text);
+WriteToLog('    SQL.Active=True');
+    try
+  Stmt.Result.Active := True;
+    except
+    on e: Exception do
+        begin
+WriteToLog('Error: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+    end;
+WriteToLog('    RecordCount='+IntToStr(Stmt.Result.RecordCount));
+  Stmt.FreshResult:=True;
+WriteToLog('### SQLTables');
+	Result:=SQL_SUCCESS;
+end;
+
+///// SQLColumns /////
+
+Function SQLColumns(
+             Stmt:PStmt;//:HSTMT;
+             CatalogName:UCHAR;
+             CatalogLength:SWORD;
+             SchemaName:UCHAR;
+             SchemaLength:SWORD;
+             TableName:UCHAR;
+             TableLength:SWORD;
+             ColumnName:UCHAR;
+             ColumnLength:SWORD
+                    ): RETCODE; stdcall;
+const
+  MaxLen=100;
+var
+{$IFDEF SQLCOLUMNS_TABLE_NOT_FOUND_DEBUG_LOG}
+  EDB:TEasyDatabase;
+{$ENDIF}
+  ET:TEasyTable;
+  TablesList:TStringList;
+  i,j:Integer;
+  str,str2:String;
+  pStr:pChar;
+  NumericAttributePtr:PInteger;
+  ColumnNumber:WORD;
+label
+  Finish;
+begin
+	WriteToLog('>>> SQLColumns called');
+{$IFDEF SQLCOLUMNS_TABLE_NOT_FOUND_DEBUG_LOG}
+WriteToLog('==================================================');
+EDB := TEasyDatabase.Create(Nil);
+EDB.DatabaseName:='test';
+EDB.DatabaseFileName := 'S:\DelphiProjects\_eodbc-test\test.edb';
+if EDB.Exists
+then WriteToLog('Database test Exists')
+else WriteToLog('Database test Not Exists');
+if EDB.TableExists('Table123')
+then WriteToLog('Table123 Exists')
+else WriteToLog('Table123 Not Exists');
+
+if EDB.IsEasyTableDatabaseFile('S:\DelphiProjects\_eodbc-test\test.edb')
+then WriteToLog('Database test.edb Exists')
+else WriteToLog('Database test.edb Not Exists');
+if EDB.TableExists('Table123')
+then WriteToLog('Table123 Exists')
+else WriteToLog('Table123 Not Exists');
+if EDB.TableExists('Table1')
+then WriteToLog('Table1 Exists')
+else WriteToLog('Table1 Not Exists');
+TablesList:=TStringList.Create;
+
+  try
+EDB.GetTablesList(TablesList);
+  except
+  on e: Exception do
+    begin
+WriteToLog('GetTablesList - Error: ' + e.Message);
+    end;
+  end;
+
+for i:=0 to TablesList.Count-1 do
+begin
+WriteToLog('=> Table #'+IntToStr(i)+' = "'+TablesList[i]+'"');
+if EDB.TableExists(TablesList[i])
+then WriteToLog('=> Table Exists')
+else WriteToLog('=> Table Not Exists');
+end;
+
+TablesList.Free;
+EDB.Free;
+WriteToLog('==================================================');
+{$ENDIF}
+
+if Integer(CatalogName)=SQL_NULL_HANDLE then WriteToLog('    CatalogName=0') else WriteToLog('    CatalogName="'+CatalogName+'"');
+WriteToLog('    CatalogLength='+IntToStr(CatalogLength));
+if Integer(SchemaName)=SQL_NULL_HANDLE then WriteToLog('    SchemaName=0') else WriteToLog('    SchemaName="'+SchemaName+'"');
+WriteToLog('    SchemaLength='+IntToStr(SchemaLength));
+if Integer(TableName)=SQL_NULL_HANDLE then WriteToLog('    TableName=0') else WriteToLog('    TableName="'+TableName+'"');
+WriteToLog('    TableLength='+IntToStr(TableLength));
+if Integer(ColumnName)=SQL_NULL_HANDLE then WriteToLog('    ColumnName=0') else WriteToLog('    ColumnName="'+ColumnName+'"');
+WriteToLog('    ColumnLength='+IntToStr(ColumnLength));
+
+  if not Stmt.TypeInfo.Exists then InitTypeInfo(Stmt);
+
+  Result:=SQLTables( Stmt,CatalogName,CatalogLength,SchemaName,SchemaLength,
+                     TableName,TableLength,PChar('TABLE'),6);
+  if Result=SQL_ERROR then
+    begin
+WriteToLog('### SQLColumns: SQLTables returns SQL_ERROR');
+      Exit;
+    end;
+
+  WriteToLog('    TStringList.Create');
+  TablesList:=TStringList.Create;
+  while not Stmt.Result.Eof do
+    begin
+      TablesList.Add(Stmt.Result.FieldByName('TABLE_NAME').AsString);
+      Stmt.Result.Next;
+    end;
+
+{$IFDEF DEBUG_LOG}
+WriteToLog('    Tables Found:');
+for i:=0 to TablesList.Count-1 do
+WriteToLog('    - '+TablesList[i]);
+{$ENDIF}
+
+WriteToLog('    TEasyTable.Create');
+    ET := TEasyTable.Create(Nil);
+WriteToLog('    DatabaseFileName');
+    if Integer(CatalogName)=SQL_NULL_HANDLE
+      then ET.DatabaseFileName := Stmt.Database
+      else
+        if ( Trim(CatalogName)=''  )
+        or ( Trim(CatalogName)='%' )
+          then ET.DatabaseFileName := Stmt.Database
+          else
+            if CatalogLength = SQL_NTS
+              then ET.DatabaseFileName := CatalogName
+              else ET.DatabaseFileName := Copy(CatalogName,1,CatalogLength);
+WriteToLog('    "'+ET.DatabaseFileName+'"');
+
+    // Create Result table
+WriteToLog('    InMemory');
+    Stmt.Result.InMemory:=True;
+WriteToLog('    Active=False');
+    Stmt.Result.Active:=False;
+WriteToLog('    Drop table');
+    Stmt.Result.SQL.Text := 'drop table Columns';
+    try
+      Stmt.Result.ExecSQL;
+    except
+    on e: Exception do
+      begin
+WriteToLog('Error: ' + e.Message);
+        Result:=SQL_ERROR;
+        Exit;
+      end;
+    end; // try
+WriteToLog('    Create Table');
+    Stmt.Result.SQL.Text :=
+    'create table Columns('+
+    'TABLE_QUALIFIER STRING('+IntToStr(_MAX_PATH)+'),'+
+    'TABLE_OWNER STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),'+
+    'TABLE_NAME STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),'+
+    'COLUMN_NAME STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+'),'+
+    'DATA_TYPE SMALLINT,'+
+    'TYPE_NAME STRING('+IntToStr(25)+'),'+
+//    'COLUMN_SIZE INTEGER,'+  // v.3.xx
+    'PRECISION INTEGER,'+ // v.2.xx
+    'LENGTH INTEGER,' + // v.2.xx
+//    'BUFFER_LENGTH INTEGER,' + // v.3.xx
+    'SCALE SMALLINT,' + // v.2.xx
+//    'DECIMAL_DIGITS SMALLINT,' + // v.3.xx
+    'RADIX SMALLINT,' + // v.2.xx
+//    'NUM_PREC_RADIX SMALLINT,' + // v.3.xx
+    'NULLABLE SMALLINT,' +
+    'REMARKS STRING('+IntToStr(MAX_IDENTIFIER_LENGTH)+')'+
+{
+    'LITERAL_PREFIX ,'+
+    'LITERAL_SUFFIX, '+
+    'CREATE_PARAMS, '+
+    'NULLABLE, '+
+    'CASE_SENSITIVE, '+
+    'SEARCHABLE, '+
+    'UNSIGNED_ATTRIBUTE, '+
+//    'FIXED_PREC_SCALE, '+ // v.3.xx
+    'MONEY, '+              // v.2.xx
+//    'AUTO_UNIQUE_VALUE, '+  // v.3.xx
+    'AUTO_INCREMENT, '+       // v.2.xx
+    'LOCAL_TYPE_NAME, '+
+    'MINIMUM_SCALE, '+
+    'MAXIMUM_SCALE'+//, '+
+//    'SQL_DATATYPE, '+   // v.3.xx
+//    'SQL_DATETIME_SUB, '+    // v.3.xx
+//    'NUM_PREC_RADIX, '+       // v.3.xx
+//    'INTERVAL_PRECISION, '+  // v.3.xx
+}
+    ')'; // v.2
+    try
+      Stmt.Result.ExecSQL;
+    except
+    on e: Exception do
+      begin
+WriteToLog('Error: ' + e.Message);
+        Result:=SQL_ERROR;
+        Exit;
+      end;
+    end;// try
+WriteToLog('    Table Columns created');
+
+{
+WriteToLog('    TStringList.Create');
+  ColumnsList:=TStringList.Create;
+}
+
+  for i:=0 to TablesList.Count-1 do
+    begin
+WriteToLog('    Open table #'+IntToStr(i)+' = '+TablesList[i]);
+      ET.Close;
+      ET.TableName:=TablesList[i];
+      try
+        ET.Open;
+      except
+      on e: Exception do
+          begin
+WriteToLog('Error: ' + e.Message);
+WriteToLog('TableName="'+ET.TableName+'"');
+WriteToLog('DatabaseName="'+ET.DatabaseName+'"');
+WriteToLog('DatabaseFileName="'+ET.DatabaseFileName+'"');
+if ET.InMemory
+then WriteToLog('InMemory=True')
+else WriteToLog('InMemory=False');
+            Result:=SQL_ERROR;
+            Exit;
+          end;
+      end;
+WriteToLog('    Table opened');
+    // insert columns records for table #i
+    for j:=0 to ET.FieldCount-1 do
+      begin
+WriteToLog('    insert '+IntToStr(j)+' = '+ET.Fields[j].FieldName);
+
+        // select all columns to enable SQLColAttributes using
+        Stmt.Result.DatabaseFileName:=Stmt.Database;
+        Stmt.Result.InMemory:=False;
+        Stmt.Result.Active:=False;
+        Stmt.Result.SQL.Text := 'select * from '+TablesList[i];
+        try
+          Stmt.Result.Active := True;
+        except
+        on e: Exception do
+            begin
+WriteToLog('Error: ' + e.Message);
+              Result:=SQL_ERROR;
+              Exit;
+            end;
+        end; // try
+
+if Stmt.Result.Active then
+WriteToLog('    Result.RecordCount='+IntToStr(Stmt.Result.RecordCount))
+else
+WriteToLog('    Result.Active=False!!!');
+
+        // Prepare to insert new record about column # j
+WriteToLog('    Prepare SQL Statement:');
+        str :=
+          'insert into Columns('+
+          'TABLE_QUALIFIER,'+
+//        'TABLE_OWNER,'+  //NULL
+          'TABLE_NAME,'+
+          'COLUMN_NAME,'+
+          'DATA_TYPE,'+
+          'TYPE_NAME,'+
+      //    'COLUMN_SIZE,'+  // v.3.xx
+          'PRECISION,'+ // v.2.xx
+          'LENGTH,' + // v.2.xx
+      //    'BUFFER_LENGTH,' + // v.3.xx
+          'SCALE,' + // v.2.xx
+      //    'DECIMAL_DIGITS,' + // v.3.xx
+          'RADIX,' + // v.2.xx
+      //    'NUM_PREC_RADIX,' + // v.3.xx
+          'NULLABLE,' +
+{
+          'LITERAL_PREFIX ,'+
+          'LITERAL_SUFFIX, '+
+          'CREATE_PARAMS, '+
+          'NULLABLE, '+
+          'CASE_SENSITIVE, '+
+          'SEARCHABLE, '+
+          'UNSIGNED_ATTRIBUTE, '+
+      //    'FIXED_PREC_SCALE, '+ // v.3.xx
+          'MONEY, '+              // v.2.xx
+      //    'AUTO_UNIQUE_VALUE, '+  // v.3.xx
+          'AUTO_INCREMENT, '+       // v.2.xx
+          'LOCAL_TYPE_NAME, '+
+          'MINIMUM_SCALE, '+
+          'MAXIMUM_SCALE'+//, '+
+      //    'SQL_DATATYPE, '+   // v.3.xx
+      //    'SQL_DATETIME_SUB, '+    // v.3.xx
+      //    'NUM_PREC_RADIX, '+       // v.3.xx
+      //    'INTERVAL_PRECISION, '+  // v.3.xx
+}
+          'REMARKS'+
+          ') values('+
+          CONSTANT_QUOTE+Stmt.Database+CONSTANT_QUOTE+','+
+//        CONSTANT_QUOTE+SchemaName+CONSTANT_QUOTE+','+ //NULL
+          CONSTANT_QUOTE+TablesList[i]+CONSTANT_QUOTE+','+
+          CONSTANT_QUOTE+ET.Fields[j].FieldName+CONSTANT_QUOTE+','; // Column_Name
+
+WriteToLog('    str:'+str);
+        NumericAttributePtr:=AllocMem(4); // Integer
+        pStr:=AllocMem(MaxLen);
+        ColumnNumber := Word(j+1);
+
+        // DATA_TYPE
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_COLUMN_TYPE,pStr,-3,Pointer(SQL_NULL_HANDLE),NumericAttributePtr)=SQL_ERROR
+          then str2:=''
+          else str2:=IntToStr(NumericAttributePtr^);
+WriteToLog('    '+str2);
+        str := str+str2+',';
+WriteToLog('    str:'+str);
+
+        // TYPE_NAME
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_COLUMN_TYPE_NAME,pStr,MaxLen,Pointer(SQL_NULL_HANDLE),Pointer(SQL_NULL_HANDLE))=SQL_ERROR
+          then pStr:='';
+WriteToLog('    str:'+str);
+WriteToLog('    pStr='+pStr);
+WriteToLog('    str:'+str);
+        str := str+CONSTANT_QUOTE+pStr+CONSTANT_QUOTE+',';
+WriteToLog('    str:'+str);
+
+        // [PRECISION]
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_COLUMN_PRECISION,pStr,-3,Pointer(SQL_NULL_HANDLE),NumericAttributePtr)=SQL_ERROR
+          then str2:=''
+          else str2:=IntToStr(NumericAttributePtr^);
+WriteToLog('    '+str2);
+        str := str+str2+',';
+WriteToLog('    str:'+str);
+
+        // LENGTH = precision
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_COLUMN_LENGTH,pStr,-3,Pointer(SQL_NULL_HANDLE),NumericAttributePtr)=SQL_ERROR
+          then str2:=''
+          else str2:=IntToStr(NumericAttributePtr^);
+WriteToLog('    '+str2);
+        str := str+str2+',';
+WriteToLog('    str:'+str);
+
+        // SCALE
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_COLUMN_SCALE,pStr,-3,Pointer(SQL_NULL_HANDLE),NumericAttributePtr)=SQL_ERROR
+          then str2:=''
+          else str2:=IntToStr(NumericAttributePtr^);
+WriteToLog('    '+str2);
+        str := str+str2+',';
+WriteToLog('    str:'+str);
+
+        // RADIX
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_DESC_NUM_PREC_RADIX,pStr,-3,Pointer(SQL_NULL_HANDLE),NumericAttributePtr)=SQL_ERROR
+          then
+            str2:='NULL'
+          else if NumericAttributePtr^=0 then
+            str2:='NULL'
+          else
+            str2:=IntToStr(NumericAttributePtr^);
+WriteToLog('    '+str2);
+        str := str+str2+',';
+WriteToLog('    str:'+str);
+
+        // NULLABLE
+        if SQLColAttributes(Stmt,ColumnNumber,SQL_DESC_NULLABLE,pStr,-3,Pointer(SQL_NULL_HANDLE),NumericAttributePtr)=SQL_ERROR
+          then str2:=''
+          else str2:=IntToStr(NumericAttributePtr^);
+WriteToLog('    '+str2);
+        str := str+str2+',';
+WriteToLog('    str:'+str);
+
+{
+---------------------------
+Other fields should be here
+---------------------------
+}
+
+        // REMARKS
+        str2:='';
+        str := str+CONSTANT_QUOTE+str2+CONSTANT_QUOTE
+
+          +')';
+WriteToLog('    str:'+str);
+
+        FreeMem(pStr);
+        FreeMem(NumericAttributePtr);
+
+        // insert new record about column # j
+WriteToLog('    Insert:');
+        Stmt.Result.SQL.Text := str; // SQL.Text sets Stmt.Result.Active:=False;
+WriteToLog('    Result.SQL.Text='+Stmt.Result.SQL.Text);
+        Stmt.Result.InMemory:=True;
+WriteToLog('    Try...');
+        try
+          Stmt.Result.ExecSQL;
+        except
+        on e: Exception do
+          begin
+WriteToLog('Error: ' + e.Message);
+            Result:=SQL_ERROR;
+            Exit;
+          end;
+        end; // try
+WriteToLog('    ...inserted!');
+
+if Stmt.Result.Active then
+WriteToLog('    Result.RecordCount='+IntToStr(Stmt.Result.RecordCount))
+else
+WriteToLog('    Result.Active=False!!!');
+
+      end; // for: next field
+  end; //for: next table
+
+  // Select using the TableName and ColumnName patterns
+  if Integer(TableName)<>SQL_NULL_HANDLE
+    then
+      begin
+        if TableLength = SQL_NTS
+          then str := TableName//StrCopy(pChar(str),TableName)
+          else str := Copy(TableName,1,TableLength);
+        str := StringReplace(str,'''',' ',[rfReplaceAll]);
+        str := StringReplace(str,'"',' ',[rfReplaceAll]);
+        str := Trim(str);
+WriteToLog('    str='+str);
+        if str='' then str:='%';
+        str := 'select * from memory Columns where (TABLE_NAME like '+CONSTANT_QUOTE+str+CONSTANT_QUOTE+')'
+      end
+    else
+        str := 'select * from memory Columns where (TABLE_NAME like ''%'')';
+  Stmt.Result.SQL.Text := str;
+WriteToLog('    SQL.Text='+Stmt.Result.SQL.Text);
+  if Integer(ColumnName)<>SQL_NULL_HANDLE
+    then
+      begin
+        if ColumnLength = SQL_NTS
+          then str := ColumnName//StrCopy(pChar(str),ColumnName)
+          else str := Copy(ColumnName,1,ColumnLength);
+        str := StringReplace(str,'''',' ',[rfReplaceAll]);
+        str := StringReplace(str,'"',' ',[rfReplaceAll]);
+        str := Trim(str);
+WriteToLog('    str='+str);
+        if str='' then str:='%';
+        Stmt.Result.SQL.Text := Stmt.Result.SQL.Text
+            + 'and (Column_NAME like '+CONSTANT_QUOTE+str+CONSTANT_QUOTE+')'
+      end;
+WriteToLog('    SQL.Text='+Stmt.Result.SQL.Text);
+
+WriteToLog('    SQL.Active=True');
+  try
+    Stmt.Result.Active := True;
+  except
+  on e: Exception do
+      begin
+WriteToLog('Error: ' + e.Message);
+       	Result:=SQL_ERROR;
+        Exit;
+      end;
+  end; // try
+WriteToLog('    RecordCount='+IntToStr(Stmt.Result.RecordCount));
+  Stmt.Result.First;
+  Stmt.FreshResult:=True;
+
+	Result:=SQL_SUCCESS;
+
+ Finish:
+WriteToLog('    TablesList.Free');
+  try
+    TablesList.Free;
+  except
+  on e: Exception do
+    begin
+WriteToLog('Error: ' + e.Message);
+      Result:=SQL_ERROR;
+      Exit;
+    end;
+  end;
+WriteToLog('    ET.Free');
+  try
+    ET.Free;
+  except
+  on e: Exception do
+    begin
+WriteToLog('Error: ' + e.Message);
+      Result:=SQL_ERROR;
+      Exit;
+    end;
+  end;
+WriteToLog('### SQLColumns');
+end;
+
+///// SQLExecDirect /////
+
+Function SQLExecDirect (
+               Stmt:PStmt;//HSTMT;
+          		 StatementText: UCHAR;
+          		 TextLength: SDWORD): RETCODE; stdcall;
+var
+  str:string;
+  i:Integer;
+  DateTime: PSQL_TIMESTAMP_STRUCT;
+  Date:     PSQL_DATE_STRUCT;
+  Time:     PSQL_TIME_STRUCT;
+begin
+WriteToLog('>>> SQLExecDirect called');
+WriteToLog('    Stmt='+IntToHex(Integer(Stmt),8));
+  if Integer(StatementText)=SQL_NULL_HANDLE then
+    begin
+WriteToLog('### SQLExecDirect Error: StatementTextPtr=SQL_NULL_HANDLE!');
+    	Result:=SQL_ERROR;
+      Exit;
+    end;
+  // Prepare for new result
+  Stmt.Result.DatabaseFileName:=Stmt.Database;
+WriteToLog('    DatabaseFileName='+Stmt.Result.DatabaseFileName);
+  Stmt.Result.InMemory:=False;
+  Stmt.Result.Active:=False;
+WriteToLog('    Old data erased');
+WriteToLog('    StatementText='+StatementText);
+WriteToLog('    TextLength='+IntToStr(TextLength));
+  if TextLength=SQL_NTS
+    then
+  Stmt.Result.SQL.Text:=StatementText
+    else
+      begin
+  Stmt.Result.SQL.Text:=Copy(StatementText,1,TextLength);
+WriteToLog('    copied');
+      end;
+WriteToLog('    Statement='+Stmt.Result.SQL.Text);
+
+  // set parameters
+  i:=0;
+  Move(i,Pointer(Integer(Stmt.Result.SQL.Text)+TextLength)^,1);// Null-terminated char
+  while pos('?',Stmt.Result.SQL.Text)>0 do
+    begin
+WriteToLog('    Parameter #'+IntToStr(i+1));
+      case Stmt.BindParam[i].ParameterType of
+        SQL_C_CHAR:
+          begin
+WriteToLog('    BufferLength'+IntToStr(Stmt.BindParam[i].BufferLength));
+WriteToLog('    Buffer'+PChar(Stmt.BindParam[i].ParameterValuePtr));
+//            StrLCopy(PChar(str),PChar(Stmt.BindParam[i].ParameterValuePtr),Stmt.BindParam[i].BufferLength);
+//            str := Copy(str,1,pos('=',str))
+//                    +'"'+Copy(str,pos('=',str)+1,Length(str))+'"';
+            str := PChar(Stmt.BindParam[i].ParameterValuePtr);
+            str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+          end;
+        SQL_TIMESTAMP:
+          begin
+WriteToLog('    SQL_TIMESTAMP');
+            if Stmt.BindParam[i].ValueType=SQL_CHAR
+              then
+                begin
+                  StrCopy(PChar(str),Stmt.BindParam[i].ParameterValuePtr);
+                  str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+                end
+              else
+                begin
+                  DateTime := Stmt.BindParam[i].ParameterValuePtr;
+                  str := IntToStr(DateTime.Month)+'/'+
+                         IntToStr(DateTime.Day)+'/'+
+                         IntToStr(DateTime.Year)+' '+
+                         IntToStr(DateTime.Hour)+':'+
+                         IntToStr(DateTime.Minute)+':'+
+                         IntToStr(DateTime.Second)+','+
+                         IntToStr(DateTime.Fraction);
+                  str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+                  str := 'TODATE('+str+','+CONSTANT_QUOTE+'m/d/year h24:n:s'+CONSTANT_QUOTE+')';
+                end;
+WriteToLog('    DateTime='+str);
+          end;
+        SQL_DATE:
+          begin
+            if Stmt.BindParam[i].ValueType=SQL_CHAR
+              then
+                begin
+                  StrCopy(PChar(str),Stmt.BindParam[i].ParameterValuePtr);
+                  str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+                end
+              else
+                begin
+                  Date := Stmt.BindParam[i].ParameterValuePtr;
+                  str := IntToStr(Date.Month)+'/'+
+                         IntToStr(Date.Day)+'/'+
+                         IntToStr(Date.Year);
+                  str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+                  str := 'TODATE('+str+','+CONSTANT_QUOTE+'m/d/year'+CONSTANT_QUOTE+')';
+                end;
+WriteToLog('    Date='+str);
+          end;
+        SQL_TIME:
+          begin
+WriteToLog('    SQL_TIME');
+            if Stmt.BindParam[i].ValueType=SQL_CHAR
+              then
+                begin
+                  StrCopy(PChar(str),Stmt.BindParam[i].ParameterValuePtr);
+                  str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+                end
+              else
+                begin
+                  Time := Stmt.BindParam[i].ParameterValuePtr;
+                  str := IntToStr(Time.Hour)+':'+
+                         IntToStr(Time.Minute)+':'+
+                         IntToStr(Time.Second);
+                  str := CONSTANT_QUOTE+str+CONSTANT_QUOTE;
+                  str := 'TODATE('+str+','+CONSTANT_QUOTE+'h24:n:s'+CONSTANT_QUOTE+')';
+                end;
+WriteToLog('    Time='+str);
+          end;
+        SQL_INTEGER:
+          begin
+WriteToLog('    Integer');
+          if Stmt.BindParam[i].ValueType=SQL_CHAR
+            then
+              StrCopy(PChar(str),Stmt.BindParam[i].ParameterValuePtr)
+            else
+              str := IntToStr(PInteger(Stmt.BindParam[i].ParameterValuePtr)^);
+WriteToLog('    Integer='+str);
+          end;
+        SQL_SMALLINT:
+          begin
+WriteToLog('    SmallInt');
+          if Stmt.BindParam[i].ValueType=SQL_CHAR
+            then
+              StrCopy(PChar(str),Stmt.BindParam[i].ParameterValuePtr)
+            else
+              str := IntToStr(PSmallInt(Stmt.BindParam[i].ParameterValuePtr)^);
+WriteToLog('    SmallInt='+str);
+          end;
+        SQL_BIT:
+          begin
+WriteToLog('    Boolean');
+            if pSmallInt(Stmt.BindParam[i].ParameterValuePtr)^=0
+              then str:='FALSE'
+              else str:='TRUE';
+WriteToLog('    Boolean='+str);
+          end;
+        SQL_NUMERIC,
+        SQL_DECIMAL,
+        SQL_FLOAT,
+        SQL_REAL,
+        SQL_DOUBLE:
+          begin
+WriteToLog('    Float');
+          if Stmt.BindParam[i].ValueType=SQL_CHAR
+            then
+              str:=pChar(Stmt.BindParam[i].ParameterValuePtr)
+//              StrCopy(PChar(str),Stmt.BindParam[i].ParameterValuePtr)
+            else
+              str := FloatToStr(PDouble(Stmt.BindParam[i].ParameterValuePtr)^);
+WriteToLog('    Float='+str);
+          end;
+      else
+WriteToLog('    Unknown type, '+IntToStr(Stmt.BindParam[i].ParameterType));
+        str := '#####';
+      end; // case
+      Stmt.Result.SQL.Text:=Copy(Stmt.Result.SQL.Text,1,pos('?',Stmt.Result.SQL.Text)-1)
+                            + str
+                            + Copy(Stmt.Result.SQL.Text,pos('?',Stmt.Result.SQL.Text)+1,Length(Stmt.Result.SQL.Text));
+      inc(i);
+      if i>Length(Stmt.BindParam)
+        then
+          begin
+WriteToLog('    Too many parameters, '+IntToStr(i));
+            Break;
+          end; // if
+    end;// while
+
+WriteToLog('    Statement='+Stmt.Result.SQL.Text);
+// for whom does not support core level and use multipart names, f.e. Excel XP
+  Stmt.Result.SQL.Text:=StringReplace(Stmt.Result.SQL.Text,'_edb','.edb',[rfReplaceAll]);
+  Stmt.Result.SQL.Text:=StringReplace(Stmt.Result.SQL.Text,'"."','.',[rfReplaceAll]);            // multipart names does not supported:
+  Stmt.Result.SQL.Text:=StringReplace(Stmt.Result.SQL.Text,Stmt.Database+' ','',[rfReplaceAll]); // remove database name (= database file path)
+WriteToLog('    Statement='+Stmt.Result.SQL.Text);
+if Stmt.Result.InMemory
+then WriteToLog('    InMemory=True')
+else WriteToLog('    InMemory=False');
+
+  if Pos('select',LowerCase(Stmt.Result.SQL.Text))=0
+    then  // Not Select
+      begin
+WriteToLog('    Try to run ExecSQL...');
+        try
+          Stmt.Result.ExecSQL;
+        except
+         on e: Exception do
+          begin
+WriteToLog('Error: ' + e.Message);
+           	Result:=SQL_ERROR;
+            Exit;
+          end;
+        end;
+      end
+    else // Select
+      begin
+WriteToLog('    Try to set Active in True...');
+        try
+          Stmt.Result.Active:=True;
+        except
+         on e: Exception do
+          begin
+WriteToLog('Error: ' + e.Message);
+          	Result:=SQL_ERROR;
+            Exit;
+          end;
+        end;
+       Stmt.Result.FindFirst; // Select the first record - it is not necessary because TEasyQuery set to first auto
+       Stmt.FreshResult:=True; // Set Flag - new result
+WriteToLog('    Result.RecordCount='+IntToStr(Stmt.Result.RecordCount));
+      end; // if
+WriteToLog('    ... End of execution');
+	Result:=SQL_SUCCESS;
+WriteToLog('### SQLExecDirect finished');
+end;
+
+///// SQLPrepare /////
+
+Function SQLPrepare  (
+               Stmt:PStmt;//HSTMT;
+          		 StatementText: UCHAR;
+          		 TextLength: SDWORD): RETCODE; stdcall;
+var
+  i:byte;
+begin
+WriteToLog('>>> SQLPrepare called');
+  i:=0;
+WriteToLog('    TextLength='+IntToStr(TextLength));
+      try
+  FreeMem(Stmt.SQLtext);
+  if TextLength>0
+    then Stmt.SQLtext:=AllocMem(TextLength)
+    else Stmt.SQLtext:=AllocMem(MAX_SQL_TEXT_LENGTH);
+      except
+       on e: Exception do
+        begin
+WriteToLog('Error AllocMem for SQLtext: ' + e.Message);
+         	Result:=SQL_ERROR;
+          Exit;
+        end;
+      end;
+  if Integer(StatementText)=SQL_NULL_HANDLE
+    then
+      begin
+WriteToLog('    StatementTextPtr=0!');
+        Move(i,Stmt.SQLtext^,1);
+      	Result:=SQL_ERROR;
+      end
+    else
+      begin
+WriteToLog('    StatementTextPtr<>0');
+WriteToLog('    StatementText='+StatementText);
+        if TextLength=SQL_NTS
+        then
+            StrCopy(Stmt.SQLtext,StatementText)
+        else
+          begin
+            Move(StatementText^,Stmt.SQLtext^,TextLength+1);
+            Move(i,Pointer(Integer(Stmt.SQLtext)+TextLength)^,1);
+          end;
+WriteToLog('    SQLtext:"'+Stmt.SQLtext+'"');
+WriteToLog('    Call SQLExecDirect with Statemnet="'+StatementText+'"');
+      	Result:=SQLExecDirect(Stmt,StatementText,TextLength);
+      end;
+WriteToLog('    SQLtext:"'+Stmt.SQLtext+'"');
+WriteToLog('### SQLPrepare:Result='+IntToStr(Result));
+end;
+
+///// SQLExecute /////
+
+Function SQLExecute (Stmt:PStmt): RETCODE; stdcall;
+begin
+WriteToLog('>>> SQLExecute called');
+ 	Result:=SQLExecDirect(Stmt,Stmt.SQLtext,StrLen(Stmt.SQLtext));
+WriteToLog('### SQLExecute');
+end;
+
+///// SQLGetData /////
+
+Function SQLGetData  (
+               Stmt:PStmt;
+          		 ColumnNumber:UWORD;
+          		 TargetType:SWORD;
+          		 TargetValue:PTR;
+          		 BufferLength:Integer;//SDWORD;
+          		 StrLen_or_IndPtr: PInteger//{UNALIGNED} SDWORD
+                               ): RETCODE; stdcall;
+var
+  DateTime:SQL_TIMESTAMP_STRUCT;
+  Date:SQL_DATE_STRUCT;
+  Time:SQL_TIME_STRUCT;
+  BS:TStream;
+begin
+WriteToLog('>>> SQLGetData called');
+	Result:=SQL_SUCCESS;
+
+WriteToLog('    ColumnNumber='+IntToStr(ColumnNumber)+';');
+WriteToLog('    TargetType='+IntToStr(TargetType)+';');
+WriteToLog('    BufferLength='+IntToStr(BufferLength)+';');
+if Integer(StrLen_or_IndPtr)<>SQL_NULL_HANDLE then WriteToLog('    @StrLen_or_IndPtr='+IntToHex(Integer(StrLen_or_IndPtr),8)+'.') else WriteToLog('    @StrLen_or_IndPtr=0.');;
+
+  // check Null
+  if Stmt.Result.Fields[ColumnNumber-1].IsNull
+    then
+      begin
+WriteToLog('    @StrLen_or_IndPtr='+IntToHex(Integer(StrLen_or_IndPtr),8));
+        StrLen_or_IndPtr^ := SQL_NULL_DATA;
+WriteToLog('    StrLen_or_IndPtr^=SQL_NULL_DATA');
+      end
+    else // data is not null
+  if Integer(TargetValue)=SQL_NULL_HANDLE
+    then
+WriteToLog('    @TargetValue=0 - Skip result')
+    else
+  case TargetType of
+    SQL_INTEGER :
+      begin
+WriteToLog('    Integer');
+        PInteger(TargetValue)^ := Stmt.Result.Fields[ColumnNumber-1].AsInteger;
+        StrLen_or_IndPtr^ := 4;
+WriteToLog('    Value:='+IntToStr(PInteger(TargetValue)^));
+      end;
+    SQL_SMALLINT:
+      begin
+        if Stmt.Result.FieldDefs[ColumnNumber-1].DataType = ftBoolean
+          then  // Boolean for BDE
+            begin
+              if Stmt.Result.Fields[ColumnNumber-1].AsBoolean
+                then PSmallInt(TargetValue)^:=1
+                else PSmallInt(TargetValue)^:=0;
+WriteToLog('    Boolean');
+            end
+          else
+            begin
+              PSmallInt(TargetValue)^ := SmallInt(Stmt.Result.Fields[ColumnNumber-1].AsInteger);
+WriteToLog('    SmallInt');
+            end;
+        StrLen_or_IndPtr^ := 2;
+WriteToLog('    Value:='+IntToStr(PSmallInt(TargetValue)^));
+      end;
+    SQL_DOUBLE:
+      begin
+        PDouble(TargetValue)^ := Stmt.Result.Fields.Fields[ColumnNumber-1].AsFloat;
+        StrLen_or_IndPtr^ := 8;
+      end;
+    SQL_TIMESTAMP:
+      begin
+WriteToLog('    SQL_TIMESTAMP');
+//DateTimeToString(str,'yyyy',Stmt.Result.Fields[Stmt.Bind.FieldByName('ColumnNumber').AsInteger].AsDateTime);
+        DateTime.Year     := StrToInt(FormatDateTime('yyyy',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        DateTime.Month    := StrToInt(FormatDateTime('m',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        DateTime.Day      := StrToInt(FormatDateTime('d',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        DateTime.Hour     := StrToInt(FormatDateTime('h',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        DateTime.Minute   := StrToInt(FormatDateTime('n',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        DateTime.Second   := StrToInt(FormatDateTime('s',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        DateTime.Fraction := StrToInt(FormatDateTime('z',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        PSQL_TIMESTAMP_STRUCT(TargetValue)^ := DateTime;
+        StrLen_or_IndPtr^ := SizeOf(DateTime);
+      end;
+    SQL_DATE:
+      begin
+WriteToLog('    SQL_DATE');
+        Date.Year  := StrToInt(FormatDateTime('yyyy',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        Date.Month := StrToInt(FormatDateTime('m',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        Date.Day   := StrToInt(FormatDateTime('d',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        PSQL_DATE_STRUCT(TargetValue)^ := Date;
+        StrLen_or_IndPtr^ := SizeOf(Date);
+      end;
+    SQL_TIME:
+      begin
+WriteToLog('    SQL_TIME');
+        Time.Hour     := StrToInt(FormatDateTime('h',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        Time.Minute   := StrToInt(FormatDateTime('n',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        Time.Second   := StrToInt(FormatDateTime('s',Stmt.Result.Fields[ColumnNumber-1].AsDateTime));
+        PSQL_TIME_STRUCT(TargetValue)^ := Time;
+        StrLen_or_IndPtr^ := SizeOf(Time);
+      end;
+    SQL_CHAR:
+{
+        if (Integer(Pointer(BufferLength)) = SQL_NULL_HANDLE) then
+        StrCopy(PChar(TargetValue),PChar(Stmt.Result.Fields[ColumnNumber-1].AsString))
+         else
+}
+           begin
+WriteToLog('    Char');
+             StrCopy(PChar(TargetValue),
+             PChar(Copy(Stmt.Result.Fields[ColumnNumber-1].AsString,
+                        1,BufferLength)));
+             PChar(Integer(TargetValue)+BufferLength)^ := #0;
+             StrLen_or_IndPtr^ := Length(PChar(TargetValue));
+WriteToLog('    Value:="'+PChar(TargetValue)+'"');
+           end;
+    SQL_LONGVARCHAR,
+    SQL_VARBINARY,
+    SQL_LONGVARBINARY,
+    SQL_BINARY:
+      begin
+WriteToLog('    SQL_BINARY');
+      BS := TEasyBlobStream.Create(TBLOBField(Stmt.Result.Fields[ColumnNumber-1]),bmRead);
+WriteToLog('    created');
+      BS.Position:=0;
+WriteToLog('    positioned');
+
+            pSmallInt(TargetValue)^:=0;  // First 2 Bytes must be Null - BDE
+                    // BLOB field copyes into buffer starting with 2 Bytes later - BDE
+            StrLen_or_IndPtr^ := BS.Read(Pointer(Integer(TargetValue)+2)^,Stmt.Bind.FieldByName('BufferLength').AsInteger-2); // StrLen_or_IndPtr = length
+WriteToLog('    '+IntToStr(StrLen_or_IndPtr^)+' bytes placed into buffer');
+            // Set Len indicator
+            if BS.Size > (Stmt.Bind.FieldByName('BufferLength').AsInteger-2)
+              then StrLen_or_IndPtr^ := SQL_NO_TOTAL;      // if no all the data has been got
+            BS.Free;
+
+WriteToLog('    freed');
+      if StrLen_or_IndPtr^ > Stmt.Bind.FieldByName('BufferLength').AsInteger
+        then StrLen_or_IndPtr^ := SQL_NO_TOTAL;
+WriteToLog('    Len='+IntToStr(StrLen_or_IndPtr^));
+      end
+  else
+WriteToLog('    Unsupported TargetType='+IntToStr(TargetType));
+	Result:=SQL_SUCCESS;
+  end;
+if Integer(StrLen_or_IndPtr)<>SQL_NULL_HANDLE then WriteToLog('    StrLen_or_IndPtr='+IntToStr(StrLen_or_IndPtr^)+'.');
+WriteToLog('### SQLGetData');
+end;
+
+///// SQLSpecialColumns /////
+
+Function SQLSpecialColumns  ( arg0:HSTMT;
+		 arg1:UWORD;
+		 arg2:UCHAR;
+		 arg3:SWORD;
+		 arg4:UCHAR;
+		 arg5:SWORD;
+		 arg6:UCHAR;
+		 arg7:SWORD;
+		 arg8:UWORD;
+		 arg9:UWORD
+                             ): RETCODE; stdcall;
+begin
+	WriteToLog('>>> SQLSpecialColumns called');
+	Result:=SQL_SUCCESS;
+end;
+
+///// SQLStatistics /////
+
+Function SQLStatistics  (arg0:HSTMT;
+		 arg1:UCHAR;
+		 arg2:SWORD;
+		 arg3:UCHAR;
+		 arg4:SWORD;
+		 arg5:UCHAR;
+		 arg6:SWORD;
+		 arg7:UWORD;
+		 arg8:UWORD
+                             ): RETCODE; stdcall;
+begin
+	WriteToLog('>>> SQLStatistics called');
+	Result:=SQL_SUCCESS;
+end;
+
+///// SQLDriverConnect /////
+
+Function SQLDriverConnect  (
+     Connection:PConnection;//HDBC;
+		 WindowHandle: HWND;
+		 InConnectionStr:UCHAR;
+		 InStrLength:smallint;//SWORD;
+		 OutConnectionStr:UCHAR;
+		 OutStrBufferLength:SWORD;
+		 var OutStrOutLength: {UNALIGNED} SWORD;
+		 DriverCompletion:UWORD
+                            ): RETCODE; stdcall;
+var
+{
+    Connection : TConnection;
+    p: pointer;
+}
+  str1: String;
+  DBtest:TEasyDatabase;
+  DatabasePath, FileName:PChar;
+  Path, Default,DSN : String;
+  len: Integer;
+begin
+WriteToLog('>>> SQLDriverConnect called with parameters'+#10+#13+
+'    "'+InConnectionStr+'"'+#10+#13+
+'    and Mode='+IntToStr(DriverCompletion));
+
+  FileName:=AllocMem(_MAX_PATH+1);
+ try
+  StrCopy(FileName,'ODBC.INI');
+  DatabasePath:=AllocMem(_MAX_PATH+1);
+ try
+  StrCopy(DatabasePath,'');
+  Path := 'Path';
+  Default := '';
+  DSN := '';
+
+  if pos('DATABASE=',InConnectionStr)=0
+    then
+      begin
+        if pos('DSN=',InConnectionStr)=0
+          then str1:=''
+          else
+            begin
+              DSN:=Copy(InConnectionStr,pos('DSN=',InConnectionStr)+4,_MAX_PATH);
+WriteToLog('    DSN='+DSN+'!');
+              DSN:=Copy(DSN,1,pos(';',DSN)-1);
+WriteToLog('    DSN='+DSN+'!');
+              StrCopy(Connection.DSN,pChar(DSN));
+              try   // copy Path from ODBC.INI to str1
+                SQLGetPrivateProfileString(pChar(DSN),pChar(Path),pChar(Default),DatabasePath,_MAX_PATH,FileName);
+              except
+              on E: Exception do
+WriteToLog('    SQLGetPrivateProfileString failed: ' + e.Message);
+              end;
+WriteToLog('    Path='+DatabasePath+'!');
+                Str1:=DatabasePath;
+WriteToLog('    Path='+str1+'!');
+            end;
+      end
+    else // Get Database parameter from InConnectionStr
+      begin
+        str1:=Copy(InConnectionStr,pos('DATABASE=',InConnectionStr)+9,_MAX_PATH);
+        str1:=Copy(str1,1,pos(';',str1)-1);
+      end;
+  FreeMem(DatabasePath);
+  StrCopy(Connection.Database,pChar(Str1));
+  DBtest:=TEasyDatabase.Create(Nil);
+  if DBtest.IsEasyTableDatabaseFile(Connection.Database) then Result:=SQL_SUCCESS else Result:=SQL_ERROR;
+
+  if (DriverCompletion=SQL_DRIVER_PROMPT)
+  or ( (Result=SQL_ERROR)
+    and //  if not DriverCompletion=SQL_DRIVER_NOPROMPT
+    ((DriverCompletion=SQL_DRIVER_COMPLETE) or (DriverCompletion=SQL_DRIVER_COMPLETE_REQUIRED)) )
+   then // Dialog form
+    begin
+     DSNsetupForm := TDSNsetupForm.Create(Nil);
+     repeat
+  // Show dialog
+      DSNsetupForm.DatabaseFile.Text:=str1;   // Copy path to Dialog fields
+      DSNsetupForm.DSN.Text:=DSN;             // Copy DSN to Dialog fields
+      try
+        DSNsetupForm.Show;
+      except
+      on E: Exception do
+WriteToLog('DSNsetupForm.Show failed: ' + e.Message);
+      end;
+      repeat
+       Application.ProcessMessages;
+      until not DSNsetupForm.Visible;
+      StrCopy(Connection.Database,pChar(DSNsetupForm.DatabaseFile.Text));
+      StrCopy(Connection.DSN,pChar(DSNsetupForm.DSN.Text));
+{ ================= OLD CODE =================
+      try //Check database path
+        DBtest.DatabaseName:='DBtest';
+        DBtest.DatabaseFileName:=Connection.Database;
+        DBtest.Open;
+      except
+      on E: Exception do
+WriteToLog('    Database.Open failed: ' + e.Message);
+      end;
+     until DBtest.Connected;
+================= OLD CODE =================}
+     until DBtest.IsEasyTableDatabaseFile(Connection.Database);
+     Result:=SQL_SUCCESS;
+     DSNsetupForm.Free;
+    end;
+ finally
+  DBtest.Free;
+ end;
+  FreeMem(FileName);
+WriteToLog('    Database='+Connection.Database+'!');
+WriteToLog('    DSN='+Connection.DSN+'!');
+
+{
+  if InStrLength=SQL_NTS
+    then Len1:=Length(InConnectionStr)
+    else Len1:=InStrLength;
+
+  if Len1>OutStrBufferLength
+    then
+     begin
+//      str1:='DATABASE='+str1+';';
+      OutConnectionStr:='DATABASE='+str1+';';
+//      Move(str1,OutConnectionStr,length(str1)+1);
+//      (PChar(OutConnectionStr)+length(str1))^:=#0;
+//      Move(InConnectionStr,OutConnectionStr,Length(InConnectionStr)+1)
+//      Move(InConnectionStr,OutConnectionStr,InStrLength+1)
+//      StrCopy(PChar(OutConnectionStr),InConnectionStr)
+     end
+    else
+     begin
+      Move(InConnectionStr,OutConnectionStr,OutStrBufferLength-1);
+      (PChar(OutConnectionStr)+OutStrBufferLength)^:=#0;
+WriteToLog('Buffer is too short. Truncated.');
+     end;
+}
+
+  if OutStrBufferLength=0
+    then OutStrOutLength:=0
+    else
+begin
+  str1:='DSN='+Connection.DSN+';'+
+        'DATABASE='+Connection.Database+';';
+
+{  if OutStrBufferLength > Length(str1)
+    then StrCopy(OutConnectionStr,pChar(str1))
+    else
+}
+
+  OutStrOutLength:=Length(str1);
+
+//  StrLCopy(OutConnectionStr,pChar(str1),OutStrBufferLength-1);
+  if OutStrOutLength < OutStrBufferLength then
+    len := OutStrOutLength+1
+  else
+    len := OutStrBufferLength;
+  Move(pChar(str1)^,OutConnectionStr^,len);
+
+ finally
+  FreeMem(FileName);
+ end;
+
+  if  (OutStrBufferLength<>-3)
+  and (OutStrOutLength>OutStrBufferLength)
+    then Result:=SQL_SUCCESS_WITH_INFO;
+
+end;
+{
+  Move(ConnectionHandle,p,4);
+  Move(Connection,p^,SizeOf(Connection));
+}
+if OutStrBufferLength>0 then WriteToLog(
+'### SQLDriverConnect finished with:'+#10+#13+
+'    InConnectionStr="'+InConnectionStr+'";'+#10+#13+
+'    OutConnectionStr="'+OutConnectionStr+'";'+#10+#13+
+'    InStrLength='+IntToStr(InStrLength)+';'+#10+#13+
+'    OutStrBufferLength='+IntToStr(OutStrBufferLength)+';'+#10+#13+
+'    OutStrOutLength='+IntToStr(OutStrOutLength)+'.'+#10+#13+
+#10+#13+
+'    Connection="'+Connection.Database+'"'
+)else WriteToLog(
+'### SQLDriverConnect finished with:'+#10+#13+
+'    InConnectionStr="'+InConnectionStr+'";'+#10+#13+
+'    OutConnectionStr=Not Changed'+#10+#13+
+'    InStrLength='+IntToStr(InStrLength)+';'+#10+#13+
+'    OutStrBufferLength='+IntToStr(OutStrBufferLength)+';'+#10+#13+
+'    OutStrOutLength='+IntToStr(OutStrOutLength)+'.'+#10+#13+
+#10+#13+
+'    Connection="'+Connection.Database+'"');
+
+	// This really doesn't show nearly all that you need to know
+	// about driver connect, read the programmer's reference
+
+{
+	if ((InStrLength == SQL_NTS) && (InConnectionStr))
+		InStrLength = strlen(InConnectionStr);
+
+	MessageBox(WindowHandle,
+		   "Connection dialog would go here",
+		   "Sample driver",
+		   MB_OK);
+
+	if ((OutConnectionStr) && cbConnStrOut > 0): RETCODE; stdcall;
+	begin
+		strncpy(OutConnectionStr,
+		        InConnectionStr,
+			(InStrLength == SQL_NTS) ? cbConnStrOut - 1 :
+						min(cbConnStrOut,InStrLength));
+
+		OutConnectionStr[cbConnStrOut - 1] = '\0';
+	end;
+
+	if (OutStrOutLength)
+		*OutStrOutLength = InStrLength;
+}
+WriteToLog('    Result='+IntToStr(Result));
+end;

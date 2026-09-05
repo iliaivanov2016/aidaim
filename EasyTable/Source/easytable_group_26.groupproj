@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{10E2214B-6C06-4DBB-8489-481466A258CD}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dcleasytabled26.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vcleasytabled26.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dcleasytabled26">
+        <MSBuild Projects="dcleasytabled26.dproj"/>
+    </Target>
+    <Target Name="dcleasytabled26:Clean">
+        <MSBuild Projects="dcleasytabled26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dcleasytabled26:Make">
+        <MSBuild Projects="dcleasytabled26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vcleasytabled26">
+        <MSBuild Projects="vcleasytabled26.dproj"/>
+    </Target>
+    <Target Name="vcleasytabled26:Clean">
+        <MSBuild Projects="vcleasytabled26.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vcleasytabled26:Make">
+        <MSBuild Projects="vcleasytabled26.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dcleasytabled26;vcleasytabled26"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dcleasytabled26:Clean;vcleasytabled26:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dcleasytabled26:Make;vcleasytabled26:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

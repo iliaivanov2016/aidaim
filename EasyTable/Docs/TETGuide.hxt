@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="EasyTable Developer's Guide">
+<HelpTOCNode Title="Introduction" Url="introduction.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Features Overview" Url="features_overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Getting Help from Technical Support" Url="getting_help_from_technical_su.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="How to Buy" Url="how_to_buy.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Working with Tables">
+<HelpTOCNode Title="Setting up a table component" Url="setting_up_a_table_component.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Specifying a database location" Url="specifying_a_database_location.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Opening and closing a table" Url="opening_and_closing_a_table.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Creating a table" Url="creating_a_table.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Navigating tables" Url="navigating_tables.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Filtering records" Url="filtering_records.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Searching records" Url="searching_records.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Sorting records" Url="sorting_records.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="BLOB fields use" Url="blob_fields_use.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Working with Databases">
+<HelpTOCNode Title="Setting up a database component" Url="setting_up_a_database_componen.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Connecting to and disconnecting from a database" Url="connecting_to_and_disconnectin.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Creating a database" Url="creating_a_database.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Deleting a database" Url="deleting_a_database.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Renaming a database" Url="renaming_a_database.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Advanced Operations">
+<HelpTOCNode Title="Advanced Operations with Tables">
+<HelpTOCNode Title="Table encryption" Url="table_encryption.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="BLOB fields compression" Url="blob_fields_compression.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="In-Memory tables" Url="in_memory_tables.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Restructuring a table" Url="restructuring_a_table.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Importing a table" Url="importing_a_table.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Exporting a table" Url="exporting_a_table.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Advanced Operations with Databases">
+<HelpTOCNode Title="Repairing a database" Url="repairing_a_database.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Compacting a database" Url="compacting_a_database.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="SQL Reference">
+<HelpTOCNode Title="Overview" Url="overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Naming conventions" Url="naming_conventions.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Operators" Url="operators.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="HEX constants" Url="hex_constants.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Functions" Url="functions.htm">
+<HelpTOCNode Title="Aggregate Functions" Url="aggregate_functions.htm">
+<HelpTOCNode Title="AVG Function" Url="avg_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="COUNT Function" Url="count_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MIN Function" Url="min_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MAX Function" Url="max_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SUM Function" Url="sum_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Date and Time Functions" Url="date_and_time_functions.htm">
+<HelpTOCNode Title="CURRENT_DATE Function" Url="current_date_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CURRENT_TIME Function" Url="current_time_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CURRENT_TIMESTAMP,  NOW AND SYSDATE Functions" Url="current_timestamp_now_sysdate_functions.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAY Function" Url="day_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAYNAME Function" Url="dayname_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAYOFWEEK Function" Url="dayofweek_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="EXTRACT Function" Url="extract_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="HOUR Function" Url="hour_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MINUTE Function" Url="minute_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MONTH Function" Url="month_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MONTHNAME Function" Url="monthname_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MSECOND Function" Url="msecond_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="QUARTER Function" Url="quarter_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SECOND Function" Url="second_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TODATE Function" Url="todate_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TOSTRING Function" Url="tostring_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="WEEKDAY Function" Url="weekday_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="YEAR Function" Url="year_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Mathematical Functions" Url="mathematical_functions.htm">
+<HelpTOCNode Title="ABS Function" Url="abs_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SIGN Function" Url="sign_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MOD Function" Url="mod_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="FLOOR Function" Url="floor_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CEILING Function" Url="ceiling_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ROUND Function" Url="round_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TRUNCATE Function" Url="truncate_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="POWER Function" Url="power_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="HEX Function" Url="hex_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RANDOM Function" Url="rand_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Miscellaneous Functions" Url="miscellaneous_functions.htm">
+<HelpTOCNode Title="ISNULL Function" Url="isnull_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LASTAUTOINC Function" Url="lastautoinc_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="String Functions" Url="string_functions.htm">
+<HelpTOCNode Title="LENGTH Function" Url="length_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LOWER Function" Url="lower_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LTRIM Function" Url="ltrim_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="POS Function" Url="pos_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RTRIM Function" Url="rtrim_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SUBSTRING Function" Url="substring_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TRIM Function" Url="trim_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="UPPER Function" Url="upper_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Type Conversion Functions" Url="type_conversion_functions.htm">
+<HelpTOCNode Title="CAST Function" Url="cast_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Using parameters" Url="using_parameters.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SELECT Statement" Url="select_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="INSERT Statement" Url="insert_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="UPDATE Statement" Url="update_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DELETE Statement" Url="delete_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CREATE TABLE Statement" Url="create_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ALTER TABLE Statement" Url="alter_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DROP TABLE Statement" Url="drop_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CREATE INDEX Statement" Url="create_index_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DROP INDEX Statement" Url="drop_index_statement.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Tuning and optimization">
+<HelpTOCNode Title="Tuning and optimization" Url="tuning_and_optimization.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Appendix">
+<HelpTOCNode Title="Differences from TTable" Url="differences_from_ttable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Supported data types" Url="supported_data_types.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Internationalization and localization" Url="internationalization_and_local.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

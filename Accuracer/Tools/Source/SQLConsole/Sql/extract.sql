@@ -1,0 +1,1 @@
+SELECT EXTRACT(MONTH FROM LastInvoiceDate) FROM Customer

@@ -1,0 +1,33 @@
+Creating table #1
+Filling table #1 record count = ,100, key records quantity = ,10, key records groups quantity = ,1
+Time Accuracer = ,157
+Time Accuracer Memory = ,0
+Time EasyTable = ,0
+Time BDE PARADOX = ,32
+Time BDE ACCESS = ,0
+Time DBISAM = ,61
+Time ADVANTAGE = ,0
+Time KEYDB = ,0
+
+Creating table #2
+Filling table #2 record count = ,100, key records quantity = ,10, key records groups quantity = ,1
+Time Accuracer = ,470
+Time Accuracer Memory = ,0
+Time EasyTable = ,31
+Time BDE PARADOX = ,0
+Time BDE ACCESS = ,0
+Time DBISAM = ,61
+Time ADVANTAGE = ,0
+Time KEYDB = ,0
+
+Creating table #3
+Filling table #3 record count = ,100, key records quantity = ,10, key records groups quantity = ,1
+Time Accuracer = ,751
+Time Accuracer Memory = ,0
+Time EasyTable = ,16
+Time BDE PARADOX = ,15
+Time BDE ACCESS = ,0
+Time DBISAM = ,32
+Time ADVANTAGE = ,0
+Time KEYDB = ,0
+

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{19725CAD-C2BC-4779-A0D8-EB9284EABA28}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dclMsgComD22.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclMsgComD22.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dclMsgComD22">
+        <MSBuild Projects="dclMsgComD22.dproj"/>
+    </Target>
+    <Target Name="dclMsgComD22:Clean">
+        <MSBuild Projects="dclMsgComD22.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclMsgComD22:Make">
+        <MSBuild Projects="dclMsgComD22.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclMsgComD22">
+        <MSBuild Projects="vclMsgComD22.dproj"/>
+    </Target>
+    <Target Name="vclMsgComD22:Clean">
+        <MSBuild Projects="vclMsgComD22.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclMsgComD22:Make">
+        <MSBuild Projects="vclMsgComD22.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dclMsgComD22;vclMsgComD22"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dclMsgComD22:Clean;vclMsgComD22:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dclMsgComD22:Make;vclMsgComD22:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

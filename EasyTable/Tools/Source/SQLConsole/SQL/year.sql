@@ -1,0 +1,1 @@
+SELECT YEAR(LastInvoiceDate) FROM Customer

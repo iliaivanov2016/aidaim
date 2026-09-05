@@ -1,0 +1,68 @@
+//---------------------------------------------------------------------------
+#ifndef uMainH
+#define uMainH
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include "EasyTable.hpp"
+#include <Db.hpp>
+#include <DBCtrls.hpp>
+#include <DBGrids.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Grids.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// IDE-managed Components
+  TLabel *Label2;
+  TLabel *Label3;
+  TPanel *Panel1;
+  TDBText *DBLabel1;
+  TDBImage *DBImage1;
+  TPanel *Panel2;
+  TLabel *Label1;
+  TDBText *DBLabel2;
+  TPanel *Panel3;
+  TDBMemo *DBMemo1;
+  TPanel *Panel4;
+  TDBGrid *DBGrid1;
+  TButton *bnOpenDB;
+  TButton *bnCloseDB;
+  TButton *bnMakeEXE;
+  TButton *bnExit;
+  TEdit *eDBPath;
+  TButton *Button5;
+  TDBNavigator *DBNavigator1;
+  TButton *bnExtract;
+  TDataSource *DataSource1;
+  TEasyTable *EasyTable1;
+  TStringField *EasyTable1Category;
+  TStringField *EasyTable1Common_Name;
+  TStringField *EasyTable1SpeciesName;
+  TFloatField *EasyTable1Lengthcm;
+  TFloatField *EasyTable1Length_In;
+  TMemoField *EasyTable1Notes;
+  TGraphicField *EasyTable1Graphic;
+  TEasyDatabase *EasyDatabase1;
+  TOpenDialog *OpenDialog1;
+  TSaveDialog *SaveDialog1;
+  TSaveDialog *SaveDialog2;
+  void __fastcall FormCreate(TObject *Sender);
+  void __fastcall bnMakeEXEClick(TObject *Sender);
+  void __fastcall bnOpenDBClick(TObject *Sender);
+  void __fastcall bnCloseDBClick(TObject *Sender);
+  void __fastcall bnExitClick(TObject *Sender);
+  void __fastcall Button5Click(TObject *Sender);
+  void __fastcall bnExtractClick(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+  __fastcall TForm1(TComponent* Owner);
+  void __fastcall OpenDatabase(bool bOpenAsExe);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif

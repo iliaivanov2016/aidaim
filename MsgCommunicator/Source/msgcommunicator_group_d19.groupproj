@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FFFAAD73-422A-4D05-BC81-E6371E319119}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dclMsgComD19.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclMsgComD19.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dclMsgComD19">
+        <MSBuild Projects="dclMsgComD19.dproj"/>
+    </Target>
+    <Target Name="dclMsgComD19:Clean">
+        <MSBuild Projects="dclMsgComD19.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclMsgComD19:Make">
+        <MSBuild Projects="dclMsgComD19.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclMsgComD19">
+        <MSBuild Projects="vclMsgComD19.dproj"/>
+    </Target>
+    <Target Name="vclMsgComD19:Clean">
+        <MSBuild Projects="vclMsgComD19.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclMsgComD19:Make">
+        <MSBuild Projects="vclMsgComD19.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dclMsgComD19;vclMsgComD19"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dclMsgComD19:Clean;vclMsgComD19:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dclMsgComD19:Make;vclMsgComD19:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="Overview" Url="overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Features" Url="features.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Compression and encryption algorithms" Url="compression_and_encryption_algorithms.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Getting Help from Technical Support" Url="getting_help_from_technical_support.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="How to Buy" Url="how_to_buy.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Classes">
+<HelpTOCNode Title="TSingleFileSystem" Url="tsinglefilesystem.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSFSFileStream" Url="tsfsfilestream.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Procedures">
+<HelpTOCNode Title="MakeSFX procedure" Url="makesfx_procedure.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CopySFS function" Url="copysfs_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DeleteSFS function" Url="deletesfs_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RenameSFS function" Url="renamesfs_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="IsSFSFile" Url="issfsfile.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="IsSingleFileEncrypted function" Url="issinglefileencrypted_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="IsPasswordValid function" Url="ispasswordvalid_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="GetControlQuestion function" Url="getcontrolquestion_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RestorePasswordByControlAnswer function" Url="restorepasswordbycontrolanswer_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

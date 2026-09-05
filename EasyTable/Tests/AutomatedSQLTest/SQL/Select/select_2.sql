@@ -1,0 +1,1 @@
+select id,FString,FMemo Memo,FInteger from jt1 where (id > 100000) order by id

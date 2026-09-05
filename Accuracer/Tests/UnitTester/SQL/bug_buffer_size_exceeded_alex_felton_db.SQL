@@ -1,0 +1,164 @@
+
+DROP TABLE CurContacts CASCADE;
+CREATE TABLE CurContacts (
+	Pupil_ID INTEGER,
+	Contact_ID INTEGER,
+	Surename STRING (50),
+	Forename STRING (50),
+	Unique_ID STRING (50)
+);
+CREATE INDEX CurIdx ON CurContacts (
+	Unique_ID
+);
+INSERT INTO CurContacts VALUES (
+	6369,
+	6403,
+	'ZOG',
+	'GRETA',
+	'6369-6403'
+);
+INSERT INTO CurContacts VALUES (
+	6369,
+	6384,
+	'ZOG',
+	'CRAIG',
+	'6369-6384'
+);
+INSERT INTO CurContacts VALUES (
+	3327,
+	3059,
+	'ZAKI',
+	'Ivan',
+	'3327-3059'
+);
+INSERT INTO CurContacts VALUES (
+	3327,
+	3058,
+	'ZAKI',
+	'Irene',
+	'3327-3058'
+);
+INSERT INTO CurContacts VALUES (
+	3099,
+	3101,
+	'ZIMMERMAN',
+	'R',
+	'3099-3101'
+);
+INSERT INTO CurContacts VALUES (
+	3099,
+	3100,
+	'ZIMMERMAN',
+	'F',
+	'3099-3100'
+);
+INSERT INTO CurContacts VALUES (
+	6139,
+	6274,
+	'ZIGLIO',
+	'RACHEL',
+	'6139-6274'
+);
+INSERT INTO CurContacts VALUES (
+	6139,
+	6206,
+	'ZIGLIO',
+	'DARIO',
+	'6139-6206'
+);
+INSERT INTO CurContacts VALUES (
+	6138,
+	6274,
+	'ZIGLIO',
+	'RACHEL',
+	'6138-6274'
+);
+INSERT INTO CurContacts VALUES (
+	6138,
+	6206,
+	'ZIGLIO',
+	'DARIO',
+	'6138-6206'
+);
+
+DROP TABLE PrevContacts CASCADE;
+CREATE TABLE PrevContacts (
+	Pupil_ID INTEGER,
+	Contact_ID INTEGER,
+	Surename STRING (50),
+	Forename STRING (50),
+	Unique_ID STRING (30)
+);
+CREATE INDEX PrevIdx ON PrevContacts (
+	Unique_ID
+);
+INSERT INTO PrevContacts VALUES (
+	6369,
+	6403,
+	'ZOG',
+	'GRETA',
+	'6369-6403'
+);
+INSERT INTO PrevContacts VALUES (
+	6369,
+	6384,
+	'ZOG',
+	'CRAIG',
+	'6369-6384'
+);
+INSERT INTO PrevContacts VALUES (
+	3327,
+	3059,
+	'ZAKI',
+	'Ivan',
+	'3327-3059'
+);
+INSERT INTO PrevContacts VALUES (
+	3327,
+	3058,
+	'ZAKI',
+	'Irene',
+	'3327-3058'
+);
+INSERT INTO PrevContacts VALUES (
+	3099,
+	3101,
+	'ZIMMERMAN',
+	'R',
+	'3099-3101'
+);
+INSERT INTO PrevContacts VALUES (
+	3099,
+	3100,
+	'ZIMMERMAN',
+	'F',
+	'3099-3100'
+);
+INSERT INTO PrevContacts VALUES (
+	6139,
+	6274,
+	'ZIGLIO',
+	'RACHEL',
+	'6139-6274'
+);
+INSERT INTO PrevContacts VALUES (
+	6139,
+	6206,
+	'ZIGLIO',
+	'DARIO',
+	'6139-6206'
+);
+INSERT INTO PrevContacts VALUES (
+	6138,
+	6274,
+	'ZIGLIO',
+	'RACHEL',
+	'6138-6274'
+);
+INSERT INTO PrevContacts VALUES (
+	6138,
+	6206,
+	'ZIGLIO',
+	'DARIO',
+	'6138-6206'
+);

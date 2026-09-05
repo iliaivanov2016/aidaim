@@ -1,0 +1,20 @@
+
+Current date: ,31.03.2008
+
+Script #1, file SQL\expr_arithmetic_sign.sql  Start time: ,21:30:08.296, ...
+Comparing EasyTable with DBISAM
+Command #1, EasyTable time = ,93
+Command #2, EasyTable time = ,360
+Command #3, EasyTable time = ,140
+Command #4, EasyTable time = ,188
+Command #5, EasyTable time = ,156
+Command #6, EasyTable time = ,94
+Command #1, DBISAM time = ,125
+Command #2, DBISAM time = ,15
+Command #3, DBISAM time = ,16
+Command #4, DBISAM time = ,0
+Command #5, DBISAM time = ,0
+Command #6, DBISAM time = ,16
+Checking results ...
+OK. EasyTable full time = ,1031, DBISAM full time = ,172
+

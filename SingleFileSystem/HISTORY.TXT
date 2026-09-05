@@ -1,0 +1,293 @@
+Single File System: History of changes
+======================================
+
+
+- version 20.00 (10/21/2025)
+  New features added: 
+    1. RAD Studio 13 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 19.00 (07/23/2025)
+  New features added: 
+    1. RAD Studio 12.3 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 18.00 (01/27/2024)
+  New features added: 
+    1. RAD Studio 12.0 Athens support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 17.00 (03/27/2023)
+  New features added: 
+    1. RAD Studio 11.3 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 16.00 (12/19/2022)
+  New features added: 
+    1. RAD Studio 11.2 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 15.00 (03/31/2022)
+  New features added: 
+    1. RAD Studio 11.1 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 14.00 (09/27/2021)
+  New features added: 
+    1. RAD Studio 11 Alexandria support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.4.2 Sydney rebuld with update 2 (Windows 32 bit and Windows 64 bit).
+
+
+- version 13.00 (06/30/2020)
+  New features added: 
+    1. RAD Studio 10.4 Sydney support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.3.3 Rio rebuld with update 3 (Windows 32 bit and Windows 64 bit).
+
+
+- version 12.00 (12/25/2018)
+  New features added: 
+    1. RAD Studio 10.3 Rio support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.2 Tokyo rebuilt with update 3.
+
+
+- version 11.00 (04/17/2017)
+  New features added: 
+    1. RAD Studio 10.2 Tokyo support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.1 Berlin rebuilt with update 2.
+
+
+- version 10.00 (06/17/2016)
+
+  New features added: 
+  1. RAD Studio 10.1 Berlin support added (32-bit and 64-bit).
+
+
+- version 9.00 (09/08/2015)
+
+  New features added: 
+  1. RAD Studio 10 Seattle support added (32-bit and 64-bit).
+
+
+- version 8.00 (04/15/2015)
+
+  New features added: 
+  1. Delphi and C++ Builder XE8 32-bit and 64-bit support added.
+
+
+- version 7.00 (09/11/2014)
+
+  New features added: 
+  1. Delphi and C++ Builder XE7 32-bit and 64-bit support added.
+
+
+- version 6.00 (05/19/2014)
+
+  New features added: 
+  1. Delphi and C++ Builder XE6 32-bit and 64-bit support added.
+
+
+- version 5.00 (02/17/2014)
+
+  New features added: 
+  1. Delphi and C++ Builder XE5 32-bit and 64-bit support added.
+
+  Bugs fixed: 
+  1. Bug with wrong read only detection in TSFFileStream.Create with fmCreate was fixed.
+
+- version 4.00 (08/06/2013)
+
+  New features added: 
+  1. Delphi and C++ Builder XE3, XE4 32-bit and 64-bit support added.
+
+
+- version 3.00 (01/31/2012)
+
+  New features added: 
+  1. Delphi and C++ Builder XE2 (32-bit) supported.
+
+
+- version 2.80 (08/13/2010)
+
+  New features added: 
+  1. Delphi 2010 file create problem is solved.
+  2. Delphi and C++ Builder 2011 support added.
+
+
+- version 2.70 (07/01/2009)
+
+  New features added: 
+  1. Single File System now can store compressed files > 2 Gb.
+     It is recommended to repair all Single File System files to convert to latest format.
+  2. SFSManager utility updated - support for Delphi 2009 and 2010 added.
+  3. Delphi 2010 is now supported.
+
+  Bugs fixed: 
+  1. Bug in TSingleFileSystem.Repair under Delphi 2009 and 2010 was fixed.
+
+
+- version 2.60 (02/12/2007)
+
+  New features added: 
+  1. Search methods now supports 64-bit file sizes (TSearchRec.FindData).
+  2. SFSManager utility updated.
+
+  Bugs fixed: 
+  1. Problems with exporting / importing files > 2Gb 
+     with compression and encryption were solved.
+
+
+- version 2.50 (12/12/2006)
+
+  New features added: 
+  1. Repair procedure was improved, now it removes broken links.
+
+  Bugs fixed: 
+  1. Bug in TSingleFileSystem.LoadLibrary method was fixed.
+  2. Bug in all operations with paths strating from '\' or '/' was fixed.
+
+- version 2.40 (07/28/2006)
+
+  Bugs fixed: 
+  1. Problem with path detection in BDS 2006 SP2 is solved. Many thanks to Sebastian Zierer!
+  2. Bug with DirectoryExists call on files was fixed.
+  3. Bug in ExportFiles and ExportFolders with relative paths was fixed.
+
+- version 2.30 (12/21/2005)
+
+  Bugs fixed: 
+  1. Bug with extending SFS file with ExtentPageCount < 4 was fixed.
+  2. Bug with Repair method in some cases was fixed.
+  3. Some bugs in Component Reference were fixed.
+  4. Problem with 8.3 file names in SFSManager association was solved.
+  5. C++ Builder compilation bugs (header files) were fixed.
+  6. Bug with drag-and-drop in TreeViewBackup Delphi demo was fixed.
+
+- version 2.20 (07/16/2004)
+
+  New features added: 
+  1. Automatic reducing of the SFS file size in case of deleting data from the end of file.
+  2. New key generation algorithm was implemented (LFSR).
+
+  Bugs fixed: 
+  1. Problem with file date settings in ImportFiles / ExportFiles was solved.
+  2. Bug with searching files by name was fixed.
+  3. Bug in encryption key generation was fixed. 
+  If you have an encrypted SFS file, please create new 
+  SFS file and copy all files from old SFS file to new one (you may use old password for this new file). 
+
+- version 2.12 (06/17/2003)
+
+  Bugs fixed: 
+  1. Repair method can now repairs folders with invlid 
+     parent folder link.
+
+
+- version 2.11 (01/22/2003)
+
+  New features added: 
+  1. PartFileSize parameter is added to TSingleFileSystem.Create,
+     so now it is possible to create multiple-parts archive with 
+     custom size of the part. 
+
+
+- version 2.10 (01/09/2003)
+
+  New features added: 
+  1. Auto-detect of the file system is added. 
+     Now you can create single file > 4 GB on 
+     NTFS and other file systems supporting such files. 
+  2. CopyFile and MoveFile methods of TSingleFileSystem were added.
+  3. ChangeFilesEncryption method of TSingleFileSystem was added.
+
+
+- version 2.00 (10/24/2002)
+
+  New features added: 
+  1. RunApplication method is added to execute applications 
+     stored in SFS file.
+  2. LoadLibrary method is added to load DLLs 
+     stored in SFS file.
+  3. OnPassword event is added in TSingleFileSystem.
+     It is fired when the password for encrypted file is required.
+
+
+- version 1.20 (09/02/2002)
+
+  New features added: 
+  1. SFX support: MakeSFX procedure is added. 
+
+
+- version 1.16 (08/26/2002)
+
+  New features added: 
+  1. OnDiskFull event is added.
+
+  Bugs fixed: 
+  1. Repair method now always delete the temporary files it created.
+
+
+- version 1.15 (07/16/2002)
+
+  Bugs fixed: 
+  1. SFSManager reopening files problem is solved.
+  2. C++ Builder 5 package is corrected to comply with 
+     Professional Edition of C++ Builder.
+  3. The problem of false search results for non-existing files is solved.
+
+
+- version 1.14 (07/11/2002)
+
+  New features added: 
+  1. Context help is added.
+
+  Bugs fixed: 
+  1. Installaton program now correctly checks whether destination 
+     directory is created.
+
+- version 1.13 (06/26/2002)
+
+  Bugs fixed: 
+  1. TSingleFileSystem.LoadFromStream problem is solved.
+
+
+- version 1.12 (06/20/2002)
+
+  New features added: 
+  1. SaveToStream, LoadFromStream methods are added to TSingleFileSystem 
+     to provide a possibility to save to and load in-memory SFS file from 
+     database BLOB field for example.
+  2. SaveToFile, LoadFromFile methods are added to TSingleFileSystem.
+
+
+- version 1.11 (06/18/2002)
+
+  Bugs fixed: 
+  1. TSingleFileSystem.ImportFiles, ExportFiles and DeleteFiles 
+     call for single file processing is corrected.
+
+
+- version 1.10 (06/14/2002)
+
+  New features added: 
+  1. ImportFiles, ImportFolder methods are added to TSingleFileSystem.
+  2. ExportFile, ExportFolder methods are added to TSingleFileSystem.
+  3. IsFolderEmpty method is added to TSingleFileSystem.
+  4. OnFileProgress and OnOverwritePrompt events are added.
+  5. IsSFSFile function is added to verify whether the file is 
+     SFS file.
+  6. Installation files into IDE is now optional.
+  7. TreeViewBackup demo is added to illustrate work with 
+     TreeView and SFS.
+
+
+- version 1.00 (04/23/2002)
+
+  New features added: 
+  1. 3 properties added:
+      TSingleFileSystem.Encrypted, TSingleFileSystem.Password,
+      TSingleFileSystem.ControlQuestion
+  2. 1 method added:
+      TSingleFileSystem.ChangeEncryption.
+
+
+- version 1.00 Beta (03/26/2002)

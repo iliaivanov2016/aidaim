@@ -1,0 +1,21 @@
+:TITLE CryptoPressStream Component Reference
+:BASE CryptoPressStreamRef.hlp
+1 CryptoPressStream Component Reference
+2 Classes
+3 TCPSManager=TCPSManager@CryptoPressStreamRef.hlp>Main
+3 TCPSAdvancedStream=TCPSAdvancedStream@CryptoPressStreamRef.hlp>Main
+3 TCPSMemoryStream=TCPSMemoryStream@CryptoPressStreamRef.hlp>Main
+3 TCPSFileStream=TCPSFileStream@CryptoPressStreamRef.hlp>Main
+3 TCPSCryptoPressMemoryStream=TCPSCryptoPressMemoryStream@CryptoPressStreamRef.hlp>Main
+3 TCPSCryptoPressFileStream=TCPSCryptoPressFileStream@CryptoPressStreamRef.hlp>Main
+3 TCPSCryptoPressStream=TCPSCryptoPressStream@CryptoPressStreamRef.hlp>Main
+3 TCPSStream=TCPSStream@CryptoPressStreamRef.hlp>Main
+3 TCPSCryptoParamsEditor=TCPSCryptoParamsEditor@CryptoPressStreamRef.hlp>Main
+3 ECPSException=ECPSException@CryptoPressStreamRef.hlp>Main
+2 Functions
+3 Functions=Functions@CryptoPressStreamRef.hlp>Main
+3 IsStreamCPSStream=IsStreamCPSStream@CryptoPressStreamRef.hlp>Main
+3 IsStreamEncryptedCPSStream=IsStreamEncryptedCPSStream@CryptoPressStreamRef.hlp>Main
+3 CPSGenerateRandomBuffer=CPSGenerateRandomBuffer@CryptoPressStreamRef.hlp>Main
+3 CPSCountCRC=CPSCountCRC@CryptoPressStreamRef.hlp>Main
+3 CPSCountCRC16=CPSCountCRC16@CryptoPressStreamRef.hlp>Main

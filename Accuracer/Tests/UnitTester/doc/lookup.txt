@@ -1,0 +1,14 @@
+>I changed something and got it to work but the next issue now is that
+only
+>the newly created lookup field is showing in the dbgrid.
+
+You need to create all of the persistent fields for your table before you
+create your lookup field. Here's a code snip of how to do that.
+
+Table1.FieldDefs.Update;
+Table1.Close;
+For I := 0 to Table1.FieldDefs.Count - 1 do
+if Table1.FindField(Table1.FieldDefs[i].Name) = nil then
+Table1.FieldDefs.Items[i].CreateField(Table1);
+
+

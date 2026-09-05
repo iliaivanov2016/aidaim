@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpCollection SYSTEM "ms-help://hx/resources/HelpCollection.DTD">
+<HelpCollection DTDVersion="1.0" LangId="1033" Title="Accuracer Developer's Guide" Copyright="(c) AidAim Software, 2000-2009" FileVersion="1.0.0">
+  <CompilerOptions CreateFullTextIndex="Yes" OutputFile="..\AccuracerGuide.hxs" CompileResult="Hxs">
+    <IncludeFile File="AccuracerGuide_topiclist.HxF"/>
+  </CompilerOptions>
+  <TOCDef File="AccuracerGuide.hxt"/>
+  <KeywordIndexDef File="AccuracerGuide.hxk"/>
+  <KeywordIndexDef File="NamedURLIndex.HxK"/>
+  <ItemMoniker Name="!DefaultToc" ProgId="HxDs.HxHierarchy" InitData=""/>
+  <ItemMoniker Name="!DefaultNamedUrlIndex" ProgId="HxDs.HxIndex" InitData="NamedUrlIndex"/>
+  <ItemMoniker Name="!DefaultFullTextSearch" ProgId="HxDs.HxFullTextSearch" InitData=""/>
+  <ItemMoniker Name="!DefaultAssociativeIndex" ProgId="HxDs.HxIndex" InitData="A"/>
+  <ItemMoniker Name="!DefaultKeywordIndex" ProgId="HxDs.HxIndex" InitData="K"/>
+  <ToolData Name="MSVHWLogLevel" Value="2"/>
+  <ToolData Name="MSVHWNamespace" Value="Accuracer_Guide"/>
+  <ToolData Name="MSVHWUniqueID" Value="Accuracer_Guide"/>
+</HelpCollection>

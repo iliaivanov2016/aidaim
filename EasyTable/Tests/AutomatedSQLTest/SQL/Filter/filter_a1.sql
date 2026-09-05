@@ -1,0 +1,1 @@
+select ID from jt1 where ID=1

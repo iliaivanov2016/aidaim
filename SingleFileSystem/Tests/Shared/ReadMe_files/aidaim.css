@@ -1,0 +1,37 @@
+body, table, tr, td, p, a , select { font-family:Arial;font-size:12px; }
+input { font-family:Tahoma,Times,Arial,Sans; font-size : 8pt;}
+input.votcol { background-color : #b6bdb3 }
+TEXTAREA { font-family:Tahoma,Times,Arial,Sans; font-size : 8pt; background-color : #ffffff }
+h1 { margin-top:12px; margin-bottom:-20px; text-align: center; font-family:Arial; font-size:16px; font-weight:bold; color:#50010A; }
+h2 { margin-top:25px; margin-bottom:-20px; text-align: center; font-family:Arial; font-size:14px; font-weight:bold; color:#600010; }
+b { color: #333333; }
+p { text-align: justify; Zmargin-bottom: -10px; text-indent: 0px; }
+
+a { color:#000000; text-decoration:underline }
+a.hm { color:#ffffff; text-decoration:none; font-weight:bold; font-size:8pt }
+a.hm:hover { color:#ffffff; text-decoration:underline }
+.btm { color:#ffffff }
+.lm { color:#ffffff; font-weight:bold }
+.lmi { padding-left:12px; color:#000000; text-align:left }
+.lmi2 { padding-left:24px; color:#000000; text-align:left }
+.hlmi { padding-left:20px; padding-right:20px; color:#000000; text-align:left; }
+.rwh { color:#ffffff; font-weight:bold; padding-left:8px }
+.rwt { padding:8px }
+.mh { padding-left:10px; padding-right:10px }
+.mhf { font-size:7pt; color:#ffffff; font-weight:bold; POSITION:relative; TOP:-1px; LEFT:-1px }
+.mhf2 { font-size:7pt; color:#000000; font-weight:bold; POSITION:absolute }
+.mhfb { font-family:Tahoma,Times,Arial,Sans; font-size : 9pt;  color:#ffffff; font-weight:bold; POSITION:relative; TOP:-1px; LEFT:-1px }
+.mhfb2 { font-family:Tahoma,Times,Arial,Sans; font-size : 9pt;  color:#000000; font-weight:bold; POSITION:absolute }
+a.lmil { text-decoration:none }
+a.lmil:hover { text-decoration:underline }
+a.lmilk { text-decoration:none; color:#ffffff; font-weight:bold; font-size:12px }
+a.bl { color:#ffffff; text-decoration:underline; font-weight:bold }
+.sp { left:0px; position:relative; top:0px }
+#g1, #g2, #g3, #g4 { position:absolute; visibility:hidden }
+.fullprice { TEXT-DECORATION: line-through }
+.btn {height: 24; width: 140; font-family:Tahoma;font-size:11px;border-width:1px;font-weight:700;background:#4881a5;color:white;cursor:hand}
+.nea {color:#aa0011; font-weight:bold}
+.ugu {color:#00a008; font-weight:bold}
+
+a.sp_link {color:#dbe4ec;}
+

@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Project1.exe"/>
+    <OBJFILES value="Project1.obj Unit1.obj"/>
+    <RESFILES value="Project1.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Unit1.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib vcl.lib dbrtl.lib vcldb.lib bdertl.lib vclSQLMemTableb6.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi vcljpg.bpi dsnap.bpi dbrtl.bpi vcldb.bpi 
+      bdertl.bpi vclSQLMemTableb6.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;_VIS_NOLIB;USEPACKAGES"/>
+    <MAINSOURCE value="Project1.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;..\..\..\Current;..\..\..\Work_SQLMem"/>
+    <LIBPATH value="c:\compilers\cbuilder4\lib\release;c:\compilers\cbuilder4\lib\release\;$(BCB)\Projects\Lib;..\..\..\..\..\..\vcl\indy\c4;..\lib\release;$(BCB)\lib\obj;$(BCB)\lib;&quot;E:\AidAim\Accuracer320_cs_pro.b4\Lib\C++ Builder 4\&quot;;..\..\..\Current;..\..\..\Work_SQLMem"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -I$(BCB)\include -I$(BCB)\include\vcl -I..\..\..\Current 
+      -I..\..\..\Work_SQLMem -boa"/>
+    <CFLAG1 value="-Od -H=c:\COMPIL~1\CBUILD~1\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k 
+      -y -v -vi- -c -tW -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Project1.cpp" FORMNAME="" UNITNAME="Project1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Project1.res" FORMNAME="" UNITNAME="Project1" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Unit1.cpp" FORMNAME="Form1" UNITNAME="Unit1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Current;..\..\..\Work_SQLMem
+Item1=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Current;..\..\..\Work_ACR
+Item2=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Current;S:\Projects\Delphi Components\Accuracer\Work_ACR
+Item3=$(BCB)\include;$(BCB)\include\vcl;S:\Projects\Delphi Components\Accuracer\Current
+Item4=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=c:\compilers\cbuilder4\lib\release;$(BCB)\Projects\Lib;c:\compilers\cbuilder4\lib\release\;..\..\..\..\..\..\vcl\indy\c4;..\lib\release;$(BCB)\lib\obj;$(BCB)\lib;E:\AidAim\Accuracer320_cs_pro.b4\Lib\C++ Builder 4\;..\..\..\Current;..\..\..\Work_SQLMem
+Item1=c:\compilers\cbuilder4\lib\release\;..\..\..\..\..\..\vcl\indy\c4;..\lib\release;$(BCB)\lib\obj;$(BCB)\lib;E:\AidAim\Accuracer320_cs_pro.b4\Lib\C++ Builder 4\;..\..\..\Current;..\..\..\Work_ACR
+Item2=c:\compilers\cbuilder4\lib\release;c:\compilers\cbuilder4\lib\release\;..\..\..\..\..\..\vcl\indy\c4;..\lib\release;$(BCB)\lib\obj;$(BCB)\lib;E:\AidAim\Accuracer320_cs_pro.b4\Lib\C++ Builder 4\;..\..\..\Current;S:\Projects\Delphi Components\Accuracer\Work_ACR
+Item3=c:\compilers\cbuilder4\lib\release;..\..\..\..\..\..\vcl\indy\c4;..\lib\release;$(BCB)\lib\obj;$(BCB)\lib;E:\AidAim\Accuracer320_cs_pro.b4\Lib\C++ Builder 4\;S:\Projects\Delphi Components\Accuracer\Current
+Item4=$(BCB)\lib\obj;$(BCB)\lib;E:\AidAim\Accuracer320_cs_pro.b4\Lib\C++ Builder 4
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>

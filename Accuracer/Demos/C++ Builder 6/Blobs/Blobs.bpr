@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Blobs.exe"/>
+    <OBJFILES value="Blobs.obj Main.obj Client.obj"/>
+    <RESFILES value="Blobs.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Main.dfm Client.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="vclAccuracerb6.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib dbrtl.lib vcldb.lib bdertl.lib vclx.lib vclAccuracerb6.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi vcljpg.bpi dbrtl.bpi vcldb.bpi bdertl.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="NO_STRICT;_VIS_NOLIB;USEPACKAGES"/>
+    <MAINSOURCE value="Blobs.cpp"/>
+    <INCLUDEPATH value="..\..\..\Current;&quot;D:\Program Files\EasyTable\Lib\&quot;;$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;..\..\..\..\EasyTable\Lib\C++ Builder 4&quot;"/>
+    <LIBPATH value="$(BCB)\Projects\Lib;..\..\..\Current;&quot;D:\Program Files\EasyTable\Lib\&quot;;$(BCB)\lib\debug;$(BCB)\lib\obj;$(BCB)\lib;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;..\..\..\..\EasyTable\Lib\C++ Builder 4&quot;"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -I..\..\..\Current -I&quot;D:\Program Files\EasyTable\Lib\.&quot; 
+      -I$(BCB)\include -I$(BCB)\include\vcl -I&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;; -I&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;; 
+      -I&quot;..\..\..\..\EasyTable\Lib\C++ Builder 4&quot; -boa"/>
+    <CFLAG1 value="-Od -H=c:\PROGRA~1\BORLAND\CBUILD~2\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 
+      -b- -k -y -v -vi- -c -tW -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Blobs.cpp" FORMNAME="" UNITNAME="Blobs" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Blobs.res" FORMNAME="" UNITNAME="Blobs" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Main.cpp" FORMNAME="MainForm" UNITNAME="Main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Client.cpp" FORMNAME="CustForm" UNITNAME="Client" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=6
+Item0=..\..\..\Current;D:\Program Files\EasyTable\Lib\;$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;..\..\..\..\EasyTable\Lib\C++ Builder 4
+Item1=..\..\..\Current;D:\Program Files\EasyTable\Lib\;$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;C:\SourceCode\EasyTable\Lib\C++ Builder 4\;C:\SourceCode\EasyTable\Lib\C++ Builder 4\;C:\SourceCode\Accuracer\Current
+Item2=..\..\..\Current;D:\Program Files\EasyTable\Lib\;$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;C:\SourceCode\EasyTable\Lib\C++ Builder 4\;C:\SourceCode\EasyTable\Lib\C++ Builder 4\
+Item3=D:\Program Files\EasyTable\Lib\;$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;C:\SourceCode\EasyTable\Lib\C++ Builder 4\&quot;;&quot;C:\SourceCode\EasyTable\Lib\C++ Builder 4\&quot;
+Item4=D:\Program Files\EasyTable\Lib;$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;C:\SourceCode\EasyTable\Lib\C++ Builder 4\&quot;;&quot;C:\SourceCode\EasyTable\Lib\C++ Builder 4\&quot;
+Item5=$(BCB)\include;$(BCB)\include\vcl;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;C:\SourceCode\EasyTable\Lib\C++ Builder 4\&quot;;&quot;C:\SourceCode\EasyTable\Lib\C++ Builder 4\&quot;
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=$(BCB)\Projects\Lib;..\..\..\Current;D:\Program Files\EasyTable\Lib\;$(BCB)\lib\debug;$(BCB)\lib\obj;$(BCB)\lib;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;..\..\..\..\EasyTable\Lib\C++ Builder 4
+Item1=$(BCB)\Projects\Lib;..\..\..\Current;D:\Program Files\EasyTable\Lib\;$(BCB)\lib\debug;$(BCB)\lib\obj;$(BCB)\lib;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;C:\SourceCode\EasyTable\Lib\C++ Builder 4\;C:\SourceCode\EasyTable\Lib\C++ Builder 4\;C:\SourceCode\Accuracer\Current
+Item2=$(BCB)\Projects\Lib;..\..\..\Current;D:\Program Files\EasyTable\Lib\;$(BCB)\lib\debug;$(BCB)\lib\obj;$(BCB)\lib;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;&quot;s:\AidAim\Accuracer600\Lib\C++ Builder 6\&quot;;C:\SourceCode\EasyTable\Lib\C++ Builder 4\;C:\SourceCode\EasyTable\Lib\C++ Builder 4\
+Item3=D:\Program Files\EasyTable\Lib;$(BCB)\lib\debug;$(BCB)\lib\obj;$(BCB)\lib
+Item4=$(BCB)\lib\debug;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

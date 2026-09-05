@@ -1,0 +1,100 @@
+Accuracer ODBC Driver: History of changes
+=========================================
+
+Version 5.00 (02/27/2014)
+-------------------------
+
+  New functionality of Accuracer v.9.00 has been added.
+
+
+Version 4.02 (03/30/2011)
+-------------------------
+
+  New functionality of Accuracer v.5.90 has been added.
+
+  SQL parameters functionality has been rewrited.
+  
+  DSN Setup form resizing bug in case of screen scaling has been fixed.
+
+
+
+Version 4.01 (07/19/2010)
+-------------------------
+
+  Small bug has been fixed.
+
+
+
+Version 4.00 (05/13/2010)
+-------------------------
+
+  New functionality of Accuracer v.5.
+
+
+
+Version 3.00 (06/18/2009)
+-------------------------
+
+  Advanced DSN parameters were added. Now Accuracer ODBC Driver can work 
+  with encrypted databases as well as with Accuracer Database Server
+  with network traffic compression and encryption.
+
+  php 4 support added. New php demo.
+
+  CodeGear Delphi 2009, C++Builder 2009 support. New D2009 and CB2009 demos.
+
+  Compatibility with MS Excel has been essentially improved. Some data types 
+  support has been added.
+
+  DbExpress Driver support was improved. Please, read Demos/DbExpress/ReadMe.txt
+  to learn details on how to test Accuracer ODBC Driver with ODBC DbExpress Driver.
+
+  Some changes were made in ConfigDSN, SQLAllocStmt, SQLConnect, SQLDriverConnect,
+  SQLColAttributes, SQLFetch, SQLExtendedFetch, SQLGetData functions.
+
+
+
+Version 2.10 (06/03/2005)
+-------------------------
+
+  New functionality of Accuracer v.4.
+
+  Some changes in SQLAllocStmt, SQLGetInfo, SQLTables, SQLExecute, 
+  SQLPrepare, SQLExecDirect, SQLGetData, SQLSpecialColumns, SQLStatisics 
+  functions to achieve better compatibility with Microsoft Office 
+  and Visual Studio products.
+
+  Some improvements were made in SQLExecDirect function in a work with Time 
+  and DateTime fields.
+
+  Small bugs were fixed in SQLColAttributes, SQLGetInfo functions.
+
+
+
+Version 2.00 (08/18/2004)
+-------------------------
+
+  Client/server mode and new functionality of Accuracer v.3.30 have been added.
+
+  Some changes were made and some bugs were fixed in ConfigDSN function in Setup DLL.
+
+
+
+Version 1.02 (02/16/2004)
+-------------------------
+
+  New functionality of Accuracer v.2.
+
+
+
+Version 1.01 (01/15/2004)
+-------------------------
+
+  Some improvements to achieve the better compatibility with different IDEs and OSs.
+  
+  Minor changes were made in the SQLRowCount function.
+
+
+
+Version 1.00 (12/15/2003)
+-------------------------

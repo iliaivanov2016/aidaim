@@ -1,0 +1,54 @@
+:TITLE MsgCommunicator: Delphi Instant Messaging (IM) SDK for creation of custom messenger system
+:BASE MsgCommunicator.hlp
+1 MsgCommunicator: Guia del Desarrollador
+2 Introduction=Introduction@MsgCommunicator.hlp>Main
+2 Getting Started=GettingStarted@MsgCommunicator.hlp>Main
+2 Networking=Networking@MsgCommunicator.hlp>Main
+2 Connecting=Connecting@MsgCommunicator.hlp>Main
+2 Messaging=Messaging@MsgCommunicator.hlp>Main
+2 Direct Messaging=DirectMessaging@MsgCommunicator.hlp>Main
+2 Message History=History@MsgCommunicator.hlp>Main
+2 User Details and Users Database=UserInfo@MsgCommunicator.hlp>Main
+2 Working with Contact List=WorkingWithContactList@MsgCommunicator.hlp>Main
+2 Custom Commands=CustomCommands@MsgCommunicator.hlp>Main
+2 Disconnect=Disconnect@MsgCommunicator.hlp>Main
+2 Peer-To-Peer Mode=Peer-To-PeerMode@MsgCommunicator.hlp>Main
+2 Client Return Codes=ClientReturnCodes@MsgCommunicator.hlp>Main
+2 Writing server application=WritingServerApplication@MsgCommunicator.hlp>Main
+2 Brief=Brief@MsgCommunicator.hlp>Main
+1 MsgCommunicator: Component Reference
+2 Overview=Overview@MsgCommunicator.hlp>Main
+2 Classes
+3 TMsgClient=TMsgClient@MsgCommunicator.hlp>Main
+3 TMsgServer=TMsgServer@MsgCommunicator.hlp>Main
+3 TMsgDatabase=TMsgDatabase@MsgCommunicator.hlp>Main
+3 TMsgDatabaseAccuracer=TMsgDatabaseAccuracer@MsgCommunicator.hlp>Main
+3 TMsgDatabaseMySQL=TMsgDatabaseMySQL@MsgCommunicator.hlp>Main
+3 TMsgDatabaseMySQLDAC=TMsgDatabaseMySQLDAC@MsgCommunicator.hlp>Main
+3 TMsgTempTable=TMsgTempTable@MsgCommunicator.hlp>Main
+3 TMsgTempTableAccuracer=TMsgTempTableAccuracer@MsgCommunicator.hlp>Main
+3 TMsgTempTablSQLMemTable=TMsgTempTableSQLMemTable@MsgCommunicator.hlp>Main
+3 TMsgClientConnectParamsEditor=TMsgClientConnectParamsEditor@MsgCommunicator.hlp>Main
+3 TMsgClientNetworkSettingsEditor=TMsgClientNetworkSettingsEditr@MsgCommunicator.hlp>Main
+3 TMsgServerConnectParamsEditor=TMsgServerConnectParamsEditor@MsgCommunicator.hlp>Main
+3 TMsgServerNetworkSettingsEditor=TMsgServerNetworkSettingsEditr@MsgCommunicator.hlp>Main
+3 TMsgCryptoParamsEditor=TMsgCryptoParamsEditor@MsgCommunicator.hlp>Main
+2 Types
+3 TMsgClientInfo=TACRClientInfo@MsgCommunicator.hlp>Main
+3 TMsgBaseUserInfo=TMsgBaseUserInfo@MsgCommunicator.hlp>Main
+3 TMsgUserInfo=TMsgUserInfo@MsgCommunicator.hlp>Main
+3 TMsgUserInfoArray=TMsgUserInfoArray@MsgCommunicator.hlp>Main
+3 TMsgUserInfoArraySortBy=TMsgUserInfoArraySortBy@MsgCommunicator.hlp>Main
+3 TMsgContactInfoArray=TMsgContactInfoArray@MsgCommunicator.hlp>Main
+3 TMsgContactInfo=TMsgContactInfo@MsgCommunicator.hlp>Main
+3 TMsgContactNameSource=TMsgContactNameSource@MsgCommunicator.hlp>Main
+3 TMsgUserStatus=TMsgUserStatus@MsgCommunicator.hlp>Main
+3 TMsgCompressionAlgorithm=TMsgCompressionAlgorithm@MsgCommunicator.hlp>Main
+3 TMsgComparisonOperator=TMsgComparisonOperator@MsgCommunicator.hlp>Main
+3 TMsgDateComparison=TMsgDateComparison@MsgCommunicator.hlp>Main
+3 TMsgIntegerComparison=TMsgIntegerComparison_1@MsgCommunicator.hlp>Main
+3 TMsgTextComparison=TMsgTextComparison@MsgCommunicator.hlp>Main
+3 TMsgMessageType=TMsgMessageType@MsgCommunicator.hlp>Main
+2 Variables/Constants
+3 MSG_INVALID_ID=MSG_INVALID_ID@MsgCommunicator.hlp>Main
+3 MSG_INVALID_USER_ID=MSG_INVALID_USER_ID@MsgCommunicator.hlp>Main

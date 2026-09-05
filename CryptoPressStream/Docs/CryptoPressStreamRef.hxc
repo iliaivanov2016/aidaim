@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpCollection SYSTEM "ms-help://hx/resources/HelpCollection.DTD">
+<HelpCollection DTDVersion="1.0" LangId="1033" Title="CryptoPressStream Component Reference" Copyright="(C) 2004-2008 AidAim Software" FileVersion="1.0.0">
+  <CompilerOptions CreateFullTextIndex="Yes" OutputFile="..\CryptoPressStreamRef.hxs" CompileResult="Hxs">
+    <IncludeFile File="CryptoPressStreamRef_topiclist.HxF"/>
+  </CompilerOptions>
+  <TOCDef File="CryptoPressStreamRef.hxt"/>
+  <KeywordIndexDef File="CryptoPressStreamRef.hxk"/>
+  <KeywordIndexDef File="CryptoPressStreamRef_A.HXK"/>
+  <KeywordIndexDef File="NamedURLIndex.HxK"/>
+  <ItemMoniker Name="!DefaultToc" ProgId="HxDs.HxHierarchy" InitData=""/>
+  <ItemMoniker Name="!DefaultNamedUrlIndex" ProgId="HxDs.HxIndex" InitData="NamedUrlIndex"/>
+  <ItemMoniker Name="!DefaultFullTextSearch" ProgId="HxDs.HxFullTextSearch" InitData=""/>
+  <ItemMoniker Name="!DefaultAssociativeIndex" ProgId="HxDs.HxIndex" InitData="A"/>
+  <ItemMoniker Name="!DefaultKeywordIndex" ProgId="HxDs.HxIndex" InitData="K"/>
+  <ToolData Name="MSVHWLogLevel" Value="2"/>
+  <ToolData Name="MSVHWNamespace" Value="CryptoPressStream_Reference"/>
+  <ToolData Name="MSVHWUniqueID" Value="CryptoPressStream_Reference"/>
+</HelpCollection>

@@ -1,0 +1,1 @@
+select MAX(jt2.id) max_id from jt1,jt2

@@ -1,0 +1,9 @@
+MsgCommunicator Database Pack: History of changes
+=============================================================
+
+- version 1.10 (04/27/2011)
+  New features added:
+  1. Firebird/Interbase module added (FIBPlus components).
+
+- version 1.00 (11/26/2010)
+ 

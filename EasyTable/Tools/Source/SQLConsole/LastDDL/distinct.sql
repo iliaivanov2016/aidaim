@@ -1,0 +1,1 @@
+select distinct SYMBOL from holdings_MasterDetail

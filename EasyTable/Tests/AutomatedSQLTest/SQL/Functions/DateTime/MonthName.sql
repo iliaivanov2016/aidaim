@@ -1,0 +1,59 @@
+#exec
+DROP TABLE MEMORY Tmp;
+#exec
+CREATE TABLE MEMORY Tmp (id autoinc, dt DateTime);
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('01/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('02/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('03/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('04/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('05/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('06/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('07/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('09/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('10/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('11/01/2005','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('12/01/2005','MM/DD/YYYY'));
+select id,MONTHNAME(dt) f1 FROM MEMORY Tmp order by id;
+#dbisam 
+#exec
+DROP TABLE if exists "\MEMORY\Tmp";
+#exec
+CREATE TABLE "\MEMORY\Tmp" (id autoinc, f1 char(9));
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('January');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('February');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('March');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('April');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('May');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('June');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('July');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('August');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('September');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('October');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('November');
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES('December');
+SELECT id,f1 FROM "\MEMORY\Tmp" order by id;

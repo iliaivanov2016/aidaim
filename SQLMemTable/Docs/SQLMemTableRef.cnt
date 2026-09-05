@@ -1,0 +1,11 @@
+:TITLE SQLMemTable Component Reference
+:BASE SQLMemTableRef.hlp
+1 SQLMemTable
+2 TSQLMemDataSet=TSQLMemDataSet@SQLMemTableRef.hlp>Main
+2 TSQLMemDatabase=TACRDatabase@SQLMemTableRef.hlp>Main
+2 TSQLMemTable=TSQLMemTable@SQLMemTableRef.hlp>Main
+2 TSQLMemQuery=TSQLMemQuery@SQLMemTableRef.hlp>Main
+2 TSQLMemBatchMove=TSQLMemBatchMove@SQLMemTableRef.hlp>Main
+2 TSQLMemBlobStream=TSQLMemBlobStream@SQLMemTableRef.hlp>Main
+2 TSQLMemWideStringList=TSQLMemWideStringList@SQLMemTableRef.hlp>Main
+2 TSQLMemForeignKeyDefs=TACRForeignKeyDefs@SQLMemTableRef.hlp>Main

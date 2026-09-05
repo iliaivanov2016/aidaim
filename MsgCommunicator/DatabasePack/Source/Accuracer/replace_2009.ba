@@ -1,0 +1,78 @@
+SET ToolsDir=S:\Projects\Tools
+
+rem ------ BACKUP ALL FUNCTION / CLASS NAMES THAT CAN BE DAMAGED BY MMSGO REPLACES (USING _ CHARACTER) ------
+%ToolsDir%\Replace\replace "MSG_d12h.pas" "StrLen" "Str_Len" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "widechar" "WideCh_r" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "widestring" "WideStr_ng" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "FillChar" "FillCh_r" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "resourcestring" "resource_string_" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "ReadString" "Read_String_" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "WriteString" "Write_String_" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "AnsiChar" "Ansi_Char" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "AnsiString" "Ansi_String" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "QuotedString" "QuotedSt_ring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "StringOfChar" "St_ringOfC_har" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "AsString" "AsSt_ring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "ftString" "ftSt_ring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "SUBString" "SUBSt_ring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "TOString" "TOSt_ring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "ShortString" "ShortSt_ring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " char;" " AnsiChar;" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " char " " AnsiChar " IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" ":char;" ":AnsiChar;" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "char\n" "AnsiChar\n" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " char)" " AnsiChar)" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" ":char)" ":AnsiChar)" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "char(" "AnsiChar(" IgnoreCase=Yes
+
+%ToolsDir%\Replace\replace "*.pas" " pchar;" " PAnsiChar;" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " pchar " " PAnsiChar " IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" ":pchar;" ":PAnsiChar;" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "pchar\n" "PAnsiChar\n" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " pchar)" " PAnsiChar)" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" ":pchar)" ":PAnsiChar)" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "pchar(" "PAnsiChar(" IgnoreCase=Yes
+
+%ToolsDir%\Replace\replace "*.pas" " string;" " AnsiString;" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " string " " AnsiString " IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" ":string;" ":AnsiString;" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "string\n" "AnsiString\n" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" " string)" " AnsiString)" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" ":string)" ":AnsiString)" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "string(" "AnsiString(" IgnoreCase=Yes
+
+rem ------ REPLACE ALL API FUNCTION CALLS TO ANSI ------
+%ToolsDir%\Replace\replace "*.pas" "StrLen(" "{$IFDEF D12H}aaStrLen({$ELSE}StrLen({$ENDIF}" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "GetTempPath(" "Windows.GetTempPathA(" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "Windows.GetTempFileName(" "Windows.GetTempFileNameA(" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "Windows.CreateFile(" "Windows.CreateFileA(" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "CreateWindow(" "Windows.CreateWindowA(" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "SHGetPathFromIDList(" "ShlObj.SHGetPathFromIDListA(" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "SHBrowseForFolder(" "ShlObj.SHBrowseForFolderA(" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "TBrowseInfo" "TBrowseInfoA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "MessageBox" "MessageBoxA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "GetWindowText" "GetWindowTextA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "CharToOemBuff" "CharToOemBuffA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "OemToCharBuff" "OemToCharBuffA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "CharUpperBuff" "CharUpperBuffA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "CharLowerBuff" "CharLowerBuffA" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "CreateFile" "CreateFileA" IgnoreCase=Yes
+
+rem ------ RESTORE ALL REPLACED NAMES ------
+%ToolsDir%\Replace\replace "*.pas" "WideCh_r" "WideChar" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "WideStr_ng" "WideString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "FillCh_r" "FillChar" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "resource_string_" "resourcestring" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "MSG_d12h.pas" "Str_Len" "StrLen" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "Read_String_" "ReadString"  IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "Write_String_" "WriteString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "Ansi_Char" "AnsiChar" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "Ansi_String" "AnsiString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "QuotedSt_ring" "QuotedString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "St_ringOfC_har" "StringOfChar" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "AsSt_ring" "AsString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "ftSt_ring" "ftString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "SUBSt_ring" "SUBString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "TOSt_ring" "TOString" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "MSG*.pas" "Ansi_Ansi" "Ansi" IgnoreCase=Yes
+%ToolsDir%\Replace\replace "*.pas" "ShortSt_ring" "ShortString" IgnoreCase=Yes

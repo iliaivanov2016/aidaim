@@ -1,0 +1,155 @@
+object ACRLinkFields: TACRLinkFields
+  Left = 235
+  Top = 123
+  Width = 352
+  Height = 309
+  HorzScrollBar.Range = 348
+  VertScrollBar.Range = 307
+  ActiveControl = IndexList
+  Caption = 'Field Link Designer'
+  Color = clButton
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 75
+  TextHeight = 20
+  TextWidth = 7
+  object Bevel1: TBevel
+    Left = 4
+    Top = 38
+    Width = 343
+    Height = 190
+    Shape = bsFrame
+  end
+  object Bevel2: TBevel
+    Left = 6
+    Top = 264
+    Width = 341
+    Height = 43
+    Shape = bsFrame
+  end
+  object Label30: TLabel
+    Left = 13
+    Top = 40
+    Width = 70
+    Height = 20
+    Caption = 'D&etail Fields'
+    FocusControl = DetailList
+  end
+  object Label31: TLabel
+    Left = 222
+    Top = 40
+    Width = 76
+    Height = 20
+    Caption = '&Master Fields'
+    FocusControl = MasterList
+  end
+  object IndexLabel: TLabel
+    Left = 4
+    Top = 10
+    Width = 100
+    Height = 20
+    Caption = 'A&vailable Indexes'
+    FocusControl = IndexList
+  end
+  object Label2: TLabel
+    Left = 12
+    Top = 141
+    Width = 76
+    Height = 20
+    Caption = '&Joined Fields'
+    FocusControl = BindList
+  end
+  object DetailList: TListBox
+    Left = 13
+    Top = 59
+    Width = 117
+    Height = 69
+    TabOrder = 1
+    OnClick = BindingListClick
+  end
+  object MasterList: TListBox
+    Left = 222
+    Top = 58
+    Width = 117
+    Height = 69
+    TabOrder = 2
+    OnClick = BindingListClick
+  end
+  object BindList: TListBox
+    Left = 12
+    Top = 160
+    Width = 242
+    Height = 56
+    MultiSelect = True
+    TabOrder = 3
+    OnClick = BindListClick
+  end
+  object IndexList: TComboBox
+    Left = 111
+    Top = 7
+    Width = 237
+    Height = 28
+    Style = csDropDownList
+    ItemHeight = 22
+    TabOrder = 0
+    OnChange = IndexListChange
+    OnClick = IndexListChange
+  end
+  object AddButton: TButton
+    Left = 138
+    Top = 82
+    Width = 75
+    Height = 25
+    Caption = '&Add'
+    TabOrder = 4
+    OnClick = AddButtonClick
+  end
+  object DeleteButton: TButton
+    Left = 263
+    Top = 160
+    Width = 75
+    Height = 25
+    Caption = '&Delete'
+    TabOrder = 5
+    OnClick = DeleteButtonClick
+  end
+  object ClearButton: TButton
+    Left = 263
+    Top = 191
+    Width = 75
+    Height = 25
+    Caption = '&Clear'
+    TabOrder = 6
+    OnClick = ClearButtonClick
+  end
+  object Button1: TButton
+    Left = 100
+    Top = 233
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 7
+    OnClick = BitBtn1Click
+  end
+  object Button2: TButton
+    Left = 186
+    Top = 233
+    Width = 75
+    Height = 25
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 8
+  end
+  object Help: TButton
+    Left = 272
+    Top = 233
+    Width = 75
+    Height = 25
+    Caption = '&Help'
+    TabOrder = 9
+    OnClick = HelpClick
+  end
+end

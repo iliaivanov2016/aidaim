@@ -1,0 +1,1 @@
+select distinct FString from jt1 order by FString desc

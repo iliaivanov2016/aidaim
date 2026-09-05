@@ -1,0 +1,3 @@
+{$DEFINE DEBUG_TRACE_TACRBTreeIndex_CanInsertRecord}
+{$DEFINE DEBUG_TRACE_TACRBTreeKeyRef_MakeKeyFromRecordBuffer}
+{$DEFINE DEBUG_TRACE_TACRBTreeIndex_GetApproxRangeRecordCount}

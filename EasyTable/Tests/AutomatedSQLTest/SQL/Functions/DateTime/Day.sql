@@ -1,0 +1,39 @@
+#exec
+DROP TABLE MEMORY Tmp;
+#exec
+CREATE TABLE MEMORY Tmp (id autoinc, dt DateTime);
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/14/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/15/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/16/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/17/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/18/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/19/2006','MM/DD/YYYY'));
+#exec
+INSERT INTO MEMORY Tmp(dt) VALUES(TODATE('08/20/2006','MM/DD/YYYY'));
+select id,DAY(dt) f1 FROM MEMORY Tmp order by id;
+#dbisam 
+#exec
+DROP TABLE if exists "\MEMORY\Tmp";
+#exec
+CREATE TABLE "\MEMORY\Tmp" (id autoinc, f1 integer);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(14);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(15);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(16);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(17);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(18);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(19);
+#exec
+INSERT INTO "\MEMORY\Tmp"(f1) VALUES(20);
+SELECT id,f1 FROM "\MEMORY\Tmp" order by id;

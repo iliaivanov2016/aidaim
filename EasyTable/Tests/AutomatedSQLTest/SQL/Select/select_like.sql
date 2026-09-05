@@ -1,0 +1,1 @@
+select fstring from jt1 where fstring like '%' order by fstring desc

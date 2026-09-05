@@ -1,0 +1,42 @@
+package MsgComDBMySQLDACd12;
+
+{$R *.res}
+{$R 'MsgDatabaseMySQLDAC.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'AidAim MsgCommunicator DAC for MySQL Database Module'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vclMsgComD12,
+  designide,
+  dbrtl,
+  vcl,
+  vcldb,
+  mySQLDAC12;
+
+contains
+  MsgDatabaseMySQLDACReg in 'MsgDatabaseMySQLDACReg.pas',
+  MsgDatabaseMySQLDAC in 'MsgDatabaseMySQLDAC.pas';
+
+end.

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="SQLMemTable">
+<HelpTOCNode Title="TSQLMemDataSet" Url="tsqlmemdataset.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemDatabase" Url="tacrdatabase.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemTable" Url="tsqlmemtable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemQuery" Url="tsqlmemquery.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemBatchMove" Url="tsqlmembatchmove.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemBlobStream" Url="tsqlmemblobstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemWideStringList" Url="tsqlmemwidestringlist.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TSQLMemForeignKeyDefs" Url="tacrforeignkeydefs.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

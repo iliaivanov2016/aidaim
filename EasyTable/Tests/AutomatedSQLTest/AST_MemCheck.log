@@ -1,0 +1,152 @@
+MemCheck version 2.75
+
+TOP 10 Leaks: begin
+Leak #0 User allocated memory (GetMem)
+	Size: 4576743
+	1 Occurence
+	call stack - 0 : (no debug info) Find error: 0000000C
+	call stack - 1 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@GetMaxFileSize Line 1864 Find error: 004E7824
+	call stack - 2 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 3 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA902
+	call stack - 4 : Module SingleFileSystem.pas Routine @Singlefilesystem@TSingleFileSystem@Create Line 2261 Find error: 004F0424
+	call stack - 5 :  Routine @System@@LStrSetLength Find error: 0040537F
+	call stack - 6 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 7 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA92B
+	call stack - 8 : Module SingleFileSystem.pas Routine @Singlefilesystem@TSingleFileSystem@Create Line 2261 Find error: 004F0424
+	call stack - 9 : Module ETblFileManage.pas Routine @Etblfilemanage@TSFSPlainFileSystem@Create Line 1541 Find error: 0052C8A4
+	call stack - 10 : Module ETblFileManage.pas Routine @Etblfilemanage@TPFSManager@GetPFSHandle Line 1797 Find error: 0052D05A
+	call stack - 11 :  Routine @Easytable@TEasyDatabaseManager@GetPFSHandle Find error: 005727E0
+	call stack - 12 :  Routine @Easytable@TEasyDatabaseManager@OpenSFSFile Find error: 0057199F
+	call stack - 13 :  Routine @Easytable@TEasyDatabaseManager@ConnectDatabase Find error: 00571C9B
+	call stack - 14 :  Routine @Easytable@TEasyDatabase@CreateHandle Find error: 00574453
+	call stack - 15 :  Routine @Easytable@TEasyDatabase@Open Find error: 00573E18
+	call stack - 16 : Module EasyTable.pas Routine @Easytable@TEasySession@DoOpenDatabase Line 3352 Find error: 0053664D
+	call stack - 17 :  Routine @Easytable@TEasyDataset@OpenDatabase Find error: 00551910
+	call stack - 18 :  Routine @Easytable@TEasyDataset@SetDBFlag Find error: 00550C4E
+	call stack - 19 :  Routine @Easytable@TEasyQuery@ExecSQL Find error: 00573769
+	call stack - 20 : Module uMain.pas Routine RunSQLSommand Line 901 Find error: 0066CA9A
+	call stack - 21 : Module uMain.pas(no debug info) Line 944 Find error: 0066CC3A
+	call stack - 22 : Module uMain.pas Routine @Umain@TfmMain@RunTests Line 434 Find error: 0066B471
+	call stack - 23 : Module uMain.pas(no debug info) Line 257 Find error: 0066AF45
+	call stack - 24 : Module Forms.pas Routine @Forms@TCustomForm@DoShow Line 2854 Find error: 00476D1B
+	call stack - 25 : Module Forms.pas Routine @Forms@TCustomForm@CMShowingChanged Line 4450 Find error: 0047A965
+	call stack - 26 : Module Controls.pas Routine @Controls@TControl@WndProc Line 4645 Find error: 00459A16
+
+Leak #1 User allocated memory (GetMem)
+	Size: 4561430
+	1 Occurence
+	call stack - 0 : (no debug info) Find error: 0000000C
+	call stack - 1 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@GetMaxFileSize Line 1864 Find error: 004E7824
+	call stack - 2 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 3 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA902
+	call stack - 4 : Module SingleFileSystem.pas Routine @Singlefilesystem@IsPasswordValid Line 4404 Find error: 004F13D9
+	call stack - 5 :  Routine @System@@LStrSetLength Find error: 0040537F
+	call stack - 6 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 7 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA92B
+	call stack - 8 : Module SingleFileSystem.pas Routine @Singlefilesystem@IsPasswordValid Line 4404 Find error: 004F13D9
+	call stack - 9 : Module SingleFileSystem.pas Routine @Singlefilesystem@TSingleFileSystem@Create Line 2256 Find error: 004F03BA
+	call stack - 10 : Module ETblFileManage.pas Routine @Etblfilemanage@TSFSPlainFileSystem@Create Line 1541 Find error: 0052C8A4
+	call stack - 11 : Module ETblFileManage.pas Routine @Etblfilemanage@TPFSManager@GetPFSHandle Line 1797 Find error: 0052D05A
+	call stack - 12 :  Routine @Easytable@TEasyDatabaseManager@GetPFSHandle Find error: 005727E0
+	call stack - 13 :  Routine @Easytable@TEasyDatabaseManager@OpenSFSFile Find error: 0057199F
+	call stack - 14 :  Routine @Easytable@TEasyDatabaseManager@ConnectDatabase Find error: 00571C9B
+	call stack - 15 :  Routine @Easytable@TEasyDatabase@CreateHandle Find error: 00574453
+	call stack - 16 :  Routine @Easytable@TEasyDatabase@Open Find error: 00573E18
+	call stack - 17 : Module EasyTable.pas Routine @Easytable@TEasySession@DoOpenDatabase Line 3352 Find error: 0053664D
+	call stack - 18 :  Routine @Easytable@TEasyDataset@OpenDatabase Find error: 00551910
+	call stack - 19 :  Routine @Easytable@TEasyDataset@SetDBFlag Find error: 00550C4E
+	call stack - 20 :  Routine @Easytable@TEasyQuery@ExecSQL Find error: 00573769
+	call stack - 21 : Module uMain.pas Routine RunSQLSommand Line 901 Find error: 0066CA9A
+	call stack - 22 : Module uMain.pas(no debug info) Line 944 Find error: 0066CC3A
+	call stack - 23 : Module uMain.pas Routine @Umain@TfmMain@RunTests Line 434 Find error: 0066B471
+	call stack - 24 : Module uMain.pas(no debug info) Line 257 Find error: 0066AF45
+	call stack - 25 : Module Forms.pas Routine @Forms@TCustomForm@DoShow Line 2854 Find error: 00476D1B
+	call stack - 26 : Module Forms.pas Routine @Forms@TCustomForm@CMShowingChanged Line 4450 Find error: 0047A965
+
+TOP 10 Leaks: end
+
+Total leak: 9138173 bytes
+
+
+*** MEMCHK: Blocks STILL allocated ***
+
+Leak #0 User allocated memory (GetMem)
+	Size: 4576743
+	1 Occurence
+	call stack - 0 : (no debug info) Find error: 0000000C
+	call stack - 1 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@GetMaxFileSize Line 1864 Find error: 004E7824
+	call stack - 2 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 3 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA902
+	call stack - 4 : Module SingleFileSystem.pas Routine @Singlefilesystem@TSingleFileSystem@Create Line 2261 Find error: 004F0424
+	call stack - 5 :  Routine @System@@LStrSetLength Find error: 0040537F
+	call stack - 6 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 7 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA92B
+	call stack - 8 : Module SingleFileSystem.pas Routine @Singlefilesystem@TSingleFileSystem@Create Line 2261 Find error: 004F0424
+	call stack - 9 : Module ETblFileManage.pas Routine @Etblfilemanage@TSFSPlainFileSystem@Create Line 1541 Find error: 0052C8A4
+	call stack - 10 : Module ETblFileManage.pas Routine @Etblfilemanage@TPFSManager@GetPFSHandle Line 1797 Find error: 0052D05A
+	call stack - 11 :  Routine @Easytable@TEasyDatabaseManager@GetPFSHandle Find error: 005727E0
+	call stack - 12 :  Routine @Easytable@TEasyDatabaseManager@OpenSFSFile Find error: 0057199F
+	call stack - 13 :  Routine @Easytable@TEasyDatabaseManager@ConnectDatabase Find error: 00571C9B
+	call stack - 14 :  Routine @Easytable@TEasyDatabase@CreateHandle Find error: 00574453
+	call stack - 15 :  Routine @Easytable@TEasyDatabase@Open Find error: 00573E18
+	call stack - 16 : Module EasyTable.pas Routine @Easytable@TEasySession@DoOpenDatabase Line 3352 Find error: 0053664D
+	call stack - 17 :  Routine @Easytable@TEasyDataset@OpenDatabase Find error: 00551910
+	call stack - 18 :  Routine @Easytable@TEasyDataset@SetDBFlag Find error: 00550C4E
+	call stack - 19 :  Routine @Easytable@TEasyQuery@ExecSQL Find error: 00573769
+	call stack - 20 : Module uMain.pas Routine RunSQLSommand Line 901 Find error: 0066CA9A
+	call stack - 21 : Module uMain.pas(no debug info) Line 944 Find error: 0066CC3A
+	call stack - 22 : Module uMain.pas Routine @Umain@TfmMain@RunTests Line 434 Find error: 0066B471
+	call stack - 23 : Module uMain.pas(no debug info) Line 257 Find error: 0066AF45
+	call stack - 24 : Module Forms.pas Routine @Forms@TCustomForm@DoShow Line 2854 Find error: 00476D1B
+	call stack - 25 : Module Forms.pas Routine @Forms@TCustomForm@CMShowingChanged Line 4450 Find error: 0047A965
+	call stack - 26 : Module Controls.pas Routine @Controls@TControl@WndProc Line 4645 Find error: 00459A16
+
+Leak #1 User allocated memory (GetMem)
+	Size: 4561430
+	1 Occurence
+	call stack - 0 : (no debug info) Find error: 0000000C
+	call stack - 1 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@GetMaxFileSize Line 1864 Find error: 004E7824
+	call stack - 2 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 3 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA902
+	call stack - 4 : Module SingleFileSystem.pas Routine @Singlefilesystem@IsPasswordValid Line 4404 Find error: 004F13D9
+	call stack - 5 :  Routine @System@@LStrSetLength Find error: 0040537F
+	call stack - 6 : Module SFSFileCtrl.pas Routine @Sfsfilectrl@TSFSHugeFile@Create Line 730 Find error: 004E5B70
+	call stack - 7 : Module SFSEngine.pas Routine @Sfsengine@TPageFileManager@Create Line 2288 Find error: 004EA92B
+	call stack - 8 : Module SingleFileSystem.pas Routine @Singlefilesystem@IsPasswordValid Line 4404 Find error: 004F13D9
+	call stack - 9 : Module SingleFileSystem.pas Routine @Singlefilesystem@TSingleFileSystem@Create Line 2256 Find error: 004F03BA
+	call stack - 10 : Module ETblFileManage.pas Routine @Etblfilemanage@TSFSPlainFileSystem@Create Line 1541 Find error: 0052C8A4
+	call stack - 11 : Module ETblFileManage.pas Routine @Etblfilemanage@TPFSManager@GetPFSHandle Line 1797 Find error: 0052D05A
+	call stack - 12 :  Routine @Easytable@TEasyDatabaseManager@GetPFSHandle Find error: 005727E0
+	call stack - 13 :  Routine @Easytable@TEasyDatabaseManager@OpenSFSFile Find error: 0057199F
+	call stack - 14 :  Routine @Easytable@TEasyDatabaseManager@ConnectDatabase Find error: 00571C9B
+	call stack - 15 :  Routine @Easytable@TEasyDatabase@CreateHandle Find error: 00574453
+	call stack - 16 :  Routine @Easytable@TEasyDatabase@Open Find error: 00573E18
+	call stack - 17 : Module EasyTable.pas Routine @Easytable@TEasySession@DoOpenDatabase Line 3352 Find error: 0053664D
+	call stack - 18 :  Routine @Easytable@TEasyDataset@OpenDatabase Find error: 00551910
+	call stack - 19 :  Routine @Easytable@TEasyDataset@SetDBFlag Find error: 00550C4E
+	call stack - 20 :  Routine @Easytable@TEasyQuery@ExecSQL Find error: 00573769
+	call stack - 21 : Module uMain.pas Routine RunSQLSommand Line 901 Find error: 0066CA9A
+	call stack - 22 : Module uMain.pas(no debug info) Line 944 Find error: 0066CC3A
+	call stack - 23 : Module uMain.pas Routine @Umain@TfmMain@RunTests Line 434 Find error: 0066B471
+	call stack - 24 : Module uMain.pas(no debug info) Line 257 Find error: 0066AF45
+	call stack - 25 : Module Forms.pas Routine @Forms@TCustomForm@DoShow Line 2854 Find error: 00476D1B
+	call stack - 26 : Module Forms.pas Routine @Forms@TCustomForm@CMShowingChanged Line 4450 Find error: 0047A965
+
+*** MEMCHK: End of allocated blocks ***
+
+
+*** MEMCHK: Chronological leak information ***
+
+* User allocated memory (GetMem) (Leak #1) Size: 4561430
+* User allocated memory (GetMem) (Leak #0) Size: 4576743
+
+*** MEMCHK: End of chronological leak information ***
+
+
+*** MEMCHK: Blocks written to after destruction ***
+
+	Bad blocks count: 0
+
+
+*** MEMCHK: End of blocks written to after destruction ***
+

@@ -1,0 +1,21 @@
+{DEFINE DEBUG_TRACE_THREAD_SYNC}
+{DEFINE DEBUG_TRACE_THREAD_SYNC_STATS}
+{DEFINE DEBUG_TRACE_InternalUnlockNested_FULL}
+{DEFINE DEBUG_TRACE_InternalUnlockSingle_FULL}
+
+{DEFINE DEBUG_TRACE_WaitAndLockForRead}
+{DEFINE DEBUG_TRACE_WaitAndLockForWrite}
+{DEFINE DEBUG_TRACE_Unlock}
+
+{DEFINE DEBUG_TRACE_InternalWaitAndLockForReadNested}
+{DEFINE DEBUG_TRACE_InternalWaitAndLockForReadSingle}
+{DEFINE DEBUG_TRACE_InternalWaitAndLockForWriteNested}
+{DEFINE DEBUG_TRACE_InternalWaitAndLockForWriteSingle}
+{DEFINE DEBUG_TRACE_InternalUnlockSingle}
+{DEFINE DEBUG_TRACE_InternalUnlockNested}
+
+{DEFINE DEBUG_TRACE_InternalWaitAndLockForReadSingle_FULL}
+{DEFINE DEBUG_TRACE_InternalWaitAndLockForWriteSingle_FULL}
+{DEFINE DEBUG_TRACE_InternalUnlockSingle_FULL}
+
+{$DEFINE DEBUG_TRACE_FULL_Single}

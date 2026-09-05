@@ -1,0 +1,6 @@
+:BASE SQLMTRef.hlp
+1 SQLMemTable
+2 TSQLMemTable=TSQLMemTable@SQLMTRef.hlp>Main
+2 TSQLMemQuery=TSQLMemQuery@SQLMTRef.hlp>Main
+2 TSQLMemBlobStream=TSQLMemBlobStream@SQLMTRef.hlp>Main
+2 TSQLMemDataSet=TSQLMemDataSet@SQLMTRef.hlp>Main

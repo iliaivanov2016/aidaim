@@ -1,0 +1,1 @@
+This folder contains demos for Delphi 2009 and higher - with Unicode String type.

@@ -1,0 +1,2 @@
+{$DEFINE DEBUG_TRACE_TACRObjectNameArray_Add}
+

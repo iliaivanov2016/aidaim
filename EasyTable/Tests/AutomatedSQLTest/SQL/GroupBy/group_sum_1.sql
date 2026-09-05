@@ -1,0 +1,1 @@
+SELECT SUM(FInteger) total FROM jt1 WHERE FInteger < 0

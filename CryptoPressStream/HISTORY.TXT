@@ -1,0 +1,211 @@
+CryptoPressStream: History of changes
+=====================================
+
+
+- version 21.00 (10/21/2025)
+  New features added: 
+    1. RAD Studio 13 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 20.00 (07/23/2025)
+  New features added: 
+    1. RAD Studio 12.3 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 19.00 (01/17/2024)
+  New features added: 
+    1. RAD Studio 12.0 Athens support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 18.00 (03/27/2023)
+  New features added: 
+    1. RAD Studio 11.3 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 17.00 (12/19/2022)
+  New features added: 
+    1. RAD Studio 11.2 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 16.00 (03/31/2022)
+  New features added: 
+    1. RAD Studio 11.1 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 15.00 (09/27/2021)
+  New features added: 
+    1. RAD Studio 11 Alexandria support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.4.2 Sydney rebuld with update 2 (Windows 32 bit and Windows 64 bit).
+
+
+- version 14.00 (06/30/2020)
+  New features added: 
+    1. RAD Studio 10.4 Sydney support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.3.3 Rio rebuld with update 3 (Windows 32 bit and Windows 64 bit).
+
+
+- version 13.00 (12/25/2018)
+  New features added: 
+    1. RAD Studio 10.3 Rio support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.2 Tokyo rebuilt with update 3.
+
+
+- version 12.00 (04/17/2017)
+  New features added: 
+    1. RAD Studio 10.2 Tokyo support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.1 Berlin rebuilt with update 2.
+
+
+- version 11.00 (06/17/2016)
+
+  New features:
+   1. RAD Studio 10.1 Berlin support added (Windows 32 bit and Windows 64 bit). 
+   2. Windows 64-bit platform support improved - component now enabled in form designer.
+
+
+- version 10.00 (09/08/2015)
+
+  New features:
+   1. RAD Studio 10 Seattle support added (Windows 32 bit and Windows 64 bit). 
+
+
+- version 9.00 (04/15/2015)
+
+  New features:
+   1. Delphi & C++ Builder XE8 support added (Windows 32 bit and Windows 64 bit only). 
+
+
+- version 8.00 (09/11/2014)
+
+  New features:
+   1. Delphi & C++ Builder XE7 support added (Windows 32 bit and Windows 64 bit only). 
+
+
+- version 7.00 (05/19/2014)
+
+  New features:
+   1. Delphi & C++ Builder XE6 support added (Windows 32 bit and Windows 64 bit only). 
+
+  Bugs fixed:
+   1. Problem with incorrect inline Assembler compiling under XE2 and newer RAD studio versions solved. 
+      Now checksum calculated in XE2+ exactly same as in prior versions.
+
+
+- version 6.00 (10/28/2013)
+
+  New features:
+   1. Delphi & C++ Builder XE5 support added (Windows 32 bit and Windows 64 bit only). 
+
+
+- version 5.00 (06/05/2013)
+
+  New features:
+   1. Delphi & C++ Builder XE4 support added.
+
+
+- version 4.00 (04/16/2013)
+
+  New features:
+   1. Delphi XE3 support added.
+   2. PPMI compression algorithm added in both 32-bit and 64-bit platforms (provides better compression rate than PPM). 
+       PPM variant I is used in 7zip. 
+       PPMI is supported in XE2 and XE3. It is switched off in old compilers.
+       Note: the data format is different under 64-bit and 32-bit.
+
+
+- version 3.10 (04/02/2013)
+
+  New features:
+   1. Delphi and C++ Builder XE2 (64-bit) support added (PPM compression is not supported in x64 platform). 
+
+- version 3.00 (01/30/2012)
+
+  New features:
+   1. Delphi and C++ Builder XE2 (32-bit) support added. 64-bit support will be available in v.3.10.
+
+
+- version 2.10 (08/16/2010)
+
+  New features:
+   1. TCPSStringFormat enum type extended: cpssfEscape value added. 
+   2. LoadFromFile,SaveToFile overloaded methods with Unicode FileName parameter were added to TCPSStream class.
+   3. Demos and component reference updated.
+   4. Support for Delphi and C++ Builder 2011 added.
+
+  Bugs fixed:
+   1. Bug in formatting functions was fixed.
+   2. All known issues are solved.
+
+
+- version 2.00 (03/12/2009)
+
+  New features:
+   1. Changes in encryption implementation, especially in block chaining and hashing.
+       ANY DATA ENCRYPTED BY VERSION 1 CANNOT BE DECRYPTED BY VERSION 2 AND LATER.
+       Demo RijndaelEncryption added.   
+   2. The performance of TCPSMemoryStream increased. Now it is faster then Delphi 7 TMemoryStream in 10-100 times.
+       Demo FastMemoryStream added.
+   3. File stream classes and TCPSManager now supports Unicode file names and path to temporary directory.
+       UnicodeFileName demo added.
+   4. New methods for saving and loading data were added to TCPSStream:
+       - SaveData
+       - LoadData
+       - SaveShortString
+       - LoadShortString
+       - SaveAnsiString
+       - LoadAnsiString
+       - SaveWideString
+       - LoadWideString
+       - SaveString
+       - LoadString
+       - SaveBoolean
+       - LoadBoolean
+       - SaveInteger
+       -  LoadInteger
+       - SaveCardinal
+       - LoadCardinal
+       - SaveInt64
+       - LoadInt64
+       LoadSave demo was added.
+   5. Property Eof added to TCPSStream.
+   6. Functions IsStreamCPSStream and IsStreamEncryptedCPSStream were added to CPSMain unit.
+   7. TCPSCryptoParamsEditor class updated - now it accepts initial vectors of any length.
+       InitVectorSize property added.
+   8. CPSGenerateRandomBuffer changed in CPSCrypto unit - overloaded method added with parameters for setting seed 
+       generated by human input. It allows to generate unpredictable random data.
+   9. CompressBuffer and DecompressBuffer methods of TCPSManager were modified.
+        SkipBufferHeader parameter added - it allows to get pure compressed or encrypted data.
+   10. Network demo added. Shows how to send encrypted and compressed data.
+   11. Documentation updated.
+
+- version 1.30 (10/09/2008)
+
+  New features:
+    1. Demos for Delphi 2009 and C++ Builder 2009 were added.
+    2. CurrentVersion property added to TCPSManager component.
+
+  Bugs fixed:
+    1. All bugs in File demo were fixed (decompress button event handler, captions, file sizes).
+
+
+- version 1.20 (12/12/2006)
+
+  Bugs fixed:
+    1. MaxKeySize check is fixed to allow 56 bytes keys.
+
+
+- version 1.10 (12/20/2005)
+
+  New features:
+    1. New demo ManyFiles was added. It shows how to create archives from many files
+       using CryptoPressStream.
+    2. Some demos were ported to C++ Builder 4,5,6 and 2006.
+    3. Properties Operation, ProgressOperation were added to TCPSStream.
+  Bugs fixed:
+    1. Bug in TCPSFileStream.Create was fixed. Now it works in Windows 98.
+    2. Bug in TCPSMemoryStream.Create was fixed. Now it can be used with 
+       CPSManager component safely.
+    3. Bugs with progress indication were fixed.
+    4. Problem with large files (> 2 Gb) without compression was solved.
+
+- version 1.00 (11/11/2004)

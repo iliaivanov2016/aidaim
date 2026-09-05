@@ -1,0 +1,3 @@
+All demos adapted for using in Delphi and C++ Builder 2009 are located in folders
+Delphi 2009 and C++ Builder 2009. 
+All other demos cannot be used there without modifications.

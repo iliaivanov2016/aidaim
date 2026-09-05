@@ -1,0 +1,4 @@
+All demos adapted for using in Delphi and C++ Builder 2009 and higher (Unicode strings) are located in folders
+Delphi 2009+ and C++ Builder 2009, C++ Builder2010. 
+
+All other demos cannot be used there without modifications, except those that have included ver.inc file.

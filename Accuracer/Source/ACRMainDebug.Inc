@@ -1,0 +1,10 @@
+{DEFINE DEBUG_TRACE_TACRTable_CreateTable}
+{DEFINE DEBUG_TRACE_TACRLocalCursor_CreateTable}
+{DEFINE DEBUG_TRACE_TACRDataset_SetDBFlag}
+{DEFINE DEBUG_TRACE_TACRDataset_OpenDatabase}
+{DEFINE DEBUG_TRACE_TACRSession_DoOpenDatabase}
+{DEFINE DEBUG_TRACE_TACRDatabase_Open}
+{$DEFINE DEBUG_TRACE_TACRDataSet_GetRecord}
+
+
+

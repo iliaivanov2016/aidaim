@@ -1,0 +1,1 @@
+select distinct FInteger from jt1 order by FInteger desc

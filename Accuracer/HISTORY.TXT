@@ -1,0 +1,1310 @@
+Accuracer: History of changes
+===============================
+
+- version 24.00 (10/21/2025)
+  New features added: 
+    1. RAD Studio 13 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 23.00 (07/23/2025)
+  New features added: 
+    1. RAD Studio 12.3 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 22.00 (01/17/2024)
+  New features added: 
+    1. RAD Studio 12.0 Athens support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 21.00 (03/27/2023)
+  New features added: 
+    1. RAD Studio 11.3 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 20.00 (12/19/2022)
+  New features added: 
+    1. RAD Studio 11.2 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 19.00 (03/31/2022)
+  New features added: 
+    1. RAD Studio 11.1 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 18.00 (09/27/2021)
+  New features added: 
+    1. RAD Studio 11 Alexandria support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.4.2 Sydney rebuld with update 2 (Windows 32 bit and Windows 64 bit).
+
+- version 17.00 (06/30/2020)
+  New features added: 
+    1. RAD Studio 10.4 Sydney support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.3.3 Rio rebuld with update 3 (Windows 32 bit and Windows 64 bit).
+
+
+- version 16.00 (12/25/2018)
+  New features added: 
+    1. RAD Studio 10.3 Rio support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.2 Tokyo rebuld with update 3 (Windows 32 bit and Windows 64 bit).
+
+
+- version 15.00 (04/17/2017)
+  New features added: 
+    1. RAD Studio 10.2 Tokyo support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.1 Berlin rebuilt with update 2.
+
+
+- version 14.00 (06/17/2016)
+  New features added: 
+    1. RAD Studio 10.1 Berlin support added (Windows 32 bit and Windows 64 bit).
+    2. Windows 64-bit platform support improved - components now enabled in form designer.
+
+
+- version 13.00 (09/08/2015)
+  New features added: 
+    1. RAD Studio 10 Seattle support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 12.10 (09/05/2015)
+  Bugs fixed:
+    1. Edit locking bug in local and file-server modes under Windows 64 bit platform was fixed.
+    2. Encryption issue with Rijndael 256 bit cipher under Windows 64 bit platform was fixed.
+    3. Problem with blob and memo fields under Windows 64 bit platform was fixed.
+
+- version 12.00 (04/16/2015)
+  New features added: 
+    1. RAD Studio XE8 support added.
+
+
+- version 11.20 (12/10/2014)
+
+  New features added: 
+  1. RAD Studio XE7 support improved.
+
+
+- version 11.10 (10/30/2014)
+  New features added: 
+    1. RAD Studio XE7 support essentially improved.
+
+  Bugs fixed:
+    1. Bookmark related problems in Rad Studio XE7 are solved.
+
+
+- version 11.00 (09/10/2014)
+  New features added: 
+    1. RAD Studio XE7 support added.
+
+- version 10.10 (07/10/2014)
+  Bugs fixed:
+    1. Bug with creating new disk databases was fixed.
+
+- version 10.00 (05/20/2014)
+  New features added: 
+    1. RAD Studio XE6 support added.
+
+- version 9.00 (12/19/2013)
+  New features added: 
+    1. RAD Studio XE5 support added.
+  Bugs fixed:
+    1. Problems with range check errors in encryption functions were solved.
+
+
+- version 8.00 (05/30/2013)
+  New features added: 
+    1. RAD Studio XE4 support added.
+
+
+- version 7.10 (05/29/2013)
+  Bugs fixed:
+    1. Problems with date, time and datetime values conversion in Delphi XE3 were solved.
+
+
+- version 7.00 (03/28/2013)
+  New features added: 
+    1. RAD Studio XE3 support added.
+    2. Limited support of x64 platform in XE2/XE3 added. See Readme_x64.txt
+    3. TCP/IP protocolo implemented. See updated utilities ACRManager and AccuracerDatabaseServer for example of use.
+        It is recommended to use server port 12008 for TCP and 12007 for UDP.
+        Client server mode is disabled in C++  Builder 5 and C++ Builder 6.
+
+  Bugs fixed:
+    1. Bug with incorrect calculation IsNull property on calculated and lookup fields is fixed.
+
+
+- version 6.00 Beta Version #2 (10/06/2011)
+  New features added: 
+    1. RAD Studio XE2 support added.
+
+  Bugs fixed:
+    1. Minor bugs in expressions evaluation were fixed.
+
+
+- version 6.00 Beta Version #1 (03/31/2011)
+
+  New features added: 
+    1. Views are fully supported (WITH cHECK OPTION). CREATE VIEW, DROP VIEW SQL statements added.
+       CreateView and DropView methods added to TACRDatabase.
+
+
+- version 5.90  (03/23/2011)
+
+  New features added: 
+    1. New SQL functions added:
+       - ACOS
+       - ASCII
+       - ASIN
+       - ATAN
+       - ATAN2
+       - CHR
+       - CONCAT 
+       - COS
+       - COT
+       - EXP
+       - LN, LOG
+       - LOG10
+       - PI
+       - REPEAT
+       - REPLACE
+       - SIN
+       - STDDEV 
+       - SQR
+       - SQRT
+       - TAN
+    2. Expressions parsing was essentially improved.
+    3. New SQL data types supported: GUID and NUMERIC (DECIMAL).
+    4. DIV synonym of the division operator added - same as /.
+    5. Property CaseInsensitive added to TACRDatabase and TACRDataset.
+    6. ACRManager updated - setting CaseInsensitive added.
+    7. CONSTRAINT keyword is now supported in DDL statements (NULL, NOT NULL, FOREIGN KEY).
+       
+  Bugs fixed:
+    1. Bug in concatenation of string and date-time expressions was fixed.
+    2. Problem with displaying joined fields from all tables in NATURAL JOIN and JOIN with USING was solved.
+    3. Problem with expression's aliases in some SELECT statments was solved.
+    4. Some minor bugs in parsing boolean expressions were fixed.
+    5. The problem with detection of the size of char expressions was solved.    
+    6. Bug in parsing of ORDER BY clause in UNION / EXCEPT / INTERSECT was fixed.
+    7. Some minor problems with WHERE and JOIN were solved.
+    8. Bug in shrinking algorithm was fixed.
+   
+
+- version 5.85  (02/18/2011)
+
+  New features added: 
+    1. Stored functions now supports DDL statements (CREATE TABLE, INSERT, etc.). 
+        New function InsertRecordToTelTable added to StoredFunctions.adb demo database.
+    2. Functions ISOWEEK, WEEK and DAYOFYEAR added, as well as corresponding operators of EXTRACT function.
+    3. CAST operator updated - CAST('str' AS CHAR(1)) will truncate string value to 1 symbol.
+
+  Bugs fixed:
+    1. Bug in execution of INSERT and UPDATE SQL statements with BLOB parameters in client-server mode was fixed.
+    2. Bug in compact and repair using TACRSession component was fixed.
+    3. Bug with incorrect detection of correlated subquery instead of uncorrelated subquery was fixed.
+    4. Problem with destroying nested stored functions was solved.
+
+
+- version 5.80  (12/30/2010)
+
+  New features added: 
+    1. COMMIT SQL command parsing was changed. If FLUSH keyword is specified after COMMIT it will flush OS file buffers.
+        By default COMMIT does not flush buffers. NOFLUSH keyword will be ignored, as it is the default value now.
+    2. SQL engine extended:
+       - EMPTY TABLE command added
+       - IF EXISTS predicate added to DROP TABLE, EMPTY TABLE
+       - IF NOT EXISTS predicate added to CREATE TABLE
+       - BOTH, LEADING, TRAILING support added to TRIM function
+       - CAST operator extended - now it supports size restriction on string data types, like Char(20)
+       - IFNULL function implemented as synonym of COALESCE. Thus you can use it with any number of expressions
+       - NULLIF function added
+       - ANY / SOME and ALL operators implemented for SQL statements with subqueries
+       - DATEADD function modified - added support for expressions for number parameter.
+    3. Client-server engine was optimized.
+
+  Bugs fixed:
+    1. Bug in sub-queries with IN, NOT IN operator when sub-query called from empty dataset.
+    2. Bug in TACRDataset.Locate  (field names parsing) was fixed.
+    3. Problem with executing live query with subquery on single table was solved.
+    4. All known problems with using disk engine in multi-threaded applications on machines with multi-core CPU were solved.
+    5. Bug in InternalCancel method of TACRDataset in client-server mode was fixed.
+    6. Problem with wrong data type detection in CASE and COALESCE was solved.
+    7. Bug in INSERT ... SELECT with expressions was fixed.
+    8. Problem in stored functions with string result type was solved.
+
+
+- version 5.70  (12/09/2010)
+
+  New features added: 
+    1. New demo MasterDetailRuntime added.
+    2. ACRManager utility updated - added displaying information about current line and column numbers in SQL editor.
+
+  Bugs fixed:
+    1. Bug with deleting tables is fixed.
+    2. Bug in evaluation of functions ROUND, COALESCE and their combinations was fixed.
+    3. Bugs in correlated queries with several conditions were fixed.
+    4. Problem with wrong parsing of simple form of CASE WHEN END was solved.
+    5. Bug in sub-queries with IN operator applied to empty dataset was fixed.
+    6. Bug with reading blob fields in client-server mode was fixed.
+    7. Bug with reading empty BLOB / Memo fields was fixed.
+    8. Problem with incorrect executing of NOT LIKE operator was solved.
+    9. Bug in LIKE operator applied to empty string was fixed. 
+   10. Bug in queries with CORRESPONDING BY option of UNION/EXCEPT/INTERSECT was fixed.
+
+
+- version 5.60  (11/12/2010)
+
+  New features added: 
+    1. SQL engine updated and optimized. Correlated subqueries are now supported in SELECT, UPDATE and DELETE statements.
+    2. SQL syntax extended:
+       - COALESCE function added
+       - CASE operator added         
+       - DATEADD and DATEDIFF functions added.
+    3. Client-server engine is made much more stable.   
+    4. Disk engine is made more stable and faster. It is recommended to repair all existing databases.
+    5. File-server performance and stability increased.
+    6. Disconnect method added to TACRServer.
+
+  Bugs fixed:
+    1. Problem with not closed connections in client-server in case of using wrong database settings were solved.
+    2. Problem with evaluation of calculated and lookup fields in client-server mode was solved.
+    3. All known bugs in stored functions were fixed.
+    4. All known bugs in uncorellated subqueries fixed.
+    5. Bug in TACRDatabase.MakeExeDatabase under Unicode Delphi versions (2009 and higher) was fixed.
+    6. All known bugs in boolean expressions fixed.
+    7. Problem with accessing BLOB fields from calculated fields was solved.
+    8. Bug in parsing + and - operators with date and time expressions was fixed.
+    9. Problem with connections to remote server with wrong settings was solved.
+  10. Problem with wrong priority detection of locks inside the transaction was solved.
+
+
+- version 5.50  (09/02/2010)
+
+  New features added: 
+    1. Client-server connection more stable and fast on large amount of data being transferred.
+    2. RAD Studio XE is now supported.
+    3. New demo added - RestructureTableMultiThread.
+    4. Transactions mechanism now sets IRW lock on any table read inside the transaction. 
+        Thus it is possible to run transactions that first read the table and later write changes.
+    5. UPDATE / DELETE SQL statements were optimized.
+
+  Bugs fixed:
+    1. Problem with connecting remote server under IDE was solved.
+    2. Problems with running multi-threaded applications on multi core CPU were solved.
+    3. Bug in detection of invalid database file (Accuracer v.1-4 for example) was fixed.
+    4. Bug in RepairDatabase with foreign keys (UseLowLevelTableAccess = True) was fixed.
+    5. Some bugs in parsing and executing stored functions were fixed.
+    6. Problem with building large joins on machines with low amount of RAM is solved.
+
+
+- version 5.40  (07/20/2010)
+
+  New features added: 
+    1. Encrypted databases performance essentially improved (up to 10 times).
+    2. Thread locking speed is essentially increased.
+    3. SELECT performance improved.
+
+  Bugs fixed:
+    1. The problem with the following type of queries was solved: SELECT Num,Num FROM Test GROUP BY Num.
+    2. Problems with calculated and lookup fields in Delphi / C++ Builder before RAD Studio 2006 were solved.
+    3. Bug with ApplyRange / ResetRange in client-server mode was fixed.
+
+
+- version 5.30  (06/21/2010)
+
+  New features added: 
+    1. Client-server connection is now much faster and stable. New client cache system implemented.
+    2. Support for string field size 0 is added - default value is 20 characters.
+    3. Delphi and C++ Builder 2010 compatibility improved.
+    4. Repair database improved - now it can fix incorrect table list header.
+
+  Bugs fixed:
+    1. Problem with lookup and calculated fields in RAD Studio 2010 was solved.
+    2. Some minor bugs in reopening parametric SQL statements were fixed.
+    3. Bug with loading memory tables in some cases was fixed.
+    4. Problem with opening queries in design-time was solved.
+
+
+- version 5.20  (04/29/2010)
+
+   New features added: 
+     1. Client-server connection was redesigned to make more stable.
+     2. File-server locking changed to LockFileEx if possible to avoid LockFile/UnlockFile bugs.
+     3. ACRRefresh procedure added to ACRMemory unit - it allows to call ProcessMessages when some
+         long operation is performed in the main thread. Used in clinet-server engine, SQL engine, repair table, export table to SQL.
+     4. ImportTable function updated - now it converts ftBCD to ftFloat to make easy import from some well known databases.
+     5. Protection from external data corruption was added.
+     6. ACR4Convert utlity updated - now it supports encrypted databases.
+
+  Bugs fixed:
+     1. Critical locking problem in file-server was solved - now the database file cannot be shrinked in case of locking failure.
+     2. Problem with setting auto-increment values is solved. Now it is possible to set it both in SQL and in AppendRecord, 
+        if new value is greater than current auto-inc counter then the counter will be automatically updated to avoid duplication.
+
+
+- version 5.11  (03/26/2010)
+
+   New features added: 
+     1. ChangesDetectionMultiUser demo was added.
+     2. ACRManager updated - error detection on opening database added.
+     3. ClearChache and FlushFileBuffers support in client-server mode was implemented.
+     4. Stored functions are supported in client-server.
+
+  Bugs fixed:
+     1. Problem with client-server connection from ACRManager to AccuracerDatabaseServer was solved.
+
+
+- version 5.10  (03/25/2010)
+
+   New features added: 
+     1. Stored functions support added (disk and memory databases).
+         New SQL statements and features:
+         - CREATE FUNCTION
+         - DROP FUNCTION
+         - ALTER FUNCTION
+         - EXECUTE FUNCTION
+         - IF ... THEN ... ELSE ...
+         - BEGIN ... END command blocks
+         - Operator := (Assign variable with expression value)
+         - Session variables - @VariableName
+         New methods in TACRDatabase:
+         - CreateStoredFunction
+         - DropStoredFunction
+         - AlterStoredFunction
+         - AlterStoredFunctionRename
+         - ExecuteStoredFunction
+         - FindStoredFunction
+         - GetStoredFunctions
+         - ExportStoredFunctionsToSQL
+         - IsStoredFunctionManagerExists
+     2. Client-server connection was totally rewritten - much faster and more stable.
+     3. Execution of SQL statements with outer JOIN was optimized.
+     4. Compatibility with C++ Builder improved - problem with closing projects built with run-time packages is solved.
+     5. All supported SQL data type names are defined as reserved words (Memo, WideMemo, Char, Varchar, Integer, etc.). 
+     6. C++ style single line comment ( // ) supported in SQL scripts:
+         // comment
+     7. Developer's guide and component reference are updated.
+     8. ACRManager updated - stored functions management added.
+
+  Bugs fixed:
+     1. Bug with renaming fields in joins was fixed.
+     2. Problem with sub-query parsing in FROM clause was solved.
+     3. Problem with WHERE clause on sub-query specified in FROM clause was solved.
+     4. Some bugs in SELECT statements with OUTER JOIN were fixed.
+     5. Bug in locking mechanism (update inside transaction) was fixed.
+     6. Bug in dropping foreign key in disk mode was fixed.
+     7. Problem with evaluation of expressions with many nested parenthesises was solved.
+     8. Bug in record locking was fixed.
+
+
+- version 5.01  (01/16/2010)
+
+   New features added: 
+     1. TACRDatabase.GetTablesInfo changed - now it sorts tables by name (ascending, case insensitive).
+     2. The rule of automatic naming of join fields was changed - table name (or alias) is added before the field name.
+     3. ACRManager utility updated - table list is sorted by table name (ascending, case insensitive).
+
+  Bugs fixed:
+     1. Memory leak in cache manager thread was fixed.
+     2. Bug with loading table states was fixed.
+     3. Bug in wide string and ansi string comparison was fixed (SQL engine, searching and filtering).
+     4. Bug in getting result fields in SELECT statements with UNION, EXCEPT or INTERSECT was fixed.
+     5. Problems with naming of join fields were solved.
+     6. Bug in evaluation of aggregate functions on expressions with NULL values was fixed.
+     7. Memory leak in GET TABLES parsing fixed.
+     8. Bug in parsing CREATE INDEX with  MEMORY keywrod was fixed.
+     9. Bug in setting SQL text with parameters at design time was fixed.
+    10. Bug in creating memory table at diesgn time was fixed.
+
+
+- version 5.00 Final (12/30/2009)
+
+   New features added: 
+     1. New SQL command added:
+         GET TABLES [Field Number] or SELECT * FROM [DatabaseName.]TABLES ORDER BY [Field Name] 
+         Returns read-only table with descriptions of all tables in the database.
+     2. All database objects name are Unicode (tables, fields, indexes, constraints, sequences).
+     3. Encryption library is updated to latest version. There are changes in initial vector settings (correct vector size is required).   
+     4. TACRCryptoParamsEditor class updated - InitVectorSize property added, SetInitVector and MakeRandomInitVector methods updated.
+     5. Cache management implemented.
+
+
+- version 5.00 Beta #4 (12/28/2009)
+
+   New features added: 
+     1. Table comments support added - Comment property in TACRTable (both memory and disk engines), 
+         COMMENT option in CREATE TABLE and ALTER TABLE.
+     2. The performance of parsing of SQL statments is greatly increased.
+ 
+  Bugs fixed:
+     1. Bug in fields mapping in SELECT with UNION, EXCEPT or INTERSECT was fixed.
+
+- version 5.00 Beta #3 (12/17/2009)
+
+  New features added: 
+    1. DATABASE FROMAT WAS CHANGED - INCOMPATIBLE WITH PREVIOUS BETA VERSIONS.
+        Tables list is optimized - load and save are much faster.
+    2. SELECT with UNION, EXCEPT and INTERSECT is optimized - up to 2 times faster. 
+        It can be used with fields that cannot be indexed - Memo, BLOB, Bytes, etc.
+
+  Bugs fixed:
+    1. Bug with storing SQL property of TACRQuery is fixed.
+    2. Bug in SELECT with DISTINCT option and Unicode string values was fixed.
+
+- version 5.00 Beta #2 (11/24/2009)
+
+  New features added: 
+    1. New class - TACRWideStringList. Can load and save both Unicode-16 and ANSI text files. 
+        Saves data in ANSI text or Unicode-16 text format (depends on whether Unicode characters exists in the SQL script or not).
+        Secure to use with encrypted databases.
+    2. SQL property of TACRQuery is now Unicode - TACRWideStringList class. Can be used in all supported IDE versions.
+    3. TACRDataset.Filter property also supports Unicode strings in Delphi 2009 and higher.
+    4. TableName property of TACRTable is now Unicode - TACRWideStringList class.
+    5. GetTableList of TACRDatabase and GetTableNames of TACRSession now uses TACRWideStringList instead of TStringList.
+    6. All export to SQL methods returns WideString instead of AnsiString.
+    7. New editor for SQL property of TACRQuery - uses TACRWideStringList class. 
+        Supports loading / saving Unicode SQL scripts in all IDE versions.
+    8. TACRQuery now has SQL designer (double-click in IDE).   
+    9. Designer for TACRDatabase updated - now it supports loading / saving Unicode SQL scripts directly using TACRWideStringList class.
+  10. ACR4Convert utility updated - log files path in parameter #4 support added. 
+  11. ACRManager utility updated, as TACRQuery.SQL.Text  is WideString now.
+  12. SQLConsole utility updated, TACRDatabase.GetTablesList method is used to get table names from current database.
+
+  Bugs fixed:
+    1. Problems with wrong file-server locking management were solved.
+    2. Problems with incorrect operation of Single User version (SU) were solved.
+    3. Stability in multi-threaded and multi-user environment essentially improved.
+    4. Bug in repair, restructure and import operations (incorrect auto-inc setting) was fixed.
+
+- version 5.00 Beta #1 (11/11/2009)
+
+  New features added: 
+    1. ACR4Convert utility updated - command line parameters added.
+    2. Component Reference updated - topic TACRDatabase.ReadOnly.
+
+  Bugs fixed:
+    1. Bug in SELECT with DISTINCT option was fixed.
+    2. Some problems in client-server connection were solved.
+    3. Problem with incorrect updating indexes without transactions was solved.
+    4. Problem with write error on locking tables in Read-Only databases was solved.
+    5. SOme bugs in client-server mode were fixed.
+
+- version 5.00 Beta #0 (11/04/2009)
+
+  New features added: 
+    1. Disk database engine was totally rewritten. Now it works in 4-5 times faster
+       then version 4 in local mode and more then in 100 times faster in file-server mode.
+       Client-server performance is also much higher, especially on table inserts.
+       Locking mechanism in file-server is now also redesigned so it significantly reduces
+       chances of lock failures by time-out.
+       IT IS RECOMMENDED TO RE-CREATE ALL TACRDATABASE COMPONENTS TO GET LATEST DEFAULT
+       SETTINGS OF VERSION 5 (OPTIONS AND LOCKPARAMS).
+    2. GetTablesInfo, GetTableState methods added to TACRDatabase. GetTableState method
+       added to TACRTable. Now each table has its own state that is incremented by
+       each table modification. Also the last modification date is saved to the table state.
+       The table state can be retrieved even when the table is closed or used by other sessions.
+    3. Each write operation to the disk table sets tffWriteFailed flag to the table state
+       before writing data and resets it after. So it is possible to detect
+       if failure occurred during last writing to each disk table.
+    4. TableName is now Unicode - WideString in all IDE versions.
+    5. Each table now has its creation date stored in the database header.
+       You can get it using GetTablesInfo method of TACRDatabase.
+    6. The transactions parallelism is significantly increased - now transactions
+       only uses the tables being read or written by the transaction.
+       Multiple transactions can read from same table at same time.
+       Only single transaction can modify data in the table, all other sessions 
+       can only read last committed data.
+    7. Tables list performance is essentially increased that allows to create and 
+       to check table existence in many times faster.
+    8. FreeSpaceManager is totally rewritten. It now works in many times faster, especially
+       in file-server mode.
+    9. Cache system is completely redesigned. Now it works much more optimal, stable and
+       provides higher parallelism in multi-threaded mode.
+   10. Auto-increment values are now calculated in TACRTable.Post 
+       (version 4 - in Insert/Append). It is much faster, especially in multi-user mode.
+   11. THE DATABASE FILE FORMAT IS CHANGED - IT IS TOTALLY INCOMPATIBLE WITH VERSION 4.
+       Also Version 5 final format will be INCOMPATIBLE WITH VERSION 5 BETA.
+       You can use ACR4Convert utility to move data BETWEEN VERSION 5 BETA AND VERSION 4.
+
+
+- version 4.97 (08/03/2009)
+
+  New features added: 
+    1. New functions added to SQL engine:
+       - CUMSUM (Mathematical)
+       - CUMPROD (Mathematical)
+       - GROUP_CONCAT (Aggregate)
+    2. Compatibility with Delphi and C++ Builder 2010 improved.
+
+  Bugs fixed:
+    1. Bug in uncorrelated sub-queries on same table was fixed.
+    2. Problem with case insensitive string comparison in filters and queries with IN operator was solved.
+       Now it compares strings case sensitively ('a' <> 'A').
+    3. Bug in parsing SQL statements with sub-queries was fixed.
+    4. Problems with DateTime conversions to floating point data types were solved.
+    5. Bugs in ALTER TABLE ADD ( ... ) were fixed.
+    6. Problem with incorrect field names handling in WHERE clause was solved.
+    7. SELECT with '*' wildcard and expressions now returns correct number of fields.
+
+- version 4.96 (06/22/2009)
+
+  New features added: 
+    1. Compatibility with third-party DB-aware controls improved.
+    2. Delphi and C++ Builder 2010 is now supported.
+
+  Bugs fixed:
+    1. Bug in TACRDataset.IsBookmarkValid method on read-only query results fixed.
+    2. Compatibility problem with Windows 9x solved.
+
+
+- version 4.95 (05/28/2009)
+
+  New features added: 
+    1. Multiple memory databases support. InMemory property added to TACRDatabase (must be set before DatabaseName).        
+    2. ChangesDetectionClientServer, TwoMemoryDatabases and LoadSaveMemoryDatabase 
+       demos were added.
+    3. SQL syntax extended:
+        - CREATE DATABASE
+        - DROP DATABASE
+    4. Null values support improved in filter expressions and SQL Statements:
+        - condition like Argument = NULL is treated as Argument IS NULL
+        - condition like Argument <> NULL is treated as Argument IS NOT NULL
+        - condition like StringArgument = "" is treated as StringArgument IS NULL
+        - condition like StringArgument <> "" is treated as StringArgument IS NOT NULL
+    5. Unicode demo was added to Delphi folder.
+    6. ClearDefinitions and AssignDefinitions methods were added to TACRDataset.
+    7. Documentation updated - both Component Reference and Developer's Guide.
+    8. The performance of insert record and save table operations as well as write to memory and temporary streams
+        essentially increased in memory and temporary tables (up to 10 times faster then version 4.90).
+    9. The performance of reading BLOB and Varchar fields essentially increased.
+   10. Database designer created - TACRDatabaseDesigner.
+
+  Bugs fixed:
+    1. Bugs in SELECT INTO and INSERT SELECT were fixed.
+    2. The problems with executing SQL queries on not existing tables were solved.
+    3. Bug with ignoring DESC and NOCASE options in PRIMARY KEY operator was fixed.
+    4. Bug in line numbering in SQL error messages was fixed.     
+    5. Problem with converting Unicode variant strings was solved (Delphi 2009 only).
+    6. Bug in Unicode strings comparison was fixed.
+
+- version 4.90 (03/30/2009)
+
+  New features added: 
+    1. Stability in multi-threaded applications essentially improved. The default value of DatabaseName property of TACRDatabase 
+        is now unique for each thread.      
+    2. Better stability in client-server mode achieved by new default settings of TACRServer and TACRDatabase.
+    3. ExportTableToSQL is now supported in client-server mode.
+    4. DatabaseFileNameUnicode, DatabaseFileNameAnsi properties were added to TACRDatabase. It is possible to use Unicode file names now.
+        The prototypes of following methods of TACRDatabase were changed to support Unicode file names:
+        - RenameDatabase
+        - CopyDatabase
+        - Backup
+        - Restore
+        - GetBackupInfo
+        - IsAccuracerBackupFile
+        - IsAccuracerBackupFileCryptoParamsValid
+    5. UnicodeDatabaseFileName demo added.
+    6. The type of ACRDefaultTempDir variable (ACRConst unit) was changed to WideString. 
+    7. SQLConsole utility updated - export table to SQL implemented.
+
+
+  Bugs fixed:
+    1. Problems with executing multi-threaded applications on multi-core processor were solved.
+    2. Bug in deleting records with indexes on VARCHAR fields was fixed.
+    3. Problem with destroying parameterized queries in client-server mode was solved.
+    4. Bug in SELECT statement with JOIN operator on string conditions was fixed.
+    5. Memory leak in TOBLOB SQL function fixed.
+
+- version 4.81 (02/20/2009)
+
+  New features added: 
+    1. Utilities ACRServer,DBTransfer,SQLConsole,ACRBackup,ACRRestore 
+       were adapted for Delphi 2009.
+    2. Unicode demo updated - SQL example added.
+
+  Bugs fixed:
+    1. Bug in editing records with BLOB or VARCHAR values was fixed.
+    2. Bug in opening table in multi-threaded environment was fixed.
+
+- version 4.80 (02/16/2009)
+
+  New features added: 
+    1. Locking mechanism was essentially improved in all modes - multi-threaded, file-server, client-server. 
+       Now it is more robust and fast.
+    2. Client-server connection layer is now much more stable. 
+    3. BDS 2009 compatibility improved.
+    4. DBTransfer utility updated - now it supports import / export with BDE aliases that requires login information.
+    5. ACRManager utility was modified. Many thanks to Pal Laurinyecz!
+    6. Unicode demo added.
+    7. Component Reference updated - load and save methods, SendMessage and OnReceive events in TACRDatabase and TACRServer.
+    8. Transactions locking type changed from ltS to ltIRW. Only single transaction now can be started on same table, 
+       other transactions will wait until first will be finished.
+    9. Stability in multi-threaded applications is greatly increased. The product works stable with 100 threads in
+       both disk and memory modes.
+   10. The performance of most of operations increased.
+
+  Bugs fixed:
+    1. SUBSTRING and TOSTRING functions fixed.
+    2. Problems with Unicode strings comparison were solved.
+    3. Bug in TACRBatchMove.Execute on tables with BLOB fields was fixed.
+    4. Problem in repair / restructuring table with some type of indexes was solved.
+    5. Problem with reusing pages on updating BLOB and Varchar data was solved.
+    6. Minor issues in TACRBatchMove and TACRTable.ImportTable were solved.
+
+- version 4.70 (09/18/2008)
+
+  New features added: 
+    1. The performance of UPDATE statements is essentially increased in most cases.
+    2. ClearCache method added to TACRDatabase.
+    3. The performance of parametrized queries essentially increased, 
+       especially in client-server mode.
+    4. GotoCurrent method added to TACRDataset - same as TTable.GotoCurrent.
+    5. Component Reference updated.
+    6. ACRManager utility was modified.
+
+  Bugs fixed:
+    1. Problem with executing scripts with '?' symbol generated by TClientDataset was solved.
+    2. Bug with sub-queries in FROM clause was fixed.
+    3. Bug with DISTINCT option on joined tables was fixed.
+    4. Problem with memory leaks in DELETE SQL statement on table with BLOB fields was solved.
+    5. Bugs with Prepare/Unprepare calls on parametrized queries were fixed.
+    6. Bug in SetRange call on table without records matching search criteria was fixed.
+
+
+- version 4.60 (08/08/2008)
+
+  IT IS RECOMMENDED TO CONVERT ALL EXISTING DATABASE FILES TO LATEST FORMAT!
+  YOU CAN USE TACRDATABASE.REPAIRDATABASE OR ACRMANAGER UTILITY FOR THAT.
+
+  New features added: 
+    1. The performance of SELECT statements on single table with RequestLive = false is essentially increased.
+    2. ACRManager utility improved. 
+       Display of query execution time and number of records added (hint on the Open Query / Execute SQL buttons).
+    3. The performance of DISTINCT option increased in 2-3 times on single table with 100,000 records.
+    4. DISTINCT on fields that cannot be indexed (like BLOB, MEMO) is now supported.
+    5. The ORDER BY implementation in UNION statement changed to standard - 
+       it is applied to the whole result dataset instead of last SELECT as it was before.
+    6. The performance in file-server mode essentially increased (up to 10 times on some tests).
+    7. Execution of SELECT INTO statements was optimized.
+    8. ACRManager utility was modified - progress for repairing table added.
+    9. SendMessage demo was added.
+
+  Bugs fixed:
+    1. Problem with executing large scripts with '?' symbol was solved.
+    2. Bugs in SELECT statement with OUTER JOIN (LEFT, FULL, RIGHT) and filter conditions were fixed.
+    3. Bugs in most of string functions with memo fields were fixed.
+    4. Problem with wrong result order when TOP option is combined with ORDER BY in SELECT statement was solved.    
+    5. Bug with inserting empty string to memo field using parameter was fixed.
+    6. Problems with evaluation of string expressions containing NULL values were solved.
+    7. Bugs in TOP option implementation were fixed.
+    8. Bugs in ORDER BY and ORDER BY INDEX implementation were fixed.
+    9. All known problems with SELECT INTO were solved.
+   10. Problems with extending the database file were solved.
+   11. Problems with evaluation of expressions on wide strings were solved.
+   12. Bug with AND conditions on expression field in SELECT statements with joins was fixed.
+   13. Bug in ApplyRange call with partially NULL key was fixed.
+
+- version 4.50 (05/21/2008)
+
+  New features added: 
+    1. Support for parameter names specified by question symbol '?' implemented.
+
+  Bugs fixed:
+    1, Bug with mathematical functions in combination with count(*) was fixed.
+    2. Problems with GROUP BY on memo field were solved.
+
+- version 4.40 (04/02/2008)
+
+  New features added: 
+    1. Sub-queries are now supported in FROM clause of SELECT statement.
+    2. New SQL functions were added:
+       - ABS
+       - CEILING, CEIL 
+       - FLOOR
+       - MOD
+       - POWER, POW
+       - RANDOM, RAND
+       - ROUND     
+       - SIGN
+       - TRUNCATE,TRUNC
+       - HEX
+    3. New SQL operators were added:
+       - %, mod (same as MOD(x,y))
+       - shl, << (shift left)
+       - shr, >> (shift right)
+       - xor, ^  (bitwise XOR)
+       - &  (bitwise AND)
+       - |  (bitwise OR)
+       - ~  (bitwise NOT)
+    4. Hex constants are now supported (both C++ and Delphi forms: 0xff and $FF)
+    5. C++ form of logical and comparison operators is now supported (!, &&, !=, ==).
+    6. The performance of most of SELECT statements in multi-user mode essentially increased.
+    7. The performance of in-memory tables in multi-threaded applications was essentially increased.
+       Parallelism level is now much higher.
+    8. The performance of disk tables in multi-threaded and multi-user applications was essentially increased.
+       Parallelism level is now much higher.
+    9. The algorithm of re-usage of empty pages inside database file was optimized.
+       It is recommended to compact/repair all existing databases for better performance.
+    10. Import compatibility with MS Access database was essentially improved.
+    11. Column and table names can be quoted by back quote `.
+    12. Developer's guide updated - the following topics were added / modified:
+        - Restructuring a table
+        - HEX constants
+        - Naming conventions
+        - Using parameters
+        - Operators
+        - Functions
+    13. Demo scripts were added to SQLConsole\SQL: Random.sql, Random_0_1.sql
+
+  Bugs fixed:
+    1. Bug with foreign keys and primary keys handling inside transaction was fixed.
+    2. Bug with OnFilterRecord and GetWideMemoField was fixed.
+    3. Bug on destroying in-memory table component in multi-threaded applications was fixed.  
+    4. The problem with extending the database file was solved.
+    5. The bug in parsing parameter names in quotes (',") was fixed.
+    6. Problem with using TOBLOB function in INSERT / UPDATE statements with memo fields was solved.
+    7. Bug in comparison of memo field values was fixed.
+
+- version 4.30 (10/31/2007)
+
+  New features added: 
+    1. UpdateWithoutSQL demo added.
+    2. GetOptimalPageSize and GetDiskRecordSize methods were added to TACRDataset.
+    3. ACRManager utility was updated.
+    4. The speed of navigation by active index was increased in ~100 times.
+
+  Bugs fixed:
+    1. Bug in foreign key implementation with default update action was fixed.
+    2. Bug in SELECT satements returning not live result in client-server mode was fixed.
+    3. Bug in subquery containing quoted or bracketed strings was fixed.
+    4. All known memory leaks in client-server mode were eliminated.
+
+- version 4.20 (03/30/2007)
+
+  New features added: 
+    1. Client-server connection mechanism was essentially optimized.
+       Performance in client-server mode increased in 4-6 times, 
+       especially under Delphi 2006 and 2007.
+    2. SQL performance increased on most of frequently used queries.
+    3. SaveTablesToStream, SaveTablesToFile methods were added to TACRTable. 
+       Many thanks to Eric LAUNAY!
+    4. Parameter names in quotes ('," and `) are now supported.
+    5. ACRManager utility improved:
+     - SQL syntax highlighting added.
+     - Fields, indexes and foreign keys tabs added to show structure of the opened dataset.
+     - Create and restructure table form redesigned.
+     - RecNo / RecordCount display added for fields, indexes and foreign keys tables.
+     - Printing SQL script added.
+     - SetRecNo button added.
+    6. Transactions mechanism was essentially improved.
+    7. Search algoprithm for finding partially filled pages was re-designed.
+       Now Accuracer will use existing pages much better.
+    8. Documentation updated.
+
+  Bugs fixed:
+    1. Bug with SELECT statements with multiple conditions in WHERE clause and RequestLive set to True was fixed.
+    2. Bug with DELETE and UPDATE statements with multiple conditions in WHERE clause was fixed.
+    3. C++ Builder build problem (some wrong compiler defines) was solved.
+    4. Memory leak in Transactions demo was eliminated.
+    5. Problem with too high CPU usage in case of unexpected client termination in 
+       client-server mode was solved.
+    6. Problem with commit call in TACRBatchMove with UseTransaction set to false is solved.
+    7. Bug in SUM and AVG functions with NULL arguments was fixed.
+    8. Problem with lookup and calculated fields in client-server mode was solved.    
+    9. Problem with calling AddIndex, DeleteIndex, DeleteAllIndexes methods of TACRTable on 
+       table opened in shared mode (Exclusive = false) was solved. 
+       Now exception is raised to prevent such incorrect operation. 
+       Exclusive property must be set to true before calling these methods.
+   10. Bug with LENGTH function on wide strings fixed.
+
+- version 4.10 (10/18/2006)
+
+  New features added: 
+    1. New SQL functions were added:
+       - ISNULL
+       - YEAR
+       - QUARTER
+       - MONTH
+       - DAY
+       - WEEKDAY
+       - DAYOFWEEK
+       - DAYNAME
+       - MONTHNAME
+       - HOUR
+       - MINUTE
+       - SECOND
+       - MSECOND
+       - EXTRACT 
+    2. MIN and MAX functions can be used with any data types, except BLOB types.
+    3. SQL functions description is modified in Developer's Guide.
+  Bugs fixed:
+    1. MaxKeySize check is fixed to allow 56 bytes keys.
+    2. Memory leak problem with executing SQL via ClientDataset was solved.
+       Many thanks to Gildas Dubois!
+    3. Problem with not existing databases in BDS 2006 at designing was solved.
+    4. Problems with OnEditError, OnDeleteError, OnPostError events of TACRTable were solved.
+    5. RestructureTable example was fixed in both Developer's Guide and Component Reference.
+    6. Bug with incorrect loading corrupted memory tables was fixed.
+    7. Bug in SQL with parameters of ftBytes type was fixed.
+
+- version 4.06 (05/18/2006)
+  Bugs fixed:
+    1. Problem with ftWideString fields in Borland Developer Studio 2006 was solved.
+    2. Bug with filters with NOT operator was fixed.
+    3. Problem with empty query result and blob fields in client-server mode was solved.
+    4. Bug with master-detail tables in client-server mode was fixed.
+
+- version 4.05 (03/06/2006)
+
+  New features added: 
+    1. SQL performance on some types of SELECT statements was optimized.
+  Bugs fixed:
+    1. Bug with some queries in client-server mode was fixed.
+    2. Bug in AddIndex on closed table was fixed.
+    3. Problem with opening forms with database components with Connected = true when
+       database cannot be opened is solved.
+    4. Problem with displaying icons of the components in C++ Builder 2006 is solved.
+    5. Problem with NO_WIN32_LEAN_AND_MEAN directive in C++ Builder is solved.
+
+- version 4.04 (12/23/2005)
+
+  New features added: 
+    1. Importing ftOraBLOB and ftOraClob field types - many thanks to Douglas Stites.
+  Bugs fixed:
+    1. Bug with joins on string fields was fixed.
+    2. Bugs in searching on memo and wide memo fields were fixed.
+    3. Bug with TSQLTimeStamp and TClientDataset was fixed.
+    4. Bugs in joins on multiple fields were fixed.
+
+- version 4.03 (08/05/2005)
+
+  New features added: 
+    1. New events (analogs of SQL triggers) were added to TACRServer:
+       BeforeInsertRecord, AfterInsertRecord, 
+       BeforeUpdateRecord, AfterUpdaterRecord,
+       BeforeDeleteRecord, AfterDeleteRecord, 
+       BeforeExecuteSQL, AfterExecuteSQL. 
+       Use these events on server side as analogs of similar events in TACRDatabase.
+    2. Compiled utilities are now removed from distributive and move to download page.
+    3. Client-server connection stability improved.
+       
+  Bugs fixed:
+    1. Some minor bugs with Union, Except, Intersect SQL operators were fixed.
+    2. Bug in TACRServer with loading encryption settings from configuration file fixed.
+    3. Bug with invalid property in dfm files of most of the Accuracer utilities was fixed.   
+    4. Bug with ToString function and formats with milliseconds ('zzz','z') was fixed.
+    5. Bug with closing tables in some cases was fixed.
+    6. Bug with DY format in TODATE and TOSTRING was fixed. 
+       SQL Reference updated - DY returns 3 symobols.
+    7. Bug with too much CPU usage by the TACRServer was fixed.
+    8. Bug in UNION sql statement was fixed.
+    9. Minor bug with foreign key types mismatch was fixed.
+   10. Bug in ACRManager utility with Create Table for (Required column values of TDBGrid)
+       was fixed.
+
+- version 4.02 (07/16/2005)
+
+  New features added: 
+    1. Milliseconds ('ZZZ','Z') are now supported in TODATE and TOSTRING SQL functions.
+    2. ClientDataset compatibility was improved.
+    3. OnError event was added to TACRDatabase and TACRServer. 
+    4. NetworkSettings property was added to TACRDatabase.ConnectParams and TACRServer.
+       Server configuration file format was changed.
+       It is recommended to delete old configruation file for Accuracer server 
+       before first start.
+    5. UseConfigFile property was added to TACRServer.
+    6. BeforeConnectionLost, AfterConnectionLost events were added to TACRDatabase.
+       This event occurs on network errors that forces automatic closing current 
+       connetion to the database server. 
+    7. Client-server connection stability was significantly improved (especially in WAN),
+       better error checking was implemented, automatic disconnect on network erros added.
+    8. Method AddForeignKey was added to TACRTable. ALTER TABLE ADD FOREIGN KEY was optimized.
+    9. ACRManager utility was enhanced: 
+       - Foreign keys tab was added to Create table / Restructure Table page
+       - Automatic detection of client-server connection lost and 
+         server shut down was added - now ACRManager automatically closes database.
+   10. New events (analogs of SQL triggers) were added to TACRDatabase:
+       BeforeInsertRecord, AfterInsertRecord, 
+       BeforeUpdateRecord, AfterUpdaterRecord,
+       BeforeDeleteRecord, AfterDeleteRecord, 
+       BeforeExecuteSQL, AfterExecuteSQL.
+       Logging demo (sample of use of these events) was added.
+       Note: SQL statements will not trigger mentioned above events in
+             case if database is remote (client-server mode, LocalDatabase = False).
+             Use OnSQL event of TACRServer instead.
+
+  Bugs fixed:
+    1. Bug with case insensitive string comparison was fixed.
+    2. Problems with opening in-memory tables at design-time were solved.
+    3. Bug with conversion of some data types was fixed.
+    4. Some problems with connection in client-server version were solved.
+    5. Bug with table renaming was fixed. ALTER TABLE ADD FOREIGN KEY now works fine.    
+    6. Bug with executing DELETE SQL statement on memory table was fixed.
+    7. Problem with loosing foreign keys in RepairTable, RestructureTable, RepairDatabase, 
+       CompactDatabase is solved now.    
+    8. Bug with SELECT executing in case when it returns empty result set 
+       in client-server mode was fixed.
+    9. Problems in RestructureTable, CreateTable, RenameTable when multiple foreign keys 
+       referencing same table exists were solved.
+   10. Bug with updating memo fields using UPDATE SQL statement was fixed.
+   11. Bug with DROP INDEX in ExportTableTOSQL and ExportDatabaseToSQL was fixed.
+   12. Bug with unlocking tables in case when some operation with locking failed was fixed.
+   13. Bug with SELECT executing (table locking error) in multi-threaded applications was fixed.
+   14. Minor bug with filter setting was fixed.
+   15. Some problems with not existing tables and databases at design time were solved.
+
+- version 4.01 (03/16/2005)
+
+  Bugs fixed:
+    1. Bug in searching and filtering on date, time and datetime fields was fixed.
+    2. Problem with foreign key checking was solved.
+
+- version 4.00 (12/28/2004)
+
+  New features added: 
+    1. Referential Integrity support (SQL'99 compliance) was added.
+    2. ForeignKeyDefs, RestructureForeignKeyDefs properties were added to TACRTable.
+    3. FOREIGN KEY support was added to SQL CREATE TABLE and ALTER TABLE statements.
+    4. DROP CONSTRAINT support was added to SQL statement ALTER TABLE.
+    5. CASCADE option was added to SQL statement DELETE TABLE.
+    6. Cascade parameter was added to DeleteTable method TACRTable.
+    7. Referential Integrity demo was added.
+    8. DeleteConstraint method was added to TACRTable.
+    9. Performance of insert, update and delete operations was improved.
+   10. Default client and server port numbers in client-server mode were changed.
+  Bugs fixed:
+    1. Some bugs with SELECT from single table were fixed.
+
+- version 3.50 (12/10/2004)
+
+  New features added: 
+    1. SQL performance was essentially increased on most types of queries.
+    2. ORDER BY clause now supports column numbers.
+    3. ImportTable speed from some databases was increased.
+    4. DBTransfer utility was updated. Now it can import indexes.
+    5. Parameters are now supported in sub-queries.
+    6. FindIndex method was added to TACRMemTable component.
+    7. Backup and Restore related methods and properties of TACRDatabase have been added 
+       to Component Reference.
+  Bugs fixed:
+    1. Bug with closing queries at design time in some cases was fixed.
+    2. Some bugs in SQL engine were fixed.
+    3. Problem with exporting float values in ExportToSQL was solved.
+    4. Bug with loading in-memory table was fixed.
+
+
+- version 3.40 (09/29/2004)
+
+  New features added: 
+    1. Export to SQL was implemented. 
+       ExportDatabaseToSQL method was added to TACRDatabase component.
+       ExportTableToSQL method was added to TACRTable component.
+       New demo ExportToSQL was added.
+    2. TOBLOB SQL function was added.
+    3. ACRManager utility was enhanced. Now it can export tables or whole database to SQL script.
+    4. RetryCount now can be set to the minimum value of 1 instead of 10.
+    5. ReadOnly database file detection was implemented.
+    6. SQL, filter and navigation performance was essentially increased.
+    7. DBTransfer utility was updated - creating new database option was added.
+    8. Backup and Restore database were implemented. 
+       BackupParams property was added to TACRDatabase.
+       Backup, Restore, GetBackupInfo, IsAccuracerBackupFile, 
+       IsAccuracerBackupFileCryptoParamsValid methods were added to TACRDatabase.
+    9. New utilities AccuracerBackup and AccuracerRestore were added.
+
+  Bugs fixed:
+    1. Bug in Refresh was fixed.    
+    2. Bug with filters on empty wide strings was fixed.
+    3. Bug with refreshing DBGrid after insert was fixed.
+    4. Bug with deleting records from memory table using SQL DELETE statement was fixed.
+    5. Bug with updating empty blob field in memory table was fixed.
+    6. Bug with inserting record after deleting record in memory table was fixed.
+    7. Bug with running SQL queries on read-only databases was fixed.
+    8. Some bugs with field names in SQL engine were fixed.
+    9. Bugs in Component Reference index were fixed (TACRDatabase and TACRServer).
+
+
+- version 3.30 (08/12/2004)
+
+  New features added: 
+    1. Network performance and reliability were essentially improved.
+    2. SQL, filters and navigation performance was essentially increased.
+    3. Compression and encryption of network traffic was implemented. 
+       CryptoParams property was added to TACRServer and TACRDatabase.ConnectionParams.
+       CompressionMode and CompressionAlgorithm properties were added to TACRDatabase.ConnectionParams.
+    4. Events OnServerStart and OnServerStop of TACRServer were renamed to 
+       AfterServerStart and AfterServerStop.
+    5. Events BeforeServerStart and BeforeServerStop were added to TACRServer.
+    6. Events BeforeConnect, AfterConnect, BeforeDisconnect, AfterDisconnect,
+       BeforeServerShutdown, AfterServerShutdown were added to TACRDatabase component.
+    7. Now server forces all connected clients to close databases when server is being stopped.
+    8. Aggregate functions COUNT, SUM and AVG now can be used with DISTINCT option.
+    9. Compatibility with third party DB-aware controls was improved.
+   10. All memory tables now can be saved to file or to stream by single call. 
+       Methods SaveAllTablesToStream, LoadAllTablesFromStream, SaveAllTablesToFile, LoadAllTablesFromFile 
+       were added to TACRTable component.
+ 
+  Bugs fixed:
+    1. Problem with autoinc values setting in Compact/Repair was solved.
+    2. Some bugs with SQL field naming were fixed.
+    3. Problem with temporary indexes uniquness was solved.
+    4. Some bugs in network layer (client-server edition) were fixed.
+       Now it works stable under IDE.
+    5. Problems with opening database with invalid settings at design-time were solved.
+    6. Problem with adding new field in Fields Editor on empty field list was solved.
+    7. Bug in AddIndex on closed table was fixed.
+    8. Bugs with filters on date, time or datetime fields were fixed.
+    9. Bug in CAST to string type implementation was fixed.
+   10. Bug in SELECT DISTINCT implementation was fixed. 
+
+- version 3.20 (06/29/2004)
+
+  New features added: 
+    1. Automatic reducing of the database file size in case of deleting data from the end of file.
+    2. Creating executable database files is now supported. 
+       Methods MakeExeDatabase, IsAccuracerDatabaseFile and 
+       RemoveDatabaseFromExe were added to TACRDatabase.
+    3. CopyDatabase method was added to TACRDatabase component.
+    4. New demos added: BlobsSQL, ExeDatabase, MergeDBExe, SQL, WebApp.
+    5. ACRManager utility was significantly enhanced.
+    6. SQL queries and filters now supports memo fields. MemoSearch demo was added.
+    7. SQL DDL performance was improved.
+    8. MemoryTableAllocBy property was added to TACRTable component.
+
+  Bugs fixed:
+    1. Problem with using live queries in transactions was solved. 
+    2. Bugs in ALTER TABLe and CREATE TABLe implementation were fixed.
+    3. Bug in CREATE INDEX on memory table was fixed.
+    4. Left, right and full outer joins now works corectly.   
+ 
+- version 3.10 (06/03/2004)
+
+  New features added: 
+    1. SetWideMemoField and GetWideMemoField methods were added to TACRDataset.
+    2. FlushFileBuffers method was added to TACRDatabase component.
+    3. IF NOT EXISTS option was added to CREATE INDEX SQL statement.
+    4. IF EXISTS option was added to DROP INDEX SQL statement.
+    5. NOCASE option was added to ORDER BY clause of SELECT SQL statement.
+    6. INDEX option was added to ORDER BY clause of SELECT SQL statement.
+    7. SQL performance was essentially increased.
+    8. Filters were optimized.
+    9. LockTable / UnlockTable methods were added to TACRDataset.
+   10. OnSQL event was added to TACRServer component. Now it is possible to change SQL queries on 
+       server side before executing and discard them if necessary.
+   11. Method SendMessage and events OnReceiveTextMessage, OnReceiveBinaryMessage and 
+       OnReceiveStreamMessage were added to TACRDatabase and TACRServer components. Now clients and 
+       server can send and receive custom messages.
+   12. Methods GetClients and IsClientConnected were added to TACRServer component. Now server can 
+       get information about all clients connected.
+
+
+  Bugs fixed:
+    1. SELECT statements now works correctly in trial version.
+    2. ClientDataset demo was fixed to be compatible with trial version.    
+    3. Filters on wide string fields now works correctly.
+    4. Now update records with indexes and filters works correctly.
+    5. Bug in TACRQuery.SetParamsFromCursor was fixed.
+    6. Some porblems with compatibility with third-party treeviews and grids were solved.
+
+
+- version 3.01 (04/28/2004)
+
+  New features added: 
+    1. SQL queries are now supported in Client-Server mode.
+    2. Network connection routines now have better compaitiblity with different versions of Delphi / C++ Builder.
+    3. Client-Server version now works under Delphi and C++ Builder 4, 5.
+    4. Network performance and reliability were essentially improved.
+    5. BLOB and Memo fields are now supported in Client-Server mode.
+
+
+- version 2.20 (03/31/2004)
+
+  New features added: 
+    1. New component TACRBatchMove (TBatchMove analog) was added. 
+    2. New method BatchMove was added to TACRTable component.
+    3. New demo BatchMove was added.
+    4. New method RepairTable was added to TACRTable component.
+    5. Alternative method of repairng table was implemented - 
+       UseLowLevelTableAccess option was added to RepairDatabase and RepairTable methods.
+    6. Filters performance was increased due to better choise of filtering algorithm.
+
+
+  Bugs fixed:
+    1. Bugs with using transactions via SQL were fixed.
+    2. Bug with insert empty strings to memo fields via parametrized queries was fixed.
+    3. Repair now fixes autoinc fields values on none-cycled autoinc fields.
+    4. Bug with checking for record locks was fixed (Edit method in TACRTable). 
+    5. LargeInt fields now can be accessed via SQL and in Master/Detail tables.
+    6. Problem with updating use counter on closing database in multi-thread mode was fixed.
+    7. Bug with range check error on database files > 2 Gb was fixed.
+    8. SQL function POS now returns 0 if one of its arguments is NULL.
+    9. Bug with not optimal choosing of the search algorithm was fixed.
+   10. Bug with reading from locked byte in the page header was fixed 
+       (Error 10474 during the modification of same table by multiple applications).
+   11. Bug with deleting record on filtered and indexed in-memory table was fixed.
+   12. Problems with live queries and table modification using transactions in single-user mode 
+       were fixed.
+   13. Bug with setting IndexName property of TACRTable to empty string was fixed.
+   14. OnFilterRecord now have True as a default value for Accept parameter.
+   15. Problems with record positioning after refreshing filtered dataset were solved. 
+
+
+- version 3.00 Alpha (03/12/2004)
+
+  New features added: 
+    1.  Client-Server support was added. Read ClientServer.txt for more information.
+    2.  New component TACRServer was added.
+    3.  New utility AccuracerDatabaseServer was added. 
+    4.  New properties ConnectionParams and LocalDatabase were added to 
+        TACRDatabase component.
+
+
+- version 2.10 (02/11/2004)
+
+  New features added: 
+    1.  Uncorrelated subqueries is now supported. 
+        See scripts in Utils\Bin\SQLConsole\SQL\SubQuery folder for examples.
+        Also read SELECT Statement topic in Developer's Guide to learn more about it.
+    2.  SQL operator IN now can be used with subquery.
+    3.  SQL operator EXISTS was added.
+    4.  The speed of loading memory tables from file was essentially increased.
+    5.  Properties FormatVersion, TotalPageCount, FreePageCount, UsedPageCount,
+        Density were added to TACRDatabase component.
+    6.  ACRManager was enchanced. Now it provides some statistic about opened database file,
+        like size empty space, size of used pages, format version.
+    7.  Demos AuotInc, DefaultMinMax, Compression, CSVImport and RaveReport were added.
+    8.  SELECT DISTINCT performance on queries from single table was essentially increased.
+    9.  Filter and searching speed was essentially increased. 
+    10. Developer's Guide was enhanced. 
+
+
+
+  Bugs fixed:
+    1. Bug with loosing some of database options during 
+       RepairDatabase / CompactDatabase was fixed.
+    2. Bug with not saving compression parameters for varchar fields was fixed.
+       Repair your old database files to convert them to new format if there was 
+       varchar or wide varchar fields in at least one of the tables. 
+    3. Problem with not using a default values on tables without autoincrement fields 
+       was solved.
+    4. Bug with reading large compressed varchar values was fixed.
+    
+
+- version 2.00 (02/02/2004)
+
+  New features added: 
+    1. Transactions support was added. See Transactions topic in Developer's Guide and 
+       Transactions demo.
+    2. SQL statements START TRANSACTION, COMMIT, ROLLBACK was implemented.
+    3. Performance was greatly increased (in 2-10 times), 
+       especially in excluisve mode and in transactions.
+    4. Trial limitations was changed - see Trial Limitations topic in Developer's Guide.
+    5. ChangeDatabaseSettings method was added to TACRDatabase component.
+    6. ACRManager utility was improved - autoinc settings added, borrow structure 
+       was implemented. CopyTables now works with ecnrypted databases. 
+       Now ACRManager can change settings of existing database file.
+    7. SQLConsole now can create and open encrypted databases.
+    8. Developer's Guide was essentially enchanced, new topics about
+       multi-user and multi-thread support, transactions, varchar fields were added.
+   
+  Bugs fixed:
+    1. Bug in adding and deleting pages with small page size (< 4096 bytes) was fixed.
+    2. Bug with opening a database file at design time via TACRDatabase component placed on
+       text form was fixed.
+    3. Problem with removing temporary files is solved. Now you can set also 
+       path to temporary directory using variable ACRDefaultTempDir in unit ACRConst.
+    4. Bug in SetRecNo method of TACRDataset was fixed. Now RecNo is set correctly when 
+       some DB controls are connected to the table.
+    
+
+- version 1.40 (01/14/2004)
+
+  New features added: 
+    1. New locking mechanism was implemented. Performance was greatly increased, 
+       especially in multi-user and  multi-thread environments. 
+       New mechanism is much more stable than its ancestor.
+    2. Insert and edit record now works much faster.
+
+  Bugs fixed:
+    1. Bug with invalid memo and blob fields settings in 
+       SELECT statement was fixed.
+    2. Bug with invalid filling of the FAdvIndexDefs property was fixed. 
+       Now RepairDatabase works perfectly on tables with indexes.
+    3. Bug with closing queries with ORDER BY statement was fixed.
+    4. Bug with invalid record position after Insert and Edit on
+       filtered dataset was fixed.
+    5. Bug with invalid TACRQuery.RowsAffected value after executing UPDATE statement
+       with WHERE cluase on one of the fields specified in SET clause was fixed.
+    6. Bug with loosing encryption parameters of the database file during the repair 
+       process was fixed.    
+    7. Bug with encrypted database containing indexed tables was fixed.
+    8. Problem with unique temporary index names was solved.
+    9. Bug with edit after cancel on the fields table in ACRManager utility was solved.
+   10. Problem with storing current record position in TACRDataset.BookmarkValid method 
+       was solved.
+   11. Bug with parameters implementation in TACRQuery was fixed.
+   12. Bug in JPEG demo was fixed.
+   13. Bug in filters and SELECT statements with multiple AND operators was fixed.
+
+- version 1.34 (12/11/2003)
+
+  New features added: 
+    1. CompactDatabase and RepairDatabase methods were added to TACRDatabase component.
+    2. OnProgress and OnTableProgress event was added to TACRDatabase component.
+    3. ACRManager utility was essentially enhanced. New features:
+       - PageSize, MaxSessionCount and Encryption settings for the database file;
+       - Default, Minimum and Maximum values for the fields in create table or restructure table;
+       - BLOB and Varchar compression settings in create table or restructure table;
+       - progress indication in all long operations;
+       - CompactDatabase and RepairDatabase added;
+    4. SQL scripts parsing and executing was optimized, 
+       memory usage was essentially decreased.
+    5. OnProgress event was added to TACRTable component.
+    6. ImportTable method now converts all string fields from none-Accuracer tables 
+as fixed length char fields, while previous version made a varchar fields for them.
+
+  Bugs fixed:
+    1. Bug in queries with WHERE clause and specified field list was fixed.
+    2. Bug in ACRManager with creating a table after restructuring was fixed.
+
+- version 1.33 (11/29/2003)
+
+  New features added: 
+    1. New methods in TACRDatabase component IsDatabaseEncyrpted, IsDatabaseEncyrptedByPassword, 
+       IsCryptoParamsValid was added. Now you can use them for safe detection of database encryption.
+
+  Bugs fixed:
+    1. Bug with inserting Unicode string values > 8 Kb length was fixed.
+   
+
+- version 1.32 (11/27/2003)
+
+  Bugs fixed:
+    1. Bug with time, date and datetime fields access by ClientDataset was fixed.
+    2. Some bugs with table locks were fixed.
+    3. Bug with opening database file that has been opened in IDE was fixed.
+
+- version 1.31 (11/22/2003)
+
+  Bugs fixed:
+    1. Bug with executing SELECT statements in Single-User mode (SU Std version) was fixed.
+    2. Bug with AutoIncLargeInt field type implementation was fixed.
+
+- version 1.30 (11/12/2003)
+
+  New features added: 
+    1. Performance was greatly increased both in single-user and multi-user modes.
+    2. Multi-Thread, ClientDataset and EncryptedDB demos were added.
+    3. IProvider interface support was implemented. Now you can access TACRTable and 
+       TACRQuery components via TClientDataset.
+    4. Database file format has been changed.
+    5. Database encryption was implemented. 
+    6. Documentation was improved.
+
+  Bugs fixed:
+    1. Bugs with editing / deleting records in multi-user mode was fixed.
+    2. Multi-Thread access is now working correctly.
+    3. Some bugs in indexes were fixed.
+    4. Some bugs in SQL implementation were fixed.
+
+
+- version 1.20 Beta (10/23/2003)
+

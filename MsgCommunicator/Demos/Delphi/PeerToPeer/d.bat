@@ -1,0 +1,1 @@
+del msg_*.txt

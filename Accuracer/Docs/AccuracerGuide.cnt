@@ -1,0 +1,162 @@
+:TITLE Accuracer Developer's Guide
+:BASE AccuracerGuide.hlp
+1 Accuracer Developer's Guide
+2 Introduction=Introduction@AccuracerGuide.hlp
+2 Features Overview=Features_Overview@AccuracerGuide.hlp
+2 Getting Help from Technical Support=Getting_Help_from_Technical_Su@AccuracerGuide.hlp
+2 How to Buy=How_to_Buy@AccuracerGuide.hlp
+2 Working with Tables
+3 Creating a database file=Creatingadatabasefile@AccuracerGuide.hlp
+3 Setting up a table and database components=Setting_up_a_table_component@AccuracerGuide.hlp
+3 Creating a table=Creating_a_table@AccuracerGuide.hlp
+3 Opening and closing a table=Opening_and_closing_a_table@AccuracerGuide.hlp
+3 Navigating tables=Navigating_tables@AccuracerGuide.hlp
+3 Filtering records=Filtering_records@AccuracerGuide.hlp
+3 Searching records=Searching_records@AccuracerGuide.hlp
+3 Sorting records=Sorting_records@AccuracerGuide.hlp
+3 BLOB fields use=BLOB_fields_use@AccuracerGuide.hlp
+3 BLOB and Varchar fields=BLOB_and_varchar@AccuracerGuide.hlp
+2 Advanced Operations with Tables
+3 Restructuring a table=Restructuring_a_table@AccuracerGuide.hlp
+2 SQL Reference
+3 Overview=Overview@AccuracerGuide.hlp
+3 Naming conventions=Naming_conventions@AccuracerGuide.hlp
+3 Reserved words=Reserved_words@AccuracerGuide.hlp
+3 Using parameters=Using_parameters@AccuracerGuide.hlp
+3 Operators=Operators@AccuracerGuide.hlp
+3 CASE Operator=CASE_Operator@AccuracerGuide.hlp
+3 HEX constants=HEX_constants@AccuracerGuide.hlp
+3 Comments=Comments@AccuracerGuide.hlp
+3 Functions
+4 Functions=Functions@AccuracerGuide.hlp
+4 Aggregate Functions
+5 Aggregate Functions=Aggregate_Functions@AccuracerGuide.hlp
+5 AVG Function=AVG_Function@AccuracerGuide.hlp
+5 COUNT Function=COUNT_Function@AccuracerGuide.hlp
+5 GROUP_CONCAT Function=GROUP_CONCAT_Function@AccuracerGuide.hlp
+5 MIN Function=MIN_Function@AccuracerGuide.hlp
+5 MAX Function=MAX_Function@AccuracerGuide.hlp
+5 SUM Function=SUM_Function@AccuracerGuide.hlp
+5 STDDEV Function=STDDEV_Function@AccuracerGuide.hlp
+4 Date and Time Functions
+5 Date and Time Functions=Date_and_Time_Functions@AccuracerGuide.hlp
+5 CURRENT_DATE Function=CURRENT_DATE_Function@AccuracerGuide.hlp
+5 CURRENT_TIME Function=CURRENT_TIME_Function@AccuracerGuide.hlp
+5 CURRENT_TIMESTAMP,  NOW AND SYSDATE Functions=CURRENT_TIMESTAMP_NOW_SYSDATE_Functions@AccuracerGuide.hlp
+5 DATEADD Function=DATEADD_Function@AccuracerGuide.hlp
+5 DATEDIFF Function=DATEDIFF_Function@AccuracerGuide.hlp
+5 DAY Function=DAY_Function@AccuracerGuide.hlp
+5 DAYNAME Function=DAYNAME_Function@AccuracerGuide.hlp
+5 DAYOFWEEK Function=DAYOFWEEK_Function@AccuracerGuide.hlp
+5 DAYOFYEAR Function=DAYOFYEAR_Function@AccuracerGuide.hlp
+5 EXTRACT Function=EXTRACT_Function@AccuracerGuide.hlp
+5 HOUR Function=HOUR_Function@AccuracerGuide.hlp
+5 ISOWEEK Function=ISOWEEK_Function@AccuracerGuide.hlp
+5 MINUTE Function=MINUTE_Function@AccuracerGuide.hlp
+5 MONTH Function=MONTH_Function@AccuracerGuide.hlp
+5 MONTHNAME Function=MONTHNAME_Function@AccuracerGuide.hlp
+5 MSECOND Function=MSECOND_Function@AccuracerGuide.hlp
+5 QUARTER Function=QUARTER_Function@AccuracerGuide.hlp
+5 SECOND Function=SECOND_Function@AccuracerGuide.hlp
+5 TODATE Function=TODATE_Function@AccuracerGuide.hlp
+5 TOSTRING Function=TOSTRING_Function@AccuracerGuide.hlp
+5 WEEK Function=WEEK_Function@AccuracerGuide.hlp
+5 WEEKDAY Function=WEEKDAY_Function@AccuracerGuide.hlp
+5 YEAR Function=YEAR_Function@AccuracerGuide.hlp
+4 Miscellaneous Functions
+5 Miscellaneous Functions=Miscellaneous_Functions@AccuracerGuide.hlp
+5 COALESCE Function=COALESCE_Function@AccuracerGuide.hlp
+5 ISNULL Function=ISNULL_Function@AccuracerGuide.hlp
+5 LASTAUTOINC Function=LASTAUTOINC_Function@AccuracerGuide.hlp
+5 NULLIF Function=NULLIF_Function@AccuracerGuide.hlp
+4 Mathematical Functions
+5 Mathematical Functions=Mathematical_Functions@AccuracerGuide.hlp
+5 ABS Function=Abs_Function@AccuracerGuide.hlp
+5 ACOS Function=ACOS_Function@AccuracerGuide.hlp
+5 ASIN Function=ASIN_Function@AccuracerGuide.hlp
+5 ATAN Function =ATAN_Function@AccuracerGuide.hlp
+5 ATAN2 Function=ATAN2_Function@AccuracerGuide.hlp
+5 CEILING Function=CEILING_Function@AccuracerGuide.hlp
+5 COS Function=COS_Function@AccuracerGuide.hlp
+5 COT Function=COT_Function@AccuracerGuide.hlp
+5 CUMPROD Function=CUMPROD_Function@AccuracerGuide.hlp
+5 CUMSUM Function=CUMSUM_Function@AccuracerGuide.hlp
+5 DEGREES Function=DEGREES_Function@AccuracerGuide.hlp
+5 EXP Function=EXP_Function@AccuracerGuide.hlp
+5 FLOOR Function=FLOOR_Function@AccuracerGuide.hlp
+5 HEX Function=HEX_Function@AccuracerGuide.hlp
+5 LOG Function=LOG_Function@AccuracerGuide.hlp
+5 MOD Function=MOD_Function@AccuracerGuide.hlp
+5 PI Function=PI_Function@AccuracerGuide.hlp
+5 POWER Function=POWER_Function@AccuracerGuide.hlp
+5 RADIANS Function=RADIANS_Function@AccuracerGuide.hlp
+5 RANDOM Function=RAND_Function@AccuracerGuide.hlp
+5 ROUND Function=ROUND_Function@AccuracerGuide.hlp
+5 SIGN Function=Sign_Function@AccuracerGuide.hlp
+5 SIN Function=SIN_Function@AccuracerGuide.hlp
+5 SQR Function=SQR_Function@AccuracerGuide.hlp
+5 SQRT Function=SQRT_Function@AccuracerGuide.hlp
+5 TAN Function =TAN_Function@AccuracerGuide.hlp
+5 TRUNCATE Function=TRUNCATE_Function@AccuracerGuide.hlp
+4 String Functions
+5 String Functions=String_Functions@AccuracerGuide.hlp
+5 ASCII Function=ASCII_Function@AccuracerGuide.hlp
+5 CHR Function=CHR_Function@AccuracerGuide.hlp
+5 CONCAT Function=CONCAT_Function@AccuracerGuide.hlp
+5 LENGTH Function=Length_Function@AccuracerGuide.hlp
+5 LOWER Function=Lower_Function@AccuracerGuide.hlp
+5 LTRIM Function=LTRIM_Function@AccuracerGuide.hlp
+5 POS Function=POS_Function@AccuracerGuide.hlp
+5 REPEAT Function=REPEAT_Function@AccuracerGuide.hlp
+5 REPLACE Function=REPLACE_Function@AccuracerGuide.hlp
+5 RTRIM Function=RTRIM_Function@AccuracerGuide.hlp
+5 SUBSTRING Function=SUBSTRING_Function@AccuracerGuide.hlp
+5 TRIM Function=TRIM_Function@AccuracerGuide.hlp
+5 UPPER Function=UPPER_Function@AccuracerGuide.hlp
+4 Type Conversion Functions
+5 Type Conversion Functions=Type_Conversion_Functions@AccuracerGuide.hlp
+5 CAST Function=CAST_Function@AccuracerGuide.hlp
+5 TOBLOB Function=TOBLOB_Function@AccuracerGuide.hlp
+3 Stored functions and procedures
+4 Stored functions and procedures=Stored_functions_and_procedure@AccuracerGuide.hlp
+4 CREATE FUNCTION Statement=CREATE_FUNCTION_Statement@AccuracerGuide.hlp
+4 DROP FUNCTION Statement=DROP_FUNCTION_Statement@AccuracerGuide.hlp
+4 ALTER FUNCTION Statement=ALTER_FUNCTION_Statement@AccuracerGuide.hlp
+4 EXECUTE FUNCTION Statement=EXECUTE_FUNCTION_Statement@AccuracerGuide.hlp
+4 IF Statement=IF_Statement_2@AccuracerGuide.hlp
+4 Assign Operator=Assign_Operator@AccuracerGuide.hlp
+2 SELECT Statement=SELECT_Statement@AccuracerGuide.hlp
+3 GET TABLES=GET_TABLES@AccuracerGuide.hlp
+3 INSERT Statement=INSERT_Statement@AccuracerGuide.hlp
+3 UPDATE Statement=UPDATE_Statement@AccuracerGuide.hlp
+3 DELETE Statement=DELETE_Statement@AccuracerGuide.hlp
+3 CREATE DATABASE Statement=CREATE_DATABASE_Statement@AccuracerGuide.hlp
+3 DROP DATABASE Statement=DROP_DATABASE_Statement@AccuracerGuide.hlp
+3 CREATE TABLE Statement=CREATE_TABLE_Statement@AccuracerGuide.hlp
+3 ALTER TABLE Statement=ALTER_TABLE_Statement@AccuracerGuide.hlp
+3 DROP TABLE Statement=DROP_TABLE_Statement@AccuracerGuide.hlp
+3 EMPTY TABLE Statement=EMPTY_TABLE_Statement@AccuracerGuide.hlp
+3 CREATE INDEX Statement=CREATE_INDEX_Statement@AccuracerGuide.hlp
+3 DROP INDEX Statement=DROP_INDEX_Statement@AccuracerGuide.hlp
+3 START TRANSACTION Statement=Start_Transaction_Statement_2@AccuracerGuide.hlp
+3 COMMIT Statement=Commit_Statement_3@AccuracerGuide.hlp
+3 ROLLBACK Statement=ROLLBACK_Statement@AccuracerGuide.hlp
+2 Multi-User and Multi-Thread, Locking Mechanism and Transactions
+3 Multi-User and Multi-Thread Support=Multi-UserandMulti-Thread@AccuracerGuide.hlp
+3 Locking Mechanism=LockingMechanism@AccuracerGuide.hlp
+3 Transactions=Transactions@AccuracerGuide.hlp
+2 Client-Server Engine
+3 Introduction=Introduction2@AccuracerGuide.hlp
+2 Migration
+3 Overview=Migration_Overview@AccuracerGuide.hlp
+3 Migration from BDE=Migration_from_BDE@AccuracerGuide.hlp
+3 Migration from EasyTable=MigrationfromEasyTable@AccuracerGuide.hlp
+3 Migration from other database systems and platforms=Migrationfromotherdatabase@AccuracerGuide.hlp
+3 Import and Export=ImportandExport@AccuracerGuide.hlp
+2 Tuning and Optimizations
+3 Overview=Overview2@AccuracerGuide.hlp
+2 Appendix
+3 Differences from BDE=Differences_from_TTable@AccuracerGuide.hlp
+3 Supported data types=Supported_data_types@AccuracerGuide.hlp
+3 Internationalization and localization=Internationalization_and_local@AccuracerGuide.hlp
+3 Limitations=Limitations@AccuracerGuide.hlp

@@ -1,0 +1,12 @@
+SELECT min(FINTEGER) sf, FString
+from jt1
+WHERE FINTEGER > 853966865
+GROUP BY FString
+ORDER BY sf, FString
+
+#Paradox
+SELECT min(FINTEGER) sf, FSTring
+from jt1
+WHERE FINTEGER > 853966865
+GROUP BY FString
+ORDER BY sf, FString

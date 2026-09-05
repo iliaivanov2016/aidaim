@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="CryptoPressStream Component Reference">
+<HelpTOCNode Title="Classes">
+<HelpTOCNode Title="TCPSManager" Url="tcpsmanager.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSAdvancedStream" Url="tcpsadvancedstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSMemoryStream" Url="tcpsmemorystream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSFileStream" Url="tcpsfilestream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSCryptoPressMemoryStream" Url="tcpscryptopressmemorystream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSCryptoPressFileStream" Url="tcpscryptopressfilestream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSCryptoPressStream" Url="tcpscryptopressstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSStream" Url="tcpsstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCPSCryptoParamsEditor" Url="tcpscryptoparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ECPSException" Url="ecpsexception.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Functions" Url="functions.htm">
+<HelpTOCNode Title="IsStreamCPSStream" Url="isstreamcpsstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="IsStreamEncryptedCPSStream" Url="isstreamencryptedcpsstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CPSGenerateRandomBuffer" Url="cpsgeneraterandombuffer.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CPSCountCRC" Url="cpscountcrc.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CPSCountCRC16" Url="cpscountcrc16.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

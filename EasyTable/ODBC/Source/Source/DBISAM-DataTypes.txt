@@ -1,0 +1,29 @@
+/* SQL-92 Table Creation Script with DBISAM Extensions */
+
+DROP TABLE IF EXISTS "Table1";
+
+CREATE TABLE IF NOT EXISTS "Table1"
+(
+   "BooleanField" BOOLEAN,
+!!!   "Bytes" BYTES(250),
+!!!   "BCDField" DECIMAL(0 , 4),
+!!!   "CurrencyField" MONEY,
+   "FloatField" FLOAT,
+   "LargeIntField" LARGEINT,
+   "AutoIncField" AUTOINC,
+   "IntegerField" INTEGER,
+   "WordField" WORD,
+   "SmallIntField" SMALLINT,
+   "DateField" DATE,
+   "TimeField" TIME,
+   "FmtMemoField" BLOB(0,3),
+   "TimeStampField" TIMESTAMP,
+   "TypedBinaryField" BLOB(0,7),
+!!!   "MemoField" MEMO,
+   "BLOBField" BLOB,
+!!!   "GraphicField" GRAPHIC,
+   "FCharField" CHARACTER(10),
+   "StringField" CHARACTER(10)
+LANGUAGE "ANSI Standard" SORT "Default Order"
+USER MAJOR VERSION 1
+);

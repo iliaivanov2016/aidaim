@@ -1,0 +1,4 @@
+if you want to localize IB Query to your native language download DK Lang Translation editor (http://www.dk-soft.org/products/dklang/) and use file IBQ.dklang as source.
+Post please translated language files (*.lng) to my email mitec@atlas.cz. Thanx.
+
+

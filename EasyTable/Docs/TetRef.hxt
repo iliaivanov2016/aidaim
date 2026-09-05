@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="TEasyTable">
+<HelpTOCNode Title="TEasyTable" Url="teasytable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TEasyQuery" Url="teasyquery.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TEasySession" Url="teasysession.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TEasyDatabase" Url="teasydatabase.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TEasyBlobStream" Url="teasyblobstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TEasyDataSet" Url="teasydataset.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="Accuracer Developer's Guide">
+<HelpTOCNode Title="Introduction" Url="introduction.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Features Overview" Url="features_overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Getting Help from Technical Support" Url="getting_help_from_technical_su.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="How to Buy" Url="how_to_buy.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Working with Tables">
+<HelpTOCNode Title="Creating a database file" Url="creatingadatabasefile.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Setting up a table and database components" Url="setting_up_a_table_component.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Creating a table" Url="creating_a_table.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Opening and closing a table" Url="opening_and_closing_a_table.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Navigating tables" Url="navigating_tables.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Filtering records" Url="filtering_records.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Searching records" Url="searching_records.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Sorting records" Url="sorting_records.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="BLOB fields use" Url="blob_fields_use.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="BLOB and Varchar fields" Url="blob_and_varchar.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Advanced Operations with Tables">
+<HelpTOCNode Title="Restructuring a table" Url="restructuring_a_table.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="SQL Reference">
+<HelpTOCNode Title="Overview" Url="overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Naming conventions" Url="naming_conventions.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Reserved words" Url="reserved_words.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Using parameters" Url="using_parameters.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Operators" Url="operators.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CASE Operator" Url="case_operator.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="HEX constants" Url="hex_constants.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Comments" Url="comments.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Functions" Url="functions.htm">
+<HelpTOCNode Title="Aggregate Functions" Url="aggregate_functions.htm">
+<HelpTOCNode Title="AVG Function" Url="avg_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="COUNT Function" Url="count_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="GROUP_CONCAT Function" Url="group_concat_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MIN Function" Url="min_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MAX Function" Url="max_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SUM Function" Url="sum_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="STDDEV Function" Url="stddev_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Date and Time Functions" Url="date_and_time_functions.htm">
+<HelpTOCNode Title="CURRENT_DATE Function" Url="current_date_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CURRENT_TIME Function" Url="current_time_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CURRENT_TIMESTAMP,  NOW AND SYSDATE Functions" Url="current_timestamp_now_sysdate_functions.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DATEADD Function" Url="dateadd_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DATEDIFF Function" Url="datediff_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAY Function" Url="day_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAYNAME Function" Url="dayname_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAYOFWEEK Function" Url="dayofweek_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DAYOFYEAR Function" Url="dayofyear_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="EXTRACT Function" Url="extract_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="HOUR Function" Url="hour_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ISOWEEK Function" Url="isoweek_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MINUTE Function" Url="minute_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MONTH Function" Url="month_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MONTHNAME Function" Url="monthname_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MSECOND Function" Url="msecond_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="QUARTER Function" Url="quarter_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SECOND Function" Url="second_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TODATE Function" Url="todate_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TOSTRING Function" Url="tostring_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="WEEK Function" Url="week_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="WEEKDAY Function" Url="weekday_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="YEAR Function" Url="year_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Miscellaneous Functions" Url="miscellaneous_functions.htm">
+<HelpTOCNode Title="COALESCE Function" Url="coalesce_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ISNULL Function" Url="isnull_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LASTAUTOINC Function" Url="lastautoinc_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="NULLIF Function" Url="nullif_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Mathematical Functions" Url="mathematical_functions.htm">
+<HelpTOCNode Title="ABS Function" Url="abs_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACOS Function" Url="acos_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ASIN Function" Url="asin_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ATAN Function " Url="atan_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ATAN2 Function" Url="atan2_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CEILING Function" Url="ceiling_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="COS Function" Url="cos_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="COT Function" Url="cot_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CUMPROD Function" Url="cumprod_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CUMSUM Function" Url="cumsum_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DEGREES Function" Url="degrees_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="EXP Function" Url="exp_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="FLOOR Function" Url="floor_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="HEX Function" Url="hex_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LOG Function" Url="log_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="MOD Function" Url="mod_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="PI Function" Url="pi_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="POWER Function" Url="power_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RADIANS Function" Url="radians_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RANDOM Function" Url="rand_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ROUND Function" Url="round_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SIGN Function" Url="sign_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SIN Function" Url="sin_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SQR Function" Url="sqr_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SQRT Function" Url="sqrt_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TAN Function " Url="tan_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TRUNCATE Function" Url="truncate_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="String Functions" Url="string_functions.htm">
+<HelpTOCNode Title="ASCII Function" Url="ascii_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CHR Function" Url="chr_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CONCAT Function" Url="concat_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LENGTH Function" Url="length_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LOWER Function" Url="lower_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="LTRIM Function" Url="ltrim_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="POS Function" Url="pos_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="REPEAT Function" Url="repeat_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="REPLACE Function" Url="replace_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="RTRIM Function" Url="rtrim_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="SUBSTRING Function" Url="substring_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TRIM Function" Url="trim_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="UPPER Function" Url="upper_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Type Conversion Functions" Url="type_conversion_functions.htm">
+<HelpTOCNode Title="CAST Function" Url="cast_function.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TOBLOB Function" Url="toblob_function.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Stored functions and procedures" Url="stored_functions_and_procedure.htm">
+<HelpTOCNode Title="CREATE FUNCTION Statement" Url="create_function_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DROP FUNCTION Statement" Url="drop_function_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ALTER FUNCTION Statement" Url="alter_function_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="EXECUTE FUNCTION Statement" Url="execute_function_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="IF Statement" Url="if_statement_2.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Assign Operator" Url="assign_operator.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="SELECT Statement" Url="select_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="GET TABLES" Url="get_tables.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="INSERT Statement" Url="insert_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="UPDATE Statement" Url="update_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DELETE Statement" Url="delete_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CREATE DATABASE Statement" Url="create_database_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DROP DATABASE Statement" Url="drop_database_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CREATE TABLE Statement" Url="create_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ALTER TABLE Statement" Url="alter_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DROP TABLE Statement" Url="drop_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="EMPTY TABLE Statement" Url="empty_table_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="CREATE INDEX Statement" Url="create_index_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="DROP INDEX Statement" Url="drop_index_statement.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="START TRANSACTION Statement" Url="start_transaction_statement_2.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="COMMIT Statement" Url="commit_statement_3.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ROLLBACK Statement" Url="rollback_statement.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Multi-User and Multi-Thread, Locking Mechanism and Transactions">
+<HelpTOCNode Title="Multi-User and Multi-Thread Support" Url="multi_userandmulti_thread.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Locking Mechanism" Url="lockingmechanism.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Transactions" Url="transactions.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Client-Server Engine">
+<HelpTOCNode Title="Introduction" Url="introduction2.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Migration">
+<HelpTOCNode Title="Overview" Url="migration_overview.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Migration from BDE" Url="migration_from_bde.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Migration from EasyTable" Url="migrationfromeasytable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Migration from other database systems and platforms" Url="migrationfromotherdatabase.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Import and Export" Url="importandexport.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Tuning and Optimizations">
+<HelpTOCNode Title="Overview" Url="overview2.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Appendix">
+<HelpTOCNode Title="Differences from BDE" Url="differences_from_ttable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Supported data types" Url="supported_data_types.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Internationalization and localization" Url="internationalization_and_local.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Limitations" Url="limitations.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

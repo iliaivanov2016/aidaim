@@ -1,0 +1,1 @@
+select distinct jt1.FString from jt1,jt2 where jt1.fstring = jt2.fstring order by jt1.FString desc

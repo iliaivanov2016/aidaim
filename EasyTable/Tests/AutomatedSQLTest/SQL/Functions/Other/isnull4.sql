@@ -1,0 +1,19 @@
+#exec
+DROP TABLE MEMORY Tmp;
+#exec
+CREATE TABLE MEMORY Tmp (num integer);
+#exec
+INSERT INTO MEMORY Tmp VALUES(150);
+#exec
+INSERT INTO MEMORY Tmp VALUES(NULL);
+#exec
+INSERT INTO MEMORY Tmp VALUES(50);
+select SUM(IsNull(num,1000)) f1 FROM MEMORY Tmp;
+#dbisam 
+#exec
+DROP TABLE if exists "\MEMORY\Tmp";
+#exec
+CREATE TABLE "\MEMORY\Tmp" (f1 Integer);
+#exec
+INSERT INTO "\MEMORY\Tmp" VALUES(1200);
+SELECT f1 FROM "\MEMORY\Tmp";

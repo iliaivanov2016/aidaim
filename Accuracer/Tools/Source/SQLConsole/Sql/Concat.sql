@@ -1,0 +1,1 @@
+SELECT Country + ',  ' + State  FROM Customer

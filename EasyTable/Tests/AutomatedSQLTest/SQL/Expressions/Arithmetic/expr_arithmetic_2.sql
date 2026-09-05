@@ -1,0 +1,4 @@
+SELECT 2.3*17+1*id-2*(1.1) a, ID FROM jt1 ORDER BY ID
+#Paradox
+SELECT 2.3*17+1*id-2*(1.1) a, ID FROM jt1 ORDER BY ID
+

@@ -1,0 +1,58 @@
+:TITLE Accuracer Component Reference
+:BASE AccuracerRef.hlp
+1 Accuracer Component Reference
+2 Classes
+3 TACRDataSet=TSQLMemDataSet@AccuracerRef.hlp>Main
+3 TACRTable=TACRTable@AccuracerRef.hlp>Main
+3 TACRQuery=TSQLMemQuery@AccuracerRef.hlp>Main
+3 TACRSession=TACRSession@AccuracerRef.hlp>Main
+3 TACRDatabase=TACRDatabase@AccuracerRef.hlp>Main
+3 TACRServer=TACRServer@AccuracerRef.hlp>Main
+3 TACRBatchMove=TACRBatchMove@AccuracerRef.hlp>Main
+3 TACRBlobStream=TSQLMemBlobStream@AccuracerRef.hlp>Main
+3 TACRWideStringList=TACRWideStringList@AccuracerRef.hlp>Main
+3 TACRBackupParamsEditor=TACRBackupParamsEditor@AccuracerRef.hlp>Main
+3 TACRConnectionParamsEditor=TACRConnectionParamsEditor@AccuracerRef.hlp>Main
+3 TACRCryptoParamsEditor=TACRCryptoParamsEditor@AccuracerRef.hlp>Main
+3 TACRForeignKeyDefs=TACRForeignKeyDefs@AccuracerRef.hlp>Main
+3 TACRLockParamsEditor=TACRLockParamsEditor@AccuracerRef.hlp>Main
+3 TACROptionsEditor=TACROptionsEditor@AccuracerRef.hlp>Main
+2 Procedures and Functions
+3 CopyDatasets function=CopyDatasets@AccuracerRef.hlp>Main
+3 ACRGetTableFlag function=ACRGetTableFlag@AccuracerRef.hlp>Main
+2 Variables and Constants
+3 ACRDefaultMemoryPageSize variable=ACRDefaultMemoryPageSize@AccuracerRef.hlp>Main
+3 ACRDefaultPageMangerCacheCapactiy=ACRDefaultTemporaryPageSize_3@AccuracerRef.hlp>Main
+3 ACRDefaultPageSize constant=ACRDefaultPageSize@AccuracerRef.hlp>Main
+3 ACRDefaultTempDir variable=ACRDefaultTemporaryPageSize@AccuracerRef.hlp>Main
+3 ACRDefaultTemporaryPageSize variable=ACRDefaultTemporaryPageSize_2@AccuracerRef.hlp>Main
+3 ACRMaxPageSize constant=ACRMaxPageSize@AccuracerRef.hlp>Main
+3 ACRMinPageSize constant=ACRMinPageSize@AccuracerRef.hlp>Main
+3 Cache management constants=Cachemanagementconstants@AccuracerRef.hlp>Main
+2 Types
+3 Types=Types@AccuracerRef.hlp>Main
+3 TACRAdvancedFieldType_type=TACRAdvancedFieldType_type@AccuracerRef.hlp>Main
+3 TACRArrayOfTACRVariant=TACRArrayOfTACRVariant@AccuracerRef.hlp>Main
+3 TACRBackupInfo=TACRBackupInfo@AccuracerRef.hlp>Main
+3 TACRBatchMode=TACRBatchMode@AccuracerRef.hlp>Main
+3 TACRClientInfo=TACRClientInfo@AccuracerRef.hlp>Main
+3 TACRForeignKeyDef
+4 TACRForeignKeyDef=TACRForeignKeyDef@AccuracerRef.hlp>Main
+4 TACRForeignKeyDef Hierarchy=TACRForeignKeyDef_Hierarchy@AccuracerRef.hlp
+4 TACRForeignKeyDef methods=TACRForeignKeyDef_methods@AccuracerRef.hlp>object
+4 TACRForeignKeyDef properties
+5 TACRForeignKeyDef properties=TACRForeignKeyDef_properties@AccuracerRef.hlp>object
+5 TACRForeignKeyDef.Columns=TACRForeignKeyDef.Columns@AccuracerRef.hlp>Main
+5 TACRForeignKeyDef.Name=TACRForeignKeyDef.Name@AccuracerRef.hlp>Main
+5 TACRForeignKeyDef.ReferencedTableName=TACRForeignKeyDef.ReferencedTa@AccuracerRef.hlp>Main
+5 TACRForeignKeyDef.MatchType=TACRForeignKeyDef.MatchType@AccuracerRef.hlp>Main
+5 TACRForeignKeyDef.DeleteAction=TACRForeignKeyDef.DeleteAction@AccuracerRef.hlp>Main
+5 TACRForeignKeyDef.UpdateAction=TACRForeignKeyDef.UpdateAction@AccuracerRef.hlp>Main
+2 TACRForeignKeyAction=TACRForeignKeyAction@AccuracerRef.hlp>Main
+3 TACRForeignKeyMatchType=TACRForeignKeyMatchType@AccuracerRef.hlp>Main
+3 TACRTableState=TACRTableState@AccuracerRef.hlp>Main
+3 TACRTableInfoArray=TACRTableInfoArray@AccuracerRef.hlp>Main
+3 TBlobStreamMode type=TBlobStreamMode_type@AccuracerRef.hlp>Main
+3 TCompressionAlgorithm type=TCompressionAlgorithmtype@AccuracerRef.hlp>Main
+3 TDataSetState type=TDataSetState_type@AccuracerRef.hlp>Main
+3 TIndexOptions_type=TIndexOptions_type@AccuracerRef.hlp>Main

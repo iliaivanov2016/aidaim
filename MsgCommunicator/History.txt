@@ -1,0 +1,564 @@
+MsgCommunicator: History of changes
+===================================
+
+
+- version 21.00 (10/21/2025)
+  New features added: 
+    1. RAD Studio 13 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 20.00 (07/23/2025)
+  New features added: 
+    1. RAD Studio 12.3 support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 19.00 (01/17/2024)
+  New features added: 
+    1. RAD Studio 12.0 Athens support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 18.00 (03/27/2023)
+  New features added: 
+    1. RAD Studio 11.3 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 17.00 (12/19/2022)
+  New features added: 
+    1. RAD Studio 11.2 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 16.00 (03/31/2022)
+  New features added: 
+    1. RAD Studio 11.1 Alexandria support added (Windows 32 bit and Windows 64 bit).
+
+
+- version 15.00 (09/27/2021)
+  New features added: 
+    1. RAD Studio 11 Alexandria support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.4.2 Sydney rebuld with update 2 (Windows 32 bit and Windows 64 bit).
+
+
+- version 14.00 (06/30/2020)
+  New features added: 
+    1. RAD Studio 10.4 Sydney support added (Windows 32 bit and Windows 64 bit).
+    2. RAD Studio 10.3.3 Rio rebuld with update 3 (Windows 32 bit and Windows 64 bit).
+
+
+- version 13.00 (12/25/2018)
+  New features added: 
+    1. RAD Studio 10.3 Rio support added (Windows 32 bit).
+    2. RAD Studio 10.2 Tokyo rebuilt with update 3.
+
+
+- version 12.00 (04/17/2017)
+  New features added: 
+    1. RAD Studio 10.2 Tokyo support added (Windows 32 bit).
+    2. RAD Studio 10.1 Berlin rebuilt with update 2.
+
+
+- version 11.00 (06/17/2016)
+  New features added:
+    1. RAD Studio 10.1 Berlin support added (32-bit only).
+
+
+- version 10.00 (09/08/2015)
+  New features added:
+    1. RAD Studio 10 Seattle support added (32-bit only).
+
+
+- version 9.00 (04/15/2015)
+  New features added:
+    1. RAD Studio XE8 support added (32-bit only).
+
+
+- version 8.00 (09/11/2014)
+  New features added:
+    1. RAD Studio XE7 support added (32-bit only).
+
+
+- version 7.00 (05/19/2014)
+  New features added:
+    1. RAD Studio XE6 support added (32-bit only).
+
+
+- version 6.00 (02/18/2014)
+  New features added:
+    1. RAD Studio XE3, XE4, XE5 support added (32-bit only).
+
+
+- version 5.00 (10/26/2011)
+  New features added:
+    1. RAD Studio XE2 support added.
+  Bugs fixed:
+    1. SendFile demo bug in Delpi XE.
+
+
+- version 4.51 (06/23/2011)
+
+  Bugs fixed:
+    1. Some bugs have been fixed.
+    2. Some improvements in On-Line/Off-Line logic.
+        Now  client do not change on-line user status to off-line after server
+        shutdown in case there is a direct session.
+        Also, on-line user status changes to off-line after server shutdown in
+        case there is no direct session with this user.
+
+
+- version 4.50 (04/22/2011)
+
+  New features added:
+    1. New Disconnect methods in TMsgServer to disconnect client by Host:Port or
+       by SessionID.
+    2. Optimization in network engine: new faster grouping packet resend mechanism.
+    3. Developer's Guide was enhanced, Component Reference was updated.
+    4. Changes in demos:
+        .\Demos\Delphi\Basic\Client
+        .\Demos\Delphi\Basic\Server
+        .\Demos\Delphi\LoginByName
+        .\Demos\Delphi\PeerToPeer
+
+  Bugs fixed:
+    1. Some bugs have been fixed.
+
+
+- version 4.40 (08/16/2010)
+
+  New features added:
+    1. Delphi and C++ Builder XE support added.
+    2. Client-server connection was optimized to send large data fast and stable.
+    3. NetworkSettings property of TMsgConnectionParamsEditor is declared 
+       as PUBLIC instead of PUBLISHED as it was before. 
+       Click on 'Ignore' button when open form with TMsgClient/TMsgServer components. 
+       It is done for automatic assignment of latest default network settings.
+
+
+- version 4.30 (06/30/2010)
+
+  New features added:
+    1. Message sending to multiple addresses.
+       Use SendMessageMultiple in TMsgClient or TMsgServer with
+       array of destination UserIDs to send ANSI string, Unicode string,
+       binary buffer, or stream message to multiple addresses.
+    2. New MultipleMessages demo.
+    3. Some changes in network engine for more performance
+       and better stability.
+    4. New global variable MsgRefreshInterval with default value of 
+       MsgAntifreezeTimeOut (milliseconds). 
+       Now your form will be updated periodically in long operations
+       by calling ProcessMessage in main thread with MsgRefreshInterval
+       timeout.
+       To disable this mechanism, set MsgRefreshInterval = 0.
+       Note: In case you use this internal refresh mechanizm, 
+       you must disable form elements calling cient / server methods
+       during a long operation youself to prevent starting new operations
+       withOut finishing the previous already started.
+
+  Bugs fixed:
+    1. Some small bugs have been fixed.
+
+
+- version 4.20 (03/29/2010)
+
+  New features added: 
+    1. Network engine has been optimized to achieve more performance
+       and better stability.
+    2. New client property UseServerSettings for automatic client configuration.
+       NetworkSettings on the server side now include client network settings
+       to support auto-configuration of clients during connection procedure.
+
+  Bugs fixed:
+    1. Some bugs have been fixed.
+
+
+- version 4.10 (12/30/2009)
+
+  New features added: 
+    1. File sending routines were optimized to achieve better stability
+       and faster transmission speed.
+    2. New SendFileViaServer demo.
+
+  Bugs fixed:
+    1. Some bugs have been fixed.
+
+
+- version 4.01 (11/10/2009)
+
+  New features added: 
+    1. Some changes in send file demos.
+
+  Bugs fixed:
+    1. A number of bugs has been fixed.
+
+
+- version 4.00 (10/26/2009)
+
+  New features added: 
+    1. Network  engine  has  been  re-designed  to  achieve more performance,
+       faster communication and better stability.
+    2. Network file transmission routines have been optimized.
+       File sending speed is 20 times faster now!
+    3. Some  changes  in demos have been made for a better compatibility with
+       different  IDE versions and to show new code examples of the different
+       ways of MsgCommunicator using.
+
+  Bugs fixed:
+    1. A number of bugs has been fixed in the product and demos.
+
+
+- version 3.60 (07/01/2009)
+
+  New features added: 
+    1. Delphi and C++ Builder 2010 support added.
+    2. SendFile demo modified - progress now uses TThread.Synchronize to prevent from draw canvas error.
+
+  Bugs fixed:
+    1. Some bugs in peer-to-peer messaging were fixed.
+    2. SendFile in direct mode bug was fixed.
+
+
+- version 3.50 (04/07/2009)
+
+  New features added: 
+    1. SendFile, ReceiveFile methods were added to TMsgServer.
+    2. New demos added:
+       - SendFilesFromServerTo2Clients
+       - SendFilesToServer
+       - SendFileToServer
+
+
+- version 3.40 (11/06/2008)
+
+  New features added: 
+    1. Sending / receiving Unicode text message added.
+    2. FindUsersCPP method was added to TMsgClient to avoid bug in C++Builder linker.
+    3. C++Builder database demos were added.
+    4. Demos for Delphi and C++Builder 2009 were added.
+    5. Component reference updated:
+        - TMsgDatabasyMySQLDAC topic was added
+        - TMsgDatabase, TMsgDatabasyMySQL descriptions were updated
+        - SendMessage description updated in TMsgClient and TMsgServer
+        - OnReceiveUnicodeTextMessage event description added to TMsgClient and TMsgServer
+
+
+- version 3.30 (04/01/2008)
+
+  New features added: 
+    1. Network communication has been optimized. Long message transmission speed
+       was essentially increased (in 6 times for 64KB message with default 
+       packet size).
+
+
+- version 3.20 (09/18/2007)
+
+  New features added: 
+    1. New GetLastLogged method in TMsgServer. Now you can easily learn
+       logon/logoff time of the previous user session on the server.
+    2. New Multi-threaded Client demo.
+    3. New MsgCommunicator DAC for mySQL Database Module for Delphi / C++ Builder 
+       for fast working with MySQL database.
+
+  Bugs fixed:
+    1. Guest disconnection bug.
+
+
+- version 3.10 (08/06/2007)
+
+  New features added: 
+    1. New FindUserID method in TMsgClient. Now you can easily implement
+       login by name and password pair.
+    2. New LoginByName demo.
+    3. PingCount, a new property in NetworkSettings in TMsgServer. 
+       Now server pings clients for some times for the specified alive period. 
+    4. SetDefaultValues, a new property in NetworkSettings in TMsgClient and 
+       TMsgServer (msgLocal, msgLAN, msgWAN, msgModem values).
+       Now configuration for different cases are more easy.
+    5. Storing of the server messages in case the client is off-line and 
+       sending them when it will be logged.
+    6. KeepConnection, a new property in NetworkSettings. Now server keeps 
+       connection alive in case the client's address or port is changed. 
+       You can set it to False to block IP-spoofing attack.
+
+  Bugs fixed:
+    1. OnLine/OffLine events in TMsgClient.
+    2. BeforeDisconnect/AfterDisconnect events in TMsgServer.
+
+
+- version 3.00 (03/20/2007)
+
+  New features added: 
+    1. Command server session threads mechanism is re-designed.
+    2. Incoming packets processor was re-designed and implemented as 
+       a single thread working with a queue.
+    3. New message queries were implemented and processing messages in 
+       the threads was re-designed. 
+    4. PingClientsThread has been optimized. 
+       Now server will increase WaitForPingAnswer parameter in case of huge 
+       number of concurrent connections based on ServerPingSleep parameters 
+       (ping thread pause), ServerResendDelay parameter and MsgResendDelay 
+       constant, you can increase both of them in case of slow network.
+    5. Client and server default network parameters were re-configured 
+       for WAN instead of LAN as they were optimized before.
+    6. Packet re-sending algorithm has been optimized.
+    7. New server thread for events processing is added.
+    8. Speed optimization of:
+       - working with files on the server side
+       - IsUserExisting
+       - RegisterNewUser
+       - LogOn/LogOff
+    9. Memory usage optimization. Now you can run server to handle 
+       hundreds of thousands users on one machine with 1 GB RAM. 
+       This is the great work that makes MsgCommunicator server more stable 
+       under the stress load.
+   10. SendFile/ReceiveFile and SendStream/ReceiveStream with progress 
+       indicator support.
+       You can send/receive any number of files/streams simultaneously.
+       Sending/receiving files and streams takes no effect on the other 
+       command/message data exchange.
+       These objects can be sent directly or thru server despite of their size 
+       which can be very large.
+       You can customize network data transmission process for each file/stream 
+       independently.
+   11. New SendFile demo.
+   12. New methods in TMsgServer: UsersCount, OnLineUsersCount, GuestsCount,
+       ClearAll, GetUserContactCount, IsUserInContacts.
+   13. New property in TMsgServer: AllowFiles.
+   14. New events in TMsgServer: OnUserLogon, OnUserLogoff, OnReceiveFile, 
+       OnReceiveStream.
+   15. Changes in TMsgClient.RegisterNewUser. Now it logs on automatically 
+       and also can be called to disable auto logon after registering.
+   16. Changes in TMsgClient.Logon. Logon calls GetContacts by default. 
+       You can skip it by setting GetContactList parameter to False.
+   17. New methods in TMsgClient: DisconnectDirectly, SendFile, ReceiveFile, 
+       SendStream. 
+   18. New properties in TMsgClient: AllowFiles, IncomingPath.
+   19. New events in TMsgClient: OnReceiveFile, OnReceiveStream, OnFileReceived,
+       OnStreamReceived, OnSendFile, OnSendStream.
+   20. MsgCommunicator Manual has been updated.
+
+
+- version 3.00 Beta (03/04/2007)
+
+  New features added: 
+    1. Send method and receive events for transmitting files and streams. 
+    2. SendFile demo.
+    3. Network stability essentially improved.
+    4. Memory usage decreased.
+    5. Connection mechanism optimized to handle large number of concurrent connections.
+       Successfully tested with 100,000 concurrent connections.    
+
+
+- version 2.20 (02/05/2007)
+
+  Bugs fixed:
+    1. Bug with Server.ini file.
+    2. Bug with Stream SendMessage on the server.
+    3. MsgCommunicator Manual has been updated.
+
+
+- version 2.10 (12/26/2006)
+
+  New features added: 
+    1. TwoServers demo has been added.
+    2. Some network parameter optimisation was made.
+    3. Server heavy load when connecting with wrong parameters is resolved.
+       Now MsgServer is more protected from DoS attack by illegal 
+       connections.
+
+  Bugs fixed:
+    1. Disconnect event bug has been fixed. Now Off-Line event is sending
+       when user is disconnecting. Also, Off-Line event will be sent if
+       user disconnects abnormally (due network problems or app's kill) -- 
+       set WaitForPingAnswer in NetworkSettings to specify client alive
+       detection timeout (in msec).
+    2. CryptoParams bug in MsgServer has been fixed. Now you can use 
+       network data encryption as it was enabled since the first version 
+       of MsgCommunicator.
+    3. ServerID set algorithm is changed. Now server will be stopped then
+       started again when ServerID changes. Also, now ServerID updates in 
+       configuration file when it changed. Use new TwoServers demo to 
+       investigate multi-server configuration behavior. Each server must 
+       have unique host:port network address (ServerID can be the same).
+    4. Now server host/port settings will be updated after start, so you
+       can learn the port your server started on.
+    5. BDS 2006 C++Builder compatibility is improved.
+       ShortString type was replaced to String in the following pulic 
+       methods:
+       in TMsgClient: AddUserToContacts, UpdateUserInContacts, FindUsers,
+                      RegisterNewUser, UpdateUserInfo;
+       in TMsgServer: AddUserToContacts, UpdateUserInContacts, FindUsers,
+                      InsertUse, UpdateUser.
+
+
+- version 2.00 Final (11/23/2005)
+
+  New features added: 
+    1. MaxConnections property was added to TMsgServer. 
+    2. GetUserContacts, AddUserToContacts, UpdateUserInContacts, 
+       RemoveUserFromContacts methods were added to TMsgServer. 
+    3. Documentation updated: Developer's Guide and Component Reference.
+
+  Bugs fixed:
+    1. Some minor bugs in demos were fixed.
+
+
+- version 2.00 Beta (10/24/2005)
+
+  New features added: 
+    1. Accuracer Database Module.
+    2. MySQL Database Module.
+    3. Message history on the client side as well as on the server side
+       (database module required). OnSaveMessage event was added to 
+       TMsgClient and TMsgServer.
+    4. Messages search. (Database module required). FindMessages method 
+       was added to TMsgClient and TMsgServer.
+    5. Users search. (Database module required). FindUsers method
+       was added to TMsgClient and TMsgServer. 
+    6. User authentication by password. Logon, Logoff methods, 
+       Password and Logged properties were added to TMsgClient.
+    7. TMsgDatabase, TMsgDatabaseAccuracer, TMsgTempTable, TMsgTempTableAccuracer, 
+       TMsgTempTableSQLMemTable, TMsgDatabaseMySQL classes were added for database support.
+    8. Database and TempTable properties, OnError event 
+       were added to TMsgClient and TMsgServer.
+    9. StoreMessageHistory property was added to TMsgClient and TMsgServer.
+   10. OnReceiveCommand event and SendCommand method were modified (parameter 
+       Buffer is now PChar).
+   11. OnReceiveCommand,OnReceiveTextMessage,OnReceiveBinaryMessage,
+       OnReceiveStreamMessage events were modified - 
+       parameters SendingDate and DeliveryDate were added.
+   12. New unit MsgDatabase was added. It contains base classes 
+       TMsgDatabase and TMsgTempTable. 
+   13. TMsgUserInfo, TMsgBaseUserInfo records were changed.
+       Now TMsgBaseUserInfo is used only for storing users data in files.
+   14. TMsgContactInfo type was added to MsgComBase unit.
+   15. GetContactDisplayName method was added to TMsgClient and TMsgServer.
+   16. Contacts and ContactCount properties were added to TMsgClient.
+   17. UpdateUserInContacts method was added to TMsgClient.
+   18. SortUsers method was added to TMsgServer, GetUsers method was modified (parameters).
+   19. The following methods in TMsgClient were changed (return types and parameters):
+       - GetUserInfo
+       - IsUserOnline
+       - IsUserExisting
+       - GetMyContactsList was renamed to GetContacts
+       - RegisterNewUser (now it returns error code if user already exists)
+       - UpdateMyUserInfo was renamed to UpdateUserInfo (now it returns error code 
+         if user does not exist and uses current UserID instead of UserInfo.UserID)
+       - AddUserToMyContacts was renamed to AddUserToContacts
+       - RemoveUserFromMyContacts was renamed to RemoveUserFromContacts
+   20. All demos updated to v.2.00 interface. TwoClientsAndServer demo is removed.
+   21. New demos - Databases (Accuracer Client, Accuracer Server, 
+       MySQL Client, MySQL Server)     
+
+
+- version 1.42 (09/21/2005)
+
+  New features added: 
+    1. Auto detection of an abnormal client disconnection in TMsgServer.
+    2. OnError events in TMsgClient and TMsgServer have been added.
+    3. Network stability has been improved. 
+    4. Changes in connection parameters.
+
+  Bugs fixed:
+    1. Range Check Error in Peer-To-Peer Demo in Delphi 2005.
+    2. Wrong client number in online/offline events on client if UserID>255.
+
+
+- version 1.41 (05/16/2005)
+
+  New features added: 
+    1. OnUserOnLine/OnUserOffLine events support in peer-to-peer mode.
+    2. New property TMsgClient.CurrentVersion
+    3. Changes in TMsgServer.CurrentVersion
+
+  Bugs fixed:
+    1. Disconnecting problems.
+    2. Connecting with encryption parameters.
+
+
+- version 1.40 (02/04/2005)
+
+  New features added: 
+    1. Peer-To-Peer mode. Direct connections in client/server mode. Direct messaging.
+       New properties: TMsgClient.Active, TMsgClient.AllowDirectly, 
+       TMsgClient.ConnectedDirectly.
+       New methods: TMsgClient.ConnectDirectly. TMsgClient.SendMessage methods were 
+       modified to support direct messaging.
+    2. Peer-To-Peer Demo.
+    3. CustomCommands Demo.
+    4. TMsgServer.ClearContacts method.
+    5. TMsgServer.GetUsers method.
+
+  Bugs fixed:
+    1. Client/server custom command receiving bug.
+
+
+- version 1.30 (12/24/2004)
+
+  New features added: 
+    1. Advanced fields in contacts list: on-line/off-line status, current 
+       host and port (if this user is connected to the server now).
+    2. TMsgClient.SendCommand, TMsgServer.OnReceiveCommand have been added
+       to support client to server direction of custom commands.
+    3. A new server property UseConfigFile which you can set to False to prevent 
+       any operations with configuration file.
+    4. TMsgSever.OnUserRegistered, TMsgServer.OnUserInfoChanged server events
+       were added to make more flexible server interface.
+
+  Bugs fixed:
+    1. Bug with IDE hang in case you specify wrong connection parameters in
+       design-time.
+
+
+- version 1.20 (12/01/2004)
+
+  New features added: 
+    1. Off-line messages support on the server. Now all messages store on the 
+       server while a client is off-line. When the client connects to the 
+       server, server sends to the client all the messages stored for this 
+       client.
+
+
+- version 1.10 (11/01/2004)
+
+  New features added: 
+    1. MsgClient demo for Delphi and C++ Builder.
+    2. MsgServer demo for Delphi and C++ Builder.
+    3. Some changes in a connecting process algorithm.
+    4. TMsgClient.UpdateMyUserInfo was added. Now you can change details of 
+       registered user.
+    5. TMsgClient.IsUserExisting has been added. It is more clear and convenient 
+       way than TMsgClient.GetUserInfo to check if user with such ID is already 
+       registered on the server or not.
+    6. UserID field in TMsgClientInfo type has been added. Now 
+       TMsgServer.GetClients and TMsgServer.IsClientConnected are supporting 
+       UserID.
+    7. TMsgServer.IsClientConnected has been added for more convenience.
+    8. TMsgServer.IsUserExisting has been added.
+    9. TMsgServer.GetNewUserID has been added.
+   10. OnUserOnLine and OnUserOffLine events is now supported.
+   11. TMsgServer.SendCommand method and TMsgClient.OnReceiveCommand event were 
+       added.
+       Now you can send your custom commands from MsgServer to MsgClient.
+       It enables you, for example, easily implement any server event handlers 
+       on client side.
+   12. TMsgServer.InsertUser, TMsgServer.UpdateUser, TMsgServer.DeleteUser, and 
+       TMsgServer.DisconnectUser methods were added to allow administration 
+       functions on the server.
+   13. TMsgServer.MinUserID property to allow reserve of numbers space for 
+       server identifiers.
+   14. Developer's Guide was added to MsgCommunicator Manual. 
+       Some additions and improvements in Component Reference which has been 
+       included in this united manual, too.
+
+  Bugs fixed:
+    1. Bug with LocalPort property in MsgServer. Now MsgServer works properly
+       with remote connections from network.
+
+
+- version 1.01 (09/27/2004)
+
+  Bugs fixed:
+    1. Bug with MsgClient connection parameters.
+    2. Bug with TMsgClient.Connected property in design-time.
+
+
+- version 1.00 (09/27/2004)

@@ -1,0 +1,48 @@
+{DEFINE DEBUG_TIMES_INSERT}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_WriteMostUpdatedData}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_ReadMostUpdatedData}
+{$DEFINE DEBUG_TRACE_TACRAdvancedTableData_InsertRecord}
+{$DEFINE DEBUG_TRACE_TACRAdvancedTableData_GetRecordBuffer}
+{DEFINE DEBUG_TRACE_TACRAdvancedTableData_DeleteRecord}
+{DEFINE DEBUG_TRACE_TACRAdvancedTableData_RestoreMostUpdatedData}
+
+{DEFINE DEBUG_TRACE_TACRAdvancedTableData_Commit}
+{DEFINE DEBUG_TRACE_TACRAdvancedTableData_Rollback}
+{DEFINE DEBUG_TRACE_LOCKTABLE}
+{DEFINE DEBUG_TRACE_UNLOCKTABLE}
+
+{DEFINE DEBUG_TRACE_CREATE_TABLE_CACHE}
+// v.4
+{DEFINE DEBUG_TABLE_DATA_NO_SYNC}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_LockTableForRead}
+{DEFINE DEBUG_TRACE_TACRDataSet_GetRecord}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_GetRecordBuffer}
+{DEFINE DEBUG_TRACE_TACRTableData_GetRecordBuffer}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_GetRecordCount}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_FindRecord}
+{DEFINE DEBUG_TRACE_TACRTableData_FindRecord}
+{DEFINE DEBUG_TRACE_FULL_TACRTableData_FindRecord}
+
+{DEFINE DEBUG_TRACE_AUTOINC_NEXT_VALUE}
+{DEFINE DEBUG_TRACE_TACRTableData_LoadSequencesFromStream}
+{DEFINE DEBUG_TRACE_TACRTableData_SaveSequencesToStream}
+
+{DEFINE DEBUG_TRACE_TACRDiskTableData_ApplyDefaultValuesToRecordBuffer}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_UpdateRecord}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_ReadMostUpdatedData}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_ReadTableMetadata}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_InternalOpenTable}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_OpenTable}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_CheckConstraints}
+{DEFINE DEBUG_TRACE_TACRDiskRecordManager_InternalLoadDiskRecordSmall}
+{DEFINE DEBUG_TRACE_TACRDiskRecordManager_InternalAddRecordSmall}
+
+{DEFINE DEBUG_TRACE_TACRMemoryTableData_DeleteTable}
+{$DEFINE DEBUG_TRACE_UpdateVisibleRecords}
+{DEFINE DEBUG_TRACE_DeleteVisibleRecords}
+{DEFINE DEBUG_TRACE_TACRMemoryTableData_CreateTable}
+
+{DEFINE DEBUG_TRACE_TACRDiskTableData_CreateTable}
+{DEFINE DEBUG_TRACE_TACRDiskTableData_DeleteTable}
+{DEFINE TACRDiskTableData_CreateTable}
+

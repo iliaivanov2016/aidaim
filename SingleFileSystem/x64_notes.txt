@@ -1,0 +1,7 @@
+- PPM compression is not supported in x64, only PPM variant I (added in version 4 of Single File System):
+  use ppmiFastest, ppmiNormal, ppmiMax compression levels instead of ppmFastest,ppmNormal,ppmMax under x64 platform
+- when SFS is built under x64, the value of SFS_X64 contant is true (SingleFileSystem unit)
+- To build x64 platform from source code, use *_x64.* project files and uncomment the following line in SFSVer.inc:
+{$DEFINE X64_ON}
+
+Note: x86 build operates faster than x64 due to use of inline Assembler.

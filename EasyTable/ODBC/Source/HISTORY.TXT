@@ -1,0 +1,56 @@
+EasyTable ODBC Driver: History of changes
+=========================================
+
+Version 2.00 (02/27/2014)
+-------------------------
+
+  New functionality of EasyTable v.8.00 has been added.
+
+
+Version 1.20 (12/22/2006)
+-------------------------
+
+  New functionality of EasyTable v.6.11 has been added.
+
+  Some changes in functions SQLDescribeCol, SQLFetch and SQLExtendedFetch 
+  to add logical type support for Microsoft Excel.
+
+  Some changes in functions SQLTables and SQLColumns to achieve better 
+  compatibility with Macromedia DreamWeaver.
+
+
+Version 1.10 (02/17/2006)
+-------------------------
+
+  New functionality of EasyTable v.6.04 has been added.
+
+  Some changes in functions SQLDriverConnect, SQLAllocStmt, 
+  SQLBindCol, SQLGetInfo, SQLTables, 
+  SQLExecute, SQLPrepare, SQLExecDirect, SQLGetData, SQLFetch,
+  SQLSpecialColumns, SQLStatisics functions to achieve better compatibility 
+  with Microsoft Office and Visual Studio products.
+
+  Some changes were made and one bug was fixed in ConfigDSN function 
+  in Setup DLL.
+
+
+Version 1.02 (02/16/2004)
+-------------------------
+
+  New functionality of EasyTable v.6.00.
+
+
+Version 1.01 (12/04/2003)
+-------------------------
+
+  Some improvements to achieve the better compatibility with 
+  different IDEs and OSs.
+  
+  Minor changes were made in the following functions:
+  - SQLConnect
+  - SQLColumns
+  - SQLColAttributes  
+
+
+Version 1.00 (07/16/2003)
+-------------------------

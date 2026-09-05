@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4B2354FE-3ADF-4E33-AF12-207BEE92EBD7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dclAccuracerd20.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclAccuracerd20.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dclAccuracerd20">
+        <MSBuild Projects="dclAccuracerd20.dproj"/>
+    </Target>
+    <Target Name="dclAccuracerd20:Clean">
+        <MSBuild Projects="dclAccuracerd20.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclAccuracerd20:Make">
+        <MSBuild Projects="dclAccuracerd20.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclAccuracerd20">
+        <MSBuild Projects="vclAccuracerd20.dproj"/>
+    </Target>
+    <Target Name="vclAccuracerd20:Clean">
+        <MSBuild Projects="vclAccuracerd20.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclAccuracerd20:Make">
+        <MSBuild Projects="vclAccuracerd20.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dclAccuracerd20;vclAccuracerd20"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dclAccuracerd20:Clean;vclAccuracerd20:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dclAccuracerd20:Make;vclAccuracerd20:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

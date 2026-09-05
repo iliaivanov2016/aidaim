@@ -1,0 +1,7 @@
+Documentation in PDF and HTML formats is available on our web site.
+
+HTML onlne help:
+http://www.aidaim.com/products/acr/acr_spec.php
+
+PDF help:
+http://www.aidaim.com/products/download.php

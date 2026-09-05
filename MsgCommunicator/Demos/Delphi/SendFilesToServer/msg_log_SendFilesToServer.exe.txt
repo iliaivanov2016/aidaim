@@ -1,0 +1,36 @@
+27100656 - PrID = 4780, ThID = 4348: MsgDebug initialization - OK
+27100656 - PrID = 4780, ThID = 4348: MsgComBaseEngine> initialized
+27100656 - PrID = 4780, ThID = 4348: MsgMemory> initialized
+27100656 - PrID = 4780, ThID = 4348: MsgCompression> initialized
+27100656 - PrID = 4780, ThID = 4348: MsgTypes> initialized
+27100656 - PrID = 4780, ThID = 4348: MsgDecUtil> initialization started
+27100656 - PrID = 4780, ThID = 4348: MsgDecUtil> CPU type = 15
+27100656 - PrID = 4780, ThID = 4348: MsgDecUtil> Before CRC32:
+27100656 - PrID = 4780, ThID = 4348: InitTestIsOk
+27100671 - PrID = 4780, ThID = 4348: MsgDecUtil> After CRC32:
+27100671 - PrID = 4780, ThID = 4348: InitTestIsOk
+27100671 - PrID = 4780, ThID = 4348: MsgDecUtil> initialization finished
+27100671 - PrID = 4780, ThID = 4348: MsgRng> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgHash> initialization started
+27100671 - PrID = 4780, ThID = 4348: MsgHash> initialization finished
+27100671 - PrID = 4780, ThID = 4348: MsgCipher> initialization started
+27100671 - PrID = 4780, ThID = 4348: MsgCipher> initialization finished
+27100671 - PrID = 4780, ThID = 4348: MsgCipher1> initialization started
+27100671 - PrID = 4780, ThID = 4348: MsgCipher1> initialization finished
+27100671 - PrID = 4780, ThID = 4348: MsgCrypto> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgNetwork> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgBaseEngine> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgComMain> initialization started
+27100671 - PrID = 4780, ThID = 4348: MsgComMain> initialization finished
+27100671 - PrID = 4780, ThID = 4348: MsgConnection> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgServer> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgComBase> initialized
+27100671 - PrID = 4780, ThID = 4348: MsgClient> initializing...
+27100671 - PrID = 4780, ThID = 4348: MsgClient> initialized
+27116015 - PrID = 4780, ThID = 4348: MsgClient> finalizing...
+27116046 - PrID = 4780, ThID = 4348: MsgClient> finalized
+27116046 - PrID = 4780, ThID = 4348: MsgConnection> finalized
+27116046 - PrID = 4780, ThID = 4348: MsgDecUtil> finalization started
+27116046 - PrID = 4780, ThID = 4348: MsgDecUtil> finalization finished
+27116046 - PrID = 4780, ThID = 4348: MsgMemory> finalizing...
+27116046 - PrID = 4780, ThID = 4348: MsgMemory> finalized

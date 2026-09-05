@@ -1,0 +1,14 @@
+del *.bak
+del *.lib
+del *.bpl
+del *.bpi
+del *.dcp
+del *.dcu
+del *.dsk
+del *.dof
+del *.ddp
+del *.~*
+del *.hpp
+del *.cfg
+del ACR*.obj
+del *.hpp

@@ -1,0 +1,116 @@
+3034625	PrID = 3744, ThID = 3248:	> TMsgServerSession.ExecuteLogon
+3034625	PrID = 3744, ThID = 3248:	1 TMsgServerSession.ExecuteLogon
+3034625	PrID = 3744, ThID = 3248:	2 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3034625	PrID = 3744, ThID = 3248:	3 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3034625	PrID = 3744, ThID = 3248:	5 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3034625	PrID = 3744, ThID = 3248:	6 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3034625	PrID = 3744, ThID = 3248:	7 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3034625	PrID = 3744, ThID = 3248:	9 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3034640	PrID = 3744, ThID = 3248:	10 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	11 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	12 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	13 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	14 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	15 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	16 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	17 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	18 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	19 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3034640	PrID = 3744, ThID = 3248:	> TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	> TMsgServerSession.ExecuteLogon
+3049953	PrID = 3744, ThID = 4028:	1 TMsgServerSession.ExecuteLogon
+3049953	PrID = 3744, ThID = 4028:	2 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3049953	PrID = 3744, ThID = 4028:	3 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3049953	PrID = 3744, ThID = 4028:	5 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3049953	PrID = 3744, ThID = 4028:	6 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3049953	PrID = 3744, ThID = 4028:	7 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3049953	PrID = 3744, ThID = 4028:	9 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3049953	PrID = 3744, ThID = 4028:	10 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	11 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	12 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	13 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	14 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	15 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	16 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	17 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	18 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	19 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3049953	PrID = 3744, ThID = 4028:	> TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	> TMsgServerSession.ExecuteLogon
+3053953	PrID = 3744, ThID = 2784:	1 TMsgServerSession.ExecuteLogon
+3053953	PrID = 3744, ThID = 2784:	2 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3053953	PrID = 3744, ThID = 2784:	3 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3053953	PrID = 3744, ThID = 2784:	5 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3053953	PrID = 3744, ThID = 2784:	6 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3053953	PrID = 3744, ThID = 2784:	7 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3053953	PrID = 3744, ThID = 2784:	9 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3053953	PrID = 3744, ThID = 2784:	10 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	11 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	12 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	13 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	14 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	15 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	16 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	17 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	18 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	19 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3053953	PrID = 3744, ThID = 2784:	> TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057625	PrID = 3744, ThID = 3364:	> TMsgServerSession.ExecuteLogon
+3057625	PrID = 3744, ThID = 3364:	1 TMsgServerSession.ExecuteLogon
+3057625	PrID = 3744, ThID = 3364:	2 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3057625	PrID = 3744, ThID = 3364:	3 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3057625	PrID = 3744, ThID = 3364:	5 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3057625	PrID = 3744, ThID = 3364:	6 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3057625	PrID = 3744, ThID = 3364:	7 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3057625	PrID = 3744, ThID = 3364:	9 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60113
+3057625	PrID = 3744, ThID = 3364:	10 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057625	PrID = 3744, ThID = 3364:	11 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057625	PrID = 3744, ThID = 3364:	12 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057625	PrID = 3744, ThID = 3364:	13 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	14 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	15 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	16 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	17 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	18 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	19 TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3057640	PrID = 3744, ThID = 3364:	> TMsgServerSession.ExecuteLogon, CommandHeader.CommandResult = 60000
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3070375	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3070375	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3070375	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3070375	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3070375	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3070375	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3071390	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3071390	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3071390	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071390	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3071390	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3071390	PrID = 3744, ThID = 2636:	**************************************************************
+3071859	PrID = 3744, ThID = 2636:	**************************************************************
+3071859	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3071859	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3071859	PrID = 3744, ThID = 2636:	**************************************************************
+3071859	PrID = 3744, ThID = 2636:	**************************************************************
+3071859	PrID = 3744, ThID = 2636:	TMsgServerConnectionManager.DoSendBuffer> - Error:
+3071859	PrID = 3744, ThID = 2636:	Access violation at address 00404350 in module 'Server.exe'. Write of address 00000030
+3071859	PrID = 3744, ThID = 2636:	**************************************************************

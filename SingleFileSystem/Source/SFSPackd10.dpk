@@ -1,0 +1,45 @@
+package SFSPackd10;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Single File System Package'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl;
+
+contains
+  SingleFileSystem in 'SingleFileSystem.pas',
+  SFSCipher in 'SFSCipher.pas',
+  SFSCompress in 'SFSCompress.pas',
+  SFSDECConst in 'SFSDECConst.pas',
+  SFSDECUtil in 'SFSDECUtil.pas',
+  SFSRng in 'SFSRng.pas',
+  SFSEngine in 'SFSEngine.pas',
+  SFSFileCtrl in 'SFSFileCtrl.pas',
+  SFSPassword in 'SFSPassword.pas',
+  SFSStrFunc in 'SFSStrFunc.pas',
+  SFSZlib in 'SFSZlib.pas',
+  SFSBZip2 in 'SFSBZip2.pas';
+
+end.

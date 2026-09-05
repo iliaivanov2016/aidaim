@@ -1,0 +1,2933 @@
+AODBC started!
+>>> ConfigDSN called with parameters
+    ""
+    and Request=1
+    Allocated
+    empty DSN
+    Adv copied
+    ADV=!
+>>  GetAdvParamsFromDSN
+    GetAdvParamsFromDSN> ADV param from ODBC.INI = ""
+    GetAdvParamsFromDSN> No ADV parameter!
+##  GetAdvParamsFromDSN
+    DatabasePath=!
+    Description=!
+    DatabaseName=!
+    Mode=!
+>>  SetAdvParamsToForm
+##  SetAdvParamsToForm
+>>  GetAdvParamsFromForm
+    CryptoAlgorithm=0
+    Finishing...
+### ConfigDSN finished
+AODBC started!
+>>> SQLAllocEnv called
+    @TypeInfo=032F27C8
+>>> SQLAllocConnect called
+### SQLAllocConnect
+>>> SQLGetInfo about 77
+    SetInfoStr
+    >Info=02.50
+    not NULL_HANDLE
+    >Length=5
+### SQLGetInfo
+>>> SQLConnect called with parameters:
+    Connection=032F2D9C;
+    Server=aaa;
+    ServerNameLength=3
+    Connection.DSN=aaa;
+    ADV(ODBC.INI)=?!
+>>  GetAdvParamsFromDSN
+    GetAdvParamsFromDSN> ADV param from ODBC.INI = "?"
+    GetAdvParamsFromDSN> parse ADV parameter...
+    GetAdvParamsFromDSN> decrypted
+    CryptoAlgorithm=0
+    CryptoMode=0
+    UseInitVector=0
+    password size=0
+    key size=0
+    IVFile size=0
+    IVFile=!
+    KeyFile size=0
+    KeyFile=!
+##  GetAdvParamsFromDSN
+    DatabasePath="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb"
+    Default="?"
+    Free...
+    ok
+    User=Nil;
+    Authentication=Nil.
+### SQLConnect
+>>> SQLError called
+>>> SQLGetFunctions called with FunctionId=0
+    SQLGetFunctions returned:
+
+### SQLGetFunctions Finished
+>>> SQLGetInfo about 23
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 24
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 111
+    SetInfoChar
+    >Info=N
+    Length=1
+### SQLGetInfo
+>>> SQLGetInfo about 0
+    SetSmallInt
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 1
+    SetSmallInt
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 23
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 24
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 46
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 17
+    SetInfoStr
+    >Info=Accuracer
+    not NULL_HANDLE
+    >Length=9
+### SQLGetInfo
+>>> SQLGetInfo about 85
+    SetSmallInt
+    >Info=1
+### SQLGetInfo
+>>> SQLGetInfo about 94
+    SetInfoStr
+    >Info=~@#$%^&*_-+=\}{"';:?/><,.![]|
+    not NULL_HANDLE
+    >Length=29
+### SQLGetInfo
+>>> SQLGetInfo about 25
+    SetInfoChar
+    >Info=N
+    Length=1
+### SQLGetInfo
+>>> SQLGetInfo about 46
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 29
+    SetInfoChar
+    >Info= 
+    Length=1
+### SQLGetInfo
+>>> SQLGetInfo about 101
+    SetSmallInt
+    >Info=32767
+### SQLGetInfo
+>>> SQLGetInfo about 98
+    SetSmallInt
+    >Info=32767
+### SQLGetInfo
+>>> SQLGetInfo about 30
+    SetSmallInt
+    >Info=255
+### SQLGetInfo
+>>> SQLGetInfo about 35
+    SetSmallInt
+    >Info=255
+### SQLGetInfo
+>>> SQLGetInfo about 75
+    SetSmallInt
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 38
+    SetInfoChar
+    >Info=Y
+    Length=1
+### SQLGetInfo
+>>> SQLGetInfo about 99
+    SetSmallInt
+    >Info=32767
+### SQLGetInfo
+>>> SQLGetInfo about 50
+    SetInteger
+    >Info=491519
+### SQLGetInfo
+>>> SQLGetInfo about 109
+    SetInteger
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 110
+    SetInteger
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 23
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 24
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 46
+    SetSmallInt
+    >Info=2
+### SQLGetInfo
+>>> SQLGetInfo about 0
+    SetSmallInt
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 1
+    SetSmallInt
+    >Info=0
+### SQLGetInfo
+>>> SQLGetInfo about 28
+    SetSmallInt
+    >Info=4
+### SQLGetInfo
+>>> SQLGetInfo about 93
+    SetSmallInt
+    >Info=4
+### SQLGetInfo
+>>> SQLGetInfo about 32
+    SetSmallInt
+    >Info=255
+### SQLGetInfo
+>>> SQLGetInfo about 47
+    SetInfoStr
+    >Info=user
+    not NULL_HANDLE
+    >Length=4
+### SQLGetInfo
+>>> SQLGetInfo about 81
+    SetInteger
+    >Info=15
+### SQLGetInfo
+>>> SQLAllocStmt called
+    @Connection=32F2D9C
+    Stmt AllocMem successful
+    DB created
+    DatabaseName=DB53424628
+    Mode="FS"
+    Mode=FS
+>>  SetAdvParamsToDB
+##  SetAdvParamsToDB
+    @DB=32F3258
+    DB.DatabaseName="DB53424628"
+    DB.DatabaseFileName="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb"
+    @Connection=32F2D9C
+    @Connection.TypeInfo=32F27C8
+    @Stmt.TypeInfo=32F27C8
+    @Bind=32F3840
+    @Result=32F60F0
+    Stmt=032F31F4
+### SQLAllocStmt finished
+>>> SQLGetTypeInfo about 12
+    TypeInfo Not Exists
+ >> InitTypeInfo: data preparing...
+    Init @TypeInfo=32F27C8
+    Not Active
+    TypeInfo.RecordCount=20
+    Active
+ ## InitTypeInfo: data prepared
+    TypeInfo.RecordCount=20
+    SQLGetTypeInfo: prepare to select DataType 12
+ >> SetFilter called
+    Active
+    Old data erased
+    Filter=select TYPE_NAME, DATA_TYPE, [PRECISION], LITERAL_PREFIX, LITERAL_SUFFIX, CREATE_PARAMS, NULLABLE, CASE_SENSITIVE, SEARCHABLE, UNSIGNED_ATTRIBUTE, MONEY, AUTO_INCREMENT, LOCAL_TYPE_NAME, MINIMUM_SCALE, MAXIMUM_SCALE from memory TypeInfo where DATA_TYPE=12
+
+Error: Expression expected, but 'MONEY' found at line 1, column 147 - Native error: 12525
+    TypeInfo.RecordCount=20
+    Result=-1
+### SQLGetTypeInfo finished
+>>> SQLError called
+>>> SQLError called
+>>> SQLFreeStmt
+    Stmt=32F31F4
+    @Result=32F60F0
+    @Result=32F60F0
+    @Bind=32F3840
+    @Bind=32F3840
+    Tables freed
+    DB.DatabaseName="DB53424628"
+    DB.DatabaseFileName="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb"
+    DB freed
+### SQLFreeStmt called with option 1
+>>> SQLSetConnectOption called
+>>> SQLGetConnectOption called
+    Attribute=109
+    Value=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+>>> SQLGetConnectOption finished
+>>> SQLAllocStmt called
+    @Connection=32F2D9C
+    Stmt AllocMem successful
+    DB created
+    DatabaseName=DB53471792
+    Mode="FS"
+    Mode=FS
+>>  SetAdvParamsToDB
+##  SetAdvParamsToDB
+    @DB=32F63B0
+    DB.DatabaseName="DB53471792"
+    DB.DatabaseFileName="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb"
+    @Connection=32F2D9C
+    @Connection.TypeInfo=32F27C8
+    @Stmt.TypeInfo=32F27C8
+    @Bind=32F68F0
+    @Result=338B8C8
+    Stmt=032FEA30
+### SQLAllocStmt finished
+>>> SQLTables called
+    CatalogName="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb)""
+    CatalogLength=63
+    SchemaName=0
+    SchemaLength=0
+    TableName=0
+    TableLength=0
+    TableType="'TABLE','VIEW'a"
+    TypeLength=14
+    Database.create
+    TStringList.Create
+    DatabaseFileName
+    ADB.DatabaseFileName="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb"
+    Result=54048968
+    Result.InMemory=True
+    Result.InMemory=False
+    InMemory=True...
+    Drop table...
+    Create Table
+    GetTablesList
+    DB opened
+    OK
+    insert 0 = customer_Sort
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Sort','TABLE'
+)
+
+    insert 1 = client_Blobs
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','client_Blobs','TABLE'
+)
+
+    insert 2 = Sales
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','Sales','TABLE'
+)
+
+    insert 3 = holdings_MasterDetail
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','holdings_MasterDetail','TABLE'
+)
+
+    insert 4 = Members
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','Members','TABLE'
+)
+
+    insert 5 = client_InMemory
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','client_InMemory','TABLE'
+)
+
+    insert 6 = customer_Base
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Base','TABLE'
+)
+
+    insert 7 = jpeg
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','jpeg','TABLE'
+)
+
+    insert 8 = Departments
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','Departments','TABLE'
+)
+
+    insert 9 = Dep_Mem_Links
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','Dep_Mem_Links','TABLE'
+)
+
+    insert 10 = customer_Share
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Share','TABLE'
+)
+
+    insert 11 = customer_Search
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Search','TABLE'
+)
+
+    insert 12 = customer_Range
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Range','TABLE'
+)
+
+    insert 13 = customer_Findkey
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Findkey','TABLE'
+)
+
+    insert 14 = customer_Filter
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer_Filter','TABLE'
+)
+
+    insert 15 = clients_MasterDetail
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','clients_MasterDetail','TABLE'
+)
+
+    insert 16 = customer
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','customer','TABLE'
+)
+
+    insert 17 = orders
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','orders','TABLE'
+)
+
+    insert 18 = default_min_max
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','default_min_max','TABLE'
+)
+
+    insert 19 = test
+    execute:insert into memory dbTables(TABLE_QUALIFIER,TABLE_NAME,TABLE_TYPE
+) values('S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb','test','TABLE'
+)
+
+    str=select * from memory dbTables where (TABLE_NAME like '%')
+    SQL.Text=select * from memory dbTables where (TABLE_NAME like '%')
+
+    str=
+    SQL.Text=select * from memory dbTables where (TABLE_NAME like '%')
+ and (TABLE_TYPE like '%')
+
+    SQL.Active=True
+    RecordCount=20
+### SQLTables
+>>> SQLNumResultCols called
+    Stmt=032FEA30
+    Result.RecordCount=20
+    Result.FieldCount=5
+### SQLNumResultCols RESULT=5
+>>> SQLDescribeCol called
+    Getting ColumnName...
+    Has got
+    Filtering TypeInfo...
+    TypeInfo.RecordCount=20
+    TypeInfo.FilterTYPE_NAME='String()'
+    TypeInfo.RecordCount=1
+    TypeInfo filtered
+    TypeInfo.First
+    DataType=1
+    Getting ColumnSize
+    ColumnSize=260
+    DecimalDigits getting...
+    @DecimalDigits<>0
+    precision in length
+    NO!!!
+    Nullable getting...
+    Output parameters:
+    ColumnNumber=1;
+    ColumnName=TABLE_QUALIFIER;
+    DataType=1;
+    ColumnSize=260;
+    DecimalDigits=0;
+    Nullable=1.
+### SQLDescribeCol finished
+>>> SQLDescribeCol called
+    Getting ColumnName...
+    Has got
+    Filtering TypeInfo...
+    TypeInfo.RecordCount=20
+    TypeInfo.FilterTYPE_NAME='String()'
+    TypeInfo.RecordCount=1
+    TypeInfo filtered
+    TypeInfo.First
+    DataType=1
+    Getting ColumnSize
+    ColumnSize=255
+    DecimalDigits getting...
+    @DecimalDigits<>0
+    precision in length
+    NO!!!
+    Nullable getting...
+    Output parameters:
+    ColumnNumber=2;
+    ColumnName=TABLE_OWNER;
+    DataType=1;
+    ColumnSize=255;
+    DecimalDigits=0;
+    Nullable=1.
+### SQLDescribeCol finished
+>>> SQLDescribeCol called
+    Getting ColumnName...
+    Has got
+    Filtering TypeInfo...
+    TypeInfo.RecordCount=20
+    TypeInfo.FilterTYPE_NAME='String()'
+    TypeInfo.RecordCount=1
+    TypeInfo filtered
+    TypeInfo.First
+    DataType=1
+    Getting ColumnSize
+    ColumnSize=255
+    DecimalDigits getting...
+    @DecimalDigits<>0
+    precision in length
+    NO!!!
+    Nullable getting...
+    Output parameters:
+    ColumnNumber=3;
+    ColumnName=TABLE_NAME;
+    DataType=1;
+    ColumnSize=255;
+    DecimalDigits=0;
+    Nullable=1.
+### SQLDescribeCol finished
+>>> SQLDescribeCol called
+    Getting ColumnName...
+    Has got
+    Filtering TypeInfo...
+    TypeInfo.RecordCount=20
+    TypeInfo.FilterTYPE_NAME='String()'
+    TypeInfo.RecordCount=1
+    TypeInfo filtered
+    TypeInfo.First
+    DataType=1
+    Getting ColumnSize
+    ColumnSize=255
+    DecimalDigits getting...
+    @DecimalDigits<>0
+    precision in length
+    NO!!!
+    Nullable getting...
+    Output parameters:
+    ColumnNumber=4;
+    ColumnName=TABLE_TYPE;
+    DataType=1;
+    ColumnSize=255;
+    DecimalDigits=0;
+    Nullable=1.
+### SQLDescribeCol finished
+>>> SQLDescribeCol called
+    Getting ColumnName...
+    Has got
+    Filtering TypeInfo...
+    TypeInfo.RecordCount=20
+    TypeInfo.FilterTYPE_NAME='String()'
+    TypeInfo.RecordCount=1
+    TypeInfo filtered
+    TypeInfo.First
+    DataType=1
+    Getting ColumnSize
+    ColumnSize=255
+    DecimalDigits getting...
+    @DecimalDigits<>0
+    precision in length
+    NO!!!
+    Nullable getting...
+    Output parameters:
+    ColumnNumber=5;
+    ColumnName=REMARKS;
+    DataType=1;
+    ColumnSize=255;
+    DecimalDigits=0;
+    Nullable=1.
+### SQLDescribeCol finished
+>>> SQLBindCol called:
+    Stmt=032FEA30
+    ColumnNumber=1;
+    TargetType=1;
+    BufferPtr=001EB1E0;
+    BufferLength=32769;
+    StrLen_or_IndPtr=01324DA2.
+### SQLBindCol
+>>> SQLBindCol called:
+    Stmt=032FEA30
+    ColumnNumber=2;
+    TargetType=1;
+    BufferPtr=013259A4;
+    BufferLength=256;
+    StrLen_or_IndPtr=01324D72.
+### SQLBindCol
+>>> SQLBindCol called:
+    Stmt=032FEA30
+    ColumnNumber=3;
+    TargetType=1;
+    BufferPtr=01325AA6;
+    BufferLength=256;
+    StrLen_or_IndPtr=01324D42.
+### SQLBindCol
+>>> SQLBindCol called:
+    Stmt=032FEA30
+    ColumnNumber=4;
+    TargetType=1;
+    BufferPtr=01325BA8;
+    BufferLength=256;
+    StrLen_or_IndPtr=01324D12.
+### SQLBindCol
+>>> SQLBindCol called:
+    Stmt=032FEA30
+    ColumnNumber=5;
+    TargetType=1;
+    BufferPtr=01325CAA;
+    BufferLength=256;
+    StrLen_or_IndPtr=01324CE2.
+### SQLBindCol
+>>> SQLFetch called
+    RecNo=1
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 1
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=1
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=1
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=1
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Sort'
+    buffer=
+    length=14
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 14 Characters...
+    Copied:
+    buffer=customer_Sort
+    i=3
+    ColumnNumber=4
+    Result.RecNo=1
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=1
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.1
+### SQLFetch
+>>> SQLFetch called
+    RecNo=1
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 2
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=2
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=2
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=2
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='client_Blobs'
+    buffer=customer_Sort
+    length=13
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 13 Characters...
+    Copied:
+    buffer=client_Blobs
+    i=3
+    ColumnNumber=4
+    Result.RecNo=2
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=2
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.2
+### SQLFetch
+>>> SQLFetch called
+    RecNo=2
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 3
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=3
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=3
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=3
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='Sales'
+    buffer=client_Blobs
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=Sales
+    i=3
+    ColumnNumber=4
+    Result.RecNo=3
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=3
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.3
+### SQLFetch
+>>> SQLFetch called
+    RecNo=3
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 4
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=4
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=4
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=4
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='holdings_MasterDetail'
+    buffer=Sales
+    length=22
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 22 Characters...
+    Copied:
+    buffer=holdings_MasterDetail
+    i=3
+    ColumnNumber=4
+    Result.RecNo=4
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=4
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.4
+### SQLFetch
+>>> SQLFetch called
+    RecNo=4
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 5
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=5
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=5
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=5
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='Members'
+    buffer=holdings_MasterDetail
+    length=8
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 8 Characters...
+    Copied:
+    buffer=Members
+    i=3
+    ColumnNumber=4
+    Result.RecNo=5
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=5
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.5
+### SQLFetch
+>>> SQLFetch called
+    RecNo=5
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 6
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=6
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=6
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=6
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='client_InMemory'
+    buffer=Members
+    length=16
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 16 Characters...
+    Copied:
+    buffer=client_InMemory
+    i=3
+    ColumnNumber=4
+    Result.RecNo=6
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=6
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.6
+### SQLFetch
+>>> SQLFetch called
+    RecNo=6
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 7
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=7
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=7
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=7
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Base'
+    buffer=client_InMemory
+    length=14
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 14 Characters...
+    Copied:
+    buffer=customer_Base
+    i=3
+    ColumnNumber=4
+    Result.RecNo=7
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=7
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.7
+### SQLFetch
+>>> SQLFetch called
+    RecNo=7
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 8
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=8
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=8
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=8
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='jpeg'
+    buffer=customer_Base
+    length=5
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 5 Characters...
+    Copied:
+    buffer=jpeg
+    i=3
+    ColumnNumber=4
+    Result.RecNo=8
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=8
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.8
+### SQLFetch
+>>> SQLFetch called
+    RecNo=8
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 9
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=9
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=9
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=9
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='Departments'
+    buffer=jpeg
+    length=12
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 12 Characters...
+    Copied:
+    buffer=Departments
+    i=3
+    ColumnNumber=4
+    Result.RecNo=9
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=9
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.9
+### SQLFetch
+>>> SQLFetch called
+    RecNo=9
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 10
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=10
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=10
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=10
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='Dep_Mem_Links'
+    buffer=Departments
+    length=14
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 14 Characters...
+    Copied:
+    buffer=Dep_Mem_Links
+    i=3
+    ColumnNumber=4
+    Result.RecNo=10
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=10
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.10
+### SQLFetch
+>>> SQLFetch called
+    RecNo=10
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 11
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=11
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=11
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=11
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Share'
+    buffer=Dep_Mem_Links
+    length=15
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 15 Characters...
+    Copied:
+    buffer=customer_Share
+    i=3
+    ColumnNumber=4
+    Result.RecNo=11
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=11
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.11
+### SQLFetch
+>>> SQLFetch called
+    RecNo=11
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 12
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=12
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=12
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=12
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Search'
+    buffer=customer_Share
+    length=16
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 16 Characters...
+    Copied:
+    buffer=customer_Search
+    i=3
+    ColumnNumber=4
+    Result.RecNo=12
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=12
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.12
+### SQLFetch
+>>> SQLFetch called
+    RecNo=12
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 13
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=13
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=13
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=13
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Range'
+    buffer=customer_Search
+    length=15
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 15 Characters...
+    Copied:
+    buffer=customer_Range
+    i=3
+    ColumnNumber=4
+    Result.RecNo=13
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=13
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.13
+### SQLFetch
+>>> SQLFetch called
+    RecNo=13
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 14
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=14
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=14
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=14
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Findkey'
+    buffer=customer_Range
+    length=17
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 17 Characters...
+    Copied:
+    buffer=customer_Findkey
+    i=3
+    ColumnNumber=4
+    Result.RecNo=14
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=14
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.14
+### SQLFetch
+>>> SQLFetch called
+    RecNo=14
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 15
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=15
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=15
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=15
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer_Filter'
+    buffer=customer_Findkey
+    length=16
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 16 Characters...
+    Copied:
+    buffer=customer_Filter
+    i=3
+    ColumnNumber=4
+    Result.RecNo=15
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=15
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.15
+### SQLFetch
+>>> SQLFetch called
+    RecNo=15
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 16
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=16
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=16
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=16
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='clients_MasterDetail'
+    buffer=customer_Filter
+    length=21
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 21 Characters...
+    Copied:
+    buffer=clients_MasterDetail
+    i=3
+    ColumnNumber=4
+    Result.RecNo=16
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=16
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.16
+### SQLFetch
+>>> SQLFetch called
+    RecNo=16
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 17
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=17
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=17
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=17
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='customer'
+    buffer=clients_MasterDetail
+    length=9
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 9 Characters...
+    Copied:
+    buffer=customer
+    i=3
+    ColumnNumber=4
+    Result.RecNo=17
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=17
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.17
+### SQLFetch
+>>> SQLFetch called
+    RecNo=17
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 18
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=18
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=18
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=18
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='orders'
+    buffer=customer
+    length=7
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 7 Characters...
+    Copied:
+    buffer=orders
+    i=3
+    ColumnNumber=4
+    Result.RecNo=18
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=18
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.18
+### SQLFetch
+>>> SQLFetch called
+    RecNo=18
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 19
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=19
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=19
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=19
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='default_min_max'
+    buffer=orders
+    length=16
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 16 Characters...
+    Copied:
+    buffer=default_min_max
+    i=3
+    ColumnNumber=4
+    Result.RecNo=19
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=19
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.19
+### SQLFetch
+>>> SQLFetch called
+    RecNo=19
+    Set cursos position:
+    getting data...
+ >> FetchData
+    Stmt=032FEA30
+    Columns Bound = 5
+    Columns To Fetch =5
+    AllColumnsLength=1280
+    Iteration # 1
+    Get row # 20
+    Bind.FindFirst
+    i=0
+    ColumnNumber=1
+    Result.RecNo=20
+    Stmt.Bind.Buffer=001EB1E0
+    Stmt.Bind.Buffer=2011616
+    Offset=0
+    *=0
+    Buf=2011616
+    Buf=001EB1E0
+    Buf=001EB1E0
+    StrLen_or_Ind=01324DA2
+    @RowStatusArray=0
+    SQL_CHAR
+    str='S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb'
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    length=64
+    buffer_length=32769
+AsInteger=32769
+AsString =32769
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 64 Characters...
+    Copied:
+    buffer=S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb
+    i=1
+    ColumnNumber=2
+    Result.RecNo=20
+    Stmt.Bind.Buffer=013259A4
+    Stmt.Bind.Buffer=20076964
+    Offset=0
+    *=0
+    Buf=20076964
+    Buf=013259A4
+    Buf=013259A4
+    StrLen_or_Ind=01324D72
+    @RowStatusArray=0
+    >NULL: ColumnNumber=1; FieldCount=5
+    i=2
+    ColumnNumber=3
+    Result.RecNo=20
+    Stmt.Bind.Buffer=01325AA6
+    Stmt.Bind.Buffer=20077222
+    Offset=0
+    *=0
+    Buf=20077222
+    Buf=01325AA6
+    Buf=01325AA6
+    StrLen_or_Ind=01324D42
+    @RowStatusArray=0
+    SQL_CHAR
+    str='test'
+    buffer=default_min_max
+    length=5
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 5 Characters...
+    Copied:
+    buffer=test
+    i=3
+    ColumnNumber=4
+    Result.RecNo=20
+    Stmt.Bind.Buffer=01325BA8
+    Stmt.Bind.Buffer=20077480
+    Offset=0
+    *=0
+    Buf=20077480
+    Buf=01325BA8
+    Buf=01325BA8
+    StrLen_or_Ind=01324D12
+    @RowStatusArray=0
+    SQL_CHAR
+    str='TABLE'
+    buffer=TABLE
+    length=6
+    buffer_length=256
+AsInteger=256
+AsString =256
+    Compare...
+    No!
+    Prepare to Copy...
+    Coping 6 Characters...
+    Copied:
+    buffer=TABLE
+    i=4
+    ColumnNumber=5
+    Result.RecNo=20
+    Stmt.Bind.Buffer=01325CAA
+    Stmt.Bind.Buffer=20077738
+    Offset=0
+    *=0
+    Buf=20077738
+    Buf=01325CAA
+    Buf=01325CAA
+    StrLen_or_Ind=01324CE2
+    @RowStatusArray=0
+    >NULL: ColumnNumber=4; FieldCount=5
+ ## FetchData
+    New record No.20
+### SQLFetch
+>>> SQLFetch called
+    RecNo=20
+    Set cursos position:
+    EOF - SQL_NO_DATA
+    New record No.20
+### SQLFetch
+>>> SQLFreeStmt
+    Stmt=32FEA30
+    @Result=338B8C8
+    @Result=338B8C8
+    @Bind=32F68F0
+    @Bind=32F68F0
+    Tables freed
+    DB.DatabaseName="DB53471792"
+    DB.DatabaseFileName="S:\Projects\Delphi Components\Accuracer9\Demos\Data\DBDemos.adb"
+    DB freed
+### SQLFreeStmt called with option 1
+>>> SQLDisconnect called
+>>> SQLFreeConnect called
+>>> SQLFreeEnv called
+    @TypeInfo=032F27C8
+    @TypeInfo=032F27C8
+    @TypeInfo=00000000
+    try FreeMem(Env)
+### SQLFreeEnv

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{69791725-CD42-4875-9A46-3A6677FE4AE8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dclSQLMemTabled18.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="vclSQLMemTabled18.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dclSQLMemTabled18">
+        <MSBuild Projects="dclSQLMemTabled18.dproj"/>
+    </Target>
+    <Target Name="dclSQLMemTabled18:Clean">
+        <MSBuild Projects="dclSQLMemTabled18.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSQLMemTabled18:Make">
+        <MSBuild Projects="dclSQLMemTabled18.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="vclSQLMemTabled18">
+        <MSBuild Projects="vclSQLMemTabled18.dproj"/>
+    </Target>
+    <Target Name="vclSQLMemTabled18:Clean">
+        <MSBuild Projects="vclSQLMemTabled18.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="vclSQLMemTabled18:Make">
+        <MSBuild Projects="vclSQLMemTabled18.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dclSQLMemTabled18;vclSQLMemTabled18"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dclSQLMemTabled18:Clean;vclSQLMemTabled18:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dclSQLMemTabled18:Make;vclSQLMemTabled18:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

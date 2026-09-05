@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE HelpTOC SYSTEM "ms-help://hx/resources/HelpTOC.DTD">
+<HelpTOC DTDVersion="1.0">
+<HelpTOCNode Title="Accuracer Component Reference">
+<HelpTOCNode Title="Classes">
+<HelpTOCNode Title="TACRDataSet" Url="tsqlmemdataset.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRTable" Url="tacrtable.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRQuery" Url="tsqlmemquery.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRSession" Url="tacrsession.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRDatabase" Url="tacrdatabase.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRServer" Url="tacrserver.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRBatchMove" Url="tacrbatchmove.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRBlobStream" Url="tsqlmemblobstream.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRWideStringList" Url="tacrwidestringlist.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRBackupParamsEditor" Url="tacrbackupparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRConnectionParamsEditor" Url="tacrconnectionparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRCryptoParamsEditor" Url="tacrcryptoparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDefs" Url="tacrforeignkeydefs.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRLockParamsEditor" Url="tacrlockparamseditor.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACROptionsEditor" Url="tacroptionseditor.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Procedures and Functions">
+<HelpTOCNode Title="CopyDatasets function" Url="copydatasets.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRGetTableFlag function" Url="acrgettableflag.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Variables and Constants">
+<HelpTOCNode Title="ACRDefaultMemoryPageSize variable" Url="acrdefaultmemorypagesize.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRDefaultPageMangerCacheCapactiy" Url="acrdefaulttemporarypagesize_3.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRDefaultPageSize constant" Url="acrdefaultpagesize.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRDefaultTempDir variable" Url="acrdefaulttemporarypagesize.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRDefaultTemporaryPageSize variable" Url="acrdefaulttemporarypagesize_2.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRMaxPageSize constant" Url="acrmaxpagesize.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="ACRMinPageSize constant" Url="acrminpagesize.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="Cache management constants" Url="cachemanagementconstants.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="Types" Url="types.htm">
+<HelpTOCNode Title="TACRAdvancedFieldType_type" Url="tacradvancedfieldtype_type.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRArrayOfTACRVariant" Url="tacrarrayoftacrvariant.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRBackupInfo" Url="tacrbackupinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRBatchMode" Url="tacrbatchmode.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRClientInfo" Url="tacrclientinfo.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef" Url="tacrforeignkeydef.htm">
+<HelpTOCNode Title="TACRForeignKeyDef Hierarchy" Url="tacrforeignkeydef_hierarchy.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef methods" Url="tacrforeignkeydef_methods.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef properties" Url="tacrforeignkeydef_properties.htm">
+<HelpTOCNode Title="TACRForeignKeyDef.Columns" Url="tacrforeignkeydef_columns.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef.Name" Url="tacrforeignkeydef_name.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef.ReferencedTableName" Url="tacrforeignkeydef_referencedta.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef.MatchType" Url="tacrforeignkeydef_matchtype.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef.DeleteAction" Url="tacrforeignkeydef_deleteaction.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyDef.UpdateAction" Url="tacrforeignkeydef_updateaction.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyAction" Url="tacrforeignkeyaction.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRForeignKeyMatchType" Url="tacrforeignkeymatchtype.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRTableState" Url="tacrtablestate.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TACRTableInfoArray" Url="tacrtableinfoarray.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TBlobStreamMode type" Url="tblobstreammode_type.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TCompressionAlgorithm type" Url="tcompressionalgorithmtype.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TDataSetState type" Url="tdatasetstate_type.htm">
+</HelpTOCNode>
+<HelpTOCNode Title="TIndexOptions_type" Url="tindexoptions_type.htm">
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

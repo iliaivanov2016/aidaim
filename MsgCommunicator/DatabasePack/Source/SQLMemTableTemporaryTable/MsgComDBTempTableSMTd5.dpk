@@ -1,0 +1,40 @@
+package MsgComDBTempTableSMTd5;
+
+{$R *.RES}
+{$R 'MsgDatabaseTempTableSQLMemTable.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'AidAim MsgCommunicator Database Temporary Table Component via SQLMemTable'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  Vclx50,
+  Vcldb50,
+  vclMsgComD5,
+  vclSQLMemTabled5;
+
+contains
+  MsgDatabaseTempTableSQLMemTableReg in 'MsgDatabaseTempTableSQLMemTableReg.pas',
+  MsgDatabaseTempTableSQLMemTable in 'MsgDatabaseTempTableSQLMemTable.pas';
+
+end.

@@ -1,0 +1,143 @@
+:TITLE SQLMemTable Developer's Guide
+:BASE SQLMemTableGuide.hlp
+1 SQLMemTable Developer's Guide
+2 Introduction=Introduction@SQLMemTableGuide.hlp
+2 Features Overview=Features_Overview@SQLMemTableGuide.hlp
+2 Getting Help from Technical Support=Getting_Help_from_Technical_Su@SQLMemTableGuide.hlp
+2 How to Buy=How_to_Buy@SQLMemTableGuide.hlp
+2 Working with Tables
+3 Setting up a table component=Setting_up_a_table_component@SQLMemTableGuide.hlp
+3 Creating a table=Creating_a_table@SQLMemTableGuide.hlp
+3 Opening and closing a table=Opening_and_closing_a_table@SQLMemTableGuide.hlp
+3 Navigating tables=Navigating_tables@SQLMemTableGuide.hlp
+3 Filtering records=Filtering_records@SQLMemTableGuide.hlp
+3 Searching records=Searching_records@SQLMemTableGuide.hlp
+3 Sorting records=Sorting_records@SQLMemTableGuide.hlp
+3 BLOB fields use=BLOB_fields_use@SQLMemTableGuide.hlp
+2 Advanced Operations with Tables
+3 Restructuring a table=Restructuring_a_table@SQLMemTableGuide.hlp
+2 SQL Reference
+3 Overview=Overview@SQLMemTableGuide.hlp
+3 Naming conventions=Naming_conventions@SQLMemTableGuide.hlp
+3 Using parameters=Using_parameters@SQLMemTableGuide.hlp
+3 Operators=Operators@SQLMemTableGuide.hlp
+3 CASE Operator=CASE_Operator@SQLMemTableGuide.hlp
+3 HEX constants=HEX_constants@SQLMemTableGuide.hlp
+3 Functions
+4 Functions=Functions@SQLMemTableGuide.hlp
+4 Aggregate Functions
+5 Aggregate Functions=Aggregate_Functions@SQLMemTableGuide.hlp
+5 AVG Function=AVG_Function@SQLMemTableGuide.hlp
+5 COUNT Function=COUNT_Function@SQLMemTableGuide.hlp
+5 GROUP_CONCAT Function=GROUP_CONCAT_Function@SQLMemTableGuide.hlp
+5 MIN Function=MIN_Function@SQLMemTableGuide.hlp
+5 MAX Function=MAX_Function@SQLMemTableGuide.hlp
+5 SUM Function=SUM_Function@SQLMemTableGuide.hlp
+5 STDDEV Function=STDDEV_Function@SQLMemTableGuide.hlp
+4 Date and Time Functions
+5 Date and Time Functions=Date_and_Time_Functions@SQLMemTableGuide.hlp
+5 CURRENT_DATE Function=CURRENT_DATE_Function@SQLMemTableGuide.hlp
+5 CURRENT_TIME Function=CURRENT_TIME_Function@SQLMemTableGuide.hlp
+5 CURRENT_TIMESTAMP,  NOW AND SYSDATE Functions=CURRENT_TIMESTAMP_NOW_SYSDATE_Functions@SQLMemTableGuide.hlp
+5 DATEADD Function=DATEADD_Function@SQLMemTableGuide.hlp
+5 DATEDIFF Function=DATEDIFF_Function@SQLMemTableGuide.hlp
+5 DAY Function=DAY_Function@SQLMemTableGuide.hlp
+5 DAYNAME Function=DAYNAME_Function@SQLMemTableGuide.hlp
+5 DAYOFWEEK Function=DAYOFWEEK_Function@SQLMemTableGuide.hlp
+5 DAYOFYEAR Function=DAYOFYEAR_Function@SQLMemTableGuide.hlp
+5 EXTRACT Function=EXTRACT_Function@SQLMemTableGuide.hlp
+5 HOUR Function=HOUR_Function@SQLMemTableGuide.hlp
+5 ISOWEEK Function=ISOWEEK_Function@SQLMemTableGuide.hlp
+5 MINUTE Function=MINUTE_Function@SQLMemTableGuide.hlp
+5 MONTH Function=MONTH_Function@SQLMemTableGuide.hlp
+5 MONTHNAME Function=MONTHNAME_Function@SQLMemTableGuide.hlp
+5 MSECOND Function=MSECOND_Function@SQLMemTableGuide.hlp
+5 QUARTER Function=QUARTER_Function@SQLMemTableGuide.hlp
+5 SECOND Function=SECOND_Function@SQLMemTableGuide.hlp
+5 TODATE Function=TODATE_Function@SQLMemTableGuide.hlp
+5 TOSTRING Function=TOSTRING_Function@SQLMemTableGuide.hlp
+5 WEEK Function=WEEK_Function@SQLMemTableGuide.hlp
+5 WEEKDAY Function=WEEKDAY_Function@SQLMemTableGuide.hlp
+5 YEAR Function=YEAR_Function@SQLMemTableGuide.hlp
+4 Mathematical Functions
+5 Mathematical Functions=Mathematical_Functions@SQLMemTableGuide.hlp
+5 ABS Function=Abs_Function@SQLMemTableGuide.hlp
+5 ACOS Function=ACOS_Function@SQLMemTableGuide.hlp
+5 ASIN Function=ASIN_Function@SQLMemTableGuide.hlp
+5 ATAN Function =ATAN_Function@SQLMemTableGuide.hlp
+5 ATAN2 Function=ATAN2_Function@SQLMemTableGuide.hlp
+5 CEILING Function=CEILING_Function@SQLMemTableGuide.hlp
+5 COS Function=COS_Function@SQLMemTableGuide.hlp
+5 COT Function=COT_Function@SQLMemTableGuide.hlp
+5 CUMPROD Function=CUMPROD_Function@SQLMemTableGuide.hlp
+5 CUMSUM Function=CUMSUM_Function@SQLMemTableGuide.hlp
+5 DEGREES Function=DEGREES_Function@SQLMemTableGuide.hlp
+5 EXP Function=EXP_Function@SQLMemTableGuide.hlp
+5 FLOOR Function=FLOOR_Function@SQLMemTableGuide.hlp
+5 HEX Function=HEX_Function@SQLMemTableGuide.hlp
+5 LOG Function=LOG_Function@SQLMemTableGuide.hlp
+5 MOD Function=MOD_Function@SQLMemTableGuide.hlp
+5 PI Function=PI_Function@SQLMemTableGuide.hlp
+5 POWER Function=POWER_Function@SQLMemTableGuide.hlp
+5 RADIANS Function=RADIANS_Function@SQLMemTableGuide.hlp
+5 ROUND Function=ROUND_Function@SQLMemTableGuide.hlp
+5 SIGN Function=Sign_Function@SQLMemTableGuide.hlp
+5 SIN Function=SIN_Function@SQLMemTableGuide.hlp
+5 SQR Function=SQR_Function@SQLMemTableGuide.hlp
+5 SQRT Function=SQRT_Function@SQLMemTableGuide.hlp
+5 TAN Function =TAN_Function@SQLMemTableGuide.hlp
+5 TRUNCATE Function=TRUNCATE_Function@SQLMemTableGuide.hlp
+5 RANDOM Function=RAND_Function@SQLMemTableGuide.hlp
+4 Miscellaneous Functions
+5 Miscellaneous Functions=Miscellaneous_Functions@SQLMemTableGuide.hlp
+5 COALESCE Function=COALESCE_Function@SQLMemTableGuide.hlp
+5 ISNULL Function=ISNULL_Function@SQLMemTableGuide.hlp
+5 LASTAUTOINC Function=LASTAUTOINC_Function@SQLMemTableGuide.hlp
+5 NULLIF Function=NULLIF_Function@SQLMemTableGuide.hlp
+4 String Functions
+5 String Functions=String_Functions@SQLMemTableGuide.hlp
+5 ASCII Function=ASCII_Function@SQLMemTableGuide.hlp
+5 CHR Function=CHR_Function@SQLMemTableGuide.hlp
+5 CONCAT Function=CONCAT_Function@SQLMemTableGuide.hlp
+5 LENGTH Function=Length_Function@SQLMemTableGuide.hlp
+5 LOWER Function=Lower_Function@SQLMemTableGuide.hlp
+5 LTRIM Function=LTRIM_Function@SQLMemTableGuide.hlp
+5 POS Function=POS_Function@SQLMemTableGuide.hlp
+5 REPEAT Function=REPEAT_Function@SQLMemTableGuide.hlp
+5 REPLACE Function=REPLACE_Function@SQLMemTableGuide.hlp
+5 RTRIM Function=RTRIM_Function@SQLMemTableGuide.hlp
+5 SUBSTRING Function=SUBSTRING_Function@SQLMemTableGuide.hlp
+5 TRIM Function=TRIM_Function@SQLMemTableGuide.hlp
+5 UPPER Function=UPPER_Function@SQLMemTableGuide.hlp
+4 Type Conversion Functions
+5 Type Conversion Functions=Type_Conversion_Functions@SQLMemTableGuide.hlp
+5 CAST Function=CAST_Function@SQLMemTableGuide.hlp
+5 TOBLOB Function=TOBLOB_Function@SQLMemTableGuide.hlp
+3 Stored functions and procedures
+4 Stored functions and procedures=Stored_functions_and_procedure@SQLMemTableGuide.hlp
+4 CREATE FUNCTION Statement=CREATE_FUNCTION_Statement@SQLMemTableGuide.hlp
+4 DROP FUNCTION Statement=DROP_FUNCTION_Statement@SQLMemTableGuide.hlp
+4 ALTER FUNCTION Statement=ALTER_FUNCTION_Statement@SQLMemTableGuide.hlp
+4 EXECUTE FUNCTION Statement=EXECUTE_FUNCTION_Statement@SQLMemTableGuide.hlp
+4 IF Statement=IF_Statement_2@SQLMemTableGuide.hlp
+4 Assign Operator=Assign_Operator@SQLMemTableGuide.hlp
+2 SELECT Statement=SELECT_Statement@SQLMemTableGuide.hlp
+3 GET TABLES=GET_TABLES@SQLMemTableGuide.hlp
+3 INSERT Statement=INSERT_Statement@SQLMemTableGuide.hlp
+3 UPDATE Statement=UPDATE_Statement@SQLMemTableGuide.hlp
+3 DELETE Statement=DELETE_Statement@SQLMemTableGuide.hlp
+3 CREATE DATABASE Statement=CREATE_DATABASE_Statement@SQLMemTableGuide.hlp
+3 DROP DATABASE Statement=DROP_DATABASE_Statement@SQLMemTableGuide.hlp
+3 CREATE TABLE Statement=CREATE_TABLE_Statement@SQLMemTableGuide.hlp
+3 ALTER TABLE Statement=ALTER_TABLE_Statement@SQLMemTableGuide.hlp
+3 DROP TABLE Statement=DROP_TABLE_Statement@SQLMemTableGuide.hlp
+3 EMPTY TABLE Statement=EMPTY_TABLE_Statement@SQLMemTableGuide.hlp
+3 CREATE INDEX Statement=CREATE_INDEX_Statement@SQLMemTableGuide.hlp
+3 DROP INDEX Statement=DROP_INDEX_Statement@SQLMemTableGuide.hlp
+3 CREATE VIEW Statement=CREATE_VIEW_Statement@SQLMemTableGuide.hlp
+3 DROP VIEW Statement=DROP_VIEW_Statement@SQLMemTableGuide.hlp
+2 Appendix
+3 Differences from TTable=Differences_from_TTable@SQLMemTableGuide.hlp
+3 Supported data types=Supported_data_types@SQLMemTableGuide.hlp
+3 Internationalization and localization=Internationalization_and_local@SQLMemTableGuide.hlp
+3 Limitations=Limitations@SQLMemTableGuide.hlp

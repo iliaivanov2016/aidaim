@@ -1,0 +1,1 @@
+SELECT 20 * 10 as f1, ID from jt1

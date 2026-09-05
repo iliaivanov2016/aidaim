@@ -1,0 +1,4 @@
+SELECT FInteger 
+from jt1
+GROUP BY FInteger
+ORDER BY FINTEGER

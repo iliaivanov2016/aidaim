@@ -1,0 +1,1 @@
+SELECT ISNULL(Addr2,'No Address') FROM Customer

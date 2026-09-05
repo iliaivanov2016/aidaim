@@ -1,0 +1,3 @@
+SELECT Count(*) as ROW_COUNT FROM jpeg
+WHERE NOT EXISTS 
+ (SELECT * FROM jpeg WHERE (Name LIKE 'A%'))

@@ -1,0 +1,1 @@
+select * from jt1 where (id < 50) and (NOT EXISTS (SELECT ID from jt2 where jt2.id < 0));

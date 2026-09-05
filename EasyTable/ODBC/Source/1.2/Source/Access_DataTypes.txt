@@ -1,0 +1,18 @@
+"TYPE_NAME", "DATA_TYPE", "COLUMN_SIZE", "LITERAL_PREFIX", "LITERAL_SUFFIX", "CREATE_PARAMS", "NULLABLE", "CASE_SENSITIVE", "SEARCHABLE", "UNSIGNED_ATTRIBUTE", "FIXED_PREC_SCALE", "AUTO_UNIQUE_VALUE", "LOCAL_TYPE_NAME", "MINIMUM_SCALE", "MAXIMUM_SCALE", "SQL_DATA_TYPE", "SQL_DATETIME_SUB", "NUM_PREC_RADIX", "INTERVAL_PRECISION"
+"GUID", -11, 36, "'", "'", <Null>, 1, 0, 0, <Null>, 0, <Null>, <Null>, <Null>, <Null>, -11, <Null>, <Null>, <Null>
+"BIT", -7, 1, <Null>, <Null>, <Null>, 0, 0, 2, <Null>, 0, <Null>, <Null>, 0, 0, -7, <Null>, <Null>, <Null>
+"BYTE", -6, 3, <Null>, <Null>, <Null>, 1, 0, 2, 1, 0, 0, <Null>, 0, 0, -6, <Null>, 10, <Null>
+"LONGBINARY", -4, 1073741823, "0x", <Null>, <Null>, 1, 0, 0, <Null>, 0, <Null>, <Null>, <Null>, <Null>, -4, <Null>, <Null>, <Null>
+"VARBINARY", -3, 510, "0x", <Null>, "length", 1, 0, 0, <Null>, 0, <Null>, <Null>, <Null>, <Null>, -3, <Null>, <Null>, <Null>
+"BINARY", -2, 510, "0x", <Null>, "length", 1, 0, 0, <Null>, 0, <Null>, <Null>, <Null>, <Null>, -2, <Null>, <Null>, <Null>
+"LONGCHAR", -1, 1073741823, "'", "'", <Null>, 1, 0, 0, <Null>, 0, <Null>, <Null>, <Null>, <Null>, -1, <Null>, <Null>, <Null>
+"CHAR", 1, 255, "'", "'", "length", 1, 0, 3, <Null>, 0, <Null>, <Null>, <Null>, <Null>, 1, <Null>, <Null>, <Null>
+"CURRENCY", 2, 19, <Null>, <Null>, <Null>, 1, 0, 2, 0, 1, 0, <Null>, 4, 4, 2, <Null>, 10, <Null>
+"INTEGER", 4, 10, <Null>, <Null>, <Null>, 1, 0, 2, 0, 0, 0, <Null>, 0, 0, 4, <Null>, 10, <Null>
+"COUNTER", 4, 10, <Null>, <Null>, <Null>, 0, 0, 2, 0, 0, 1, <Null>, 0, 0, 4, <Null>, 10, <Null>
+"SMALLINT", 5, 5, <Null>, <Null>, <Null>, 1, 0, 2, 0, 0, 0, <Null>, 0, 0, 5, <Null>, 10, <Null>
+"REAL", 7, 7, <Null>, <Null>, <Null>, 1, 0, 2, 0, 0, 0, <Null>, <Null>, <Null>, 7, <Null>, 10, <Null>
+"DOUBLE", 8, 15, <Null>, <Null>, <Null>, 1, 0, 2, 0, 0, 0, <Null>, <Null>, <Null>, 8, <Null>, 10, <Null>
+"DATETIME", 11, 19, "#", "#", <Null>, 1, 0, 2, <Null>, 0, <Null>, <Null>, 0, 0, 9, 3, <Null>, <Null>
+"VARCHAR", 12, 255, "'", "'", "length", 1, 0, 3, <Null>, 0, <Null>, <Null>, <Null>, <Null>, 12, <Null>, <Null>, <Null>
+16 rows fetched from 19 columns.

@@ -1,0 +1,19 @@
+{DEFINE DEBUG_PM_Test_State}
+{DEFINE DEBUG_TRACE_TACRDatabaseData_TableExists}
+{DEFINE DEBUG_TRACE_TACRDiskDatabaseData_CreateView}
+{DEFINE DEBUG_TRACE_TACRDiskDatabaseData_DropView}
+{DEFINE DEBUG_TRACE_TACRDiskDatabaseData_FindView}
+{DEFINE DEBUG_TRACE_TACRDatabaseData_FindTableData}
+{DEFINE DEBUG_TRACE_TACRMemoryDatabaseData_CreateTableData}
+{DEFINE DEBUG_TRACE_TACRDatabaseData_DeleteTableData}
+{DEFINE DEBUG_TRACE_TACRDiskDatabaseData_TableExists}
+{$DEFINE DEBUG_TRACE_TACRStoredFunctionManager_Load}
+{$DEFINE DEBUG_TRACE_TACRStoredFunctionManager_Save}
+
+
+
+
+
+
+
+

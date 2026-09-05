@@ -1,0 +1,660 @@
+{DEFINE X64_ON}
+
+
+(******************************************************************************)
+(*** VERSIONS                                                               ***)
+(******************************************************************************)
+
+{$DEFINE SQLMEMTABLE}
+
+{$DEFINE RELEASE_BUILD}
+
+{DEFINE TRIAL_VERSION}
+{DEFINE TRIAL_VERSION_WITHOUT_NAG_SCREEN}
+{DEFINE TRIAL_VERSION_WITH_FULL_SQL}
+
+// MemChecker
+{DEFINE DEBUG_MEMCHECK}
+
+// Debug Write To Log
+{DEFINE DEBUG_SEPARATE_LOG_FOR_EACH_THREAD}
+
+{DEFINE DEBUG_LOG}
+{DEFINE DEBUG_WRITE_LOGS}
+
+{DEFINE DEBUG_TSQLMemMemoryManager_REALLOCMEM}
+{DEFINE DEBUG_TSQLMemMemoryManager_GetMem}
+{DEFINE DEBUG_TRACE_TSQLMemMemoryManager_GetMem}
+
+{$IFDEF DEBUG_LOG}
+{DEFINE DEBUG_LOG_COMMUNICATION_COUNT_TIMES}
+{DEFINE DEBUG_DECRYPTION_TIME}
+{DEFINE DEBUG_SQL_TIME}
+{DEFINE DEBUG_LOCKTABLE_TIME}
+{DEFINE DEBUG_LOCATE_TIME}
+{DEFINE DEBUG_LOCK_TIMES}
+{DEFINE DEBUG_FIND_RECORD_BY_SCAN_TIME}
+{DEFINE DEBUG_BTREE_INDEX_FIND_RECORD_TIME}
+{DEFINE DEBUG_FINDKEY_TIME}
+{DEFINE DEBUG_TSQLMemExpression_ParseForLocate}
+{DEFINE DEBUG_TSQLMemTableData_ChooseScanConditions_TIME}
+{$ENDIF}
+
+{$IFDEF DEBUG_WRITE_LOGS}
+
+ {$DEFINE DEBUG_ONERROR}
+ {$DEFINE DEBUG_TRACE_ALL_SQLMem_EXCEPTIONS}
+
+ {DEFINE DEBUG_TRACE_TRANSACTIONS}
+
+ // connection debug logs
+ {I SQLMemConnectionDebug.inc}
+ {I SQLMemCommunicationDebug.inc}
+
+ {I SQLMemLockDebug.inc}
+ {I SQLMemSQLDebug.inc}
+ {I SQLMemExprDebug.inc}
+ {I SQLMemTableDataDebug.inc}
+ {I SQLMemDatabaseDataDebug.inc}
+ {I SQLMemBTreeIndexes.inc}
+ {I SQLMemDiskEngineDebug.inc}
+ {I SQLMemTypesDebug.inc}
+ {I SQLMemMainDebug.inc}
+ {I SQLMemCriticalSection.inc}
+
+
+// for Eric Taupman
+ {DEFINE DEBUG_TRACE_GetNamesList}
+ {DEFINE DEBUG_TRACE_TSQLMemTable_DataEvent}
+ {DEFINE DEBUG_TRACE_TSQLMemTable_SetTableName}
+// for Eric Taupman
+
+
+ {DEFINE LOG_DELETE_DATABASE_FILE}
+
+ {DEFINE DEBUG_TRACE_TRANSACTIONS}
+ {DEFINE DEBUG_LOG_CompressAndEncryptBuffer}
+
+ {DEFINE DEBUG_TRACE_DATACONVERT}
+
+ {DEFINE DEBUG_TRACE_TSQLMemMetaObjectDefs_GetDefNumberByName}
+ {DEFINE DEBUG_TRACE_TSQLMemMetaObjectDefs_Assign}
+
+
+ {DEFINE DEBUG_TRACE_TSQLMemLocalCursor_UpdateTableDefinitions}
+
+ {DEFINE DEBUG_TRACE_TSQLMemClientSession_GetDatabaseExists}
+ {DEFINE DEBUG_TRACE_TSQLMemServerSession_ExecuteIsDatabaseExists}
+
+
+ {DEFINE DEBUG_INDEXES_GET_RECORD}
+
+ {DEFINE DEBUG_LOG_OPEN_DATABASE_ERROR}
+ {DEFINE DEBUG_LOG_CLIENT_BLOB}
+
+
+ {DEFINE DEBUG_LOG_INIT}
+ {DEFINE DEBUG_LOG_FILES}
+
+ {DEFINE DEBUG_LOG_CLOSE_DISK_DATABASE}
+
+ // count time and number of calls to InternalLockTable in file-server mode
+ {DEFINE DEBUG_TRACE_COUNTER_FILE_SERVER_LOCKTABLE}
+
+
+ {DEFINE DEBUG_TRACE_DATASET}
+ {DEFINE DEBUG_TRACE_TSQLMemDataSet_InternalOpen}
+ {DEFINE DEBUG_TRACE_TSQLMemTable_GetHandle}
+ {DEFINE DEBUG_TRACE_TSQLMemDataset_GetTableDefinitions}
+ {DEFINE DEBUG_TRACE_TSQLMemTable_PSGetKeyFields}
+
+ {DEFINE DEBUG_TRACE_TSQLMemLocalCursor_OpenTableByFieldDefs}
+ {DEFINE DEBUG_TRACE_TSQLMemTableData_OpenTable}
+
+ // trace locktable / unlockatble in TSQLMemTableLocksManager
+
+
+ {DEFINE DEBUG_TRACE_DB_STATE}
+ {DEFINE DEBUG_TRACE_TSQLMemPage_Synchronize}
+
+ {DEFINE DEBUG_TRACE_TSQLMemPageManager_GetPage}
+ {DEFINE DEBUG_TRACE_TSQLMemPageManager_PutPage}
+ {DEFINE DEBUG_TRACE_TSQLMemPageManager_ApplyChanges}
+
+ {DEFINE DEBUG_TRACE_SERVER_SQL_ERRORS}
+ {DEFINE DEBUG_TRACE_SERVER_ExecuteStartTransaction}
+ {DEFINE DEBUG_TRACE_SERVER_ExecuteCommit}
+ {DEFINE DEBUG_TRACE_SERVER_ExecuteRollback}
+ {DEFINE DEBUG_TRACE_TSQLMemTable_UpdateIndexDefs}
+ {DEFINE DEBUG_TRACE_TSQLMemSession_DoOpenDatabase}
+ {DEFINE DEBUG_TRACE_TSQLMemDataset_SetDBFlag}
+
+ {DEFINE DEBUG_TRACE_PAGE_MANAGER}
+ {DEFINE DEBUG_INDEXES}
+ {DEFINE DEBUG_COMPRESSANDENCRYPTBUFFER}
+{$ENDIF}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Local Engine
+{$DEFINE LOCAL_VERSION}
+{$IFNDEF SQLMEMTABLE} // - Accuracer only
+ // File-Server Engine - cannot be used withot LOCAL_VERSION
+{DEFINE FILE_SERVER_VERSION}
+ // Client-Server Engine
+{DEFINE CLIENT_SERVER_VERSION}
+{$ENDIF} // - Accuracer only
+{$IFDEF CLIENT_SERVER_VERSION}
+ {$DEFINE API_NETWORK} // API Newtwork Native Unit
+ {DEFINE ProcessMessages} // auto included for Indy only, could be useful in any case
+// Client-Server Engine, Server Part - cannot be used withot LOCAL_VERSION
+ {$DEFINE SERVER_VERSION}
+// Client-Server Engine, Client Part
+ {$DEFINE CLIENT_VERSION}
+{$ENDIF}
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// ENGINE SETTINGS
+//
+////////////////////////////////////////////////////////////////////////////////
+
+{$IFNDEF SQLMEMTABLE}
+{DEFINE ENCRYPTION_ON}
+{$ENDIF}
+
+{$IFDEF X64_ON}
+ {$DEFINE ZLIB}
+ {DEFINE PPMD}
+ {$DEFINE BZIP}
+{$ELSE}
+ {$DEFINE ZLIB}
+ {$DEFINE PPMD}
+ {$DEFINE BZIP}
+{$ENDIF}
+
+{$IFDEF ZLIB}
+  {$DEFINE COMPRESSION_ON}
+{$ENDIF}
+{$IFDEF BZIP}
+  {$DEFINE COMPRESSION_ON}
+{$ENDIF}
+{$IFDEF PPMD}
+  {$DEFINE COMPRESSION_ON}
+{$ENDIF}
+
+{$IFDEF D16H}
+ {$DEFINE PPMDI}
+{$ENDIF}
+
+{$DEFINE FREE_SPACE_MANAGER_ON}
+
+// In-Memory Engine - both Accuracer / SQLMemTable
+{$DEFINE MEMORY_ENGINE}
+// Disk Engine - Accuracer only
+{$IFNDEF SQLMEMTABLE}
+ {DEFINE DISK_ENGINE}
+{$ENDIF}
+// Temporary Engine - both Accuracer / SQLMemTable
+{$DEFINE TEMPORARY_ENGINE}
+// database data lock/unlock by semaphore
+
+ // thread sync is on - otherwise use directly EnterCriticalSection / Leave... in Lock/Unlock methods
+{$DEFINE READ_WRITE_THREAD_SYNC}
+
+// record hash comparison used in DISTINCT by TSQLMemHashArray
+// otherwise will be by TSQLMemIntegerArray that is much slower in searching
+{$DEFINE HASH_ARRAY_RECORD_COMPARISON}
+// new CopyDatasets based on fields map - 18 July 2008 by Andrew Baylis
+{$DEFINE NEW_FIELDS_COPYDATASETS}
+
+// memory manager uses only Systme.GetMem
+{DEFINE SQLMem_MEMORY_SYSTEM_ONLY}
+
+// enables SQL optimizer using TSQLMemSQLOptimizer class
+// will be implemented in v.6
+{DEFINE SQL_OPTIMIZER}
+
+// v.5 settings
+// new fast Unicode string list for table names in disk engine - optimized for fast load/save
+{$DEFINE TSQLMemObjectNameArray_In_TSQLMemTableListFile}
+{$DEFINE TSQLMemCacheManagerThread_ON}
+
+// v.5.60
+{DEFINE RECORD_SEARCH_CACHE_IN_CURSOR}
+{$DEFINE NEW_FILE_SERVER_LOCKING}
+{$DEFINE CORRELATED_SUBQUERIES}
+// v.5.90
+{$DEFINE EXPR_PARSING_1} // variant #1: boolean is parsed like any other exression nodes
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+{$IFDEF SQLMemSMTNONE}
+ {$DEFINE D6H}
+ {$DEFINE VER_D4H} // for DEC v.5
+{$ELSE}
+// Delphi / C++ Builder
+
+{$A+,B-,E-,F-,G+,H+,I-,J+,K-,N+,P+,Q+,R+,S-,T-,V+,X+,Y-}
+{$O-}
+{$HINTS OFF}
+{$WARNINGS OFF}
+
+{$UNDEF D4H}
+{$UNDEF C4H}
+{$UNDEF D5H}
+{$UNDEF C5H}
+{$UNDEF D6H}
+{$UNDEF C6H}
+{$UNDEF D7H}
+{$UNDEF D10H}
+{$UNDEF D11H}
+{$UNDEF D12H}
+{$UNDEF D14H}
+{$UNDEF D15H}
+{$UNDEF D16H}
+{$UNDEF D17H}
+{$UNDEF D18H}
+{$UNDEF D19H}
+{$UNDEF D20H}
+{$UNDEF D21H}
+{$UNDEF D22H}
+{$UNDEF D23H}
+{$UNDEF D24H}
+{$UNDEF D25H}
+{$UNDEF D26H}
+{$UNDEF D27H}
+{$UNDEF D28H}
+{$UNDEF D29H}
+{$UNDEF D30H}
+
+{$IFNDEF VER120}
+  {$IFNDEF VER125}
+    {$IFNDEF VER130}
+      {$IFNDEF VER135}
+       {$IFNDEF VER140}
+        {$IFNDEF VER145}
+          {$DEFINE D7H}
+          {$DEFINE C6H}
+          {$DEFINE D6H}
+        {$ELSE}
+          {$DEFINE C6H}
+        {$ENDIF}
+       {$ENDIF}
+
+       {$DEFINE D5H}
+       {$DEFINE C5H}
+       {$DEFINE D6H}
+      {$ELSE}
+        {$DEFINE D5H}
+        {$DEFINE C5H}
+      {$ENDIF}
+    {$ELSE}
+      {$DEFINE D5H}
+    {$ENDIF}
+  {$ELSE}
+    {$DEFINE D4H}
+    {$DEFINE C4H}
+  {$ENDIF}
+{$ELSE}
+  {$DEFINE D4H}
+{$ENDIF}
+
+{$IFDEF VER180}
+{$DEFINE D10H}
+{$ENDIF}
+
+{$IFDEF VER185}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$ENDIF}
+
+{$IFDEF VER200}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER210}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER220}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER230}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+
+{$IFDEF VER240}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+
+{$IFDEF VER250}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER260}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER270}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER280}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER290}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER300}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER310}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER320}
+{$DEFINE D25H}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER330}
+{$DEFINE D26H}
+{$DEFINE D25H}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER340}
+{$DEFINE D27H}
+{$DEFINE D26H}
+{$DEFINE D25H}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER350}
+{$DEFINE D28H}
+{$DEFINE D27H}
+{$DEFINE D26H}
+{$DEFINE D25H}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF VER360}
+{$DEFINE D29H}
+{$DEFINE D28H}
+{$DEFINE D27H}
+{$DEFINE D26H}
+{$DEFINE D25H}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+
+{$IFDEF VER370}
+{$DEFINE D30H}
+{$DEFINE D29H}
+{$DEFINE D28H}
+{$DEFINE D27H}
+{$DEFINE D26H}
+{$DEFINE D25H}
+{$DEFINE D24H}
+{$DEFINE D23H}
+{$DEFINE D22H}
+{$DEFINE D21H}
+{$DEFINE D20H}
+{$DEFINE D19H}
+{$DEFINE D18H}
+{$DEFINE D17H}
+{$DEFINE D16H}
+{$DEFINE D15H}
+{$DEFINE D14H}
+{$DEFINE D12H}
+{$DEFINE D11H}
+{$DEFINE D10H}
+{$DEFINE UNICODE_STRING} // 'String' type is Unicode now
+{$ENDIF}
+
+{$IFDEF D6H}
+{$A8}
+{$WARN SYMBOL_DEPRECATED OFF}
+{$WARN SYMBOL_LIBRARY OFF}
+{$WARN SYMBOL_PLATFORM OFF}
+{$WARN UNIT_LIBRARY OFF}
+{$WARN UNIT_PLATFORM OFF}
+{$WARN UNIT_DEPRECATED OFF}
+{$ENDIF}
+{$IFDEF D7H}
+{$WARN HRESULT_COMPAT OFF}
+{$WARN HIDING_MEMBER OFF}
+{$WARN HIDDEN_VIRTUAL OFF}
+{$WARN GARBAGE OFF}
+{$WARN BOUNDS_ERROR OFF}
+{$WARN ZERO_NIL_COMPAT OFF}
+{$WARN FOR_LOOP_VAR_VARPAR OFF}
+{$WARN CASE_LABEL_RANGE OFF}
+{$WARN FOR_VARIABLE OFF}
+{$WARN COMPARING_SIGNED_UNSIGNED OFF}
+{$WARN COMBINING_SIGNED_UNSIGNED OFF}
+{$WARN FILE_OPEN OFF}
+{$WARN FILE_OPEN_UNITSRC OFF}
+{$WARN BAD_GLOBAL_SYMBOL OFF}
+{$WARN DUPLICATE_CTOR_DTOR OFF}
+{$WARN INVALID_DIRECTIVE OFF}
+{$WARN PACKAGE_NO_LINK OFF}
+{$WARN PACKAGED_THREADVAR OFF}
+{$WARN IMPLICIT_IMPORT OFF}
+{$WARN HPPEMIT_IGNORED OFF}
+{$WARN NO_RETVAL OFF}
+{$WARN USE_BEFORE_DEF OFF}
+{$WARN FOR_LOOP_VAR_UNDEF OFF}
+{$WARN UNIT_NAME_MISMATCH OFF}
+{$WARN NO_CFG_FILE_FOUND OFF}
+{$WARN MESSAGE_DIRECTIVE OFF}
+{$WARN IMPLICIT_VARIANTS OFF}
+{$WARN UNICODE_TO_LOCALE OFF}
+{$WARN LOCALE_TO_UNICODE OFF}
+{$WARN IMAGEBASE_MULTIPLE OFF}
+{$WARN SUSPICIOUS_TYPECAST OFF}
+{$WARN PRIVATE_PROPACCESSOR OFF}
+{$WARN UNSAFE_TYPE OFF}
+{$WARN UNSAFE_CODE OFF}
+{$WARN UNSAFE_CAST OFF}
+
+{$ENDIF}
+
+
+{$IFNDEF D6H}
+ {$IFNDEF MSWINDOWS}
+  {$IFNDEF LINUX}
+    {$DEFINE MSWINDOWS}
+  {$ENDIF}
+ {$ENDIF}
+{$ENDIF}
+
+{$IFDEF D12H}
+{$WARN IMPLICIT_STRING_CAST OFF}
+{$WARN IMPLICIT_STRING_CAST_LOSS OFF}
+{$ENDIF}
+
+{$ENDIF} // Delphi / C++ Builder
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////

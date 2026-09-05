@@ -1,0 +1,7 @@
+SELECT FInteger,FString FROM JT1
+ UNION ALL 
+SELECT FInteger,FString FROM JT2 WHERE (False);
+#DBISAM
+(SELECT FInteger,FString FROM JT1 )
+ UNION ALL
+(SELECT FInteger,FString FROM JT2 WHERE (False));

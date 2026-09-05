@@ -1,0 +1,1 @@
+select distinct FString,FInteger from jt1 order by FString,FInteger desc

@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="Server.exe"/>
+    <OBJFILES value="Server.obj uMain.obj"/>
+    <RESFILES value="Server.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) uMain.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="VCLACCURACERB5.lib"/>
+    <SPARELIBS value="vcl50.lib vclMsgComB5.lib vclx50.lib vcldb50.lib vclbde50.lib 
+      VCLACCURACERB5.lib VCLSQLMEMTABLEB5.lib"/>
+    <PACKAGES value="vcl50.bpi vclx50.bpi vcljpg50.bpi vcldb50.bpi vclbde50.bpi vclMsgComB5.bpi 
+      vclSqlMemTableb5.bpi MsgComDBMySQLb5.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;_VIS_NOLIB;USEPACKAGES"/>
+    <MAINSOURCE value="Server.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;&quot;..\..\..\Lib\C++ Builder 5&quot;;&quot;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source\&quot;"/>
+    <LIBPATH value="&quot;..\..\..\..\..\..\SQLMemTable\Lib\C++ Builder 5&quot;;&quot;..\..\..\Lib\C++ Builder 5&quot;;&quot;..\..\..\..\..\Lib\C++ Builder 5&quot;;&quot;..\..\..\..\..\..\Accuracer\Lib\C++ Builder 5&quot;;$(BCB)\lib\obj;$(BCB)\lib;&quot;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source\&quot;"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -I&quot;..\..\..\Lib\C++ Builder 5&quot; 
+      -I&quot;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source\.&quot; 
+      -src_suffix cpp -boa"/>
+    <CFLAG1 value="-Od -H=f:\COMPIL~1\CBUILD~3\lib\vcl50.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k 
+      -y -v -vi- -c -tW -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+s:\AidAim\MsgCommunicator\DatabaseModules\MySQLDAC\Lib\C++ Builder 5\MsgComDBMySQLDACb5.bpl=AidAim MsgCommunicator DAC for mySQL Database Module
+s:\AidAim\MsgCommunicator\DatabaseModules\Accuracer\Lib\C++ Builder 5\MsgComDBACRb5.bpl=AidAim MsgCommunicator Accuracer Database Module
+
+[HistoryLists\hlIncludePath]
+Count=3
+Item0=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Lib\C++ Builder 5;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source\
+Item1=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Lib\C++ Builder 5;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source
+Item2=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Lib\C++ Builder 5
+
+[HistoryLists\hlLibraryPath]
+Count=3
+Item0=..\..\..\Lib\C++ Builder 5;..\..\..\..\..\Lib\C++ Builder 5;..\..\..\..\..\..\Accuracer\Lib\C++ Builder 5;$(BCB)\lib\obj;$(BCB)\lib;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source\
+Item1=..\..\..\Lib\C++ Builder 5;..\..\..\..\..\Lib\C++ Builder 5;..\..\..\..\..\..\Accuracer\Lib\C++ Builder 5;$(BCB)\lib\obj;$(BCB)\lib;S:\Projects\Delphi Components\MsgCommunicator\DatabaseModules\SQLMemTableTemporaryTable\Source
+Item2=..\..\..\Lib\C++ Builder 5;..\..\..\..\..\Lib\C++ Builder 5;..\..\..\..\..\..\Accuracer\Lib\C++ Builder 5;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

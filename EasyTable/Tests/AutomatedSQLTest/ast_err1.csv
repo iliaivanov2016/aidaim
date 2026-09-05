@@ -1,0 +1,15 @@
+EasyTable raised an exception.
+EasyTable:
+')' symbol expected, but 'AND' found at line 2, column 26 - Native error: 02111
+Error in Script #43, file SQL\Expressions\Bitiwse\expr_bitwise_and.sql
+
+EasyTable raised an exception.
+EasyTable:
+')' symbol expected, but 'OR' found at line 2, column 26 - Native error: 02111
+Error in Script #46, file SQL\Expressions\Bitiwse\expr_bitwise_or.sql
+
+EasyTable raised an exception.
+EasyTable:
+Column 'Backup' from ORDER BY clause not found - Native error: 01051
+Error in Script #215, file SQL\Update\update_where_2conditions.sql
+
